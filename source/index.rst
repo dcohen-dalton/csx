@@ -1,0 +1,25 @@
+.. csx-doc documentation master file, created by
+   sphinx-quickstart on Tue Jul  2 17:48:09 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+The CSX Book
+============
+
+This online book contains the assignments for the CSX class.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Assignments:
+
+   Rust Removal <assignments/1-rust-removal/rust-removal>
+   Riemann <assignments/2-riemann/riemann>
+   Projectile <assignments/3-projectile/projectile>
+
+
+.. Indices and tables
+.. ==================
+
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
