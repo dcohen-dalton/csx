@@ -6,11 +6,6 @@ import polyfun.Polynomial;
  */
 public abstract class Riemann {
 
-    private double left;
-    private double right;
-    private double subintervals;
-    private double delta;
-
     /**
      * This constructor takes as input the left and right endpoints of the interval
      * over which the Riemann sum is to be calculated, and the number of

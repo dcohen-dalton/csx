@@ -57,3 +57,11 @@ Java class which evaluates a given Riemann sum.
 
 The Riemann Class
 -----------------
+
+In order to calculate Riemann sums you will need to write more than one class. This is because of the different "rules" that are used. Regardless of the "rule," calculating a Riemann sum inevitably involves adding together the area of all of the individual slices. 
+
+That means that 
+
+Abstract Classes
+^^^^^^^^^^^^^^^^
+
