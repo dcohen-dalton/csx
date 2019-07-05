@@ -99,21 +99,52 @@ same type of return value.
 Abstract Classes and Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At the top of the JavaDoc for ``Riemann`` is its **class declaration**, the
-line which denotes that a new class is being created: ::
+The ``Riemann`` class, as shown in the JavaDoc, contains a keyword which you
+most likely have not yet encountered: ``abstract``. This keyword will allow
+you to use to use **object-oriented programming (OOP)** to organize your code
+in a more logical way.
 
-    public abstract class Riemann
+You have learned that there are several different rules which can be used to
+calculate Riemann sums, such as the left hand rule, right hand rule, and
+trapezoid rule. Thinking of a Riemann sum as the sum of many small slices of
+the total area, these rules correspond to different ways of defining the
+slices. However, the overall method for calculating a Riemann sum remains the
+same; given the endpoints of the interval on which to calculate the sum and
+the number of slices, the calculation can always be divided into the following
+steps:
 
-The ``public`` and ``class`` keywords should look familiar, as you've used
-them to declare classes in Compsci 1 and 2. However, ``abstract`` is probably
-new to you. The ``abstract`` keyword declares that ``Riemann`` is an
-**abstract class**. Abstract classes are special in that they cannot be
-instantiated---in other words, you can never call ``new Riemann()``. This may
-seem to make abstract classes useless, since there is no way to directly
-construct an object of one.
+#. Calculate :math:`\Delta x` from the endpoints of the interval and the number
+   of slices.
+#. Determine the endpoints of each subinterval.
+#. Calculate the area of each slice.
+#. Add up the areas to find the total area.
 
-While trying to instantiate an abstract class causes a compiler error, it is still possible to create
-a ``Riemann`` object by first creating a subclass.
+Notice that only the third step depends upon the specific rule being
+used; the others are the same regardless of the rule.
+
+.. figure:: fig3.svg
+   :width: 95 %
+   :align: center
+
+   Here, three different rules are being used to calculate the same Riemann sum.
+   While slices' shapes are different, they exist over the same subintervals in
+   each diagram.
+
+.. At the top of the JavaDoc for ``Riemann`` is its **class declaration**, the
+.. line which denotes that a new class is being created: ::
+
+..     public abstract class Riemann
+
+.. The ``public`` and ``class`` keywords should look familiar, as you've used
+.. them to declare classes in Compsci 1 and 2. However, ``abstract`` is probably
+.. new to you. The ``abstract`` keyword declares that ``Riemann`` is an
+.. **abstract class**. Abstract classes are special in that they cannot be
+.. instantiated---in other words, you can never call ``new Riemann()``. This may
+.. seem to make abstract classes useless, since there is no way to directly
+.. construct an object of one.
+
+.. While trying to instantiate an abstract class causes a compiler error, it is still possible to create
+.. a ``Riemann`` object by first creating a subclass.
 
 .. admonition:: TODO
 
@@ -151,6 +182,11 @@ Base Assignment
    extending **Riemann**.
 #. Use your program to answer the following question: which of the three rules
    is the most accurate?
+
+.. warning:: Remember to account for the following edge cases:
+
+   * The value of the polynomial for a given :math:`x` is negative.
+   * The left endpoint is greater than the right endpoint.
 
 Extension
 ^^^^^^^^^
