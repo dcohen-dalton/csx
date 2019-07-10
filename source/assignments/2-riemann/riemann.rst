@@ -10,16 +10,6 @@ Riemann Sum Assignment
 Approximating Area Under a Curve
 --------------------------------
 
-.. Gomp's original text:
-.. A Riemann sum is, in almost all cases, only an approximation to the area
-.. under a curve. We’ve seen this in math class. We’ve also seen that as the
-.. width of the rectangles in a Riemann sum gets smaller the approximation
-.. to the area under the curve improves. In some cases, we’ve been able to
-.. use this fact to compute the exact value of the area under the curve. In
-.. many cases, though, the sum is too complicated to be computed by hand.
-.. This is where computers can be of help. For this project you’ll create a
-.. Riemann class which evaluates a given Riemann sum.
-
 The focus of this assignment will be defining and calculating
 the area under a curve. The following slides, created by Dr. Gomprecht,
 contain an introduction to the concept of **Riemann sums**, which
@@ -87,15 +77,6 @@ same type of return value.
    writing comments in your source code using a specific format; you can find a
    good introduction to documenting your code in this way at https://alvinalexander.com/java/edu/pj/pj010014.
 
-
-.. Regardless of the rule,
-.. calculating a Riemann sum inevitably involves adding together the area of all
-.. of the individual slices. So, that leaves a few options for how to structure
-.. this project. For this assignment, you will write an **abstract class** which
-.. several child classes, each corresponding to a different rule, extend. Using
-.. class inheritance in order to structure this project enables you to avoid
-.. writing redundant code.
-
 Abstract Classes and Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -113,14 +94,15 @@ same; given the endpoints of the interval on which to calculate the sum and
 the number of slices, the calculation can always be divided into the following
 steps:
 
-#. Calculate :math:`\Delta x` from the endpoints of the interval and the number
-   of slices.
+#. Calculate :math:`\Delta x` (the width of each subinterval) from the
+   endpoints of the interval and the number of slices.
 #. Determine the endpoints of each subinterval.
 #. Calculate the area of each slice.
 #. Add up the areas to find the total area.
 
-Notice that only the third step depends upon the specific rule being
-used; the others are the same regardless of the rule.
+Notice that only the third step---calculating the area of each slice---depends
+upon the specific rule being used; the others are the same regardless of the
+rule.
 
 .. figure:: fig3.svg
    :width: 95 %
@@ -130,46 +112,48 @@ used; the others are the same regardless of the rule.
    While slices' shapes are different, they exist over the same subintervals in
    each diagram.
 
-.. At the top of the JavaDoc for ``Riemann`` is its **class declaration**, the
-.. line which denotes that a new class is being created: ::
+Fourtunately, Java provides a convenient means of structuring classes which
+are mostly the same but differ with respect to certain functions:
+**inheritance**. You will discuss this concept in class, and the following
+pages are recommended for reference:
 
-..     public abstract class Riemann
+* `Oracle - Inheritance Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html>`_
+* `Oracle - Abstract Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html>`_
 
-.. The ``public`` and ``class`` keywords should look familiar, as you've used
-.. them to declare classes in Compsci 1 and 2. However, ``abstract`` is probably
-.. new to you. The ``abstract`` keyword declares that ``Riemann`` is an
-.. **abstract class**. Abstract classes are special in that they cannot be
-.. instantiated---in other words, you can never call ``new Riemann()``. This may
-.. seem to make abstract classes useless, since there is no way to directly
-.. construct an object of one.
+As shown in the JavaDoc, the ``Riemann`` class which you will create will be
+an **abstract class**. As such, you will never directly construct a ``new
+Riemann()``; instead, you will create **child classes** (also known as
+**subclasses**) of ``Riemann`` for each Riemann sum rule. In this way, you
+will end up with a structure where ``RightHandRule`` and ``LeftHandRule``,
+both child classes of ``Riemann``, share most methods, differing only in their
+implementations of ``slice()`` and ``slicePlot()``, since these are the only
+methods whose functionality should depend on the rule. For example, this is
+what a fictional rule called ``OvalRule`` could look like::
 
-.. While trying to instantiate an abstract class causes a compiler error, it is still possible to create
-.. a ``Riemann`` object by first creating a subclass.
+    public class OvalRule extends Riemann {
+        @Override
+        public double slice(Polynomial poly, double sleft, double sright) {
+            // return the area of an ellipse whose width is (sright - sleft)
+            // and whose height is the polynomial evaluated at sleft
+        }
 
-.. admonition:: TODO
+        @Override
+        public void slicePlot(PlotFrame pframe, Polynomial poly, double sleft, double sright) {
+            // draw an ellipse whose width is (sright - sleft)
+            // and whose height is the polynomial evaluated at sleft
+        }
+    }
 
-   Finish this section! figure out how we're explaining abstract classes and subclasses
-
-.. An abstract class is never instantiated, which is why it's called "abstract."
-.. This type of class is used in situations where you want several associated
-.. classes to share certain methods.
-
-.. Abstract methods are declared similarly to normal methods. However, they do
-.. not have a method body (the part of a method that is contained in curly
-.. braces).
-
-.. You will be given the Javadoc for an abstract class below. Using this
-.. documentation, you should fill in the methods as specified in order to meet
-.. the requirements.
-
-.. **LINK TO DOCUMENTATION**
-
-.. In each child class of **Riemann** you will write a different **slice** and
-.. **slicePlot** method.
+As shown in ``OvalRule``, you do not have to reimplement all of the
+methods in ``Riemann``. Only the abstract methods should be
+written out in the subclasses.
 
 .. figure:: riemann-diagram.png
    :width: 85 %
    :align: center
+
+   This class diagram shows the relationship between ``Riemann`` and
+   its child classes.
 
 Assignment
 --------------
@@ -177,11 +161,35 @@ Assignment
 Base Assignment
 ^^^^^^^^^^^^^^^
 
-#. Write the ``Riemann`` abstract class based on the provided `JavaDoc </_static/riemann-javadoc/riemannsum/Riemann.html>`_.
+#. Create the ``Riemann`` abstract class based on the provided
+   `JavaDoc </_static/riemann-javadoc/riemannsum/Riemann.html>`__:
+
+   - Write ``calculateDeltaX()``.
+   - Add the abstract method ``slice()``. Make sure to mark it as ``abstract``
+     and end the line with a semicolon instead of implementing the method.
+   - Write ``rs()``.
+
 #. Write ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
-   extending **Riemann**.
-#. Use your program to answer the following question: which of the three rules
-   is the most accurate?
+   extending **Riemann** and implementing the abstract method ``slice()``.
+   Do not include implementations of any other methods from ``Riemann`` in
+   these classes; they will be automatically inherited.
+
+#. Add plotting functionality:
+
+   - Add the abstract method ``slicePlot()`` to ``Riemann``.
+   - Implement ``slicePlot()`` in each of the child classes. Make sure the
+     plots correspond to the specific rules. You don't need to fill
+     in the trapezoids for ``TrapezoidRule``.
+   - Write ``rsPlot()`` in the ``Riemann`` class.
+
+#. Write ``rsAcc()`` in the ``Riemann`` class (see Dr. Gomprecht's slides for
+   an explanation of the accumulation function).
+
+#. Use your program to answer the following question: **which of the three
+   rules is the most accurate?** This should compare the results of the
+   Riemann sums with the actual area under the curve (use this
+   `Integral Calculator <https://www.integral-calculator.com>`__ to
+   get the actual value).
 
 .. warning:: Remember to account for the following edge cases:
 
@@ -200,11 +208,14 @@ For your extension, research different Riemann sum rules and write classes for
 them in the same style as the base assignment. Below are some suggested
 extensions that students have done in the past:
 
-* **Maximum rule**
-* **Minimum rule**
-* **Random rule**
-* **Midpoint rule**
-* **Simpson's rule** - this is more involved than the other options but
+* **Maximum rule** - Use the polynomial's value at the left endpoint or at the
+  right endpoint, whichever is greater.
+* **Minimum rule** - Use the polynomial's value at the left endpoint or at the
+  right endpoint, whichever is lesser.
+* **Random rule** - Randomly choose :math:`x` within the subinterval at which
+  to evaluate the polynomial.
+* **Midpoint rule** - Evaluate the polynomial at the mean of the endpoints.
+* **Simpson's rule** - This is more involved than the other options but
   is also the most interesting---and often gives better approximations. It
   will take some outside research.
 
@@ -213,3 +224,84 @@ makes it easier to learn from your program. Even if you decide not to dedicate
 a lot of time to making an interface, you should at least have some way for a
 user to run your program with desired parameters without having to directly
 edit the code first.
+
+Advanced Extensions
+"""""""""""""""""""
+
+The following possible (optional) extensions are more advanced, either from a
+mathematics or a computer science perspective.
+
+**Calculate an approximation of** :math:`\pi`. Hint: use the equation for a circle in cartesian
+coordinates to calculate the area under a semicircle.
+
+
+**Write a class which approximates arc length**: if, when graphed, a function
+produces a curve, then calculate the length of that curve in a given
+subinterval Hint: instead of breaking up an area into rectangles, break up the
+curve into line segments. You will need the distance formula :math:`r =
+\sqrt{\Delta x ^ 2 + \Delta y ^ 2}` and the Java function ``Math.sqrt()`` to
+calculate the length of each segment.
+
+.. figure:: fig4.svg
+   :width: 60 %
+   :align: center
+
+   Arc length can be approximated by dividing the curve and replacing the
+   smaller arcs with segments.
+
+**Write a version of** ``Riemann`` **called** ``RiemannExtended``
+**which supports arbitrary non-polynomial
+functions**. So far, we have only worked with polynomials. However, it is
+possible to calculate the area under other functions as well---calculating
+the area of a semicircle is an example of this. The hardest part will be
+representing arbitrary real-valued functions as Java objects:
+
+* One option is to write an abstract class called ``Function`` with a
+  single abstract method called ``evaluate()`` which takes a ``double`` and
+  returns a ``double``. Subclasses of ``Function`` will contain
+  implementations of ``evaluate()`` which calculate the value of the function
+  for a given :math:`x`. Replace ``Polynomial`` with ``Function`` throughout
+  ``RiemannExtended`` and its subclasses.
+
+  .. figure:: function-diagram.png
+     :width: 95%
+     :align: center
+
+* A cleaner but more advanced way of representing functions is to use
+  Java 8 **lambda expressions** and ``DoubleUnaryOperator``.
+  Replace ``Polynomial`` with ``DoubleUnaryOperator`` throughout
+  ``RiemannExtended`` and its subclasses.
+  This is an example of how those features could be used::
+
+    // f(x) = sin(x) + cos(x) / 2
+    DoubleUnaryOperator f = (x) -> Math.sin(x) + Math.cos(x) / 2;
+
+    // Print f(4.9)
+    System.out.println(f.applyAsDouble(4.9));
+
+    // g(x) = poly.evaluateToNumber(x)
+    DoubleUnaryOperator g = (x) -> poly.evaluateToNumber(x);
+
+    // Print g(-2)
+    System.out.println(g.applyAsDouble(-2));
+
+
+Further Resources
+-----------------
+
+Java/Computer Science
+^^^^^^^^^^^^^^^^^^^^^
+
+* `Oracle - Inheritance <https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html>`_
+* `Oracle - Abstract Classes and Methods <https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html>`_
+* `Oracle - Interfaces <https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html>`_
+* `freeCodeCamp.org - Lambda Expressions <https://www.freecodecamp.org/news/learn-these-4-things-and-working-with-lambda-expressions-b0ab36e0fffc/>`_
+* `JavaDoc <https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Math.html>`_
+  for the ``Math`` class - contains useful mathematical functions such as
+  ``Math.sin()`` and ``Math.sqrt()``.
+
+Math
+^^^^
+
+* `Wolfram Alpha <https://www.wolframalpha.com/>`__ - Can be used to calculate exact values of
+  Riemann sums including arc lengths.
