@@ -109,7 +109,7 @@ rule.
    :align: center
 
    Here, three different rules are being used to calculate the same Riemann sum.
-   While slices' shapes are different, they exist over the same subintervals in
+   While the slices' shapes are different, they exist over the same subintervals in
    each diagram.
 
 Fourtunately, Java provides a convenient means of structuring classes which
@@ -157,6 +157,22 @@ written out in the subclasses.
 
 Assignment
 --------------
+
+Remember to **document as you go.** Each method you write should
+have a documentation comment (ideally in the JavaDoc format)
+before it::
+
+    /**
+     * [DESCRIPTION OF WHAT THE METHOD DOES]
+     *
+     * @param left [DESCRIPTION OF THE 'left' PARAMETER]
+     * @param right [DESCRIPTION OF THE 'right' PARAMETER]
+     * @param subintervals [DESCRIPION OF THE 'subintervals' PARAMETER]
+     * @return [DESCRIPTION OF WHAT THE METHOD RETURNS]
+     */
+    public double calculateDeltaX(double left, double right, int subintervals) {
+        // the actual method
+    }
 
 Base Assignment
 ^^^^^^^^^^^^^^^
@@ -231,8 +247,8 @@ Advanced Extensions
 The following possible (optional) extensions are more advanced, either from a
 mathematics or a computer science perspective.
 
-**Calculate an approximation of** :math:`\pi`. Hint: use the equation for a circle in cartesian
-coordinates to calculate the area under a semicircle.
+**Calculate an approximation of** :math:`\pi`. Hint: use the equation for a
+circle in cartesian coordinates to calculate the area under a semicircle.
 
 
 **Write a class which approximates arc length**: if, when graphed, a function
