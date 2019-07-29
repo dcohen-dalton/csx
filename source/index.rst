@@ -15,6 +15,7 @@ This online book contains the assignments for the CSX class.
    Rust Removal <assignments/1-rust-removal/rust-removal>
    Riemann Sums <assignments/2-riemann/riemann>
    Projectile Motion <assignments/3-projectile/projectile>
+   Matrices <assignments/4-matrix/matrix>
 
 
 .. Indices and tables
