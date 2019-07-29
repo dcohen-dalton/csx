@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'csx-doc'
+project = 'The CSX Book'
 copyright = '2019, The Dalton School'
 author = 'The Dalton School'
 
