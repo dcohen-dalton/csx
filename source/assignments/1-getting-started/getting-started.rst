@@ -36,13 +36,15 @@ For this section, you will review quadradic equations, how to write objects and 
 Problem: Find the roots of a Quadradic.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``f(x) = ax2 + bx + c``
+.. figure:: rustremoval01.png 
+   :width: 50 %
+   :align: center
 
-The x values that make this function equal to 0 are the roots or zeroes of the function and can be found by using the quadratic equation.
+The ``x`` values that make this function equal to ``0`` are the **roots** or **zeroes** of the function and can be found by using the **quadratic formula**.
 
-.. code-block:: latex
-
-   x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+.. figure:: rustremoval00.png 
+   :width: 50 %
+   :align: center
 
 
 Step 1: Start with a Test
@@ -150,6 +152,7 @@ Open ``Sample.java`` and look at the Polyfun examples. (Ignore the rest of the c
    * For ``vx``, print the coefficient for the ``X^1`` term (also known as simply X).
    * Use a ``for``-loop or ``for-each``-loop to print all the coefficients of ``vx``
 
+For help, look at the `Polynomial JavaDocs <https://kjergens.github.io/polyfun-1.1.0/out/html/org/dalton/polyfun/Polynomial.html>`__.
 
 
 Introduction to Open Source Physics (OSP)
