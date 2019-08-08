@@ -31,12 +31,13 @@ Follow these images to set up your environment:
    :width: 100 %
    :align: left      
 
-   **Step 2.** Enter the url https://github.com/kjergens/ and select Clone.
+   **Step 2.** In the URL box enter https://github.com/kjergens/XClassProjects.git and select Clone.
 
 
 .. figure:: setup02.png 
    :width: 100 %
-   :align: center
+   :align: left
+   :figclass: align-left
 
    **Step 3.** Expand the **src** and **test** folders. These folders have example classes and are where you will put all your code for this course. Your project should now look like the above. (Note: the **out** folder will not appear until you've run a class.) 
 
@@ -58,6 +59,7 @@ The ``x`` values that make this function equal to ``0`` are the **roots** or **z
    :width: 50 %
    :align: center
 
+You are going to write a program that finds to roots (if they exist) for any quadratic equation.
 
 Step 1: Create a Test Class
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -84,24 +86,28 @@ Step 1: Create a Test Class
       assertThat(q.getA(), is(1));
    }
 
-  Look at the ``GettingStartedTest`` class as an example if you need help.
+  If you need help, look at the ``GettingStartedTest`` class, in the **test** folder as an example.
 
   Run the QuadraticTest class. It will fail at first, which is expected.
 
 
 Step 2: Create a Quadratic Object
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In order to get your test to succeed, continue with the following exercise:
+
 .. admonition:: Exercise
 
-   * In the **src** folder, create a new Java class called ``Quadratic``. This will be the object class that defines a quadratic function and methods that analyze its different characteristics.
-   * Create 3 private attributes ``a``, ``b`` and ``c``, all doubles. 
-   * Write a constructor which takes ``a``, ``b`` and ``c`` as params and sets the attributes ``a``, ``b`` and ``c``.
-   * Write a ``getA`` method which returns the value of ``a``.
-   * Run ``QuadraticTest`` again. It should succeed this time. 
+   #. In the **src** folder, create a new Java class called ``Quadratic``. This will be the object class that defines a quadratic function and methods that analyze its different characteristics.
+   #. Create 3 private attributes ``a``, ``b`` and ``c``, all doubles. 
+   #. Write a constructor which takes ``a``, ``b`` and ``c`` as params and useds them to set the ``a``, ``b`` and ``c`` attributes.
+   #. Write a public method called ``getA`` which returns the value of ``a``.
+   #. Run ``QuadraticTest`` again. It should succeed this time. 
 
 
 Step 3: Add Methods and Test methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once your ``QuadraticTest`` succeeds, continue with the following exercise:
 
 .. admonition:: Exercise
 
@@ -109,47 +115,49 @@ Step 3: Add Methods and Test methods
 
  Write the following methods in ``Quadratic``. For each method, write at least one test method in ``QuadraticTest``.
 
-   ``public double getB()`` 
-      * In ``Quadratic``, write a method to get the value of b.
-      * Go back to ``QuadraticTest`` and add test method for ``getB``.
-      * Do the same for ``getC``.
+ #. ``public double getB()`` 
+      Return the value of b.
+      In ``QuadraticTest`` and add test method for ``getB``.
 
+ #. ``public double getC()`` 
+      Return the value of c.
+      In ``QuadraticTest`` and add test method for ``getC``.
 
-   ``public boolean hasRealRoots()`` 
-      * See if the quadratic has real roots, return boolean true or false. 
-      * Write a test method in ``QuadraticTest`` called ``hasRealRoots`` to test it .
+ #. ``public boolean hasRealRoots()`` 
+      See if the quadratic has real roots, return boolean true or false. 
+      Write a test method in ``QuadraticTest`` called ``hasRealRoots`` to test it .
    
 
-   ``public int numberOfRoots()`` 
-      * Determine the number of real roots, return an int (0, 1, or 2). 
-      * Write a test method in ``QuadraticTest`` called ``numberOfRoots`` to test it .
+ #. ``public int numberOfRoots()`` 
+      Determine the number of real roots, return an int (0, 1, or 2). 
+      Write a test method in ``QuadraticTest`` called ``numberOfRoots`` to test it .
 
 
-   ``public double[] getRootArray()``
-      * Find the roots, return 2 doubles (put them in an array). 
-      * Write a test method in ``QuadraticTest`` called ``getRootArray`` to test it .
+ #. ``public double[] getRootArray()``
+      Find the roots, return 2 doubles (put them in an array). 
+      Write a test method in ``QuadraticTest`` called ``getRootArray`` to test it .
 
 
-   ``public double getAxisOfSymmetry()`` 
-      * Find the axis of symmetry. Return that value. 
-      * Write a test method in ``QuadraticTest`` called ``getAxisOfSymmetry`` to test it .
+ #. ``public double getAxisOfSymmetry()`` 
+      Find the axis of symmetry. Return that value. 
+      Write a test method in ``QuadraticTest`` called ``getAxisOfSymmetry`` to test it .
 
 
-   ``public double getExtremeValue()``
-      * Find the extreme value, the maximum or minimum function value corresponding to the y coordinate of the vertex of the parabola. Return that value. 
-      * Write a test method in ``QuadraticTest`` called ``getExtremeValue`` to test it .
+ #. ``public double getExtremeValue()``
+      Find the extreme value, the maximum or minimum function value corresponding to the y coordinate of the vertex of the parabola. Return that value. 
+      Write a test method in ``QuadraticTest`` called ``getExtremeValue`` to test it .
 
 
-   ``public boolean isMax()`` 
-      * Is the extreme value a Max or a Min? Does the parabola opens up or down? Return true for Max and false for Min. 
-      * Write a test method in ``QuadraticTest`` called ``isMax`` to test it .
+ #. ``public boolean isMax()`` 
+      Is the extreme value a Max or a Min? Does the parabola opens up or down? Return true for Max and false for Min. 
+      Write a test method in ``QuadraticTest`` called ``isMax`` to test it .
 
 
-   ``public double evaluateWith(double x)`` 
-      * Evaluate the quadratic function at an x value, return f(that x value). 
-      * Write a test method in ``QuadraticTest`` called ``evaluateWith`` to test it .
+ #. ``public double evaluateWith(double x)`` 
+      Evaluate the quadratic function at an x value, return f(that x value). 
+      Write a test method in ``QuadraticTest`` called ``evaluateWith`` to test it .
 
-   When all of the tests pass, you are finished with this exercise.
+ When ``QuadraticTest`` succeeds, you are finished with this exercise.
 
 
 Introduction to Polyfun
@@ -163,11 +171,11 @@ After looking over the code and the output, complete the following exercise.
 
    Do the following in the ``GettingStarted`` class.
 
-   * Create a Polynomial called ``gx`` and set it equal to ``(4.0)X^4 + 5.0``. Print the Polynomial.
-   * Evaluate ``vx`` for when ``x`` is ``2`` and print the answer.
-   * Add ``fx`` and ``vx`` and print the answer.
-   * For ``vx``, print the coefficient for the ``X^1`` term (also known as simply X).
-   * Use a ``for``-loop or ``for-each``-loop to print all the coefficients of ``vx``
+   #. Create a Polynomial called ``gx`` and set it equal to ``(4.0)X^4 + 5.0``. Print the Polynomial.
+   #. Evaluate ``vx`` for when ``x`` is ``2`` and print the answer.
+   #. Add ``fx`` and ``vx`` and print the answer.
+   #. For ``vx``, print the coefficient for the ``X^1`` term (also known as simply X).
+   #. Use a ``for``-loop or ``for-each``-loop to print all the coefficients of ``vx``
 
 For help, look at the `Polynomial JavaDocs <https://kjergens.github.io/polyfun-1.1.0/out/html/org/dalton/polyfun/Polynomial.html>`__.
 
@@ -185,8 +193,8 @@ When you think you understand, do the following exercise:
 
    Do the following in the ``GettingStarted`` class.
 
-   * Use a ``for``-loop to change the red line to a graph of ``fx`` for values 0 - 10.
-   * Use a ``for``-loop to change to change the green line to a graph ``vx`` for values 0 - 10.
+   #. Use a ``for``-loop to change the red line to a graph of ``fx`` for when x is values 0 - 10.
+   #. Use a ``for``-loop to change to change the green line to a graph ``vx`` for when x is values 0 - 10.
 
 Step 2: Edit a Simple Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -198,15 +206,30 @@ Familiarize yourself with the code, then do the following exercise.
 
    Do the following in the ``MovingBallApp`` class.
 
-   * Add code to let the user set the starting X position of the circle.
-   * Have the circle move in a diagonal across the screen, so as y decreases by 1, x simultaneously increases by 1.
+   #. Add code to let the user set the starting X position of the circle.
+   #. Have the circle move in a diagonal across the screen, so as y decreases by 1, x simultaneously increases by 1.
 
 Step 3: RandomWalkApp (Advanced Animation)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Now you'll create an animation from scratch. You can copy and paste MovingBallApp as starter code.
+Now you'll create an animation from scratch. 
+
+.. figure:: randomwalk.gif 
+   :width: 30 %
+   :align: center
+
 
 .. admonition:: Exercise
 
-   * In the src folder, create a new Java class called ``RandomWalkApp``.
-   * Animate a circle that for each iteration randomly moves either 1 spot up, 1 spot down, or stays at the same y. It also randomly moves 1 spot left, 1 spot right or stays at the same x.
-   * Create an ArrayList of 50 circles that move in this way.
+   #. In the src folder, create a new Java class called ``RandomWalkApp``.
+   #. Copy and paste the ``MovingBallApp`` class as starter code. Change the ``main`` method to run ``RandomWalkApp``.
+   #. Change ``doStep`` so that ``circle`` randomly moves either 1 spot up, 1 spot down, or stays at the same y. It also randomly moves 1 spot left, 1 spot right or stays at the same x.
+   #. Add 50 Circles that move in this way. 
+
+     **HINT**: Change the global ``circle`` variable to an ``ArrayList`` of type ``Circle`` called ``circles``. 
+     
+     **HINT**: You'll need a ``for``-loop in ``initialize`` to add 50 Circles to ``circles``, a ``for-each``-loop in ``doStep`` to move each Circle in ``circles``, and, optionally, a ``for-each``-loop in ``stop`` to print how far each Circle in ``circles`` moved.
+
+
+
+
+
