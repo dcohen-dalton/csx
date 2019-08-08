@@ -185,7 +185,7 @@ Introduction to Open Source Physics (OSP)
 
 Step 1: Plot a Polynomial
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Run the ``GettingStarted`` class again but this time look at the graph that appears. It will take 1-3 minutes for the graph to render. Look at the code under Open Source Physics (OSP) Example to see how this graph was made.
+Run the ``GettingStarted`` class again but this time look at the graph that appears. Hover over the graph for it to render. Look at the code under Open Source Physics (OSP) Example to see how this graph was made.
 
 When you think you understand, do the following exercise:
 
@@ -195,6 +195,9 @@ When you think you understand, do the following exercise:
 
    #. Use a ``for``-loop to change the red line to a graph of ``fx`` for when x is values 0 - 10.
    #. Use a ``for``-loop to change to change the green line to a graph ``vx`` for when x is values 0 - 10.
+   #. Use a ``for``-loop to change the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise).
+
+   Which do you prefer, appending x and y plot points, or creating a Trail?
 
 Step 2: Edit a Simple Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -209,8 +212,8 @@ Familiarize yourself with the code, then do the following exercise.
    #. Add code to let the user set the starting X position of the circle.
    #. Have the circle move in a diagonal across the screen, so as y decreases by 1, x simultaneously increases by 1.
 
-Step 3: RandomWalkApp (Advanced Animation)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 3: Create a new Animation (Random Walk)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now you'll create an animation from scratch. 
 
 .. figure:: randomwalk.gif 
@@ -220,7 +223,7 @@ Now you'll create an animation from scratch.
 
 .. admonition:: Exercise
 
-   #. In the src folder, create a new Java class called ``RandomWalkApp``.
+   #. In the **src** folder, create a new Java class called ``RandomWalkApp``.
    #. Copy and paste the ``MovingBallApp`` class as starter code. Change the ``main`` method to run ``RandomWalkApp``.
    #. Change ``doStep`` so that ``circle`` randomly moves either 1 spot up, 1 spot down, or stays at the same y. It also randomly moves 1 spot left, 1 spot right or stays at the same x.
    #. Add 50 Circles that move in this way. 
@@ -228,6 +231,22 @@ Now you'll create an animation from scratch.
      **HINT**: Change the global ``circle`` variable to an ``ArrayList`` of type ``Circle`` called ``circles``. 
      
      **HINT**: You'll need a ``for``-loop in ``initialize`` to add 50 Circles to ``circles``, a ``for-each``-loop in ``doStep`` to move each Circle in ``circles``, and, optionally, a ``for-each``-loop in ``stop`` to print how far each Circle in ``circles`` moved.
+
+Step 4: (Advanced) Spiral Trail Animation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. admonition:: Exercise
+
+  `Note: You may choose to first make this a static graph, and then change it to an animated simulation.`
+
+  #. In **src** folder, Create a new Java class called ``SpiralTrailApp``. The class should extend ``AbstractSimulation``.
+  #. Create a rectangle using the ``DrawableShape.createRectangle()`` method like this:
+    .. code-block:: java 
+
+      DrawableShape rect = DrawableShape.createRectangle(double x, double y, double w, double h);
+  #. Add the rectangle to a PlotFrame.
+  #. On the PlotFrame draw a circle centered at each of the lattice points contained in the square whose lower left corner is (1,1) and upper right corner is (5,5). (There should be a total of 25 circles.) Make the radius of each circle correspond to twice its x-coordinate, and make each horizontal row a different color.
+  #. On the PlotFrame draw a Trail that starts at the origin, (0,0), and “steps” outward in a spiral-like shape by first going to (1,0), then (1,1), ( − 1,1), ( − 1, − 1), (2, − 1), etc. The path should consist of 2 segments of length 1, then 2 segments of length 2, then 2 segments of length 3, etc. and the path turns 90° counter clockwise at the end of each segment. End the Trail at (4,4).
 
 
 
