@@ -212,12 +212,24 @@ Familiarize yourself with the code, then do the following exercise.
    #. Add code to let the user set the starting X position of the circle.
    #. Have the circle move in a diagonal across the screen, so as y decreases by 1, x simultaneously increases by 1.
 
+MovingBallApp is an extension of AbstractSimulation (an **abstract class**).
+ 
+An **abstract class** is a class is incomplete by design. The author wrote most of the methods, but left some methods empty. These empty methods are called **abstract methods**. It is up to the programmer to complete the abstract methods.
+ 
+In AbstractSimulation, these are the abstract methods:
+
+   #. ``reset`` - Adds options to the Control Panel and returns the simulation to its default state. All commands within the reset() method are executed the FIRST time the simulation is INITIALIZED, and every time the RESET button is clicked after that. Note that the RESET button appears when the app is first loaded, but does not appear again until the app has been STARTED and STOPPED, and NEW is clicked.
+   #. ``initialize`` - Sets the initial conditions of your simulation. Within this method, you should read in the values of any control panel fields and add objects to any DisplayFrame or PlotFrame windows. The commands within this method are executed once, every time the INITIALIZE button in clicked.
+   #. ``doStep`` - Invoked every 1/10 second, it defines the actions to take to do the animation. It is also invoked each time the Step button is pressed.
+ 
+You also need a main method to run the simulation.
+
 Step 3: Create a new Animation (Random Walk)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now you'll create an animation from scratch. 
 
 .. figure:: randomwalk.gif 
-   :width: 30 %
+   :width: 40 %
    :align: center
 
 
@@ -234,19 +246,29 @@ Now you'll create an animation from scratch.
 
 Step 4: (Advanced) Spiral Trail Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: spiral.gif 
+   :width: 40 %
+   :align: center
 
 .. admonition:: Exercise
 
   `Note: You may choose to first make this a static graph, and then change it to an animated simulation.`
 
   #. In **src** folder, Create a new Java class called ``SpiralTrailApp``. The class should extend ``AbstractSimulation``.
+  #. Set up empty methods for ``reset``, ``initialize``, and ``doStep``.
+  #. Add a main method to run the simulation.
   #. Create a rectangle using the ``DrawableShape.createRectangle()`` method like this:
-    .. code-block:: java 
 
-      DrawableShape rect = DrawableShape.createRectangle(double x, double y, double w, double h);
-  #. Add the rectangle to a PlotFrame.
-  #. On the PlotFrame draw a circle centered at each of the lattice points contained in the square whose lower left corner is (1,1) and upper right corner is (5,5). (There should be a total of 25 circles.) Make the radius of each circle correspond to twice its x-coordinate, and make each horizontal row a different color.
-  #. On the PlotFrame draw a Trail that starts at the origin, (0,0), and “steps” outward in a spiral-like shape by first going to (1,0), then (1,1), ( − 1,1), ( − 1, − 1), (2, − 1), etc. The path should consist of 2 segments of length 1, then 2 segments of length 2, then 2 segments of length 3, etc. and the path turns 90° counter clockwise at the end of each segment. End the Trail at (4,4).
+  .. code-block:: java 
+
+      // The x and y parameters place the center of the rectangle.
+      DrawableShape rect = DrawableShape.createRectangle(x, y, width, height);
+
+  #. Edit the rectangle to be a square with the lower left corner at (1,1) and upper right corner is (5,5). 
+  #. Create a PlotFrame and add the square.
+  #. Set the PlotFrame's preferred min and max x and y so that the square is in the middle of the plot frame.
+  #. On the PlotFrame draw a circle centered at each of the lattice points contained in the square. (There should be a total of 25 circles.)
+  #. Draw a Trail that starts at the origin, (3, 3), and “steps” outward in a spiral-like shape by first going to (2, 3), then (2, 2), (4, 2), etc. The path should consist of 2 segments of length 1, then 2 segments of length 2, then 2 segments of length 3, etc. and the path turns 90° counter clockwise at the end of each segment. End the Trail at (1, 5).
 
 
 
