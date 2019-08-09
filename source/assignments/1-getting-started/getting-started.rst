@@ -198,8 +198,8 @@ When you think you understand, do the following exercise:
    Do the following in the ``GettingStarted`` class.
 
    #. Use a ``for``-loop to change the red line to a graph of ``fx`` for when x is values 0 - 10.
-   #. Use a ``for``-loop to change to change the green line to a graph ``vx`` for when x is values 0 - 10.
-   #. Use a ``for``-loop to change the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise).
+   #. Use a ``for``-loop to change the green line to a graph ``vx`` for when x is values 0 - 10.
+   #. Use a ``for``-loop to change the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10.
 
    Which do you prefer, appending x and y plot points, or creating a Trail?
 
@@ -211,6 +211,20 @@ Step 2: Edit a Simple Animation
 
 Open and run the ``MovingBallApp``. This is an example of an animation. It is different from a static graph in that you have to write at least 3 methods (reset, intialize, and doStep) in order for it to work.
 
+Introduction to Abstract Classes
+"""""""""""""""""""""""""""""""""
+``MovingBallApp`` is an extension of ``AbstractSimulation``, an **abstract class**.
+ 
+An **abstract class** is a class that is incomplete by design. The author wrote most of the methods, but left some methods empty. These empty methods are called **abstract methods**. It is up to the programmer who extended the abstract class to write the abstract methods.
+ 
+In AbstractSimulation, these are the abstract methods:
+
+   #. ``reset`` - Adds options to the Control Panel and returns the simulation to its default state. All commands within the reset() method are executed the FIRST time the simulation is INITIALIZED, and every time the RESET button is clicked after that. Note that the RESET button appears when the app is first loaded, but does not appear again until the app has been STARTED and STOPPED, and NEW is clicked.
+   #. ``initialize`` - Sets the initial conditions of your simulation. Within this method, you should read in the values of any control panel fields and add objects to any DisplayFrame or PlotFrame windows. The commands within this method are executed once, every time the INITIALIZE button in clicked.
+   #. ``doStep`` - Invoked every 1/10 second, it defines the actions to take to do the animation. It is also invoked each time the Step button is pressed.
+ 
+You also need a ``main`` method to run the simulation.
+
 Familiarize yourself with the code, then do the following exercise.
 
 .. admonition:: Exercise
@@ -219,20 +233,6 @@ Familiarize yourself with the code, then do the following exercise.
 
    #. Add code to let the user set the starting X position of the circle.
    #. Have the circle move in a diagonal across the screen, so as y decreases by 1, x simultaneously increases by 1.
-
-Introduction to Abstract Classes
-"""""""""""""""""""""""""""""""""
-MovingBallApp is an extension of AbstractSimulation, an **abstract class**.
- 
-An **abstract class** is a class that is incomplete by design. The author wrote most of the methods, but left some methods empty. These empty methods are called **abstract methods**. It is up to the programmer to write the abstract methods.
- 
-In AbstractSimulation, these are the abstract methods:
-
-   #. ``reset`` - Adds options to the Control Panel and returns the simulation to its default state. All commands within the reset() method are executed the FIRST time the simulation is INITIALIZED, and every time the RESET button is clicked after that. Note that the RESET button appears when the app is first loaded, but does not appear again until the app has been STARTED and STOPPED, and NEW is clicked.
-   #. ``initialize`` - Sets the initial conditions of your simulation. Within this method, you should read in the values of any control panel fields and add objects to any DisplayFrame or PlotFrame windows. The commands within this method are executed once, every time the INITIALIZE button in clicked.
-   #. ``doStep`` - Invoked every 1/10 second, it defines the actions to take to do the animation. It is also invoked each time the Step button is pressed.
- 
-You also need a main method to run the simulation.
 
 Step 3: Create a new Animation (Random Walk)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -262,11 +262,13 @@ Step 4: (Advanced) Spiral Trail Animation
 
 .. admonition:: Exercise
 
-  `Note: You may choose to first make this a static graph, and then change it to an animated simulation.`
+  For this exercise, you have to decide to which method - ``reset``, ``initialize``, or ``doStep`` - to add the code for each step.
+
+    `Note: You may choose to first make this a static graph, and then change it to an abstract simulation.`
 
   #. In **src** folder, Create a new Java class called ``SpiralTrailApp``. The class should extend ``AbstractSimulation``.
   #. Set up empty methods for ``reset``, ``initialize``, and ``doStep``.
-  #. Add a main method to run the simulation.
+  #. Add a ``main`` method to run the simulation.
   #. Create a rectangle using the ``DrawableShape.createRectangle()`` method like this:
 
   .. code-block:: java 
@@ -274,7 +276,7 @@ Step 4: (Advanced) Spiral Trail Animation
       // The x and y parameters place the center of the rectangle.
       DrawableShape rect = DrawableShape.createRectangle(x, y, width, height);
 
-  #. Edit the rectangle to be a square with the lower left corner at (1,1) and upper right corner is (5,5). 
+  5. Edit the rectangle to be a square with the lower left corner at (1,1) and upper right corner at (5,5). Note that the x and y represent the center of the rectangle, not the upper left corner.
   #. Create a PlotFrame and add the square.
   #. Set the PlotFrame's preferred min and max x and y so that the square is in the middle of the plot frame.
   #. On the PlotFrame draw a circle centered at each of the lattice points contained in the square. (There should be a total of 25 circles.)
