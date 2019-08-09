@@ -163,6 +163,8 @@ Once your ``QuadraticTest`` succeeds, continue with the following exercise:
 Introduction to Polyfun
 -----------------------
 
+Getting Started with Polynomials
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Open the ``GettingStarted`` class and look at the Polynomial examples. (Ignore the rest of the code in the ``GettingStarted`` class for now.) Run the code and look at the output in the console. (Again, ignore the pop-up that appears for now.) 
 
 After looking over the code and the output, complete the following exercise.
@@ -177,7 +179,9 @@ After looking over the code and the output, complete the following exercise.
    #. For ``vx``, print the coefficient for the ``X^1`` term (also known as simply X).
    #. Use a ``for``-loop or ``for-each``-loop to print all the coefficients of ``vx``
 
-For help, look at the `Polynomial JavaDocs <https://kjergens.github.io/polyfun-1.1.0/out/html/org/dalton/polyfun/Polynomial.html>`__.
+More Information
+^^^^^^^^^^^^^^^^^
+For more information, see the `Polynomial JavaDocs <https://kjergens.github.io/polyfun-1.1.0/out/html/org/dalton/polyfun/Polynomial.html>`__.
 
 
 Introduction to Open Source Physics (OSP)
@@ -201,6 +205,10 @@ When you think you understand, do the following exercise:
 
 Step 2: Edit a Simple Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: movingball.gif 
+   :width: 40 %
+   :align: center
+
 Open and run the ``MovingBallApp``. This is an example of an animation. It is different from a static graph in that you have to write at least 3 methods (reset, intialize, and doStep) in order for it to work.
 
 Familiarize yourself with the code, then do the following exercise.
@@ -212,9 +220,11 @@ Familiarize yourself with the code, then do the following exercise.
    #. Add code to let the user set the starting X position of the circle.
    #. Have the circle move in a diagonal across the screen, so as y decreases by 1, x simultaneously increases by 1.
 
-MovingBallApp is an extension of AbstractSimulation (an **abstract class**).
+Introduction to Abstract Classes
+"""""""""""""""""""""""""""""""""
+MovingBallApp is an extension of AbstractSimulation, an **abstract class**.
  
-An **abstract class** is a class is incomplete by design. The author wrote most of the methods, but left some methods empty. These empty methods are called **abstract methods**. It is up to the programmer to complete the abstract methods.
+An **abstract class** is a class that is incomplete by design. The author wrote most of the methods, but left some methods empty. These empty methods are called **abstract methods**. It is up to the programmer to write the abstract methods.
  
 In AbstractSimulation, these are the abstract methods:
 
@@ -270,6 +280,8 @@ Step 4: (Advanced) Spiral Trail Animation
   #. On the PlotFrame draw a circle centered at each of the lattice points contained in the square. (There should be a total of 25 circles.)
   #. Draw a Trail that starts at the origin, (3, 3), and “steps” outward in a spiral-like shape by first going to (2, 3), then (2, 2), (4, 2), etc. The path should consist of 2 segments of length 1, then 2 segments of length 2, then 2 segments of length 3, etc. and the path turns 90° counter clockwise at the end of each segment. End the Trail at (1, 5).
 
+More Information
+^^^^^^^^^^^^^^^^^^
 For more information on Open Source Physics, read the `JavaDocs <https://kjergens.github.io/osp-5.1.0/out/html/index.html?overview-summary.html>`_
 
 
