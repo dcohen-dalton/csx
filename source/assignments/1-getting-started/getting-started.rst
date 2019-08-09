@@ -270,7 +270,7 @@ Step 4: (Advanced) Spiral Trail Animation
   #. On the PlotFrame draw a circle centered at each of the lattice points contained in the square. (There should be a total of 25 circles.)
   #. Draw a Trail that starts at the origin, (3, 3), and “steps” outward in a spiral-like shape by first going to (2, 3), then (2, 2), (4, 2), etc. The path should consist of 2 segments of length 1, then 2 segments of length 2, then 2 segments of length 3, etc. and the path turns 90° counter clockwise at the end of each segment. End the Trail at (1, 5).
 
-
+For more information on Open Source Physics, read the `JavaDocs <https://kjergens.github.io/osp-5.1.0/out/html/index.html?overview-summary.html>`_
 
 
 
