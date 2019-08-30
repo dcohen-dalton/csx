@@ -16,6 +16,7 @@ This online book contains the assignments for the CSX class.
    Riemann Sums <assignments/2-riemann/riemann>
    Projectile Motion <assignments/3-projectile/projectile>
    Matrices <assignments/4-matrix/matrix>
+   Springs <assignments/5-springs/springs>
 
 
 .. Indices and tables
