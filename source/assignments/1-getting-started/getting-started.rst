@@ -6,13 +6,43 @@ Getting Started
 Welcome to CSX
 -----------------------
 
-CSX, also know as Advanced Math and Physics Modelling, is three classes taught in a unified manner. The classes are Precalculus 2A, Physics A, and Computer Science X. In teaching Math and Physics in a unified way, we recognize the historical development of the two subjects. Math and Physics fit together like a hand in a glove. It’s most instructive, and most enjoyable, if the two subjects are presented in tandem. In teaching Math, Physics, and Computer Science in a unified way, we recognize the way in which contemporary scientists work. Whereas once all scientists were either experimentalists or theorists – and most were experimentalists – scientists are now increasingly engaged in the creation of computer models. This has become a third way in which to understand the physical world. Computer models are based upon an understanding of the relevant Math and Science. However, through the use of a computer, relatively simple Math and Science can be used to model extremely complicated situations. Consequently, computer models are ubiquitous in areas as disparate as Global Warming and the Human Genome.
+CSX, also know as Advanced Math and Physics Modelling, is three classes taught
+in a unified manner. The classes are Precalculus 2A, Physics A, and Computer
+Science X. In teaching Math and Physics in a unified way, we recognize the
+historical development of the two subjects. Math and Physics fit together like
+a hand in a glove. It’s most instructive, and most enjoyable, if the two
+subjects are presented in tandem. In teaching Math, Physics, and Computer
+Science in a unified way, we recognize the way in which contemporary
+scientists work. Whereas once all scientists were either experimentalists or
+theorists – and most were experimentalists – scientists are now increasingly
+engaged in the creation of computer models. This has become a third way in
+which to understand the physical world. Computer models are based upon an
+understanding of the relevant Math and Science. However, through the use of a
+computer, relatively simple Math and Science can be used to model extremely
+complicated situations. Consequently, computer models are ubiquitous in areas
+as disparate as Global Warming and the Human Genome.
 
-Almost all Computer Science projects will be based on Physics or Mathematics. Some programs will be computer models of physical situations. For example, you’ll model balls dropping, planets orbiting the Sun, and masses connected to a spring. Some programs will be realizations of mathematical algorithms. For instance, early on in the year you’ll write code to invert a matrix.
+Almost all Computer Science projects will be based on Physics or Mathematics.
+Some programs will be computer models of physical situations. For example,
+you’ll model balls dropping, planets orbiting the Sun, and masses connected to
+a spring. Some programs will be realizations of mathematical algorithms. For
+instance, early on in the year you’ll write code to invert a matrix.
 
-When possible, the same topics will be covered at the same time in both Math and Physics. Many of the concepts covered in Precalculus and Physics were developed simultaneously. Math is necessary for a deep understanding of Physics, and Physics provides beautiful applications of what would otherwise be abstract Mathematics.
+When possible, the same topics will be covered at the same time in both Math
+and Physics. Many of the concepts covered in Precalculus and Physics were
+developed simultaneously. Math is necessary for a deep understanding of
+Physics, and Physics provides beautiful applications of what would otherwise
+be abstract Mathematics.
 
-We certainly hope you enjoy Math, Physics and Computer Science this year. In particular, we hope you find it helpful to approach the three subjects as, in some sense, one. Throughout the class, you should try to think about the ways in which Math is used in Physics, the ways in which Physics allows for a deeper understanding of Mathematics, and the ways in which computers could be used to gain a deeper understanding of either Math or Physics. In addition, bear in mind that Math and Physics provide a limitless source of programming challenges. Consequently, Math and Physics provide an excellent context in which to teach programming concepts.
+We certainly hope you enjoy Math, Physics and Computer Science this year. In
+particular, we hope you find it helpful to approach the three subjects as, in
+some sense, one. Throughout the class, you should try to think about the ways
+in which Math is used in Physics, the ways in which Physics allows for a
+deeper understanding of Mathematics, and the ways in which computers could be
+used to gain a deeper understanding of either Math or Physics. In addition,
+bear in mind that Math and Physics provide a limitless source of programming
+challenges. Consequently, Math and Physics provide an excellent context in
+which to teach programming concepts.
 
 **Have a great year!**
 
@@ -20,46 +50,53 @@ Setup your Environment
 -----------------------
 Follow these images to set up your environment:
 
-.. figure:: setup00.png 
+.. figure:: setup00.png
    :width: 100 %
    :align: left
 
    **Step 1.** Open IntelliJ and select Check out from Version Control > Git.
 
 
-.. figure:: setup01.png 
+.. figure:: setup01.png
    :width: 100 %
-   :align: left      
+   :align: left
 
    **Step 2.** In the URL box enter https://github.com/kjergens/XClassProjects.git and select Clone.
 
 
-.. figure:: setup02.png 
+.. figure:: setup02.png
    :width: 100 %
    :align: left
    :figclass: align-left
 
-   **Step 3.** Expand the **src** and **test** folders. These folders have example classes and are where you will put all your code for this course. Your project should now look like the above. (Note: the **out** folder will not appear until you've run a class.) 
+   **Step 3.** Expand the **src** and **test** folders. These folders have
+   example classes and are where you will put all your code for this course.
+   Your project should now look like the above. (Note: the **out** folder will
+   not appear until you've run a class.)
 
 
 Rust Removal
 ------------
-For this section, you will review Quadratic equations, how to write objects and get introduced to writing test cases.
+For this section, you will review Quadratic equations, how to write objects
+and get introduced to writing test cases.
 
 Problem: Find the roots of a Quadratic.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: rustremoval01.png 
+.. figure:: rustremoval01.png
    :width: 50 %
    :align: center
 
-The ``x`` values that make this function equal to ``0`` are the **roots** or **zeroes** of the function and can be found by using the **quadratic formula**.
+The ``x`` values that make this function equal to ``0`` are the **roots** or
+**zeroes** of the function and can be found by using the **quadratic
+formula**.
 
-.. figure:: rustremoval00.png 
+.. figure:: rustremoval00.png
    :width: 50 %
    :align: center
 
-You are going to write a program that finds to roots (if they exist) for any quadratic equation.
+You are going to write a program that finds to roots (if they exist) for any
+quadratic equation.
 
 Step 1: Create a Test Class
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -67,7 +104,7 @@ Step 1: Create a Test Class
 
   In the **test** folder of XClassProjects, create a new Java class called ``QuadraticTest``. At the top of the class, import all the necessary JUnit libraries, like this:
 
-  .. code-block:: java 
+  .. code-block:: java
    :linenos:
 
    import org.junit.Test;
@@ -77,7 +114,7 @@ Step 1: Create a Test Class
 
   In the body of the ``QuadraticTest`` class, create a test method called ``getA``, like this:
 
-  .. code-block:: java 
+  .. code-block:: java
 
    @Test
    public void getA() {
@@ -104,6 +141,7 @@ In order to get your test to pass, continue with the following exercise:
    #. Run ``QuadraticTest`` again. It should pass this time. 
 
 
+
 Step 3: Add Methods and Test methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -111,7 +149,7 @@ Once your ``QuadraticTest`` passes, continue with the following exercise:
 
 .. admonition:: Exercise
 
- `Note: For this exercise, you will switch back and forth between the Quadratic and QuadraticTest classes.` 
+ `Note: For this exercise, you will switch back and forth between the Quadratic and QuadraticTest classes.`  
 
  Write the following methods in ``Quadratic``. For each method, write at least one test method in ``QuadraticTest``.
 
