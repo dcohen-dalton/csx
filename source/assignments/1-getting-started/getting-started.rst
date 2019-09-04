@@ -93,21 +93,21 @@ Step 1: Create a Test Class
 
 Step 2: Create a Quadratic Object
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In order to get your test to succeed, continue with the following exercise:
+In order to get your test to pass, continue with the following exercise:
 
 .. admonition:: Exercise
 
    #. In the **src** folder, create a new Java class called ``Quadratic``. This will be the object class that defines a quadratic function and methods that analyze its different characteristics.
    #. Create 3 private attributes ``a``, ``b`` and ``c``, all doubles. 
-   #. Write a constructor which takes ``a``, ``b`` and ``c`` as params and useds them to set the ``a``, ``b`` and ``c`` attributes.
+   #. Write a constructor which takes ``a``, ``b`` and ``c`` as params and uses them to set the ``a``, ``b`` and ``c`` attributes.
    #. Write a public method called ``getA`` which returns the value of ``a``.
-   #. Run ``QuadraticTest`` again. It should succeed this time. 
+   #. Run ``QuadraticTest`` again. It should pass this time. 
 
 
 Step 3: Add Methods and Test methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once your ``QuadraticTest`` succeeds, continue with the following exercise:
+Once your ``QuadraticTest`` passes, continue with the following exercise:
 
 .. admonition:: Exercise
 
@@ -157,7 +157,7 @@ Once your ``QuadraticTest`` succeeds, continue with the following exercise:
       Evaluate the quadratic function at an x value, return f(that x value). 
       Write a test method in ``QuadraticTest`` called ``evaluateWith`` to test it .
 
- When ``QuadraticTest`` succeeds, you are finished with this exercise.
+ When all the tests in ``QuadraticTest`` pass, you are finished with this exercise.
 
 
 Introduction to Polyfun
