@@ -1,7 +1,6 @@
 Projectile Assignment
 =====================
 
-<<<<<<< HEAD
 Introduction to Simulations
 ---------------------------
 
@@ -355,4 +354,3 @@ Setting up a Simulation
 -----------------------
 
 `<../../display-osp/display-osp.html>`__
->>>>>>> 713a0b8b99f6ba947574301100f5a19f57298dbe

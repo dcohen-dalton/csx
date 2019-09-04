@@ -122,6 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../2-riemann/riemann.html">Riemann Sums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-projectile/projectile.html">Projectile Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4-matrix/matrix.html">Matrices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
 </ul>
 
             
@@ -190,10 +191,40 @@
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="welcome-to-csx">
 <h2>Welcome to CSX<a class="headerlink" href="#welcome-to-csx" title="Permalink to this headline">¶</a></h2>
-<p>CSX, also know as Advanced Math and Physics Modelling, is three classes taught in a unified manner. The classes are Precalculus 2A, Physics A, and Computer Science X. In teaching Math and Physics in a unified way, we recognize the historical development of the two subjects. Math and Physics fit together like a hand in a glove. It’s most instructive, and most enjoyable, if the two subjects are presented in tandem. In teaching Math, Physics, and Computer Science in a unified way, we recognize the way in which contemporary scientists work. Whereas once all scientists were either experimentalists or theorists – and most were experimentalists – scientists are now increasingly engaged in the creation of computer models. This has become a third way in which to understand the physical world. Computer models are based upon an understanding of the relevant Math and Science. However, through the use of a computer, relatively simple Math and Science can be used to model extremely complicated situations. Consequently, computer models are ubiquitous in areas as disparate as Global Warming and the Human Genome.</p>
-<p>Almost all Computer Science projects will be based on Physics or Mathematics. Some programs will be computer models of physical situations. For example, you’ll model balls dropping, planets orbiting the Sun, and masses connected to a spring. Some programs will be realizations of mathematical algorithms. For instance, early on in the year you’ll write code to invert a matrix.</p>
-<p>When possible, the same topics will be covered at the same time in both Math and Physics. Many of the concepts covered in Precalculus and Physics were developed simultaneously. Math is necessary for a deep understanding of Physics, and Physics provides beautiful applications of what would otherwise be abstract Mathematics.</p>
-<p>We certainly hope you enjoy Math, Physics and Computer Science this year. In particular, we hope you find it helpful to approach the three subjects as, in some sense, one. Throughout the class, you should try to think about the ways in which Math is used in Physics, the ways in which Physics allows for a deeper understanding of Mathematics, and the ways in which computers could be used to gain a deeper understanding of either Math or Physics. In addition, bear in mind that Math and Physics provide a limitless source of programming challenges. Consequently, Math and Physics provide an excellent context in which to teach programming concepts.</p>
+<p>CSX, also know as Advanced Math and Physics Modelling, is three classes taught
+in a unified manner. The classes are Precalculus 2A, Physics A, and Computer
+Science X. In teaching Math and Physics in a unified way, we recognize the
+historical development of the two subjects. Math and Physics fit together like
+a hand in a glove. It’s most instructive, and most enjoyable, if the two
+subjects are presented in tandem. In teaching Math, Physics, and Computer
+Science in a unified way, we recognize the way in which contemporary
+scientists work. Whereas once all scientists were either experimentalists or
+theorists – and most were experimentalists – scientists are now increasingly
+engaged in the creation of computer models. This has become a third way in
+which to understand the physical world. Computer models are based upon an
+understanding of the relevant Math and Science. However, through the use of a
+computer, relatively simple Math and Science can be used to model extremely
+complicated situations. Consequently, computer models are ubiquitous in areas
+as disparate as Global Warming and the Human Genome.</p>
+<p>Almost all Computer Science projects will be based on Physics or Mathematics.
+Some programs will be computer models of physical situations. For example,
+you’ll model balls dropping, planets orbiting the Sun, and masses connected to
+a spring. Some programs will be realizations of mathematical algorithms. For
+instance, early on in the year you’ll write code to invert a matrix.</p>
+<p>When possible, the same topics will be covered at the same time in both Math
+and Physics. Many of the concepts covered in Precalculus and Physics were
+developed simultaneously. Math is necessary for a deep understanding of
+Physics, and Physics provides beautiful applications of what would otherwise
+be abstract Mathematics.</p>
+<p>We certainly hope you enjoy Math, Physics and Computer Science this year. In
+particular, we hope you find it helpful to approach the three subjects as, in
+some sense, one. Throughout the class, you should try to think about the ways
+in which Math is used in Physics, the ways in which Physics allows for a
+deeper understanding of Mathematics, and the ways in which computers could be
+used to gain a deeper understanding of either Math or Physics. In addition,
+bear in mind that Math and Physics provide a limitless source of programming
+challenges. Consequently, Math and Physics provide an excellent context in
+which to teach programming concepts.</p>
 <p><strong>Have a great year!</strong></p>
 </div>
 <div class="section" id="setup-your-environment">
@@ -209,22 +240,29 @@
 </div>
 <div class="align-left figure" id="id4">
 <a class="reference internal image-reference" href="../../_images/setup02.png"><img alt="../../_images/setup02.png" src="../../_images/setup02.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text"><strong>Step 3.</strong> Expand the <strong>src</strong> and <strong>test</strong> folders. These folders have example classes and are where you will put all your code for this course. Your project should now look like the above. (Note: the <strong>out</strong> folder will not appear until you’ve run a class.)</span></p>
+<p class="caption"><span class="caption-text"><strong>Step 3.</strong> Expand the <strong>src</strong> and <strong>test</strong> folders. These folders have
+example classes and are where you will put all your code for this course.
+Your project should now look like the above. (Note: the <strong>out</strong> folder will
+not appear until you’ve run a class.)</span></p>
 </div>
 </div>
 <div class="section" id="rust-removal">
 <h2>Rust Removal<a class="headerlink" href="#rust-removal" title="Permalink to this headline">¶</a></h2>
-<p>For this section, you will review Quadratic equations, how to write objects and get introduced to writing test cases.</p>
+<p>For this section, you will review Quadratic equations, how to write objects
+and get introduced to writing test cases.</p>
 <div class="section" id="problem-find-the-roots-of-a-quadratic">
 <h3>Problem: Find the roots of a Quadratic.<a class="headerlink" href="#problem-find-the-roots-of-a-quadratic" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/rustremoval01.png"><img alt="../../_images/rustremoval01.png" src="../../_images/rustremoval01.png" style="width: 50%;" /></a>
 </div>
-<p>The <code class="docutils literal"><span class="pre">x</span></code> values that make this function equal to <code class="docutils literal"><span class="pre">0</span></code> are the <strong>roots</strong> or <strong>zeroes</strong> of the function and can be found by using the <strong>quadratic formula</strong>.</p>
+<p>The <code class="docutils literal"><span class="pre">x</span></code> values that make this function equal to <code class="docutils literal"><span class="pre">0</span></code> are the <strong>roots</strong> or
+<strong>zeroes</strong> of the function and can be found by using the <strong>quadratic
+formula</strong>.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/rustremoval00.png"><img alt="../../_images/rustremoval00.png" src="../../_images/rustremoval00.png" style="width: 50%;" /></a>
 </div>
-<p>You are going to write a program that finds to roots (if they exist) for any quadratic equation.</p>
+<p>You are going to write a program that finds to roots (if they exist) for any
+quadratic equation.</p>
 </div>
 <div class="section" id="step-1-create-a-test-class">
 <h3>Step 1: Create a Test Class<a class="headerlink" href="#step-1-create-a-test-class" title="Permalink to this headline">¶</a></h3>

@@ -44,6 +44,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Springs" href="../5-springs/springs.html" />
     <link rel="prev" title="Projectile Assignment" href="../3-projectile/projectile.html" /> 
 </head>
 
@@ -90,13 +91,21 @@
             
               <p class="caption"><span class="caption-text">Assignments:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../1-rust-removal/rust-removal.html">Rust Removal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-getting-started/getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2-riemann/riemann.html">Riemann Sums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-projectile/projectile.html">Projectile Motion</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Matrices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Matrix Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Matrix Assignment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#extension">Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#polynomial-interpolation">Polynomial Interpolation</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-extensions">Advanced Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
 </ul>
 
             
@@ -164,9 +173,10 @@
   <div class="section" id="matrix-assignment">
 <h1>Matrix Assignment<a class="headerlink" href="#matrix-assignment" title="Permalink to this headline">¶</a></h1>
 <p>By now, you’ve heard Dr. Gomprecht’s lecture on matrices, which can be found
-here. Matrices, as he told you, have many different uses and
-applications both in math and science. In fact, many of you will use matrices
-in physics later in the year in order to solve systems of equations.</p>
+<a class="reference external" href="../../_static/MatrixSlides.pdf">here</a>. Matrices, as he told you, have many
+different uses and applications both in math and science. In fact, many of you
+will use matrices in physics later in the year in order to solve systems of
+equations.</p>
 <p>As with the last assignment, Dr. Gomprecht has already scaffolded some of the
 code for you. He has a list of methods that he wants your class to include. In
 addition, you should work to create some of your own test classes in order to
@@ -180,14 +190,55 @@ modify a few different matrices into the identity matrix.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">None of the functions, either than <code class="docutils literal"><span class="pre">getEntry()</span></code> and <code class="docutils literal"><span class="pre">setEntry()</span></code>,
 should actually modify the original <code class="docutils literal"><span class="pre">Matrix</span></code>. Instead, the functions
-return an entirely new <code class="docutils literal"><span class="pre">Matrix</span></code>.</p>
+return an entirely new <code class="docutils literal"><span class="pre">Matrix</span></code>. Make sure, when you are filling out
+these functions, that you are not modifying the original <code class="docutils literal"><span class="pre">Matrix</span></code>, but
+rather the <code class="docutils literal"><span class="pre">Matrix</span></code> that you will return.</p>
 </div>
 <p>It will be very important to identify your edge cases when you are testing.
 Again, much of the work of this project will be to refine your algorithm once
 you think you know what the basic logic should be. How will you handle
 non-square matrices? Uninvertible matrices?</p>
+<p>Additionally, think about how you can tell your program is working correctly.
+It’s hard to look at an inversion of a matrix and tell if it’s correct, so try
+to use the properties of inverse matrices in order to make testing easier.
+Also remember that it is very hard to naturally come by a singular (i.e.
+uninvertable) matrix by chance, so you might want to intentionally create
+singular matrices.</p>
 <div class="section" id="id1">
 <h2>Matrix Assignment<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Your assignment is to make a <code class="docutils literal"><span class="pre">Matrix</span></code> class that can invert a Matrix, as
+well as perform all of the other operations outlined in the <code class="docutils literal"><span class="pre">Matrix</span></code>
+JavaDoc.</p>
+<div class="section" id="extension">
+<h3>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h3>
+<p>There are several parts of the Extension that are highly suggested (and are
+covered in the Latex book that Dr. Gomprecht presented). In addition, there
+are some extensions that previous students have completed, although they are
+more ambitious.</p>
+<ol class="arabic">
+<li><p class="first">Use your <code class="docutils literal"><span class="pre">Matrix</span></code> class in order to differentiate polynomials using the
+VDM. While this is technically an extension, as long as you are able to
+get your <code class="docutils literal"><span class="pre">Matrix</span></code> class to work, you should hopefully be able to complete
+this.</p>
+</li>
+<li><p class="first">Use your <code class="docutils literal"><span class="pre">Matrix</span></code> class to interpolate polynomials (more below).</p>
+<p>a. Interpolate the equation of accumulation functions. Note: is there a
+pattern that you notice when you differentiate an accumulation function or
+when you accumulate a function’s derivative?</p>
+</li>
+</ol>
+<p>You could also make a GUI. Even if you choose not to make a GUI, you should
+definitely have a way in which people can input their own polynomials through
+a command line interface.</p>
+<div class="section" id="polynomial-interpolation">
+<h4>Polynomial Interpolation<a class="headerlink" href="#polynomial-interpolation" title="Permalink to this headline">¶</a></h4>
+<p>Some of you actually conducted polynomial interpolation with Simpson’s Rule
+for the Riemann assignment extension.</p>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-extensions">
+<h2>Advanced Extensions<a class="headerlink" href="#advanced-extensions" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -198,6 +249,8 @@ non-square matrices? Uninvertible matrices?</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../5-springs/springs.html" class="btn btn-neutral float-right" title="Springs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../3-projectile/projectile.html" class="btn btn-neutral float-left" title="Projectile Assignment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
