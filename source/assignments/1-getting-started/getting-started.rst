@@ -118,9 +118,9 @@ Step 1: Create a Test Class
 
    @Test
    public void getA() {
-      Quadratic q = new Quadratic(1, 2, 3);
+      Quadratic q = new Quadratic(1.0, 2.0, 3.0);
 
-      assertThat(q.getA(), is(1));
+      assertThat(q.getA(), is(1.0));
    }
 
   If you need help, look at the ``GettingStartedTest`` class, in the **test** folder as an example.
@@ -187,7 +187,7 @@ Once your ``QuadraticTest`` passes, continue with the following exercise:
 
 
  #. ``public boolean isMax()`` 
-      Is the extreme value a Max or a Min? Does the parabola opens up or down? Return true for Max and false for Min. 
+      Is the extreme value a Max or a Min? Does the parabola open up or down? Return true for Max and false for Min. 
       Write a test method in ``QuadraticTest`` called ``isMax`` to test it .
 
 
