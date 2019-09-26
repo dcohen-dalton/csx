@@ -225,8 +225,8 @@ For more information, see the `Polynomial JavaDocs <https://kjergens.github.io/p
 Introduction to Open Source Physics (OSP)
 ------------------------------------------
 
-Step 1: Plot a Polynomial
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 1: Plotting Polynomials (non-animation)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Run the ``GettingStarted`` class again but this time look at the graph that appears. Hover over the graph for it to render. Look at the code under Open Source Physics (OSP) Example to see how this graph was made.
 
 When you think you understand, do the following exercise:
@@ -241,7 +241,7 @@ When you think you understand, do the following exercise:
 
    Which do you prefer, appending x and y plot points, or creating a Trail?
 
-Step 2: Edit a Simple Animation
+Step 2: Introduction to Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure:: movingball.gif 
    :width: 40 %
@@ -272,8 +272,8 @@ Familiarize yourself with the code, then do the following exercise.
    #. Add code to let the user set the starting X position of the circle.
    #. Have the circle move in a diagonal across the screen, so as y decreases by 1, x simultaneously increases by 1.
 
-Step 3: Create a new Animation (Random Walk)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 3: Create Your Own Animation (Random Walk)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now you'll create an animation from scratch. 
 
 .. figure:: randomwalk.gif 
