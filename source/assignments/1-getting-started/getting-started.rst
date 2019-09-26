@@ -235,9 +235,9 @@ When you think you understand, do the following exercise:
 
    Do the following in the ``GettingStarted`` class.
 
-   #. Use a ``for``-loop to change the red line to a graph of ``fx`` for when x is values 0 - 10.
-   #. Use a ``for``-loop to change the green line to a graph ``vx`` for when x is values 0 - 10.
-   #. Use a ``for``-loop to change the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10.
+   #. Use a ``for``-loop to change the red line to a graph of ``fx`` for when x is values 0 - 10. (You can comment out the plotFrame.append lines of code.)
+   #. Use a ``for``-loop to change the green line to a graph ``vx`` for when x is values 0 - 10. (You can comment out the plotFrame.append lines of code.)
+   #. Use a ``for``-loop to change the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. (You can comment out the trail.addPoint lines of code.)
 
    Which do you prefer, appending x and y plot points, or creating a Trail?
 
