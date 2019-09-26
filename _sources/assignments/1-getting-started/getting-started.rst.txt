@@ -235,23 +235,24 @@ When you think you understand, do the following exercise:
 
    Do the following in the ``GettingStarted`` class.
 
-   #. Look at the code that makes the red line. Comment out the lines that append points to the red line. Then use a ``for``-loop to make the red line to a graph of ``fx`` for when x is values 0 - 10. 
-   #. Look at the code that makes the green line. Comment out the lines that append points to the green line. Then use a ``for``-loop to make the green line to a graph ``vx`` for when x is values 0 - 10. 
-   #. Look at the code that makes the orange trail. Notice how this is different from the previous lines. Comment out the code that adds points to the trail. Then use a ``for``-loop to make the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. 
+   #. Look at the code that makes the red line. Comment out the lines that append points to the red line. Then use a ``for``-loop to make the red line a graph of ``fx`` for when x is values 0 - 10. 
+   #. Look at the code that makes the green line. Comment out the lines that append points to the green line. Then use a ``for``-loop to make the green line a graph ``vx`` for when x is values 0 - 10. 
+   #. Look at the code that makes the orange trail. Notice how this is different from the previous lines. Comment out the code that adds points to the trail. Then use a ``for``-loop to make the orange line a graph of ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. 
 
-   Which do you prefer, appending x and y plot points, or creating a Trail?
-
-   When you are done with this step your plotFrame will look like this:
+   When you are done with your graph should look like this:
 
    .. figure:: plottingpoly.png 
       :width: 40 %
       :align: center
 
+  Which do you prefer, appending x and y plot points, or creating a Trail?
 
 
 Step 2: Introduction to Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Open and run the ``MovingBallApp``. This is an example of an animation. It is different from a static graph in that you have to write at least 3 methods (reset, intialize, and doStep) in order for it to work.
+Open and run the ``MovingBallApp``. 
+
+This is an example of an animation. It is different from a static graph, which you did in Step 1, in that you have to write at least three methods (reset, intialize, and doStep) in order for it to work.
 
 Background Information: Abstract Classes
 """""""""""""""""""""""""""""""""""""""""
@@ -262,8 +263,8 @@ An **abstract class** is a class that one where the author left some methods emp
 In AbstractSimulation, these are the abstract methods that MovingBallApp needs to define:
 
    #. ``reset`` - Adds options to the Control Panel and returns the simulation to its default state. All commands within the reset() method are executed the FIRST time the simulation is INITIALIZED, and every time the RESET button is clicked after that. Note that the RESET button appears when the app is first loaded, but does not appear again until the app has been STARTED and STOPPED, and NEW is clicked.
-   #. ``initialize`` - Sets the initial conditions of your simulation. Within this method, you should read in the values of any control panel fields and add objects to any DisplayFrame or PlotFrame windows. The commands within this method are executed once, every time the INITIALIZE button in clicked.
-   #. ``doStep`` - Invoked every 1/10 second, it defines the actions to take to do the animation. It is also invoked each time the Step button is pressed.
+   #. ``initialize`` - Sets the initial conditions of your simulation. It should read and store values from the control panel and add objects to the PlotFrame. The commands within this method are executed once, or every time the INITIALIZE button in clicked.
+   #. ``doStep`` - Invoked every 1/10 second, it defines the actions that do the animation. It is also invoked each time the Step button is pressed.
  
 You also need a ``main`` method to run the simulation.
 
@@ -276,7 +277,7 @@ Examine the MovingBallApp code, then do the following exercise.
    #. Add code to let the user set the starting X position of the ball.
    #. Make the ball move diagonally across the graph, so as y decreases by 1, x simultaneously increases by 1.
    
-   When you are done with this step your moving ball will look like this:
+   When you are done your moving ball should look like this:
    
    .. figure:: movingball.gif 
       :width: 40 %
@@ -288,33 +289,31 @@ Step 3: Create Your Own Animation (Random Walk)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now you'll create an animation from scratch. 
 
-.. figure:: randomwalk.gif 
-   :width: 40 %
-   :align: center
-
-
 .. admonition:: Exercise
 
    #. In the **src** folder, create a new Java class called ``RandomWalkApp``.
    #. Copy and paste the ``MovingBallApp`` class as starter code. Change the ``main`` method to run ``RandomWalkApp``.
    #. Change ``doStep`` so that ``circle`` randomly moves either 1 spot up, 1 spot down, or stays at the same y. It also randomly moves 1 spot left, 1 spot right or stays at the same x.
    #. Add 50 Circles that move in this way. 
-
-     **HINT**: Change the global ``circle`` variable to an ``ArrayList`` of type ``Circle`` called ``circles``. 
+  
+   When you are done it should look something like this:
+  
+   .. figure:: randomwalk.gif 
+      :width: 40 %
+      :align: center
+  
+  **HINT**: Change the global ``circle`` variable to an ``ArrayList`` of type ``Circle`` called ``circles``. 
      
-     **HINT**: You'll need a ``for``-loop in ``initialize`` to add 50 Circles to ``circles``, a ``for-each``-loop in ``doStep`` to move each Circle in ``circles``, and, optionally, a ``for-each``-loop in ``stop`` to print how far each Circle in ``circles`` moved.
+  **HINT**: You'll need a ``for``-loop in ``initialize`` to add 50 Circles to ``circles``, a ``for-each``-loop in ``doStep`` to move each Circle in ``circles``, and, optionally, a ``for-each``-loop in ``stop`` to print how far each Circle in ``circles`` moved.
 
 Step 4: (Advanced) Spiral Trail Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. figure:: spiral.gif 
-   :width: 40 %
-   :align: center
 
 .. admonition:: Exercise
 
-  For this exercise, you have to decide to which method - ``reset``, ``initialize``, or ``doStep`` - to add the code for each step.
+  For this exercise, you have to determine on your own to which method - ``reset``, ``initialize``, or ``doStep`` - to edit for each step.
 
-    `Note: You may choose to first make this a static graph, and then change it to an abstract simulation.`
+    `Note: If you like, you may first make this a static graph, and then change it to an animation.`
 
   #. In **src** folder, Create a new Java class called ``SpiralTrailApp``. The class should extend ``AbstractSimulation``.
   #. Set up empty methods for ``reset``, ``initialize``, and ``doStep``.
@@ -331,6 +330,12 @@ Step 4: (Advanced) Spiral Trail Animation
   #. Set the PlotFrame's preferred min and max x and y so that the square is in the middle of the plot frame.
   #. On the PlotFrame draw a circle centered at each of the lattice points contained in the square. (There should be a total of 25 circles.)
   #. Draw a Trail that starts at the origin, (3, 3), and “steps” outward in a spiral-like shape by first going to (2, 3), then (2, 2), (4, 2), etc. The path should consist of 2 segments of length 1, then 2 segments of length 2, then 2 segments of length 3, etc. and the path turns 90° counter clockwise at the end of each segment. End the Trail at (1, 5).
+
+  When you are done it should look like this:
+  
+  .. figure:: spiral.gif 
+   :width: 40 %
+   :align: center
 
 More Information
 ^^^^^^^^^^^^^^^^^^
