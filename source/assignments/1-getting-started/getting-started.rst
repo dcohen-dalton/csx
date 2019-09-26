@@ -220,7 +220,7 @@ After looking over the code and the output, complete the following exercise.
   When you get the output below you are finished with this exercise:
 
    .. figure:: polyfunexercise.png
-      :width: 60 %
+      :width: 70 %
       :align: center
 
 More Information
