@@ -239,7 +239,7 @@ When you think you understand, do the following exercise:
    #. Look at the code that makes the green line. Comment out the lines that append points to the green line. Then use a ``for``-loop to make the green line a graph ``vx`` for when x is values 0 - 10. 
    #. Look at the code that makes the orange trail. Notice how this is different from the previous lines. Comment out the code that adds points to the trail. Then use a ``for``-loop to make the orange line a graph of ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. 
 
-   When you are done with your graph should look like this:
+   When you are done it should look like this:
 
    .. figure:: plottingpoly.png 
       :width: 50 %
@@ -277,7 +277,7 @@ Examine the MovingBallApp code, then do the following exercise.
    #. Add code to let the user set the starting X position of the ball.
    #. Make the ball move diagonally across the graph, so as y decreases by 1, x simultaneously increases by 1.
    
-   When you are done your moving ball should look like this:
+   When you are done it should look like this:
    
    .. figure:: movingball.gif 
       :width: 50 %
