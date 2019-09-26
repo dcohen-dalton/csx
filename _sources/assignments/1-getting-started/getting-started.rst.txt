@@ -235,34 +235,31 @@ When you think you understand, do the following exercise:
 
    Do the following in the ``GettingStarted`` class.
 
-   #. Look at the code that makes the red line. Comment out the lines of code that append points to the red line. Then use a ``for``-loop to make the red line to a graph of ``fx`` for when x is values 0 - 10. 
-   #. Look at the code that makes the green line. Comment out the lines of code that append points to the green line. Then use a ``for``-loop to make the green line to a graph ``vx`` for when x is values 0 - 10. 
-   #. Look at the code that makes the orange trail. Notice this is different from the other two lines. Comment out the code that adds points to the trail. Then use a ``for``-loop to change the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. 
+   #. Look at the code that makes the red line. Comment out the lines that append points to the red line. Then use a ``for``-loop to make the red line to a graph of ``fx`` for when x is values 0 - 10. 
+   #. Look at the code that makes the green line. Comment out the lines that append points to the green line. Then use a ``for``-loop to make the green line to a graph ``vx`` for when x is values 0 - 10. 
+   #. Look at the code that makes the orange trail. Notice how this is different from the previous lines. Comment out the code that adds points to the trail. Then use a ``for``-loop to make the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. 
 
    Which do you prefer, appending x and y plot points, or creating a Trail?
 
-When you are done with this exercise your plotFrame should look like this:
+   When you are done with this step your plotFrame will look like this:
 
-.. figure:: plottingpoly.png 
-   :width: 40 %
-   :align: center
+   .. figure:: plottingpoly.png 
+      :width: 40 %
+      :align: center
+
 
 
 Step 2: Introduction to Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. figure:: movingball.gif 
-   :width: 40 %
-   :align: center
-
 Open and run the ``MovingBallApp``. This is an example of an animation. It is different from a static graph in that you have to write at least 3 methods (reset, intialize, and doStep) in order for it to work.
 
-Introduction to Abstract Classes
-"""""""""""""""""""""""""""""""""
+Background Information: Abstract Classes
+"""""""""""""""""""""""""""""""""""""""""
 ``MovingBallApp`` is an extension of ``AbstractSimulation``, an **abstract class**.
  
-An **abstract class** is a class that is incomplete by design. The author wrote most of the methods, but left some methods empty. These empty methods are called **abstract methods**. It is up to the programmer who extended the abstract class to write the abstract methods.
+An **abstract class** is a class that one where the author left some methods empty. These empty methods are called **abstract methods**. The class that extends the abstract class defines the abstract methods.
  
-In AbstractSimulation, these are the abstract methods:
+In AbstractSimulation, these are the abstract methods that MovingBallApp needs to define:
 
    #. ``reset`` - Adds options to the Control Panel and returns the simulation to its default state. All commands within the reset() method are executed the FIRST time the simulation is INITIALIZED, and every time the RESET button is clicked after that. Note that the RESET button appears when the app is first loaded, but does not appear again until the app has been STARTED and STOPPED, and NEW is clicked.
    #. ``initialize`` - Sets the initial conditions of your simulation. Within this method, you should read in the values of any control panel fields and add objects to any DisplayFrame or PlotFrame windows. The commands within this method are executed once, every time the INITIALIZE button in clicked.
@@ -270,7 +267,7 @@ In AbstractSimulation, these are the abstract methods:
  
 You also need a ``main`` method to run the simulation.
 
-Familiarize yourself with the code, then do the following exercise.
+Examine the MovingBallApp code, then do the following exercise.
 
 .. admonition:: Exercise
 
@@ -278,6 +275,14 @@ Familiarize yourself with the code, then do the following exercise.
 
    #. Add code to let the user set the starting X position of the ball.
    #. Make the ball move diagonally across the graph, so as y decreases by 1, x simultaneously increases by 1.
+   
+   When you are done with this step your moving ball will look like this:
+   
+   .. figure:: movingball.gif 
+      :width: 40 %
+      :align: center
+
+
 
 Step 3: Create Your Own Animation (Random Walk)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

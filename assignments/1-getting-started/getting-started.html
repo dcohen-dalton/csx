@@ -109,7 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#introduction-to-open-source-physics-osp">Introduction to Open Source Physics (OSP)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#step-1-plotting-polynomials-static-graph">Step 1: Plotting Polynomials (Static Graph)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step-2-introduction-to-animation">Step 2: Introduction to Animation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#introduction-to-abstract-classes">Introduction to Abstract Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#background-information-abstract-classes">Background Information: Abstract Classes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#step-3-create-your-own-animation-random-walk">Step 3: Create Your Own Animation (Random Walk)</a></li>
@@ -405,28 +405,25 @@ Write a test method in <code class="docutils literal"><span class="pre">Quadrati
 <p class="first admonition-title">Exercise</p>
 <p>Do the following in the <code class="docutils literal"><span class="pre">GettingStarted</span></code> class.</p>
 <ol class="arabic simple">
-<li>Look at the code that makes the red line. Comment out the lines of code that append points to the red line. Then use a <code class="docutils literal"><span class="pre">for</span></code>-loop to make the red line to a graph of <code class="docutils literal"><span class="pre">fx</span></code> for when x is values 0 - 10.</li>
-<li>Look at the code that makes the green line. Comment out the lines of code that append points to the green line. Then use a <code class="docutils literal"><span class="pre">for</span></code>-loop to make the green line to a graph <code class="docutils literal"><span class="pre">vx</span></code> for when x is values 0 - 10.</li>
-<li>Look at the code that makes the orange trail. Notice this is different from the other two lines. Comment out the code that adds points to the trail. Then use a <code class="docutils literal"><span class="pre">for</span></code>-loop to change the orange line to graph <code class="docutils literal"><span class="pre">gx</span></code> (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10.</li>
+<li>Look at the code that makes the red line. Comment out the lines that append points to the red line. Then use a <code class="docutils literal"><span class="pre">for</span></code>-loop to make the red line to a graph of <code class="docutils literal"><span class="pre">fx</span></code> for when x is values 0 - 10.</li>
+<li>Look at the code that makes the green line. Comment out the lines that append points to the green line. Then use a <code class="docutils literal"><span class="pre">for</span></code>-loop to make the green line to a graph <code class="docutils literal"><span class="pre">vx</span></code> for when x is values 0 - 10.</li>
+<li>Look at the code that makes the orange trail. Notice how this is different from the previous lines. Comment out the code that adds points to the trail. Then use a <code class="docutils literal"><span class="pre">for</span></code>-loop to make the orange line to graph <code class="docutils literal"><span class="pre">gx</span></code> (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10.</li>
 </ol>
-<p class="last">Which do you prefer, appending x and y plot points, or creating a Trail?</p>
-</div>
-<p>When you are done with this exercise your plotFrame should look like this:</p>
-<div class="figure align-center">
+<p>Which do you prefer, appending x and y plot points, or creating a Trail?</p>
+<p>When you are done with this step your plotFrame will look like this:</p>
+<div class="last figure align-center">
 <a class="reference internal image-reference" href="../../_images/plottingpoly.png"><img alt="../../_images/plottingpoly.png" src="../../_images/plottingpoly.png" style="width: 40%;" /></a>
+</div>
 </div>
 </div>
 <div class="section" id="step-2-introduction-to-animation">
 <h3>Step 2: Introduction to Animation<a class="headerlink" href="#step-2-introduction-to-animation" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/movingball.gif"><img alt="../../_images/movingball.gif" src="../../_images/movingball.gif" style="width: 40%;" /></a>
-</div>
 <p>Open and run the <code class="docutils literal"><span class="pre">MovingBallApp</span></code>. This is an example of an animation. It is different from a static graph in that you have to write at least 3 methods (reset, intialize, and doStep) in order for it to work.</p>
-<div class="section" id="introduction-to-abstract-classes">
-<h4>Introduction to Abstract Classes<a class="headerlink" href="#introduction-to-abstract-classes" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="background-information-abstract-classes">
+<h4>Background Information: Abstract Classes<a class="headerlink" href="#background-information-abstract-classes" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal"><span class="pre">MovingBallApp</span></code> is an extension of <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>, an <strong>abstract class</strong>.</p>
-<p>An <strong>abstract class</strong> is a class that is incomplete by design. The author wrote most of the methods, but left some methods empty. These empty methods are called <strong>abstract methods</strong>. It is up to the programmer who extended the abstract class to write the abstract methods.</p>
-<p>In AbstractSimulation, these are the abstract methods:</p>
+<p>An <strong>abstract class</strong> is a class that one where the author left some methods empty. These empty methods are called <strong>abstract methods</strong>. The class that extends the abstract class defines the abstract methods.</p>
+<p>In AbstractSimulation, these are the abstract methods that MovingBallApp needs to define:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><code class="docutils literal"><span class="pre">reset</span></code> - Adds options to the Control Panel and returns the simulation to its default state. All commands within the reset() method are executed the FIRST time the simulation is INITIALIZED, and every time the RESET button is clicked after that. Note that the RESET button appears when the app is first loaded, but does not appear again until the app has been STARTED and STOPPED, and NEW is clicked.</li>
@@ -435,14 +432,18 @@ Write a test method in <code class="docutils literal"><span class="pre">Quadrati
 </ol>
 </div></blockquote>
 <p>You also need a <code class="docutils literal"><span class="pre">main</span></code> method to run the simulation.</p>
-<p>Familiarize yourself with the code, then do the following exercise.</p>
+<p>Examine the MovingBallApp code, then do the following exercise.</p>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p>Do the following in the <code class="docutils literal"><span class="pre">MovingBallApp</span></code> class.</p>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li>Add code to let the user set the starting X position of the ball.</li>
 <li>Make the ball move diagonally across the graph, so as y decreases by 1, x simultaneously increases by 1.</li>
 </ol>
+<p>When you are done with this step your moving ball will look like this:</p>
+<div class="last figure align-center">
+<a class="reference internal image-reference" href="../../_images/movingball.gif"><img alt="../../_images/movingball.gif" src="../../_images/movingball.gif" style="width: 40%;" /></a>
+</div>
 </div>
 </div>
 </div>
