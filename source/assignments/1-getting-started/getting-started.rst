@@ -217,6 +217,12 @@ After looking over the code and the output, complete the following exercise.
    #. For ``vx``, print the coefficient for the ``X^1`` term (also known as simply X).
    #. Use a ``for``-loop or ``for-each``-loop to print all the coefficients of ``vx``
 
+  When you get the output below you are finished with this exercise:
+
+   .. figure:: polyfunexercise.png
+      :width: 50 %
+      :align: center
+
 More Information
 ^^^^^^^^^^^^^^^^^
 For more information, see the `Polynomial JavaDocs <https://kjergens.github.io/polyfun-1.1.0/out/html/org/dalton/polyfun/Polynomial.html>`__.
@@ -239,7 +245,7 @@ When you think you understand, do the following exercise:
    #. Look at the code that makes the green line. Comment out the lines that append points to the green line. Then use a ``for``-loop to make the green line a graph ``vx`` for when x is values 0 - 10. 
    #. Look at the code that makes the orange trail. Notice how this is different from the previous lines. Comment out the code that adds points to the trail. Then use a ``for``-loop to make the orange line a graph of ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. 
 
-   When you are done it should look like this:
+   When you get the output below you are finished with this exercise:
 
    .. figure:: plottingpoly.png 
       :width: 50 %
@@ -277,7 +283,7 @@ Examine the MovingBallApp code, then do the following exercise.
    #. Add code to let the user set the starting X position of the ball.
    #. Make the ball move diagonally across the graph, so as y decreases by 1, x simultaneously increases by 1.
    
-   When you are done it should look like this:
+   When you get the output below you are finished with this exercise:
    
    .. figure:: movingball.gif 
       :width: 50 %
@@ -296,7 +302,7 @@ Now you'll create an animation from scratch.
    #. Change ``doStep`` so that ``circle`` randomly moves either 1 spot up, 1 spot down, or stays at the same y. It also randomly moves 1 spot left, 1 spot right or stays at the same x.
    #. Add 50 Circles that move in this way. 
   
-   When you are done it should look something like this:
+   When you get output that is similar to the graph below you are finished with this exercise:
   
    .. figure:: randomwalk.gif 
       :width: 50 %
@@ -330,8 +336,8 @@ Step 4: (Advanced) Spiral Trail Animation
   #. Set the PlotFrame's preferred min and max x and y so that the square is in the middle of the plot frame.
   #. On the PlotFrame draw a circle centered at each of the lattice points contained in the square. (There should be a total of 25 circles.)
   #. Draw a Trail that starts at the origin, (3, 3), and “steps” outward in a spiral-like shape by first going to (2, 3), then (2, 2), (4, 2), etc. The path should consist of 2 segments of length 1, then 2 segments of length 2, then 2 segments of length 3, etc. and the path turns 90° counter clockwise at the end of each segment. End the Trail at (1, 5).
-
-  When you are done it should look like this:
+  
+  When you get the output below you are finished with this exercise:
   
   .. figure:: spiral.gif 
    :width: 50 %
