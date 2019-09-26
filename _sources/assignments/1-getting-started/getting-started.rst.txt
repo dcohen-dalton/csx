@@ -242,7 +242,7 @@ When you think you understand, do the following exercise:
    When you are done with your graph should look like this:
 
    .. figure:: plottingpoly.png 
-      :width: 40 %
+      :width: 60 %
       :align: center
 
   Which do you prefer, appending x and y plot points, or creating a Trail?
