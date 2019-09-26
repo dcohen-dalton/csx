@@ -241,6 +241,11 @@ When you think you understand, do the following exercise:
 
    Which do you prefer, appending x and y plot points, or creating a Trail?
 
+When you are done with this exercise your plotFrame should look like this:
+.. figure:: plottingpoly.png 
+   :width: 40 %
+   :align: center
+
 Step 2: Introduction to Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure:: movingball.gif 
