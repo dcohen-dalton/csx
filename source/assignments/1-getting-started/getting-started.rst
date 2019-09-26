@@ -242,7 +242,7 @@ When you think you understand, do the following exercise:
    When you are done with your graph should look like this:
 
    .. figure:: plottingpoly.png 
-      :width: 40 %
+      :width: 50 %
       :align: center
 
   Which do you prefer, appending x and y plot points, or creating a Trail?
@@ -280,7 +280,7 @@ Examine the MovingBallApp code, then do the following exercise.
    When you are done your moving ball should look like this:
    
    .. figure:: movingball.gif 
-      :width: 40 %
+      :width: 50 %
       :align: center
 
 
@@ -299,7 +299,7 @@ Now you'll create an animation from scratch.
    When you are done it should look something like this:
   
    .. figure:: randomwalk.gif 
-      :width: 40 %
+      :width: 50 %
       :align: center
   
   **HINT**: Change the global ``circle`` variable to an ``ArrayList`` of type ``Circle`` called ``circles``. 
@@ -334,7 +334,7 @@ Step 4: (Advanced) Spiral Trail Animation
   When you are done it should look like this:
   
   .. figure:: spiral.gif 
-   :width: 40 %
+   :width: 50 %
    :align: center
 
 More Information
