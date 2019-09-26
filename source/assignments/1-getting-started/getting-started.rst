@@ -209,7 +209,7 @@ After looking over the code and the output, complete the following exercise.
 
 .. admonition:: Exercise
 
-   Do the following in the ``GettingStarted`` class.
+  Do the following in the ``GettingStarted`` class.
 
    #. Create a Polynomial called ``gx`` and set it equal to ``(4.0)X^4 + 5.0``. Print the Polynomial.
    #. Evaluate ``vx`` for when ``x`` is ``2`` and print the answer.
@@ -220,7 +220,7 @@ After looking over the code and the output, complete the following exercise.
   When you get the output below you are finished with this exercise:
 
    .. figure:: polyfunexercise.png
-      :width: 50 %
+      :width: 60 %
       :align: center
 
 More Information
@@ -239,7 +239,7 @@ When you think you understand, do the following exercise:
 
 .. admonition:: Exercise
 
-   Do the following in the ``GettingStarted`` class.
+  Do the following in the ``GettingStarted`` class.
 
    #. Look at the code that makes the red line. Comment out the lines that append points to the red line. Then use a ``for``-loop to make the red line a graph of ``fx`` for when x is values 0 - 10. 
    #. Look at the code that makes the green line. Comment out the lines that append points to the green line. Then use a ``for``-loop to make the green line a graph ``vx`` for when x is values 0 - 10. 
@@ -278,7 +278,7 @@ Examine the MovingBallApp code, then do the following exercise.
 
 .. admonition:: Exercise
 
-   Do the following in the ``MovingBallApp`` class.
+  Do the following in the ``MovingBallApp`` class.
 
    #. Add code to let the user set the starting X position of the ball.
    #. Make the ball move diagonally across the graph, so as y decreases by 1, x simultaneously increases by 1.
