@@ -107,7 +107,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#introduction-to-open-source-physics-osp">Introduction to Open Source Physics (OSP)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#step-1-plotting-polynomials-non-animation">Step 1: Plotting Polynomials (non-animation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-plotting-polynomials-static-graph">Step 1: Plotting Polynomials (Static Graph)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step-2-introduction-to-animation">Step 2: Introduction to Animation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#introduction-to-abstract-classes">Introduction to Abstract Classes</a></li>
 </ul>
@@ -397,17 +397,17 @@ Write a test method in <code class="docutils literal"><span class="pre">Quadrati
 </div>
 <div class="section" id="introduction-to-open-source-physics-osp">
 <h2>Introduction to Open Source Physics (OSP)<a class="headerlink" href="#introduction-to-open-source-physics-osp" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="step-1-plotting-polynomials-non-animation">
-<h3>Step 1: Plotting Polynomials (non-animation)<a class="headerlink" href="#step-1-plotting-polynomials-non-animation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="step-1-plotting-polynomials-static-graph">
+<h3>Step 1: Plotting Polynomials (Static Graph)<a class="headerlink" href="#step-1-plotting-polynomials-static-graph" title="Permalink to this headline">¶</a></h3>
 <p>Run the <code class="docutils literal"><span class="pre">GettingStarted</span></code> class again but this time look at the graph that appears. Hover over the graph for it to render. Look at the code under Open Source Physics (OSP) Example to see how this graph was made.</p>
 <p>When you think you understand, do the following exercise:</p>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p>Do the following in the <code class="docutils literal"><span class="pre">GettingStarted</span></code> class.</p>
 <ol class="arabic simple">
-<li>Use a <code class="docutils literal"><span class="pre">for</span></code>-loop to change the red line to a graph of <code class="docutils literal"><span class="pre">fx</span></code> for when x is values 0 - 10. (You can comment out the plotFrame.append lines of code.)</li>
-<li>Use a <code class="docutils literal"><span class="pre">for</span></code>-loop to change the green line to a graph <code class="docutils literal"><span class="pre">vx</span></code> for when x is values 0 - 10. (You can comment out the plotFrame.append lines of code.)</li>
-<li>Use a <code class="docutils literal"><span class="pre">for</span></code>-loop to change the orange line to graph <code class="docutils literal"><span class="pre">gx</span></code> (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. (You can comment out the trail.addPoint lines of code.)</li>
+<li>Look at the code that makes the red line. Comment out the lines of code that append points to the red line. Then use a <code class="docutils literal"><span class="pre">for</span></code>-loop to make the red line to a graph of <code class="docutils literal"><span class="pre">fx</span></code> for when x is values 0 - 10.</li>
+<li>Look at the code that makes the green line. Comment out the lines of code that append points to the green line. Then use a <code class="docutils literal"><span class="pre">for</span></code>-loop to make the green line to a graph <code class="docutils literal"><span class="pre">vx</span></code> for when x is values 0 - 10.</li>
+<li>Look at the code that makes the orange trail. Notice this is different from the other two lines. Comment out the code that adds points to the trail. Then use a <code class="docutils literal"><span class="pre">for</span></code>-loop to change the orange line to graph <code class="docutils literal"><span class="pre">gx</span></code> (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10.</li>
 </ol>
 <p class="last">Which do you prefer, appending x and y plot points, or creating a Trail?</p>
 </div>
@@ -436,8 +436,8 @@ Write a test method in <code class="docutils literal"><span class="pre">Quadrati
 <p class="first admonition-title">Exercise</p>
 <p>Do the following in the <code class="docutils literal"><span class="pre">MovingBallApp</span></code> class.</p>
 <ol class="last arabic simple">
-<li>Add code to let the user set the starting X position of the circle.</li>
-<li>Have the circle move in a diagonal across the screen, so as y decreases by 1, x simultaneously increases by 1.</li>
+<li>Add code to let the user set the starting X position of the ball.</li>
+<li>Make the ball move diagonally across the graph, so as y decreases by 1, x simultaneously increases by 1.</li>
 </ol>
 </div>
 </div>

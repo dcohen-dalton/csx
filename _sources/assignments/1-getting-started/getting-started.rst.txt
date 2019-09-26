@@ -225,7 +225,7 @@ For more information, see the `Polynomial JavaDocs <https://kjergens.github.io/p
 Introduction to Open Source Physics (OSP)
 ------------------------------------------
 
-Step 1: Plotting Polynomials (non-animation)
+Step 1: Plotting Polynomials (Static Graph)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Run the ``GettingStarted`` class again but this time look at the graph that appears. Hover over the graph for it to render. Look at the code under Open Source Physics (OSP) Example to see how this graph was made.
 
@@ -235,9 +235,9 @@ When you think you understand, do the following exercise:
 
    Do the following in the ``GettingStarted`` class.
 
-   #. Use a ``for``-loop to change the red line to a graph of ``fx`` for when x is values 0 - 10. (You can comment out the plotFrame.append lines of code.)
-   #. Use a ``for``-loop to change the green line to a graph ``vx`` for when x is values 0 - 10. (You can comment out the plotFrame.append lines of code.)
-   #. Use a ``for``-loop to change the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. (You can comment out the trail.addPoint lines of code.)
+   #. Look at the code that makes the red line. Comment out the lines of code that append points to the red line. Then use a ``for``-loop to make the red line to a graph of ``fx`` for when x is values 0 - 10. 
+   #. Look at the code that makes the green line. Comment out the lines of code that append points to the green line. Then use a ``for``-loop to make the green line to a graph ``vx`` for when x is values 0 - 10. 
+   #. Look at the code that makes the orange trail. Notice this is different from the other two lines. Comment out the code that adds points to the trail. Then use a ``for``-loop to change the orange line to graph ``gx`` (which you created in the Introduction to Polyfun exercise) for when x is values 0 - 10. 
 
    Which do you prefer, appending x and y plot points, or creating a Trail?
 
@@ -269,8 +269,8 @@ Familiarize yourself with the code, then do the following exercise.
 
    Do the following in the ``MovingBallApp`` class.
 
-   #. Add code to let the user set the starting X position of the circle.
-   #. Have the circle move in a diagonal across the screen, so as y decreases by 1, x simultaneously increases by 1.
+   #. Add code to let the user set the starting X position of the ball.
+   #. Make the ball move diagonally across the graph, so as y decreases by 1, x simultaneously increases by 1.
 
 Step 3: Create Your Own Animation (Random Walk)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
