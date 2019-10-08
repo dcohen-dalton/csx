@@ -178,7 +178,7 @@ Base Assignment
 ^^^^^^^^^^^^^^^
 
 #. Create the ``Riemann`` abstract class based on the provided
-   `JavaDoc </_static/riemann-javadoc/riemannsum/Riemann.html>`__:
+   `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`__:
 
    - Write ``calculateDeltaX()``.
    - Add the abstract method ``slice()``. Make sure to mark it as ``abstract``
