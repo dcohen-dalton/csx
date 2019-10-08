@@ -298,7 +298,7 @@ representing arbitrary real-valued functions as Java objects:
 * A cleaner but more advanced way of representing functions is to use
   Java 8 **lambda expressions** and ``DoubleUnaryOperator``.
   Replace ``Polynomial`` with ``DoubleUnaryOperator`` throughout
-  ``RiemannExtended`` and its subclasses.
+  ``AbstractRiemannExtended`` and its subclasses.
   This is an example of how those features could be used::
 
     // f(x) = sin(x) + cos(x) / 2

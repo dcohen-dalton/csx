@@ -478,7 +478,7 @@ for a given . Replace <code class="docutils literal"><span class="pre">Polynomia
 <li><p class="first">A cleaner but more advanced way of representing functions is to use
 Java 8 <strong>lambda expressions</strong> and <code class="docutils literal"><span class="pre">DoubleUnaryOperator</span></code>.
 Replace <code class="docutils literal"><span class="pre">Polynomial</span></code> with <code class="docutils literal"><span class="pre">DoubleUnaryOperator</span></code> throughout
-<code class="docutils literal"><span class="pre">RiemannExtended</span></code> and its subclasses.
+<code class="docutils literal"><span class="pre">AbstractRiemannExtended</span></code> and its subclasses.
 This is an example of how those features could be used:</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// f(x) = sin(x) + cos(x) / 2</span>
 <span class="n">DoubleUnaryOperator</span> <span class="n">f</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">+</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
