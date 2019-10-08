@@ -100,7 +100,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#base-assignment">Base Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base-assignment">Base Assignment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#abstractriemann-and-child-classes">AbstractRiemann and child classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-classes">Test Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#riemannapp">RiemannApp</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#extension">Extension</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#advanced-extensions">Advanced Extensions</a></li>
 </ul>
@@ -339,29 +344,38 @@ before it:</p>
 </div>
 <div class="section" id="base-assignment">
 <h3>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>Create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the provided
-<a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a>:<ul>
+<div class="section" id="abstractriemann-and-child-classes">
+<h4>AbstractRiemann and child classes<a class="headerlink" href="#abstractriemann-and-child-classes" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the provided
+<a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a>:</p>
+<ul class="simple">
 <li>Write <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>.</li>
-<li>Add the abstract method <code class="docutils literal"><span class="pre">slice()</span></code>. Make sure to mark it as <code class="docutils literal"><span class="pre">abstract</span></code>
+<li>Add the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Make sure to mark them as <code class="docutils literal"><span class="pre">abstract</span></code>
 and end the line with a semicolon instead of implementing the method.</li>
 <li>Write <code class="docutils literal"><span class="pre">rs()</span></code>.</li>
+<li>Write <code class="docutils literal"><span class="pre">rsPlot()</span></code>.</li>
+<li>Write <code class="docutils literal"><span class="pre">rsAcc()</span></code> (see Dr. Gomprecht’s slides for an explanation of the accumulation function).</li>
 </ul>
 </li>
-<li>Write <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code> Object classes, each
-extending <strong>AbstractRiemann</strong> class and implementing the abstract method <code class="docutils literal"><span class="pre">slice()</span></code>.
+<li><p class="first">Write 3 child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each
+extending <strong>AbstractRiemann</strong> class and implementing the abstract method <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>.
 Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> in
-these classes; they will be automatically inherited.</li>
-<li>Add plotting functionality:<ul>
-<li>Add the abstract method <code class="docutils literal"><span class="pre">slicePlot()</span></code> to <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>.</li>
-<li>Implement <code class="docutils literal"><span class="pre">slicePlot()</span></code> in each of the child classes. Make sure the
-plots correspond to the specific rules. You don’t need to fill
-in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</li>
-<li>Write <code class="docutils literal"><span class="pre">rsPlot()</span></code> in the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class.</li>
-</ul>
+these classes; they will be automatically inherited.
+- For <code class="docutils literal"><span class="pre">slicePlot()</span></code> , make sure the</p>
+<blockquote>
+<div><p>plots correspond to the specific rules. You don’t need to fill
+in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</p>
+</div></blockquote>
 </li>
-<li>Write <code class="docutils literal"><span class="pre">rsAcc()</span></code> in the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class (see Dr. Gomprecht’s slides for
-an explanation of the accumulation function).</li>
+</ol>
+</div>
+<div class="section" id="test-classes">
+<h4>Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="riemannapp">
+<h4>RiemannApp<a class="headerlink" href="#riemannapp" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
 <li><dl class="first docutils">
 <dt>Write <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method.</dt>
 <dd><ul class="first last">
@@ -388,6 +402,7 @@ get the actual value).</li>
 <li>The value of the polynomial for a given  is negative.</li>
 <li>The left endpoint is greater than the right endpoint.</li>
 </ul>
+</div>
 </div>
 </div>
 <div class="section" id="extension">

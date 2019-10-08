@@ -177,30 +177,31 @@ before it::
 Base Assignment
 ^^^^^^^^^^^^^^^
 
+AbstractRiemann and child classes
+""""""""""""""""""""""""""""""""""
 #. Create the ``AbstractRiemann`` abstract class based on the provided
    `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`__:
 
    - Write ``calculateDeltaX()``.
-   - Add the abstract method ``slice()``. Make sure to mark it as ``abstract``
+   - Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract``
      and end the line with a semicolon instead of implementing the method.
    - Write ``rs()``.
+   - Write ``rsPlot()``.
+   - Write ``rsAcc()`` (see Dr. Gomprecht's slides for an explanation of the accumulation function).
 
-#. Write ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule`` Object classes, each
-   extending **AbstractRiemann** class and implementing the abstract method ``slice()``.
+#. Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
+   extending **AbstractRiemann** class and implementing the abstract method ``slice()`` and ``slicePlot()``.
    Do not include implementations of any other methods from ``AbstractRiemann`` in
    these classes; they will be automatically inherited.
-
-#. Add plotting functionality:
-
-   - Add the abstract method ``slicePlot()`` to ``AbstractRiemann``.
-   - Implement ``slicePlot()`` in each of the child classes. Make sure the
+   - For ``slicePlot()`` , make sure the
      plots correspond to the specific rules. You don't need to fill
      in the trapezoids for ``TrapezoidRule``.
-   - Write ``rsPlot()`` in the ``AbstractRiemann`` class.
 
-#. Write ``rsAcc()`` in the ``AbstractRiemann`` class (see Dr. Gomprecht's slides for
-   an explanation of the accumulation function).
+Test Classes
+""""""""""""
 
+RiemannApp
+"""""""""""
 #. Write ``RiemannApp``, which will have a ``main`` method. 
     - Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
     - Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
