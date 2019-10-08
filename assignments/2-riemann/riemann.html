@@ -253,7 +253,7 @@ good introduction to documenting your code in this way at <a class="reference ex
 </div>
 <div class="section" id="abstract-classes-and-methods">
 <h3>Abstract Classes and Methods<a class="headerlink" href="#abstract-classes-and-methods" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">Riemann</span></code> class, as shown in the JavaDoc, contains a keyword which you
+<p>The <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class, as shown in the JavaDoc, contains a keyword which you
 most likely have not yet encountered: <code class="docutils literal"><span class="pre">abstract</span></code>. This keyword will allow
 you to use to use <strong>object-oriented programming (OOP)</strong> to organize your code
 in a more logical way.</p>
@@ -343,17 +343,14 @@ before it:</p>
 </div>
 <div class="section" id="base-assignment">
 <h3>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h3>
+<p>There are 5 parts to the base assignment.</p>
 <div class="section" id="abstractriemann">
 <h4>1. AbstractRiemann<a class="headerlink" href="#abstractriemann" title="Permalink to this headline">¶</a></h4>
+<p>Refer to the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a> for <code class="docutils literal"><span class="pre">AbstractRiemann</span></code></p>
 <ul class="simple">
-<li>Create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the</li>
-</ul>
-<p><a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a> for <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>.:
-* Write <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>.
-* Add the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Make sure to mark them as <code class="docutils literal"><span class="pre">abstract</span></code></p>
-<blockquote>
-<div>and end the line with a semicolon instead of implementing the method.</div></blockquote>
-<ul class="simple">
+<li>Create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based JavaDoc.</li>
+<li>Write <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>.</li>
+<li>Add the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Make sure to mark them as <a href="#id1"><span class="problematic" id="id2">``</span></a>abstract` and end the line with a semicolon instead of implementing the method.</li>
 <li>Write <code class="docutils literal"><span class="pre">rs()</span></code>.</li>
 <li>Write <code class="docutils literal"><span class="pre">rsPlot()</span></code>.</li>
 <li>Write <code class="docutils literal"><span class="pre">rsAcc()</span></code> (see Dr. Gomprecht’s slides for an explanation of the accumulation function).</li>
@@ -362,25 +359,15 @@ before it:</p>
 <div class="section" id="child-classes">
 <h4>2. Child Classes<a class="headerlink" href="#child-classes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>Write 3 child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each</dt>
-<dd>extending <strong>AbstractRiemann</strong> class and implementing the abstract method <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>.
-Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> in
-these classes; they will be automatically inherited.</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>For <code class="docutils literal"><span class="pre">slicePlot()</span></code> , make sure the plots correspond to the specific rules. You don’t need to fill</dt>
-<dd>in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</dd>
-</dl>
-</li>
+<li>Write 3 child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each extending <strong>AbstractRiemann</strong> class.</li>
+<li>Each rule should implement the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> in these classes; they will be automatically inherited.</li>
+<li>For <code class="docutils literal"><span class="pre">slicePlot()</span></code> , make sure the plots correspond to the specific rules. You don’t need to fill in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</li>
 </ul>
 </div>
 <div class="section" id="test-classes">
 <h4>3. Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>In the test folder, create <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains a test method to test <code class="docutils literal"><span class="pre">slice</span></code>.
-- For a given Polynomial, left x and right x, assert that the <code class="docutils literal"><span class="pre">slice</span></code> method returns the correct area of the rectangle under the Polynomial.</li>
+<li>In the test folder, create <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains a test method to test <code class="docutils literal"><span class="pre">slice</span></code>. For a given Polynomial, left x and right x, assert that the <code class="docutils literal"><span class="pre">slice</span></code> method returns the correct area of the rectangle under the Polynomial.</li>
 <li>Do the same for the <code class="docutils literal"><span class="pre">slice</span></code> method in <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> and <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code>.</li>
 </ul>
 </div>
@@ -391,20 +378,14 @@ these classes; they will be automatically inherited.</dd>
 <li>Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.</li>
 <li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapazoidRule</span></code> object.</li>
 <li>Create one PlotFrame for each rule (e.g. <code class="docutils literal"><span class="pre">PlotFrame</span> <span class="pre">leftHandPlot</span></code>).</li>
-<li>Use the rule objects’ <code class="docutils literal"><span class="pre">rsPlot</span></code> method to plot the rectangles rule (e.g. <a href="#id1"><span class="problematic" id="id2">``</span></a>leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);</li>
+<li>Use the rule objects’ <code class="docutils literal"><span class="pre">rsPlot</span></code> method to plot the rectangles rule (e.g. <a href="#id3"><span class="problematic" id="id4">``</span></a>leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);</li>
 <li>Plot the Polynomial so you can see the line as compared to the rectangles.</li>
 <li>Finally, for each rule, print the estimated area under the curve.</li>
 </ul>
 </div>
 <div class="section" id="analysis">
 <h4>5. Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h4>
-<dl class="docutils">
-<dt>Use your program to answer the following question: <a href="#id3"><span class="problematic" id="id4">**</span></a>which of the three</dt>
-<dd>rules is the most accurate?** This should compare the results of the
-Riemann sums with the actual area under the curve (use this
-<a class="reference external" href="https://www.integral-calculator.com">Integral Calculator</a> to
-get the actual value).</dd>
-</dl>
+<p>Use your program to answer the following question: <strong>which of the three rules is the most accurate?</strong> This should compare the results of the Riemann sums with the actual area under the curve (use this <a class="reference external" href="https://www.integral-calculator.com">Integral Calculator</a> to get the actual value).</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p>Remember to account for the following edge cases:</p>
