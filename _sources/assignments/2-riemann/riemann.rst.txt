@@ -59,7 +59,7 @@ The Riemann Class
 The first class which you will create for this assignment, ``Riemann``, will
 contain the majority of your code for calculating Riemann sums. Start by
 `opening up the documentation
-</_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``Riemann``. The
+<https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``Riemann``. The
 linked page, known as a **JavaDoc**, has information about each of the methods
 of the ``Riemann`` class. This includes the methods' **parameters** (inputs)
 and their **return values** (outputs). Your job will be to create a class
