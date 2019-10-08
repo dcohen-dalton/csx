@@ -178,45 +178,45 @@ Base Assignment
 ^^^^^^^^^^^^^^^
 
 1. AbstractRiemann
-""""""""""""""""""""
-#. Create the ``AbstractRiemann`` abstract class based on the
+####################
+* Create the ``AbstractRiemann`` abstract class based on the
 `JavaDoc
 <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``AbstractRiemann``.:
-  - Write ``calculateDeltaX()``.
-  - Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract``
+* Write ``calculateDeltaX()``.
+* Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract``
      and end the line with a semicolon instead of implementing the method.
-  - Write ``rs()``.
-  - Write ``rsPlot()``.
-#. Write ``rsAcc()`` (see Dr. Gomprecht's slides for an explanation of the accumulation function).
+* Write ``rs()``.
+* Write ``rsPlot()``.
+* Write ``rsAcc()`` (see Dr. Gomprecht's slides for an explanation of the accumulation function).
 
 2. Child Classes
-""""""""""""""""""
-#. Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
+################
+* Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
    extending **AbstractRiemann** class and implementing the abstract method ``slice()`` and ``slicePlot()``.
    Do not include implementations of any other methods from ``AbstractRiemann`` in
    these classes; they will be automatically inherited.
-  - For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill
+* For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill
      in the trapezoids for ``TrapezoidRule``.
 
 3. Test Classes
-"""""""""""""""""
-#. In the test folder, create ``LeftHandRuleTest`` that contains a test method to test ``slice``.
+#################
+* In the test folder, create ``LeftHandRuleTest`` that contains a test method to test ``slice``.
   - For a given Polynomial, left x and right x, assert that the ``slice`` method returns the correct area of the rectangle under the Polynomial.
-#. Do the same for the ``slice`` method in ``RightHandRuleTest`` and ``TrapazoidRuleTest``.
+* Do the same for the ``slice`` method in ``RightHandRuleTest`` and ``TrapazoidRuleTest``.
 
 4. RiemannApp
-""""""""""""""""
-#. Create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting the polynomial and the rectangles. 
-#. Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
-#. Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
-#. Create one PlotFrame for each rule (e.g. ``PlotFrame leftHandPlot``).
-  - Use the rule objects' ``rsPlot`` method to plot the rectangles rule (e.g. ``leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);
-#. Plot the Polynomial so you can see the line as compared to the rectangles.
-#. Finally, for each rule, print the estimated area under the curve.
+#################
+* Create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting the polynomial and the rectangles. 
+* Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
+* Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
+* Create one PlotFrame for each rule (e.g. ``PlotFrame leftHandPlot``).
+* Use the rule objects' ``rsPlot`` method to plot the rectangles rule (e.g. ``leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);
+* Plot the Polynomial so you can see the line as compared to the rectangles.
+* Finally, for each rule, print the estimated area under the curve.
 
 5. Analysis
-"""""""""""""
-#. Use your program to answer the following question: **which of the three
+############
+Use your program to answer the following question: **which of the three
    rules is the most accurate?** This should compare the results of the
    Riemann sums with the actual area under the curve (use this
    `Integral Calculator <https://www.integral-calculator.com>`__ to

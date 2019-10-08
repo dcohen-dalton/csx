@@ -108,10 +108,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#analysis">5. Analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#extension">Extension</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#advanced-extensions">Advanced Extensions</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#extension">Extension</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#further-resources">Further Resources</a><ul>
@@ -212,7 +209,7 @@ steps, the calculation involved in each step is simple. In Compsci 1 and 2,
 you learned how to tell a computer to do the same thing over and over using
 <code class="docutils literal"><span class="pre">for</span></code> and <code class="docutils literal"><span class="pre">while</span></code>-loops. Now, you will apply this knowledge to create a
 Java class which evaluates a given Riemann sum.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/fig2.svg"><img alt="../../_images/fig2.svg" src="../../_images/fig2.svg" width="80%" /></a>
 <p class="caption"><span class="caption-text">The individual rectangles’ areas can be added up using a <code class="docutils literal"><span class="pre">for</span></code>-loop.
 The more iterations (steps) of the loop, the better the approximation.</span></p>
@@ -278,7 +275,7 @@ endpoints of the interval and the number of slices.</li>
 <p>Notice that only the third step—calculating the area of each slice—depends
 upon the specific rule being used; the others are the same regardless of the
 rule.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id7">
 <a class="reference internal image-reference" href="../../_images/fig3.svg"><img alt="../../_images/fig3.svg" src="../../_images/fig3.svg" width="95%" /></a>
 <p class="caption"><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum.
 While the slices’ shapes are different, they exist over the same subintervals in
@@ -319,7 +316,7 @@ what a fictional rule called <code class="docutils literal"><span class="pre">Ov
 <p>As shown in <code class="docutils literal"><span class="pre">OvalRule</span></code>, you do not have to reimplement all of the
 methods in <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>. Only the abstract methods should be
 written out in the subclasses.</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id8">
 <a class="reference internal image-reference" href="../../_images/riemann-diagram.png"><img alt="../../_images/riemann-diagram.png" src="../../_images/riemann-diagram.png" style="width: 85%;" /></a>
 <p class="caption"><span class="caption-text">This class diagram shows the relationship between <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> and
 its child classes.</span></p>
@@ -348,83 +345,66 @@ before it:</p>
 <h3>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="abstractriemann">
 <h4>1. AbstractRiemann<a class="headerlink" href="#abstractriemann" title="Permalink to this headline">¶</a></h4>
-<p>#. Create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the
-<a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a> for <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>.:</p>
+<ul class="simple">
+<li>Create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the</li>
+</ul>
+<p><a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a> for <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>.:
+* Write <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>.
+* Add the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Make sure to mark them as <code class="docutils literal"><span class="pre">abstract</span></code></p>
 <blockquote>
-<div><ul class="simple">
-<li>Write <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>.</li>
-<li><dl class="first docutils">
-<dt>Add the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Make sure to mark them as <code class="docutils literal"><span class="pre">abstract</span></code></dt>
-<dd>and end the line with a semicolon instead of implementing the method.</dd>
-</dl>
-</li>
+<div>and end the line with a semicolon instead of implementing the method.</div></blockquote>
+<ul class="simple">
 <li>Write <code class="docutils literal"><span class="pre">rs()</span></code>.</li>
 <li>Write <code class="docutils literal"><span class="pre">rsPlot()</span></code>.</li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple">
 <li>Write <code class="docutils literal"><span class="pre">rsAcc()</span></code> (see Dr. Gomprecht’s slides for an explanation of the accumulation function).</li>
-</ol>
+</ul>
 </div>
 <div class="section" id="child-classes">
 <h4>2. Child Classes<a class="headerlink" href="#child-classes" title="Permalink to this headline">¶</a></h4>
-<ol class="arabic simple">
-<li>Write 3 child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each
-extending <strong>AbstractRiemann</strong> class and implementing the abstract method <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>.
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Write 3 child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each</dt>
+<dd>extending <strong>AbstractRiemann</strong> class and implementing the abstract method <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>.
 Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> in
-these classes; they will be automatically inherited.</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+these classes; they will be automatically inherited.</dd>
+</dl>
+</li>
 <li><dl class="first docutils">
 <dt>For <code class="docutils literal"><span class="pre">slicePlot()</span></code> , make sure the plots correspond to the specific rules. You don’t need to fill</dt>
 <dd>in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</dd>
 </dl>
 </li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="test-classes">
 <h4>3. Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h4>
-<ol class="arabic simple">
-<li>In the test folder, create <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains a test method to test <code class="docutils literal"><span class="pre">slice</span></code>.</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li>For a given Polynomial, left x and right x, assert that the <code class="docutils literal"><span class="pre">slice</span></code> method returns the correct area of the rectangle under the Polynomial.</li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple">
+<ul class="simple">
+<li>In the test folder, create <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains a test method to test <code class="docutils literal"><span class="pre">slice</span></code>.
+- For a given Polynomial, left x and right x, assert that the <code class="docutils literal"><span class="pre">slice</span></code> method returns the correct area of the rectangle under the Polynomial.</li>
 <li>Do the same for the <code class="docutils literal"><span class="pre">slice</span></code> method in <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> and <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code>.</li>
-</ol>
+</ul>
 </div>
 <div class="section" id="riemannapp">
 <h4>4. RiemannApp<a class="headerlink" href="#riemannapp" title="Permalink to this headline">¶</a></h4>
-<ol class="arabic simple">
+<ul class="simple">
 <li>Create <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method and be responsible for plotting the polynomial and the rectangles.</li>
 <li>Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.</li>
 <li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapazoidRule</span></code> object.</li>
 <li>Create one PlotFrame for each rule (e.g. <code class="docutils literal"><span class="pre">PlotFrame</span> <span class="pre">leftHandPlot</span></code>).</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
 <li>Use the rule objects’ <code class="docutils literal"><span class="pre">rsPlot</span></code> method to plot the rectangles rule (e.g. <a href="#id1"><span class="problematic" id="id2">``</span></a>leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);</li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple">
 <li>Plot the Polynomial so you can see the line as compared to the rectangles.</li>
 <li>Finally, for each rule, print the estimated area under the curve.</li>
-</ol>
+</ul>
 </div>
 <div class="section" id="analysis">
 <h4>5. Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h4>
-<ol class="arabic simple">
-<li>Use your program to answer the following question: <strong>which of the three
-rules is the most accurate?</strong> This should compare the results of the
+<dl class="docutils">
+<dt>Use your program to answer the following question: <a href="#id3"><span class="problematic" id="id4">**</span></a>which of the three</dt>
+<dd>rules is the most accurate?** This should compare the results of the
 Riemann sums with the actual area under the curve (use this
 <a class="reference external" href="https://www.integral-calculator.com">Integral Calculator</a> to
-get the actual value).</li>
-</ol>
+get the actual value).</dd>
+</dl>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p>Remember to account for the following edge cases:</p>
@@ -461,8 +441,6 @@ makes it easier to learn from your program. Even if you decide not to dedicate
 a lot of time to making an interface, you should at least have some way for a
 user to run your program with desired parameters without having to directly
 edit the code first.</p>
-<div class="section" id="advanced-extensions">
-<h4>Advanced Extensions<a class="headerlink" href="#advanced-extensions" title="Permalink to this headline">¶</a></h4>
 <p>The following possible (optional) extensions are more advanced, either from a
 mathematics or a computer science perspective.</p>
 <p><strong>Calculate an approximation of pi</strong>. Hint: use the equation for a
@@ -472,7 +450,7 @@ produces a curve, then calculate the length of that curve in a given
 subinterval Hint: instead of breaking up an area into rectangles, break up the
 curve into line segments. You will need the distance formula  and the Java function <code class="docutils literal"><span class="pre">Math.sqrt()</span></code> to
 calculate the length of each segment.</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id9">
 <a class="reference internal image-reference" href="../../_images/fig4.svg"><img alt="../../_images/fig4.svg" src="../../_images/fig4.svg" width="60%" /></a>
 <p class="caption"><span class="caption-text">Arc length can be approximated by dividing the curve and replacing the
 smaller arcs with segments.</span></p>
@@ -514,7 +492,6 @@ This is an example of how those features could be used:</p>
 </div>
 </li>
 </ul>
-</div>
 </div>
 </div>
 <div class="section" id="further-resources">
