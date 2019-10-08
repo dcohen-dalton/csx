@@ -187,7 +187,7 @@ Base Assignment
 
 #. Write ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule`` Object classes, each
    extending **AbstractRiemann** class and implementing the abstract method ``slice()``.
-   Do not include implementations of any other methods from ``Riemann`` in
+   Do not include implementations of any other methods from ``AbstractRiemann`` in
    these classes; they will be automatically inherited.
 
 #. Add plotting functionality:
@@ -208,7 +208,6 @@ Base Assignment
     - Use the rule objects' ``rsPlot`` method to plot the rectangles rule (e.g. ``leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);
     - Plot the Polynomial so you can see the line as compared to the rectangles.
     - Finally, for each rule, print the estimated area under the curve.
-``)
 
 #. Use your program to answer the following question: **which of the three
    rules is the most accurate?** This should compare the results of the
@@ -274,7 +273,7 @@ calculate the length of each segment.
    Arc length can be approximated by dividing the curve and replacing the
    smaller arcs with segments.
 
-**Write a version of** ``Riemann`` **called** ``RiemannExtended``
+**Write a version of** ``AbstractRiemann`` **called** ``AbstractRiemannExtended``
 **which supports arbitrary non-polynomial
 functions**. So far, we have only worked with polynomials. However, it is
 possible to calculate the area under other functions as well---calculating
@@ -286,7 +285,7 @@ representing arbitrary real-valued functions as Java objects:
   returns a ``double``. Subclasses of ``Function`` will contain
   implementations of ``evaluate()`` which calculate the value of the function
   for a given :math:`x`. Replace ``Polynomial`` with ``Function`` throughout
-  ``RiemannExtended`` and its subclasses.
+  ``AbstractRiemannExtended`` and its subclasses.
 
   .. figure:: function-diagram.png
      :width: 95%

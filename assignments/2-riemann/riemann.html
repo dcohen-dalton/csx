@@ -205,7 +205,7 @@ steps, the calculation involved in each step is simple. In Compsci 1 and 2,
 you learned how to tell a computer to do the same thing over and over using
 <code class="docutils literal"><span class="pre">for</span></code> and <code class="docutils literal"><span class="pre">while</span></code>-loops. Now, you will apply this knowledge to create a
 Java class which evaluates a given Riemann sum.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/fig2.svg"><img alt="../../_images/fig2.svg" src="../../_images/fig2.svg" width="80%" /></a>
 <p class="caption"><span class="caption-text">The individual rectangles’ areas can be added up using a <code class="docutils literal"><span class="pre">for</span></code>-loop.
 The more iterations (steps) of the loop, the better the approximation.</span></p>
@@ -271,7 +271,7 @@ endpoints of the interval and the number of slices.</li>
 <p>Notice that only the third step—calculating the area of each slice—depends
 upon the specific rule being used; the others are the same regardless of the
 rule.</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/fig3.svg"><img alt="../../_images/fig3.svg" src="../../_images/fig3.svg" width="95%" /></a>
 <p class="caption"><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum.
 While the slices’ shapes are different, they exist over the same subintervals in
@@ -312,7 +312,7 @@ what a fictional rule called <code class="docutils literal"><span class="pre">Ov
 <p>As shown in <code class="docutils literal"><span class="pre">OvalRule</span></code>, you do not have to reimplement all of the
 methods in <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>. Only the abstract methods should be
 written out in the subclasses.</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/riemann-diagram.png"><img alt="../../_images/riemann-diagram.png" src="../../_images/riemann-diagram.png" style="width: 85%;" /></a>
 <p class="caption"><span class="caption-text">This class diagram shows the relationship between <code class="docutils literal"><span class="pre">Riemann</span></code> and
 its child classes.</span></p>
@@ -350,7 +350,7 @@ and end the line with a semicolon instead of implementing the method.</li>
 </li>
 <li>Write <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code> Object classes, each
 extending <strong>AbstractRiemann</strong> class and implementing the abstract method <code class="docutils literal"><span class="pre">slice()</span></code>.
-Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">Riemann</span></code> in
+Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> in
 these classes; they will be automatically inherited.</li>
 <li>Add plotting functionality:<ul>
 <li>Add the abstract method <code class="docutils literal"><span class="pre">slicePlot()</span></code> to <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>.</li>
@@ -375,9 +375,6 @@ an explanation of the accumulation function).</li>
 </dd>
 </dl>
 </li>
-</ol>
-<p><a href="#id3"><span class="problematic" id="id4">``</span></a>)</p>
-<ol class="arabic simple">
 <li>Use your program to answer the following question: <strong>which of the three
 rules is the most accurate?</strong> This should compare the results of the
 Riemann sums with the actual area under the curve (use this
@@ -430,12 +427,12 @@ produces a curve, then calculate the length of that curve in a given
 subinterval Hint: instead of breaking up an area into rectangles, break up the
 curve into line segments. You will need the distance formula  and the Java function <code class="docutils literal"><span class="pre">Math.sqrt()</span></code> to
 calculate the length of each segment.</p>
-<div class="figure align-center" id="id8">
+<div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/fig4.svg"><img alt="../../_images/fig4.svg" src="../../_images/fig4.svg" width="60%" /></a>
 <p class="caption"><span class="caption-text">Arc length can be approximated by dividing the curve and replacing the
 smaller arcs with segments.</span></p>
 </div>
-<p><strong>Write a version of</strong> <code class="docutils literal"><span class="pre">Riemann</span></code> <strong>called</strong> <code class="docutils literal"><span class="pre">RiemannExtended</span></code>
+<p><strong>Write a version of</strong> <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> <strong>called</strong> <code class="docutils literal"><span class="pre">AbstractRiemannExtended</span></code>
 <strong>which supports arbitrary non-polynomial
 functions</strong>. So far, we have only worked with polynomials. However, it is
 possible to calculate the area under other functions as well—calculating
@@ -447,7 +444,7 @@ single abstract method called <code class="docutils literal"><span class="pre">e
 returns a <code class="docutils literal"><span class="pre">double</span></code>. Subclasses of <code class="docutils literal"><span class="pre">Function</span></code> will contain
 implementations of <code class="docutils literal"><span class="pre">evaluate()</span></code> which calculate the value of the function
 for a given . Replace <code class="docutils literal"><span class="pre">Polynomial</span></code> with <code class="docutils literal"><span class="pre">Function</span></code> throughout
-<code class="docutils literal"><span class="pre">RiemannExtended</span></code> and its subclasses.</p>
+<code class="docutils literal"><span class="pre">AbstractRiemannExtended</span></code> and its subclasses.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/function-diagram.png"><img alt="../../_images/function-diagram.png" src="../../_images/function-diagram.png" style="width: 95%;" /></a>
 </div>
