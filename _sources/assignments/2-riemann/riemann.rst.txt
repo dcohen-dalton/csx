@@ -51,12 +51,12 @@ Classes and Methods
 -------------------
 
 You will create several classes for this assignment: a base class called
-``Riemann`` and then child classes for each of the Riemann sum rules.
+``AbstractRiemann`` and then child classes for each of the Riemann sum rules.
 
-The Riemann Class
-^^^^^^^^^^^^^^^^^
+The AbstractRiemann Class
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first class which you will create for this assignment, ``Riemann``, will
+The first class which you will create for this assignment, ``AbstractRiemann``, will
 contain the majority of your code for calculating Riemann sums. Start by
 `opening up the documentation
 <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``Riemann``. The
@@ -152,11 +152,11 @@ written out in the subclasses.
    :width: 85 %
    :align: center
 
-   This class diagram shows the relationship between ``Riemann`` and
+   This class diagram shows the relationship between ``AbstractRiemann`` and
    its child classes.
 
 Assignment
---------------
+-----------
 
 Remember to **document as you go.** Each method you write should
 have a documentation comment (ideally in the JavaDoc format)
@@ -177,47 +177,39 @@ before it::
 Base Assignment
 ^^^^^^^^^^^^^^^
 
-1. AbstractRiemann 
-""""""""""""""""""""
-
-Create the ``AbstractRiemann`` abstract class based on the provided
+**1. AbstractRiemann** 
+#. Create the ``AbstractRiemann`` abstract class based on the provided
    `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`__:
-
-   - Write ``calculateDeltaX()``.
-   - Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract``
+  - Write ``calculateDeltaX()``.
+  - Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract``
      and end the line with a semicolon instead of implementing the method.
-   - Write ``rs()``.
-   - Write ``rsPlot()``.
-   - Write ``rsAcc()`` (see Dr. Gomprecht's slides for an explanation of the accumulation function).
+  - Write ``rs()``.
+  - Write ``rsPlot()``.
+#. Write ``rsAcc()`` (see Dr. Gomprecht's slides for an explanation of the accumulation function).
 
-2. Child Classes
-"""""""""""""""""
-
-Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
+**2. Child Classes**
+#. Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
    extending **AbstractRiemann** class and implementing the abstract method ``slice()`` and ``slicePlot()``.
    Do not include implementations of any other methods from ``AbstractRiemann`` in
    these classes; they will be automatically inherited.
-    - For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill
+  - For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill
      in the trapezoids for ``TrapezoidRule``.
 
-3. Test Classes
-""""""""""""""""
-
+**3. Test Classes**
 #. In the test folder, create ``LeftHandRuleTest`` that contains a test method to test ``slice``.
   - For a given Polynomial, left x and right x, assert that the ``slice`` method returns the correct area of the rectangle under the Polynomial.
 #. Do the same for the ``slice`` method in ``RightHandRuleTest`` and ``TrapazoidRuleTest``.
 
-4. RiemannApp
-""""""""""""""
+**4. RiemannApp**
+#. Create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting the polynomial and the rectangles. 
+#. Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
+#. Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
+#. Create one PlotFrame for each rule (e.g. ``PlotFrame leftHandPlot``).
+  - Use the rule objects' ``rsPlot`` method to plot the rectangles rule (e.g. ``leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);
+#. Plot the Polynomial so you can see the line as compared to the rectangles.
+#. Finally, for each rule, print the estimated area under the curve.
 
-Create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting the polynomial and the rectangles. 
-    - Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
-    - Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
-    - Create one PlotFrame for each rule (e.g. ``PlotFrame leftHandPlot``).
-    - Use the rule objects' ``rsPlot`` method to plot the rectangles rule (e.g. ``leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);
-    - Plot the Polynomial so you can see the line as compared to the rectangles.
-    - Finally, for each rule, print the estimated area under the curve.
-
+**5. Analysis **
 #. Use your program to answer the following question: **which of the three
    rules is the most accurate?** This should compare the results of the
    Riemann sums with the actual area under the curve (use this
@@ -264,7 +256,7 @@ Advanced Extensions
 The following possible (optional) extensions are more advanced, either from a
 mathematics or a computer science perspective.
 
-**Calculate an approximation of** :math:`\pi`. Hint: use the equation for a
+**Calculate an approximation of pi**. Hint: use the equation for a
 circle in cartesian coordinates to calculate the area under a semicircle.
 
 
