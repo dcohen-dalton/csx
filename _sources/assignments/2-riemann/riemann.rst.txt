@@ -179,6 +179,7 @@ Base Assignment
 
 1. AbstractRiemann 
 """"""""""""""""""""
+
 Create the ``AbstractRiemann`` abstract class based on the provided
    `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`__:
 
@@ -191,6 +192,7 @@ Create the ``AbstractRiemann`` abstract class based on the provided
 
 2. Child Classes
 """""""""""""""""
+
 Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
    extending **AbstractRiemann** class and implementing the abstract method ``slice()`` and ``slicePlot()``.
    Do not include implementations of any other methods from ``AbstractRiemann`` in
@@ -198,13 +200,16 @@ Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule`
     - For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill
      in the trapezoids for ``TrapezoidRule``.
 
-Test Classes
-""""""""""""
-#. In the test folder, create ``LeftHandRuleTest`` that contains a test method to test ``slice``.
-#. Do the same for ``RightHandRuleTest`` and ``TrapazoidRuleTest``.
+3. Test Classes
+""""""""""""""""
 
-RiemannApp
-"""""""""""
+#. In the test folder, create ``LeftHandRuleTest`` that contains a test method to test ``slice``.
+  - For a given Polynomial, left x and right x, assert that the ``slice`` method returns the correct area of the rectangle under the Polynomial.
+#. Do the same for the ``slice`` method in ``RightHandRuleTest`` and ``TrapazoidRuleTest``.
+
+4. RiemannApp
+""""""""""""""
+
 Create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting the polynomial and the rectangles. 
     - Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
     - Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.

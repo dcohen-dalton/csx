@@ -103,8 +103,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#base-assignment">Base Assignment</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#abstractriemann">1. AbstractRiemann</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#child-classes">2. Child Classes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#test-classes">Test Classes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#riemannapp">RiemannApp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-classes">3. Test Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#riemannapp">4. RiemannApp</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#extension">Extension</a><ul>
@@ -379,14 +379,21 @@ these classes; they will be automatically inherited.</p>
 </dl>
 </div>
 <div class="section" id="test-classes">
-<h4>Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h4>
+<h4>3. Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li>In the test folder, create <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains a test method to test <code class="docutils literal"><span class="pre">slice</span></code>.</li>
-<li>Do the same for <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> and <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code>.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>For a given Polynomial, left x and right x, assert that the <code class="docutils literal"><span class="pre">slice</span></code> method returns the correct area of the rectangle under the Polynomial.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Do the same for the <code class="docutils literal"><span class="pre">slice</span></code> method in <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> and <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code>.</li>
 </ol>
 </div>
 <div class="section" id="riemannapp">
-<h4>RiemannApp<a class="headerlink" href="#riemannapp" title="Permalink to this headline">¶</a></h4>
+<h4>4. RiemannApp<a class="headerlink" href="#riemannapp" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Create <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method and be responsible for plotting the polynomial and the rectangles.</dt>
 <dd><ul class="first last simple">
