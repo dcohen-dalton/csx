@@ -177,9 +177,9 @@ before it::
 Base Assignment
 ^^^^^^^^^^^^^^^
 
-AbstractRiemann and child classes
-""""""""""""""""""""""""""""""""""
-#. Create the ``AbstractRiemann`` abstract class based on the provided
+1. AbstractRiemann 
+""""""""""""""""""""
+Create the ``AbstractRiemann`` abstract class based on the provided
    `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`__:
 
    - Write ``calculateDeltaX()``.
@@ -189,20 +189,23 @@ AbstractRiemann and child classes
    - Write ``rsPlot()``.
    - Write ``rsAcc()`` (see Dr. Gomprecht's slides for an explanation of the accumulation function).
 
-#. Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
+2. Child Classes
+"""""""""""""""""
+Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
    extending **AbstractRiemann** class and implementing the abstract method ``slice()`` and ``slicePlot()``.
    Do not include implementations of any other methods from ``AbstractRiemann`` in
    these classes; they will be automatically inherited.
-   - For ``slicePlot()`` , make sure the
-     plots correspond to the specific rules. You don't need to fill
+    - For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill
      in the trapezoids for ``TrapezoidRule``.
 
 Test Classes
 """"""""""""
+#. In the test folder, create ``LeftHandRuleTest`` that contains a test method to test ``slice``.
+#. Do the same for ``RightHandRuleTest`` and ``TrapazoidRuleTest``.
 
 RiemannApp
 """""""""""
-#. Write ``RiemannApp``, which will have a ``main`` method. 
+Create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting the polynomial and the rectangles. 
     - Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
     - Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
     - Create one PlotFrame for each rule (e.g. ``PlotFrame leftHandPlot``).
