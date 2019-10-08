@@ -51,19 +51,19 @@ Classes and Methods
 -------------------
 
 You will create several classes for this assignment: a base class called
-``Riemann`` and then child classes for each of the Riemann sum rules.
+``AbstractRiemann`` and then child classes for each of the Riemann sum rules.
 
-The Riemann Class
-^^^^^^^^^^^^^^^^^
+The AbstractRiemann Class
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first class which you will create for this assignment, ``Riemann``, will
+The first class which you will create for this assignment, ``AbstractRiemann``, will
 contain the majority of your code for calculating Riemann sums. Start by
 `opening up the documentation
-<https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``Riemann``. The
+<https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``AbstractRiemann``. The
 linked page, known as a **JavaDoc**, has information about each of the methods
-of the ``Riemann`` class. This includes the methods' **parameters** (inputs)
+of the ``AbstractRiemann`` class. This includes the methods' **parameters** (inputs)
 and their **return values** (outputs). Your job will be to create a class
-which conforms to the given JavaDoc---the ``Riemann`` class which you create
+which conforms to the given JavaDoc---the ``AbstractRiemann`` class which you create
 should contain each of the listed methods, and each method should behave as
 described in the JavaDoc, taking in the same parameters and outputting the
 same type of return value.
@@ -80,7 +80,7 @@ same type of return value.
 Abstract Classes and Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``Riemann`` class, as shown in the JavaDoc, contains a keyword which you
+The ``AbstractRiemann`` class, as shown in the JavaDoc, contains a keyword which you
 most likely have not yet encountered: ``abstract``. This keyword will allow
 you to use to use **object-oriented programming (OOP)** to organize your code
 in a more logical way.
@@ -152,11 +152,11 @@ written out in the subclasses.
    :width: 85 %
    :align: center
 
-   This class diagram shows the relationship between ``Riemann`` and
+   This class diagram shows the relationship between ``AbstractRiemann`` and
    its child classes.
 
 Assignment
---------------
+-----------
 
 Remember to **document as you go.** Each method you write should
 have a documentation comment (ideally in the JavaDoc format)
@@ -176,44 +176,51 @@ before it::
 
 Base Assignment
 ^^^^^^^^^^^^^^^
+There are 5 parts to the base assignment.
 
-#. Create the ``AbstractRiemann`` abstract class based on the provided
-   `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`__:
+1. AbstractRiemann
+####################
+Refer to the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``AbstractRiemann``
 
-   - Write ``calculateDeltaX()``.
-   - Add the abstract method ``slice()``. Make sure to mark it as ``abstract``
-     and end the line with a semicolon instead of implementing the method.
-   - Write ``rs()``.
+* Create the ``AbstractRiemann`` abstract class based JavaDoc.
+* Write ``calculateDeltaX()``.
+* Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract` and end the line with a semicolon instead of implementing the method.
+* Write ``rs()``.
+* Write ``rsPlot()``.
+* Write ``rsAcc()`` (see Dr. Gomprecht's slides for an explanation of the accumulation function).
 
-#. Write ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule`` Object classes, each
-   extending **AbstractRiemann** class and implementing the abstract method ``slice()``.
-   Do not include implementations of any other methods from ``AbstractRiemann`` in
-   these classes; they will be automatically inherited.
 
-#. Add plotting functionality:
+2. Child Classes
+################
 
-   - Add the abstract method ``slicePlot()`` to ``AbstractRiemann``.
-   - Implement ``slicePlot()`` in each of the child classes. Make sure the
-     plots correspond to the specific rules. You don't need to fill
-     in the trapezoids for ``TrapezoidRule``.
-   - Write ``rsPlot()`` in the ``AbstractRiemann`` class.
+* Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each extending **AbstractRiemann** class.
+* Each rule should implement the abstract methods ``slice()`` and ``slicePlot()``. Do not include implementations of any other methods from ``AbstractRiemann`` in these classes; they will be automatically inherited.
+* For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill in the trapezoids for ``TrapezoidRule``.
 
-#. Write ``rsAcc()`` in the ``AbstractRiemann`` class (see Dr. Gomprecht's slides for
-   an explanation of the accumulation function).
 
-#. Write ``RiemannApp``, which will have a ``main`` method. 
-    - Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
-    - Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
-    - Create one PlotFrame for each rule (e.g. ``PlotFrame leftHandPlot``).
-    - Use the rule objects' ``rsPlot`` method to plot the rectangles rule (e.g. ``leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);
-    - Plot the Polynomial so you can see the line as compared to the rectangles.
-    - Finally, for each rule, print the estimated area under the curve.
+3. Test Classes
+#################
 
-#. Use your program to answer the following question: **which of the three
-   rules is the most accurate?** This should compare the results of the
-   Riemann sums with the actual area under the curve (use this
-   `Integral Calculator <https://www.integral-calculator.com>`__ to
-   get the actual value).
+* In the test folder, create ``LeftHandRuleTest`` that contains a test method to test ``slice``. For a given Polynomial, left x and right x, assert that the ``slice`` method returns the correct area of the rectangle under the Polynomial.
+* Do the same for the ``slice`` method in ``RightHandRuleTest`` and ``TrapazoidRuleTest``.
+
+
+4. RiemannApp
+#################
+
+* Create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting the polynomial and the rectangles. 
+* Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
+* Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
+* Create one PlotFrame for each rule (e.g. ``PlotFrame leftHandPlot``).
+* Use the rule objects' ``rsPlot`` method to plot the rectangles rule (e.g. ``leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);
+* Plot the Polynomial so you can see the line as compared to the rectangles.
+* Finally, for each rule, print the estimated area under the curve.
+
+
+5. Analysis
+############
+
+Use your program to answer the following question: **which of the three rules is the most accurate?** This should compare the results of the Riemann sums with the actual area under the curve (use this `Integral Calculator <https://www.integral-calculator.com>`__ to get the actual value).
 
 .. warning:: Remember to account for the following edge cases:
 
@@ -255,7 +262,7 @@ Advanced Extensions
 The following possible (optional) extensions are more advanced, either from a
 mathematics or a computer science perspective.
 
-**Calculate an approximation of** :math:`\pi`. Hint: use the equation for a
+**Calculate an approximation of pi**. Hint: use the equation for a
 circle in cartesian coordinates to calculate the area under a semicircle.
 
 
@@ -294,7 +301,7 @@ representing arbitrary real-valued functions as Java objects:
 * A cleaner but more advanced way of representing functions is to use
   Java 8 **lambda expressions** and ``DoubleUnaryOperator``.
   Replace ``Polynomial`` with ``DoubleUnaryOperator`` throughout
-  ``RiemannExtended`` and its subclasses.
+  ``AbstractRiemannExtended`` and its subclasses.
   This is an example of how those features could be used::
 
     // f(x) = sin(x) + cos(x) / 2
