@@ -205,7 +205,7 @@ steps, the calculation involved in each step is simple. In Compsci 1 and 2,
 you learned how to tell a computer to do the same thing over and over using
 <code class="docutils literal"><span class="pre">for</span></code> and <code class="docutils literal"><span class="pre">while</span></code>-loops. Now, you will apply this knowledge to create a
 Java class which evaluates a given Riemann sum.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/fig2.svg"><img alt="../../_images/fig2.svg" src="../../_images/fig2.svg" width="80%" /></a>
 <p class="caption"><span class="caption-text">The individual rectangles’ areas can be added up using a <code class="docutils literal"><span class="pre">for</span></code>-loop.
 The more iterations (steps) of the loop, the better the approximation.</span></p>
@@ -271,7 +271,7 @@ endpoints of the interval and the number of slices.</li>
 <p>Notice that only the third step—calculating the area of each slice—depends
 upon the specific rule being used; the others are the same regardless of the
 rule.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/fig3.svg"><img alt="../../_images/fig3.svg" src="../../_images/fig3.svg" width="95%" /></a>
 <p class="caption"><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum.
 While the slices’ shapes are different, they exist over the same subintervals in
@@ -285,16 +285,16 @@ pages are recommended for reference:</p>
 <li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Oracle - Inheritance Tutorial</a></li>
 <li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">Oracle - Abstract Tutorial</a></li>
 </ul>
-<p>As shown in the JavaDoc, the <code class="docutils literal"><span class="pre">Riemann</span></code> class which you will create will be
+<p>As shown in the JavaDoc, the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you will create will be
 an <strong>abstract class</strong>. As such, you will never directly construct a <code class="docutils literal"><span class="pre">new</span>
-<span class="pre">Riemann()</span></code>; instead, you will create <strong>child classes</strong> (also known as
-<strong>subclasses</strong>) of <code class="docutils literal"><span class="pre">Riemann</span></code> for each Riemann sum rule. In this way, you
+<span class="pre">AbstractRiemann()</span></code>; instead, you will create <strong>child classes</strong> (also known as
+<strong>subclasses</strong>) of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> for each Riemann sum rule. In this way, you
 will end up with a structure where <code class="docutils literal"><span class="pre">RightHandRule</span></code> and <code class="docutils literal"><span class="pre">LeftHandRule</span></code>,
-both child classes of <code class="docutils literal"><span class="pre">Riemann</span></code>, share most methods, differing only in their
+both child classes of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>, share most methods, differing only in their
 implementations of <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>, since these are the only
 methods whose functionality should depend on the rule. For example, this is
 what a fictional rule called <code class="docutils literal"><span class="pre">OvalRule</span></code> could look like:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OvalRule</span> <span class="kd">extends</span> <span class="n">Riemann</span> <span class="o">{</span>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OvalRule</span> <span class="kd">extends</span> <span class="n">AbstractRiemann</span> <span class="o">{</span>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">double</span> <span class="nf">slice</span><span class="o">(</span><span class="n">Polynomial</span> <span class="n">poly</span><span class="o">,</span> <span class="kt">double</span> <span class="n">sleft</span><span class="o">,</span> <span class="kt">double</span> <span class="n">sright</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// return the area of an ellipse whose width is (sright - sleft)</span>
@@ -310,9 +310,9 @@ what a fictional rule called <code class="docutils literal"><span class="pre">Ov
 </pre></div>
 </div>
 <p>As shown in <code class="docutils literal"><span class="pre">OvalRule</span></code>, you do not have to reimplement all of the
-methods in <code class="docutils literal"><span class="pre">Riemann</span></code>. Only the abstract methods should be
+methods in <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>. Only the abstract methods should be
 written out in the subclasses.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id7">
 <a class="reference internal image-reference" href="../../_images/riemann-diagram.png"><img alt="../../_images/riemann-diagram.png" src="../../_images/riemann-diagram.png" style="width: 85%;" /></a>
 <p class="caption"><span class="caption-text">This class diagram shows the relationship between <code class="docutils literal"><span class="pre">Riemann</span></code> and
 its child classes.</span></p>
@@ -340,7 +340,7 @@ before it:</p>
 <div class="section" id="base-assignment">
 <h3>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Create the <code class="docutils literal"><span class="pre">Riemann</span></code> abstract class based on the provided
+<li>Create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the provided
 <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a>:<ul>
 <li>Write <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>.</li>
 <li>Add the abstract method <code class="docutils literal"><span class="pre">slice()</span></code>. Make sure to mark it as <code class="docutils literal"><span class="pre">abstract</span></code>
@@ -348,20 +348,36 @@ and end the line with a semicolon instead of implementing the method.</li>
 <li>Write <code class="docutils literal"><span class="pre">rs()</span></code>.</li>
 </ul>
 </li>
-<li>Write <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each
-extending <strong>Riemann</strong> and implementing the abstract method <code class="docutils literal"><span class="pre">slice()</span></code>.
+<li>Write <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code> Object classes, each
+extending <strong>AbstractRiemann</strong> class and implementing the abstract method <code class="docutils literal"><span class="pre">slice()</span></code>.
 Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">Riemann</span></code> in
 these classes; they will be automatically inherited.</li>
 <li>Add plotting functionality:<ul>
-<li>Add the abstract method <code class="docutils literal"><span class="pre">slicePlot()</span></code> to <code class="docutils literal"><span class="pre">Riemann</span></code>.</li>
+<li>Add the abstract method <code class="docutils literal"><span class="pre">slicePlot()</span></code> to <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>.</li>
 <li>Implement <code class="docutils literal"><span class="pre">slicePlot()</span></code> in each of the child classes. Make sure the
 plots correspond to the specific rules. You don’t need to fill
 in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</li>
-<li>Write <code class="docutils literal"><span class="pre">rsPlot()</span></code> in the <code class="docutils literal"><span class="pre">Riemann</span></code> class.</li>
+<li>Write <code class="docutils literal"><span class="pre">rsPlot()</span></code> in the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class.</li>
 </ul>
 </li>
-<li>Write <code class="docutils literal"><span class="pre">rsAcc()</span></code> in the <code class="docutils literal"><span class="pre">Riemann</span></code> class (see Dr. Gomprecht’s slides for
+<li>Write <code class="docutils literal"><span class="pre">rsAcc()</span></code> in the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class (see Dr. Gomprecht’s slides for
 an explanation of the accumulation function).</li>
+<li><dl class="first docutils">
+<dt>Write <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method.</dt>
+<dd><ul class="first last">
+<li>Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.</li>
+<li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapazoidRule</span></code> object.</li>
+<li>Create one PlotFrame for each rule (e.g. <code class="docutils literal"><span class="pre">PlotFrame</span> <span class="pre">leftHandPlot</span></code>).</li>
+<li>Use the rule objects’ <code class="docutils literal"><span class="pre">rsPlot</span></code> method to plot the rectangles rule (e.g. <a href="#id1"><span class="problematic" id="id2">``</span></a>leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);</li>
+<li>Plot the Polynomial so you can see the line as compared to the rectangles.</li>
+<li>Finally, for each rule, print the estimated area under the curve.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a>)</p>
+<ol class="arabic simple">
 <li>Use your program to answer the following question: <strong>which of the three
 rules is the most accurate?</strong> This should compare the results of the
 Riemann sums with the actual area under the curve (use this
@@ -414,7 +430,7 @@ produces a curve, then calculate the length of that curve in a given
 subinterval Hint: instead of breaking up an area into rectangles, break up the
 curve into line segments. You will need the distance formula  and the Java function <code class="docutils literal"><span class="pre">Math.sqrt()</span></code> to
 calculate the length of each segment.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id8">
 <a class="reference internal image-reference" href="../../_images/fig4.svg"><img alt="../../_images/fig4.svg" src="../../_images/fig4.svg" width="60%" /></a>
 <p class="caption"><span class="caption-text">Arc length can be approximated by dividing the curve and replacing the
 smaller arcs with segments.</span></p>

@@ -120,17 +120,17 @@ pages are recommended for reference:
 * `Oracle - Inheritance Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html>`_
 * `Oracle - Abstract Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html>`_
 
-As shown in the JavaDoc, the ``Riemann`` class which you will create will be
+As shown in the JavaDoc, the ``AbstractRiemann`` class which you will create will be
 an **abstract class**. As such, you will never directly construct a ``new
-Riemann()``; instead, you will create **child classes** (also known as
-**subclasses**) of ``Riemann`` for each Riemann sum rule. In this way, you
+AbstractRiemann()``; instead, you will create **child classes** (also known as
+**subclasses**) of ``AbstractRiemann`` for each Riemann sum rule. In this way, you
 will end up with a structure where ``RightHandRule`` and ``LeftHandRule``,
-both child classes of ``Riemann``, share most methods, differing only in their
+both child classes of ``AbstractRiemann``, share most methods, differing only in their
 implementations of ``slice()`` and ``slicePlot()``, since these are the only
 methods whose functionality should depend on the rule. For example, this is
 what a fictional rule called ``OvalRule`` could look like::
 
-    public class OvalRule extends Riemann {
+    public class OvalRule extends AbstractRiemann {
         @Override
         public double slice(Polynomial poly, double sleft, double sright) {
             // return the area of an ellipse whose width is (sright - sleft)
@@ -145,7 +145,7 @@ what a fictional rule called ``OvalRule`` could look like::
     }
 
 As shown in ``OvalRule``, you do not have to reimplement all of the
-methods in ``Riemann``. Only the abstract methods should be
+methods in ``AbstractRiemann``. Only the abstract methods should be
 written out in the subclasses.
 
 .. figure:: riemann-diagram.png
@@ -177,7 +177,7 @@ before it::
 Base Assignment
 ^^^^^^^^^^^^^^^
 
-#. Create the ``Riemann`` abstract class based on the provided
+#. Create the ``AbstractRiemann`` abstract class based on the provided
    `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`__:
 
    - Write ``calculateDeltaX()``.
@@ -185,21 +185,30 @@ Base Assignment
      and end the line with a semicolon instead of implementing the method.
    - Write ``rs()``.
 
-#. Write ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each
-   extending **Riemann** and implementing the abstract method ``slice()``.
+#. Write ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule`` Object classes, each
+   extending **AbstractRiemann** class and implementing the abstract method ``slice()``.
    Do not include implementations of any other methods from ``Riemann`` in
    these classes; they will be automatically inherited.
 
 #. Add plotting functionality:
 
-   - Add the abstract method ``slicePlot()`` to ``Riemann``.
+   - Add the abstract method ``slicePlot()`` to ``AbstractRiemann``.
    - Implement ``slicePlot()`` in each of the child classes. Make sure the
      plots correspond to the specific rules. You don't need to fill
      in the trapezoids for ``TrapezoidRule``.
-   - Write ``rsPlot()`` in the ``Riemann`` class.
+   - Write ``rsPlot()`` in the ``AbstractRiemann`` class.
 
-#. Write ``rsAcc()`` in the ``Riemann`` class (see Dr. Gomprecht's slides for
+#. Write ``rsAcc()`` in the ``AbstractRiemann`` class (see Dr. Gomprecht's slides for
    an explanation of the accumulation function).
+
+#. Write ``RiemannApp``, which will have a ``main`` method. 
+    - Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
+    - Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
+    - Create one PlotFrame for each rule (e.g. ``PlotFrame leftHandPlot``).
+    - Use the rule objects' ``rsPlot`` method to plot the rectangles rule (e.g. ``leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);
+    - Plot the Polynomial so you can see the line as compared to the rectangles.
+    - Finally, for each rule, print the estimated area under the curve.
+``)
 
 #. Use your program to answer the following question: **which of the three
    rules is the most accurate?** This should compare the results of the
