@@ -302,7 +302,7 @@ Now you'll create an animation from scratch.
    #. Change ``doStep`` so that ``circle`` randomly moves either 1 spot up, 1 spot down, or stays at the same y. It also randomly moves 1 spot left, 1 spot right or stays at the same x.
    #. Add 50 Circles that move in this way. 
   
-   When you get output that is similar to the graph below you are finished with this exercise:
+   When you get output similar to the graph below you are finished with this exercise:
   
    .. figure:: randomwalk.gif 
       :width: 50 %
