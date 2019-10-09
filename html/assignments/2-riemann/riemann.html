@@ -377,11 +377,12 @@ before it:</p>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Test the Riemann rules.</p>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">RightHandRule.slice()</span></code>. In other words, assert that <code class="docutils literal"><span class="pre">slice()</span></code> returns the correct area of the rectangle under a given Polynomial between two <code class="docutils literal"><span class="pre">x</span></code> values.</li>
 <li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">LeftHandRule.slice()</span></code>.</li>
 <li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">TrapazoidRule.slice()</span></code>.</li>
 </ol>
+<p class="last">When the test methods pass you are done with this exercise.</p>
 </div>
 </div>
 <div class="section" id="riemannapp">
@@ -400,7 +401,7 @@ before it:</p>
 </div>
 </div></blockquote>
 <ol class="arabic simple">
-<li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapazoidRule</span></code> object.</li>
+<li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapazoidRule</span></code> object. E.g.</li>
 </ol>
 <blockquote>
 <div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">RightHandRule</span> <span class="n">rightHandRule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RightHandRule</span><span class="o">();</span>
@@ -408,17 +409,30 @@ before it:</p>
 </div>
 </div></blockquote>
 <ol class="arabic simple">
-<li>On each PlotFrame, use the cooresponding rules’ <code class="docutils literal"><span class="pre">rsPlot()</span></code> method to plot the rectangles under the example Polynomial. E.g.</li>
+<li>For each rule object use <code class="docutils literal"><span class="pre">rsPlot()</span></code> to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.</li>
 </ol>
 <blockquote>
 <div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">rightHandRule</span><span class="o">.</span><span class="na">rsPlot</span><span class="o">(</span><span class="n">rightHandPlot</span><span class="o">,</span> <span class="n">polynomial</span><span class="o">,</span> <span class="n">dataSetIndex</span><span class="o">,</span> <span class="n">precision</span><span class="o">,</span> <span class="n">xLeft</span><span class="o">,</span> <span class="n">xRight</span><span class="o">,</span> <span class="n">numberSlices</span><span class="o">);</span>
 </pre></div>
 </div>
 </div></blockquote>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li>Also on each PlotFrame, plot the example Polynomial so you can see the line in relation to the rectangles.</li>
 <li>Finally, for each rule, print the estimated area under the curve.</li>
 </ol>
+<p>When your Riemann app prints three estimated areas and launches three PlotFrames similar to the following, you are done with this exercise.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/areas.png"><img alt="../../_images/areas.png" src="../../_images/areas.png" style="width: 40%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/rightRule.png"><img alt="../../_images/rightRule.png" src="../../_images/rightRule.png" style="width: 40%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/leftRule.png"><img alt="../../_images/leftRule.png" src="../../_images/leftRule.png" style="width: 40%;" /></a>
+</div>
+<div class="last figure align-center">
+<a class="reference internal image-reference" href="../../_images/trapRule.png"><img alt="../../_images/trapRule.png" src="../../_images/trapRule.png" style="width: 40%;" /></a>
+</div>
 </div>
 </div>
 <div class="section" id="analysis">

@@ -215,6 +215,8 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   #. In the ``test`` folder, create a class called ``LeftHandRuleTest`` that contains at least one method to test ``LeftHandRule.slice()``.
   #. In the ``test`` folder, create a class called ``TrapazoidRuleTest`` that contains at least one method to test ``TrapazoidRule.slice()``.
 
+  When the test methods pass you are done with this exercise.
+
 
 4. RiemannApp
 ^^^^^^^^^^^^^^^
@@ -228,16 +230,34 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
     .. code-block:: java
 
       PlotFrame rightHandPlot = new PlotFrame(...);
-  #. Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
+  #. Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object. E.g.
     .. code-block:: java
 
       RightHandRule rightHandRule = new RightHandRule();
-  #. On each PlotFrame, use the cooresponding rules' ``rsPlot()`` method to plot the rectangles under the example Polynomial. E.g.
+  #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.
     .. code-block:: java
     
       rightHandRule.rsPlot(rightHandPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);
   #. Also on each PlotFrame, plot the example Polynomial so you can see the line in relation to the rectangles.
   #. Finally, for each rule, print the estimated area under the curve.
+
+  When your Riemann app prints three estimated areas and launches three PlotFrames similar to the following, you are done with this exercise.
+
+  .. figure:: areas.png
+   :width: 40 %
+   :align: center
+
+  .. figure:: rightRule.png
+   :width: 40 %
+   :align: center
+
+  .. figure:: leftRule.png
+   :width: 40 %
+   :align: center
+
+  .. figure:: trapRule.png
+   :width: 40 %
+   :align: center
 
 
 5. Analysis
