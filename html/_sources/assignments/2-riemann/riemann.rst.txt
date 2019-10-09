@@ -194,7 +194,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
 2. RightHandRule, LeftHandRule and TrapazoidRule Classes
 #########################################################
 
-* Also in ``riemann``, Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each extending **AbstractRiemann** class.
+* Also in the ``riemann`` package, create 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each extending **AbstractRiemann** class.
 * Each rule should implement the abstract methods ``slice()`` and ``slicePlot()``. Do not include implementations of any other methods from ``AbstractRiemann`` in these classes; they will be automatically inherited.
 * For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill in the trapezoids for ``TrapezoidRule``.
 
@@ -210,7 +210,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
 4. RiemannApp
 #################
 
-* Back in ``riemann``, create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area. 
+* Back in the ``riemann`` package, create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area. 
 * Create an example Polynomial to find the area under e.g., 3x^2-6x+3.
 * Create one PlotFrame for each rule (e.g. ``PlotFrame rightHandPlot = new PlotFrame(...)``).
 * Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.

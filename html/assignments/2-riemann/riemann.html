@@ -359,7 +359,7 @@ before it:</p>
 <div class="section" id="righthandrule-lefthandrule-and-trapazoidrule-classes">
 <h4>2. RightHandRule, LeftHandRule and TrapazoidRule Classes<a class="headerlink" href="#righthandrule-lefthandrule-and-trapazoidrule-classes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Also in <code class="docutils literal"><span class="pre">riemann</span></code>, Write 3 child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each extending <strong>AbstractRiemann</strong> class.</li>
+<li>Also in the <code class="docutils literal"><span class="pre">riemann</span></code> package, create 3 child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each extending <strong>AbstractRiemann</strong> class.</li>
 <li>Each rule should implement the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> in these classes; they will be automatically inherited.</li>
 <li>For <code class="docutils literal"><span class="pre">slicePlot()</span></code> , make sure the plots correspond to the specific rules. You don’t need to fill in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</li>
 </ul>
@@ -375,7 +375,7 @@ before it:</p>
 <div class="section" id="riemannapp">
 <h4>4. RiemannApp<a class="headerlink" href="#riemannapp" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Back in <code class="docutils literal"><span class="pre">riemann</span></code>, create <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area.</li>
+<li>Back in the <code class="docutils literal"><span class="pre">riemann</span></code> package, create <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area.</li>
 <li>Create an example Polynomial to find the area under e.g., 3x^2-6x+3.</li>
 <li>Create one PlotFrame for each rule (e.g. <code class="docutils literal"><span class="pre">PlotFrame</span> <span class="pre">rightHandPlot</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">PlotFrame(...)</span></code>).</li>
 <li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapazoidRule</span></code> object.</li>
