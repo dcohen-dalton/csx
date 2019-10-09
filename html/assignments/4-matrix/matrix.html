@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Matrix Assignment &mdash; The CSX Book  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Springs" href="../5-springs/springs.html" />
+    <link rel="prev" title="Projectile Assignment" href="../3-projectile/projectile.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The CSX Book
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Assignments:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1-getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-riemann/riemann.html">Riemann Sums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-projectile/projectile.html">Projectile Motion</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Matrices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Matrix Assignment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#extension">Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#polynomial-interpolation">Polynomial Interpolation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-extensions">Advanced Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The CSX Book</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Matrix Assignment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/assignments/4-matrix/matrix.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="matrix-assignment">
+<h1>Matrix Assignment<a class="headerlink" href="#matrix-assignment" title="Permalink to this headline">¶</a></h1>
+<p>By now, you’ve heard Dr. Gomprecht’s lecture on matrices, which can be found
+<a class="reference external" href="../../_static/MatrixSlides.pdf">here</a>. Matrices, as he told you, have many
+different uses and applications both in math and science. In fact, many of you
+will use matrices in physics later in the year in order to solve systems of
+equations.</p>
+<p>As with the last assignment, Dr. Gomprecht has already scaffolded some of the
+code for you. He has a list of methods that he wants your class to include. In
+addition, you should work to create some of your own test classes in order to
+test your matrices.</p>
+<p>This assignment can seem very daunting at first. Before you decide what
+instructions you want to give your computer, you have to determine how you
+would manipulate a matrix first. So, we recommend that you start by trying to
+modify a few different matrices into the identity matrix.</p>
+<p><a class="reference external" href="../../_static/matrix-javadoc/main/Matrix.html">Link to the documentation</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">None of the functions, either than <code class="docutils literal"><span class="pre">getEntry()</span></code> and <code class="docutils literal"><span class="pre">setEntry()</span></code>,
+should actually modify the original <code class="docutils literal"><span class="pre">Matrix</span></code>. Instead, the functions
+return an entirely new <code class="docutils literal"><span class="pre">Matrix</span></code>. Make sure, when you are filling out
+these functions, that you are not modifying the original <code class="docutils literal"><span class="pre">Matrix</span></code>, but
+rather the <code class="docutils literal"><span class="pre">Matrix</span></code> that you will return.</p>
+</div>
+<p>It will be very important to identify your edge cases when you are testing.
+Again, much of the work of this project will be to refine your algorithm once
+you think you know what the basic logic should be. How will you handle
+non-square matrices? Uninvertible matrices?</p>
+<p>Additionally, think about how you can tell your program is working correctly.
+It’s hard to look at an inversion of a matrix and tell if it’s correct, so try
+to use the properties of inverse matrices in order to make testing easier.
+Also remember that it is very hard to naturally come by a singular (i.e.
+uninvertable) matrix by chance, so you might want to intentionally create
+singular matrices.</p>
+<div class="section" id="id1">
+<h2>Matrix Assignment<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Your assignment is to make a <code class="docutils literal"><span class="pre">Matrix</span></code> class that can invert a Matrix, as
+well as perform all of the other operations outlined in the <code class="docutils literal"><span class="pre">Matrix</span></code>
+JavaDoc.</p>
+<div class="section" id="extension">
+<h3>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h3>
+<p>There are several parts of the Extension that are highly suggested (and are
+covered in the Latex book that Dr. Gomprecht presented). In addition, there
+are some extensions that previous students have completed, although they are
+more ambitious.</p>
+<ol class="arabic">
+<li><p class="first">Use your <code class="docutils literal"><span class="pre">Matrix</span></code> class in order to differentiate polynomials using the
+VDM. While this is technically an extension, as long as you are able to
+get your <code class="docutils literal"><span class="pre">Matrix</span></code> class to work, you should hopefully be able to complete
+this.</p>
+</li>
+<li><p class="first">Use your <code class="docutils literal"><span class="pre">Matrix</span></code> class to interpolate polynomials (more below).</p>
+<p>a. Interpolate the equation of accumulation functions. Note: is there a
+pattern that you notice when you differentiate an accumulation function or
+when you accumulate a function’s derivative?</p>
+</li>
+</ol>
+<p>You could also make a GUI. Even if you choose not to make a GUI, you should
+definitely have a way in which people can input their own polynomials through
+a command line interface.</p>
+<div class="section" id="polynomial-interpolation">
+<h4>Polynomial Interpolation<a class="headerlink" href="#polynomial-interpolation" title="Permalink to this headline">¶</a></h4>
+<p>Some of you actually conducted polynomial interpolation with Simpson’s Rule
+for the Riemann assignment extension.</p>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-extensions">
+<h2>Advanced Extensions<a class="headerlink" href="#advanced-extensions" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../5-springs/springs.html" class="btn btn-neutral float-right" title="Springs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../3-projectile/projectile.html" class="btn btn-neutral float-left" title="Projectile Assignment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, The Dalton School
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
