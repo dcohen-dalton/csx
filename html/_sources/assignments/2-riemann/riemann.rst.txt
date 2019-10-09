@@ -178,11 +178,12 @@ Base Assignment
 ^^^^^^^^^^^^^^^
 You will write a total of **eight** Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapazoid Rule.
 
+
 1. AbstractRiemann Class
 #########################
-Refer to the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``AbstractRiemann``
 
-* Create the ``AbstractRiemann`` abstract class based JavaDoc.
+* Create a package namespace called ``reimann``.
+* In ``riemann`` create the ``AbstractRiemann`` abstract class based on the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ .
 * Write ``calculateDeltaX()``.
 * Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract` and end the line with a semicolon instead of implementing the method.
 * Write ``rs()``.
@@ -193,7 +194,7 @@ Refer to the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-
 2. RightHandRule, LeftHandRule and TrapazoidRule Classes
 #########################################################
 
-* Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each extending **AbstractRiemann** class.
+* Also in ``riemann``, Write 3 child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each extending **AbstractRiemann** class.
 * Each rule should implement the abstract methods ``slice()`` and ``slicePlot()``. Do not include implementations of any other methods from ``AbstractRiemann`` in these classes; they will be automatically inherited.
 * For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill in the trapezoids for ``TrapezoidRule``.
 
@@ -201,20 +202,21 @@ Refer to the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-
 3. Test Classes
 #################
 
-* In the test folder, create a class called ``RightHandRuleTest`` that contains at least one method to test ``RightHandRule.slice()``. In other words, for a given Polynomial assert that the ``slice()`` method returns the correct area of the rectangle under the Polynomial within a left x and a right x.
-* In the test folder, create a class called ``LeftHandRuleTest`` that contains at least one method to test ``LeftHandRule.slice()`` method.
-* In the test folder, create a class called ``TrapazoidRuleTest`` that contains at least one method to test ``TrapazoidRule.slice()`` method..
+* In the ``test`` folder, create a class called ``RightHandRuleTest`` that contains at least one method to test ``RightHandRule.slice()``. In other words, for a given Polynomial assert that the ``slice()`` method returns the correct area of the rectangle under the Polynomial between two values on the x-axis.
+* In the ``test`` folder, create a class called ``LeftHandRuleTest`` that contains at least one method to test ``LeftHandRule.slice()``.
+* In the ``test`` folder, create a class called ``TrapazoidRuleTest`` that contains at least one method to test ``TrapazoidRule.slice()``.
 
 
 4. RiemannApp
 #################
 
-* Create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials and rectangles, and also printing the estimated area. 
-* Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.
-* Create one PlotFrame for each rule (e.g. ``PlotFrame rightHandPlot``).
+* Back in ``riemann``, create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area. 
+* Create an example Polynomial to find the area under e.g., 3x^2-6x+3.
+* Create one PlotFrame for each rule (e.g. ``PlotFrame rightHandPlot = new PlotFrame(...)``).
 * Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
-* Use the rule objects' ``rsPlot()`` methods to plot the rectangles for that rule (e.g. ``leftHandRule.rsPlot(leftPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);``
-* Plot the Polynomial so you can see the line as compared to the rectangles.
+* Use the rule objects' ``rsPlot()`` methods to plot the rectangles under the Polynomial (e.g.::
+  ``rightHandRule.rsPlot(rightHandPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);``
+* On each PlotFrame, plot the Polynomial so you can see the line as compared to the rectangles.
 * Finally, for each rule, print the estimated area under the curve.
 
 

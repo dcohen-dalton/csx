@@ -346,9 +346,9 @@ before it:</p>
 <p>You will write a total of <strong>eight</strong> Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapazoid Rule.</p>
 <div class="section" id="abstractriemann-class">
 <h4>1. AbstractRiemann Class<a class="headerlink" href="#abstractriemann-class" title="Permalink to this headline">¶</a></h4>
-<p>Refer to the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a> for <code class="docutils literal"><span class="pre">AbstractRiemann</span></code></p>
 <ul class="simple">
-<li>Create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based JavaDoc.</li>
+<li>Create a package namespace called <code class="docutils literal"><span class="pre">reimann</span></code>.</li>
+<li>In <code class="docutils literal"><span class="pre">riemann</span></code> create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a> .</li>
 <li>Write <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>.</li>
 <li>Add the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Make sure to mark them as <a href="#id1"><span class="problematic" id="id2">``</span></a>abstract` and end the line with a semicolon instead of implementing the method.</li>
 <li>Write <code class="docutils literal"><span class="pre">rs()</span></code>.</li>
@@ -359,7 +359,7 @@ before it:</p>
 <div class="section" id="righthandrule-lefthandrule-and-trapazoidrule-classes">
 <h4>2. RightHandRule, LeftHandRule and TrapazoidRule Classes<a class="headerlink" href="#righthandrule-lefthandrule-and-trapazoidrule-classes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Write 3 child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each extending <strong>AbstractRiemann</strong> class.</li>
+<li>Also in <code class="docutils literal"><span class="pre">riemann</span></code>, Write 3 child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each extending <strong>AbstractRiemann</strong> class.</li>
 <li>Each rule should implement the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> in these classes; they will be automatically inherited.</li>
 <li>For <code class="docutils literal"><span class="pre">slicePlot()</span></code> , make sure the plots correspond to the specific rules. You don’t need to fill in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</li>
 </ul>
@@ -367,20 +367,21 @@ before it:</p>
 <div class="section" id="test-classes">
 <h4>3. Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>In the test folder, create a class called <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">RightHandRule.slice()</span></code>. In other words, for a given Polynomial assert that the <code class="docutils literal"><span class="pre">slice()</span></code> method returns the correct area of the rectangle under the Polynomial within a left x and a right x.</li>
-<li>In the test folder, create a class called <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">LeftHandRule.slice()</span></code> method.</li>
-<li>In the test folder, create a class called <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">TrapazoidRule.slice()</span></code> method..</li>
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">RightHandRule.slice()</span></code>. In other words, for a given Polynomial assert that the <code class="docutils literal"><span class="pre">slice()</span></code> method returns the correct area of the rectangle under the Polynomial between two values on the x-axis.</li>
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">LeftHandRule.slice()</span></code>.</li>
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">TrapazoidRule.slice()</span></code>.</li>
 </ul>
 </div>
 <div class="section" id="riemannapp">
 <h4>4. RiemannApp<a class="headerlink" href="#riemannapp" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Create <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method and be responsible for plotting example Polynomials and rectangles, and also printing the estimated area.</li>
-<li>Create an example Polynomial to find the area under e.g., p = 3x^2-6x+3.</li>
-<li>Create one PlotFrame for each rule (e.g. <code class="docutils literal"><span class="pre">PlotFrame</span> <span class="pre">rightHandPlot</span></code>).</li>
+<li>Back in <code class="docutils literal"><span class="pre">riemann</span></code>, create <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area.</li>
+<li>Create an example Polynomial to find the area under e.g., 3x^2-6x+3.</li>
+<li>Create one PlotFrame for each rule (e.g. <code class="docutils literal"><span class="pre">PlotFrame</span> <span class="pre">rightHandPlot</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">PlotFrame(...)</span></code>).</li>
 <li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapazoidRule</span></code> object.</li>
-<li>Use the rule objects’ <code class="docutils literal"><span class="pre">rsPlot()</span></code> methods to plot the rectangles for that rule (e.g. <code class="docutils literal"><span class="pre">leftHandRule.rsPlot(leftPlot,</span> <span class="pre">polynomial,</span> <span class="pre">dataSetIndex,</span> <span class="pre">precision,</span> <span class="pre">xLeft,</span> <span class="pre">xRight,</span> <span class="pre">numberSlices);</span></code></li>
-<li>Plot the Polynomial so you can see the line as compared to the rectangles.</li>
+<li>Use the rule objects’ <code class="docutils literal"><span class="pre">rsPlot()</span></code> methods to plot the rectangles under the Polynomial (e.g.::
+<code class="docutils literal"><span class="pre">rightHandRule.rsPlot(rightHandPlot,</span> <span class="pre">polynomial,</span> <span class="pre">dataSetIndex,</span> <span class="pre">precision,</span> <span class="pre">xLeft,</span> <span class="pre">xRight,</span> <span class="pre">numberSlices);</span></code></li>
+<li>On each PlotFrame, plot the Polynomial so you can see the line as compared to the rectangles.</li>
 <li>Finally, for each rule, print the estimated area under the curve.</li>
 </ul>
 </div>
