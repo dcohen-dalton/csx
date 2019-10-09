@@ -241,7 +241,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   #. Also on each PlotFrame, plot the example Polynomial so you can see the line in relation to the rectangles.
   #. Finally, for each rule, print the estimated area under the curve.
 
-  When your Riemann app prints three estimated areas and launches three PlotFrames similar to the following, you are done with this exercise.
+  When your RiemannApp prints estimated areas and launches three PlotFrames similar to the following, you are done with this exercise.
 
   .. figure:: areas.png
    :width: 40 %
