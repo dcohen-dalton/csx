@@ -201,9 +201,9 @@ Refer to the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-
 3. Test Classes
 #################
 
-* In the test folder, create a class called ``RightHandRuleTest`` that contains at least one test method to test ``slice``. In other words, for a given Polynomial assert that the ``slice()`` method returns the correct area of the rectangle under the Polynomial within a left x and a right x.
-* In the test folder, create a class called ``LeftHandRuleTest`` that contains at least one test method for its ``slice()`` method.
-* In the test folder, create a class called ``TrapazoidRuleTest`` that contains at least one test method for its ``slice()`` method..
+* In the test folder, create a class called ``RightHandRuleTest`` that contains at least one method to test ``RightHandRule.slice()``. In other words, for a given Polynomial assert that the ``slice()`` method returns the correct area of the rectangle under the Polynomial within a left x and a right x.
+* In the test folder, create a class called ``LeftHandRuleTest`` that contains at least one method to test ``LeftHandRule.slice()`` method.
+* In the test folder, create a class called ``TrapazoidRuleTest`` that contains at least one method to test ``TrapazoidRule.slice()`` method..
 
 
 4. RiemannApp
