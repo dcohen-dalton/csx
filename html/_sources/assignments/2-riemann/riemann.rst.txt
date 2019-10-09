@@ -212,9 +212,9 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
 
 * Back in the ``riemann`` package, create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area. 
 * Create an example Polynomial to find the area under e.g., 3x^2-6x+3.
-* Create one PlotFrame for each rule (e.g. ``PlotFrame rightHandPlot = new PlotFrame(...)``).
+* Create one PlotFrame for each rule. E.g. ``PlotFrame rightHandPlot = new PlotFrame(...)``
 * Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object.
-* Use the rule objects' ``rsPlot()`` methods to plot the rectangles under the Polynomial (e.g.::
+* Use the rule objects' ``rsPlot()`` methods to plot the rectangles under the Polynomial. E.g.
   ``rightHandRule.rsPlot(rightHandPlot, polynomial, dataSetIndex, precision, xLeft, xRight, numberSlices);``
 * On each PlotFrame, plot the Polynomial so you can see the line as compared to the rectangles.
 * Finally, for each rule, print the estimated area under the curve.

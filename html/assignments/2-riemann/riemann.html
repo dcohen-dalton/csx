@@ -377,9 +377,9 @@ before it:</p>
 <ul class="simple">
 <li>Back in the <code class="docutils literal"><span class="pre">riemann</span></code> package, create <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area.</li>
 <li>Create an example Polynomial to find the area under e.g., 3x^2-6x+3.</li>
-<li>Create one PlotFrame for each rule (e.g. <code class="docutils literal"><span class="pre">PlotFrame</span> <span class="pre">rightHandPlot</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">PlotFrame(...)</span></code>).</li>
+<li>Create one PlotFrame for each rule. E.g. <code class="docutils literal"><span class="pre">PlotFrame</span> <span class="pre">rightHandPlot</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">PlotFrame(...)</span></code></li>
 <li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapazoidRule</span></code> object.</li>
-<li>Use the rule objects’ <code class="docutils literal"><span class="pre">rsPlot()</span></code> methods to plot the rectangles under the Polynomial (e.g.::
+<li>Use the rule objects’ <code class="docutils literal"><span class="pre">rsPlot()</span></code> methods to plot the rectangles under the Polynomial. E.g.
 <code class="docutils literal"><span class="pre">rightHandRule.rsPlot(rightHandPlot,</span> <span class="pre">polynomial,</span> <span class="pre">dataSetIndex,</span> <span class="pre">precision,</span> <span class="pre">xLeft,</span> <span class="pre">xRight,</span> <span class="pre">numberSlices);</span></code></li>
 <li>On each PlotFrame, plot the Polynomial so you can see the line as compared to the rectangles.</li>
 <li>Finally, for each rule, print the estimated area under the curve.</li>
