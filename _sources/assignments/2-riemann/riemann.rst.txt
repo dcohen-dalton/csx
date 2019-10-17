@@ -222,7 +222,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
     .. code-block:: java
 
       RightHandRule rightHandRule = new RightHandRule();
-    - Asserts that ``righty.slice()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values.
+    - Asserts that the object's ``slice()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values.
 
   You may add more test methods as you see fit. When you are certain ``RightHandRule``'s ``slice()`` method works, test the other rules: 
 
