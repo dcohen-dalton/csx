@@ -180,8 +180,8 @@ extends java.lang.Object</pre>
 <tr class="rowColor" id="i1">
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rs(org.dalton.polyfun.Polynomial,double,double,int)">rs</a></span>&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
-  double&nbsp;left,
-  double&nbsp;right,
+  double&nbsp;xLeft,
+  double&nbsp;xRight,
   int&nbsp;subintervals)</code></th>
 <td class="colLast">
 <div class="block">Calculates a Riemann sum, using the particular implementation of <a href="#slice(org.dalton.polyfun.Polynomial,double,double)"><code>slice(Polynomial, double, double)</code></a>
@@ -190,11 +190,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,int,double,double)">rsAcc</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)">rsAcc</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
      org.dalton.polyfun.Polynomial&nbsp;poly,
-     int&nbsp;index,
-     double&nbsp;precision,
-     double&nbsp;base)</code></th>
+     double&nbsp;xLeft,double&nbsp;xRight)</code></th>
 <td class="colLast">
 <div class="block">Graphs the accumulation function corresponding to the input
  polynomial and the input left hand endpoint.</div>
@@ -202,10 +200,8 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsPlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,int,double,double,double,int)">rsPlot</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsPlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double,int)">rsPlot</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
       org.dalton.polyfun.Polynomial&nbsp;poly,
-      int&nbsp;index,
-      double&nbsp;precision,
       double&nbsp;left,
       double&nbsp;right,
       int&nbsp;subintervals)</code></th>
@@ -216,8 +212,8 @@ extends java.lang.Object</pre>
 <tr class="altColor" id="i4">
 <td class="colFirst"><code>abstract double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#slice(org.dalton.polyfun.Polynomial,double,double)">slice</a></span>&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
-     double&nbsp;sleft,
-     double&nbsp;sright)</code></th>
+     double&nbsp;xLeft,
+     double&nbsp;xRight)</code></th>
 <td class="colLast">
 <div class="block">Approximates a slice of the (signed) area between the graph of a polynomial
  and the x-axis, over a given interval on the x-axis.</div>
@@ -227,8 +223,8 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#slicePlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)">slicePlot</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
          org.dalton.polyfun.Polynomial&nbsp;poly,
-         double&nbsp;sleft,
-         double&nbsp;sright)</code></th>
+         double&nbsp;xLeft,
+         double&nbsp;xRight)</code></th>
 <td class="colLast">
 <div class="block">Plots a slice of the (signed) area between the graph of a polynomial
  and the x-axis, over a given interval on the x-axis.</div>
@@ -311,23 +307,23 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>rs</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;rs&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
-                 double&nbsp;left,
-                 double&nbsp;right,
+                 double&nbsp;xLeft,
+                 double&nbsp;xRight,
                  int&nbsp;subintervals)</pre>
 <div class="block">Calculates a Riemann sum, using the particular implementation of <a href="#slice(org.dalton.polyfun.Polynomial,double,double)"><code>slice(Polynomial, double, double)</code></a>
  defined in the subclass.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>poly</code> - the polynomial whose Riemann sum is to be calculated</dd>
-<dd><code>left</code> - the left hand endpoint of the Riemann sum</dd>
-<dd><code>right</code> - the right hand endpoint of the Riemann sum</dd>
+<dd><code>xLeft</code> - the left hand endpoint of the Riemann sum</dd>
+<dd><code>xRight</code> - the right hand endpoint of the Riemann sum</dd>
 <dd><code>subintervals</code> - the number of subintervals into which to divide the interval</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>An approximation of the Riemann sum over the interval [<code>left</code>, <code>right</code>].</dd>
 </dl>
 </li>
 </ul>
-<a id="rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,int,double,double)">
+<a id="rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -335,11 +331,10 @@ extends java.lang.Object</pre>
 <h4>rsAcc</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;rsAcc&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
                   org.dalton.polyfun.Polynomial&nbsp;poly,
-                  int&nbsp;index,
-                  double&nbsp;precision,
-                  double&nbsp;base)</pre>
+                  double&nbsp;xLeft,
+                  double&nbsp;xRight)</pre>
 <div class="block">Graphs the accumulation function corresponding to the input
- polynomial and the input left hand endpoint. This method uses the
+ polynomial and the endpoints. This method uses the
  specific implementation of <a href="#slicePlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)"><code>slicePlot(PlotFrame, Polynomial, double, double)</code></a>
  defined in the subclass.</div>
 <dl>
@@ -347,12 +342,8 @@ extends java.lang.Object</pre>
 <dd><code>pframe</code> - the PlotFrame on which the polynomial and the Riemann sum are
                   drawn</dd>
 <dd><code>poly</code> - the polynomial whose accumulation function is to be calculated</dd>
-<dd><code>index</code> - the number associated to the collection of (x,y) coordinates
-                  that make up the dataset which, when plotted, is the graph of the
-                  accumulation function</dd>
-<dd><code>precision</code> - the difference between the x-coordinates of two adjacent points
-                  on the graph of the accumulation function</dd>
-<dd><code>base</code> - the left hand endpoint of the accumulation function</dd>
+<dd><code>xLeft</code> - the left hand endpoint of the accumulation function</dd>
+<dd><code>xRight</code> - the right hand endpoint of the accumulation function</dd>
 </dl>
 </li>
 </ul>
@@ -364,8 +355,6 @@ extends java.lang.Object</pre>
 <h4>rsPlot</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;rsPlot&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
                    org.dalton.polyfun.Polynomial&nbsp;poly,
-                   int&nbsp;index,
-                   double&nbsp;precision,
                    double&nbsp;left,
                    double&nbsp;right,
                    int&nbsp;subintervals)</pre>
@@ -374,10 +363,6 @@ extends java.lang.Object</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>pframe</code> - the PlotFrame on which the polynomial and the Riemann sum are drawn</dd>
 <dd><code>poly</code> - the polynomial whose Riemann sum is to be calculated</dd>
-<dd><code>index</code> - the number associated to the collection of (x,y) coordinates
-                     that make up the dataset which, when plotted, is the graph of the
-                     accumulation function</dd>
-<dd><code>precision</code> - the difference between the x-coordinates of two adjacent points on the graph of the function</dd>
 <dd><code>left</code> - the left hand endpoint of the Riemann sum</dd>
 <dd><code>right</code> - the right hand endpoint of the Riemann sum</dd>
 <dd><code>subintervals</code> - the number of subintervals into which to divide the interval</dd>
@@ -391,8 +376,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>slice</h4>
 <pre class="methodSignature">public abstract&nbsp;double&nbsp;slice&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
-                             double&nbsp;sleft,
-                             double&nbsp;sright)</pre>
+                             double&nbsp;xLeft,
+                             double&nbsp;xRight)</pre>
 <div class="block">Approximates a slice of the (signed) area between the graph of a polynomial
  and the x-axis, over a given interval on the x-axis. The specific Riemann sum
  rule used in the calculation is defined by the subclass. This method should be
@@ -400,9 +385,9 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>poly</code> - the polynomial whose area (over or under the x-axis), over the
-               interval from sleft to sright, is to be calculated</dd>
-<dd><code>sleft</code> - the left hand endpoint of the interval</dd>
-<dd><code>sright</code> - the right hand endpoint of the interval</dd>
+               interval from xLeft to xRight, is to be calculated</dd>
+<dd><code>xLeft</code> - the left hand endpoint of the interval</dd>
+<dd><code>xRight</code> - the right hand endpoint of the interval</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A slice of the riemann sum</dd>
 </dl>
@@ -416,19 +401,20 @@ extends java.lang.Object</pre>
 <h4>slicePlot</h4>
 <pre class="methodSignature">public abstract&nbsp;void&nbsp;slicePlot&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
                                org.dalton.polyfun.Polynomial&nbsp;poly,
-                               double&nbsp;sleft,
-                               double&nbsp;sright)</pre>
+                               double&nbsp;xLeft,
+                               double&nbsp;xRight)</pre>
 <div class="block">Plots a slice of the (signed) area between the graph of a polynomial
  and the x-axis, over a given interval on the x-axis. The specific Riemann sum
  rule used is defined by the subclass. This method should be
- used in <a href="#rsPlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,int,double,double,double,int)"><code>rsPlot(PlotFrame, Polynomial, int, double, double, double, int)</code></a> to find the total area.</div>
+ used in <a href="#rsPlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)"><code>rsPlot(PlotFrame, Polynomial, double, double, int)</code></a> to find the total area.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>pframe</code> - the PlotFrame on which the slicePlot is to be drawn</dd>
 <dd><code>poly</code> - the polynomial whose area (over or under the x-axis), over the
-               interval from sleft to sright, is to be drawn</dd>
-<dd><code>sleft</code> - the left hand endpoint of the interval</dd>
-<dd><code>sright</code> - the right hand endpoint of the interval</dd>
+               interval from xLeft to xRight, is to be drawn</dd>
+<dd><code>xLeft</code> - the left hand endpoint of the interval</dd>
+<dd><code>xRight</code> - the right hand endpoint of the interval</dd>
+<dd><code>subintervals</code> - number of subintervals</dd>
 </dl>
 </li>
 </ul>
