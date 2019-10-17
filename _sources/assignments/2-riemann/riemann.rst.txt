@@ -209,16 +209,27 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
 ^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
-  **Summary**: Test the Riemann slice methods.
+  **Summary**: Test the Riemann ``slice()`` methods.
 
-  #. In the ``test`` folder, create a class called ``RightHandRuleTest`` that contains at least one method called ``slice`` that does the following:
-    #. Creates a Polynomial (you need to ``import org.dalton.polyfun.Polynomial``), e.g. ``Polynomial poly = new Polynomial(new double[]{3, 4, 2})``.
-    #. Creates a ``RightHandRule`` object, e.g. ``RightHandRule righty = new RightHandRule();``
-    #. Asserts that ``righty.slice()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values.
+  #. In the ``test`` folder, create a class called ``RightHandRuleTest`` and add a test method called ``slice`` that does the following:
+    - Creates a Polynomial (first import ``org.dalton.polyfun.Polynomial``). E.g.,
+
+    .. code-block:: java
+
+      Polynomial poly = new Polynomial(new double[]{3, 4, 2});
+    - Creates a ``RightHandRule`` object. E.g.,
+
+    .. code-block:: java
+
+      RightHandRule rightHandRule = new RightHandRule();
+    - Asserts that ``righty.slice()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values.
+
+  You may add more test methods as you see fit. When you are certain ``RightHandRule``'s ``slice()`` method works, test the other rules: 
+
   #. In the ``test`` folder, create a class called ``LeftHandRuleTest`` that contains at least one method to test ``LeftHandRule``'s ``slice()``.
   #. In the ``test`` folder, create a class called ``TrapezoidRuleTest`` that contains at least one method to test ``TrapezoidRule``'s ``slice()``.
 
-  When the test methods pass you are done with this exercise.
+  When all the test methods pass you are done with this exercise.
 
 
 4. RiemannApp
@@ -229,15 +240,15 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
 
   #. Back in the ``riemann`` package, create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area. 
   #. Create an example Polynomial to find the area under. E.g., 3x^2-6x+3.
-  #. Create one PlotFrame for each rule. E.g.
+  #. Create one PlotFrame for each rule. E.g.,
     .. code-block:: java
 
       PlotFrame rightHandPlot = new PlotFrame(...);
-  #. Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapezoidRule`` object. E.g.
+  #. Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapezoidRule`` object. E.g.,
     .. code-block:: java
 
       RightHandRule rightHandRule = new RightHandRule();
-  #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.
+  #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
     .. code-block:: java
     
       rightHandRule.rsPlot(rightHandPlot, polynomial, precision, xLeft, xRight, numberSlices);
