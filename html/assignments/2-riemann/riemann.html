@@ -378,9 +378,19 @@ before it:</p>
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Test the Riemann rules.</p>
 <ol class="arabic simple">
-<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">RightHandRule.slice()</span></code>. In other words, assert that <code class="docutils literal"><span class="pre">slice()</span></code> returns the correct area of the rectangle under a given Polynomial between two <code class="docutils literal"><span class="pre">x</span></code> values.</li>
-<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">LeftHandRule.slice()</span></code>.</li>
-<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">TrapazoidRule.slice()</span></code>.</li>
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> that contains at least one method that does the following:</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Create a test method called <code class="docutils literal"><span class="pre">slice</span></code>.</li>
+<li>Create a Polynomial (you need to import org.dalton.polyfun.Polynomial), e.g. <code class="docutils literal"><span class="pre">Polynomial</span> <span class="pre">poly</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Polynomial(new</span> <span class="pre">double[]{3,</span> <span class="pre">4,</span> <span class="pre">2})</span></code>.</li>
+<li>Create a RightHandRule object, e.g.``RightHandRule righty = new RightHandRule()``;</li>
+<li>Assert that <code class="docutils literal"><span class="pre">righty.slice()</span></code> returns the correct area of the rectangle under a given Polynomial between two <code class="docutils literal"><span class="pre">x</span></code> values.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">LeftHandRule</span></code>’s <code class="docutils literal"><span class="pre">slice()</span></code>.</li>
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">TrapazoidRule</span></code>’s <code class="docutils literal"><span class="pre">slice()</span></code>.</li>
 </ol>
 <p class="last">When the test methods pass you are done with this exercise.</p>
 </div>

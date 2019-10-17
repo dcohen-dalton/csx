@@ -190,20 +190,21 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,int,double,double,double)">rsAcc</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,int,double,double)">rsAcc</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
      org.dalton.polyfun.Polynomial&nbsp;poly,
+     int&nbsp;index,
      double&nbsp;precision,
-     double&nbsp;left,
-     double&nbsp;right)</code></th>
+     double&nbsp;base)</code></th>
 <td class="colLast">
 <div class="block">Graphs the accumulation function corresponding to the input
- polynomial and the input left and right endpoints.</div>
+ polynomial and the input left hand endpoint.</div>
 </td>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsPlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,int,double,double,double,int)">rsPlot</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
       org.dalton.polyfun.Polynomial&nbsp;poly,
+      int&nbsp;index,
       double&nbsp;precision,
       double&nbsp;left,
       double&nbsp;right,
@@ -326,7 +327,7 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,int,double,double,double)">
+<a id="rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,int,double,double)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -336,10 +337,9 @@ extends java.lang.Object</pre>
                   org.dalton.polyfun.Polynomial&nbsp;poly,
                   int&nbsp;index,
                   double&nbsp;precision,
-                  double&nbsp;left,
-                  double&nbsp;right)</pre>
+                  double&nbsp;base)</pre>
 <div class="block">Graphs the accumulation function corresponding to the input
- polynomial and the input left hand and right hand endpoints. This method uses the
+ polynomial and the input left hand endpoint. This method uses the
  specific implementation of <a href="#slicePlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)"><code>slicePlot(PlotFrame, Polynomial, double, double)</code></a>
  defined in the subclass.</div>
 <dl>
@@ -347,10 +347,12 @@ extends java.lang.Object</pre>
 <dd><code>pframe</code> - the PlotFrame on which the polynomial and the Riemann sum are
                   drawn</dd>
 <dd><code>poly</code> - the polynomial whose accumulation function is to be calculated</dd>
+<dd><code>index</code> - the number associated to the collection of (x,y) coordinates
+                  that make up the dataset which, when plotted, is the graph of the
+                  accumulation function</dd>
 <dd><code>precision</code> - the difference between the x-coordinates of two adjacent points
                   on the graph of the accumulation function</dd>
-<dd><code>left</code> - the left hand endpoint of the accumulation function</dd>
-<code>right</code> - the right hand endpoint of the accumulation function</dd>
+<dd><code>base</code> - the left hand endpoint of the accumulation function</dd>
 </dl>
 </li>
 </ul>
@@ -372,6 +374,9 @@ extends java.lang.Object</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>pframe</code> - the PlotFrame on which the polynomial and the Riemann sum are drawn</dd>
 <dd><code>poly</code> - the polynomial whose Riemann sum is to be calculated</dd>
+<dd><code>index</code> - the number associated to the collection of (x,y) coordinates
+                     that make up the dataset which, when plotted, is the graph of the
+                     accumulation function</dd>
 <dd><code>precision</code> - the difference between the x-coordinates of two adjacent points on the graph of the function</dd>
 <dd><code>left</code> - the left hand endpoint of the Riemann sum</dd>
 <dd><code>right</code> - the right hand endpoint of the Riemann sum</dd>

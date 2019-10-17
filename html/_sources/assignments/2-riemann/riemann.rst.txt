@@ -211,9 +211,13 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
 
   **Summary**: Test the Riemann rules.
 
-  #. In the ``test`` folder, create a class called ``RightHandRuleTest`` that contains at least one method to test ``RightHandRule.slice()``. In other words, assert that ``slice()`` returns the correct area of the rectangle under a given Polynomial between two ``x`` values.
-  #. In the ``test`` folder, create a class called ``LeftHandRuleTest`` that contains at least one method to test ``LeftHandRule.slice()``.
-  #. In the ``test`` folder, create a class called ``TrapazoidRuleTest`` that contains at least one method to test ``TrapazoidRule.slice()``.
+  #. In the ``test`` folder, create a class called ``RightHandRuleTest`` that contains at least one method that does the following:
+    #. Create a test method called ``slice``.
+    #. Create a Polynomial (you need to import org.dalton.polyfun.Polynomial), e.g. ``Polynomial poly = new Polynomial(new double[]{3, 4, 2})``.
+    #. Create a RightHandRule object, e.g.``RightHandRule righty = new RightHandRule()``;
+    #. Assert that ``righty.slice()`` returns the correct area of the rectangle under a given Polynomial between two ``x`` values.
+  #. In the ``test`` folder, create a class called ``LeftHandRuleTest`` that contains at least one method to test ``LeftHandRule``'s ``slice()``.
+  #. In the ``test`` folder, create a class called ``TrapazoidRuleTest`` that contains at least one method to test ``TrapazoidRule``'s ``slice()``.
 
   When the test methods pass you are done with this exercise.
 
