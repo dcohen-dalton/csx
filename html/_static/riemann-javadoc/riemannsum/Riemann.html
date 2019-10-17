@@ -169,8 +169,8 @@ extends java.lang.Object</pre>
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>double</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#calculateDeltaX(double,double,int)">calculateDeltaX</a></span>&#8203;(double&nbsp;left,
-               double&nbsp;right,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#calculatexfX(double,double,int)">calculateDeltaX</a></span>&#8203;(double&nbsp;xLeft,
+               double&nbsp;xRight,
                int&nbsp;subintervals)</code></th>
 <td class="colLast">
 <div class="block">Calculates &#916;x based on the endpoints of the Riemann sum and the number of subintervals;
@@ -202,8 +202,8 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsPlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double,int)">rsPlot</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
       org.dalton.polyfun.Polynomial&nbsp;poly,
-      double&nbsp;left,
-      double&nbsp;right,
+      double&nbsp;xLeft,
+      double&nbsp;xRight,
       int&nbsp;subintervals)</code></th>
 <td class="colLast">
 <div class="block">Plots a Riemann sum in a given PlotFrame.</div>
@@ -285,15 +285,15 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>calculateDeltaX</h4>
-<pre class="methodSignature">public&nbsp;double&nbsp;calculateDeltaX&#8203;(double&nbsp;left,
-                              double&nbsp;right,
+<pre class="methodSignature">public&nbsp;double&nbsp;calculateDeltaX&#8203;(double&nbsp;xLeft,
+                              double&nbsp;xRight,
                               int&nbsp;subintervals)</pre>
 <div class="block">Calculates &#916;x based on the endpoints of the Riemann sum and the number of subintervals;
  in other words, this method finds the width of each rectangle.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>left</code> - the left hand endpoint of the Riemann sum</dd>
-<dd><code>right</code> - the right hand endpoint of the Riemann sum</dd>
+<dd><code>xLeft</code> - the left hand endpoint of the Riemann sum</dd>
+<dd><code>xRight</code> - the right hand endpoint of the Riemann sum</dd>
 <dd><code>subintervals</code> - the number of subintervals into which to divide the interval</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>&#916;x</dd>
@@ -355,16 +355,16 @@ extends java.lang.Object</pre>
 <h4>rsPlot</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;rsPlot&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
                    org.dalton.polyfun.Polynomial&nbsp;poly,
-                   double&nbsp;left,
-                   double&nbsp;right,
+                   double&nbsp;xLeft,
+                   double&nbsp;xRight,
                    int&nbsp;subintervals)</pre>
 <div class="block">Plots a Riemann sum in a given PlotFrame.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>pframe</code> - the PlotFrame on which the polynomial and the Riemann sum are drawn</dd>
 <dd><code>poly</code> - the polynomial whose Riemann sum is to be calculated</dd>
-<dd><code>left</code> - the left hand endpoint of the Riemann sum</dd>
-<dd><code>right</code> - the right hand endpoint of the Riemann sum</dd>
+<dd><code>xLeft</code> - the left hand endpoint of the Riemann sum</dd>
+<dd><code>xRight</code> - the right hand endpoint of the Riemann sum</dd>
 <dd><code>subintervals</code> - the number of subintervals into which to divide the interval</dd>
 </dl>
 </li>
