@@ -213,8 +213,8 @@ Java class which evaluates a given Riemann sum.</p>
 <p class="caption"><span class="caption-text">The individual rectangles’ areas can be added up using a <code class="docutils literal"><span class="pre">for</span></code>-loop.
 The more iterations (steps) of the loop, the better the approximation.</span></p>
 </div>
-<div class="admonition-exercise admonition">
-<p class="first admonition-title">Exercise</p>
+<div class="admonition-optional-exercise admonition">
+<p class="first admonition-title">Optional Exercise</p>
 <p>The syntax of <code class="docutils literal"><span class="pre">for</span></code>-loops in Java can be hard to remember.</p>
 <ul class="last simple">
 <li>Use a <code class="docutils literal"><span class="pre">for</span></code>-loop to print the first 100 positive integers.</li>
@@ -366,7 +366,7 @@ before it:</p>
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Create specific Object classes for various Riemann rules.</p>
 <ol class="last arabic simple">
-<li>Also in the <code class="docutils literal"><span class="pre">riemann</span></code> package, create three child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each extending <strong>AbstractRiemann</strong> class.</li>
+<li>Also in the <code class="docutils literal"><span class="pre">riemann</span></code> package, create three child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each extending <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class.</li>
 <li>Each rule should implement the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> in these classes; they will be automatically inherited.</li>
 <li>For <code class="docutils literal"><span class="pre">slicePlot()</span></code> , make sure the plots correspond to the specific rules. You don’t need to fill in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</li>
 </ol>

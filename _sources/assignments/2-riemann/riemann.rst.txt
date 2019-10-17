@@ -38,7 +38,7 @@ Java class which evaluates a given Riemann sum.
    The individual rectangles' areas can be added up using a ``for``-loop.
    The more iterations (steps) of the loop, the better the approximation.
 
-.. admonition:: Exercise
+.. admonition:: Optional Exercise
 
    The syntax of ``for``-loops in Java can be hard to remember.
 
@@ -200,7 +200,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
 
   **Summary**: Create specific Object classes for various Riemann rules.
 
-  #. Also in the ``riemann`` package, create three child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each extending **AbstractRiemann** class.
+  #. Also in the ``riemann`` package, create three child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each extending ``AbstractRiemann`` class.
   #. Each rule should implement the abstract methods ``slice()`` and ``slicePlot()``. Do not include implementations of any other methods from ``AbstractRiemann`` in these classes; they will be automatically inherited.
   #. For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill in the trapezoids for ``TrapezoidRule``.
 
