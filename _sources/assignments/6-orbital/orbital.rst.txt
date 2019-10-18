@@ -14,7 +14,7 @@ Is gravity really the only force holding the solar system and galaxy together?
 
 Introduction to the Kepler Project
 ------------------------------------
-Kepler determined his laws solely from observational data. However each of them can be stated in precise mathematical terms. Ellipses aren’t simply ‘ovals’, but well defined geometric shapes. The areal velocity is also well defined: the rate of change of area that a planet sweeps out with respect to time. (Neat, just like the rate of change of position with respect to time, only different.) You will need to construct a model of a planet orbiting the Sun, based on Newton’s Law of Gravity, to see if Kepler’s Laws are exact, or just close approximations for an orbiting planet.
+Kepler determined his `laws <https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion>`_ solely from observational data. However each of them can be stated in precise mathematical terms. Ellipses aren’t simply ‘ovals’, but well defined geometric shapes. The areal velocity is also well defined: the rate of change of area that a planet sweeps out with respect to time. (Neat, just like the rate of change of position with respect to time, only different.) You will need to construct a model of a planet orbiting the Sun, based on Newton’s Law of Gravity, to see if Kepler’s Laws are exact, or just close approximations for an orbiting planet.
 
 Part 1: The Model
 ^^^^^^^^^^^^^^^^^^
