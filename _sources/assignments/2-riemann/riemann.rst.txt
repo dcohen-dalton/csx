@@ -229,6 +229,8 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   #. In the ``test`` folder, create a class called ``LeftHandRuleTest`` that contains at least one method to test ``LeftHandRule``'s ``slice()``.
   #. In the ``test`` folder, create a class called ``TrapezoidRuleTest`` that contains at least one method to test ``TrapezoidRule``'s ``slice()``.
 
+  You can check what the Riemann sum should be using a `Riemann Sum Calculator <https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/>`_.
+
   When all the test methods pass you are done with this exercise.
 
 
@@ -251,7 +253,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
     .. code-block:: java
     
-      rightHandRule.rsPlot(rightHandPlot, polynomial, xLeft, xRight, numberSlices);
+      rightHandRule.rsPlot(rightHandPlot, polynomial, 1, 2, 10);
   #. Also on each PlotFrame, plot the example Polynomial so you can see the line in relation to the rectangles.
   #. Finally, for each rule, print the estimated area under the curve.
 
