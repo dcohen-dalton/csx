@@ -3,7 +3,11 @@
 Matrix Assignment
 =================
 
-Matrices have many
+  .. figure:: Matrix_definition.png
+   :width: 60 %
+   :align: center
+
+`Matrices <https://en.wikipedia.org/wiki/Matrix_(mathematics)>`_ have many
 different uses and applications both in math and science. In fact, many of you
 will use matrices in physics in order to solve systems of
 equations.
