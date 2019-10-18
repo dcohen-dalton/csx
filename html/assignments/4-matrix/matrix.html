@@ -95,14 +95,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../2-riemann/riemann.html">Riemann Sums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-projectile/projectile.html">Projectile Motion</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Matrices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Matrix Assignment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#extension">Extension</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#polynomial-interpolation">Polynomial Interpolation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Matrix Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base-assignment">Base Assignment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-class">1. Matrix Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-classes">2. Test Classes</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#advanced-extensions">Advanced Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extension">Extension</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
@@ -184,7 +183,7 @@ test your matrices.</p>
 instructions you want to give your computer, you have to determine how you
 would manipulate a matrix first. So, we recommend that you start by trying to
 modify a few different matrices into the identity matrix.</p>
-<p><a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html">Link to the documentation</a></p>
+<p><a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html">Link to the Matrix JavaDoc</a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">None of the functions, either than <code class="docutils literal"><span class="pre">getEntry()</span></code> and <code class="docutils literal"><span class="pre">setEntry()</span></code>,
@@ -205,11 +204,52 @@ uninvertable) matrix by chance, so you might want to intentionally create
 singular matrices.</p>
 <div class="section" id="id1">
 <h2>Matrix Assignment<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Your assignment is to make a <code class="docutils literal"><span class="pre">Matrix</span></code> class that can invert a Matrix, as
-well as perform all of the other operations outlined in the <code class="docutils literal"><span class="pre">Matrix</span></code>
-JavaDoc.</p>
+<p>Remember to <strong>document as you go.</strong> Each method you write should
+have a documentation comment (ideally in the JavaDoc format)
+before it:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * [DESCRIPTION OF WHAT THE METHOD DOES]</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param left [DESCRIPTION OF THE &#39;left&#39; PARAMETER]</span>
+<span class="cm"> * @param right [DESCRIPTION OF THE &#39;right&#39; PARAMETER]</span>
+<span class="cm"> * @param subintervals [DESCRIPION OF THE &#39;subintervals&#39; PARAMETER]</span>
+<span class="cm"> * @return [DESCRIPTION OF WHAT THE METHOD RETURNS]</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateDeltaX</span><span class="o">(</span><span class="kt">double</span> <span class="n">left</span><span class="o">,</span> <span class="kt">double</span> <span class="n">right</span><span class="o">,</span> <span class="kt">int</span> <span class="n">subintervals</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// the actual method</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="base-assignment">
+<h2>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="matrix-class">
+<h3>1. Matrix Class<a class="headerlink" href="#matrix-class" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<p><strong>Summary</strong>: Create a Matrix object that performs common matrix operations.</p>
+<ol class="last arabic simple">
+<li>Create a package namespace called <code class="docutils literal"><span class="pre">matrix</span></code>.</li>
+<li>In <code class="docutils literal"><span class="pre">matrix</span></code> create a class called <code class="docutils literal"><span class="pre">Matrix</span></code>.</li>
+<li>Implement all the methods in the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html">Matrix JavaDoc</a></li>
+</ol>
+</div>
+</div>
+<div class="section" id="test-classes">
+<h3>2. Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<p><strong>Summary</strong>: Test the Matrix methods.</p>
+<ol class="last arabic simple">
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">MatrixTest</span></code> and import all the necessary JUnit libraries.</li>
+<li>In the class, but outside of any methods, create a global Matrix variable, e.g. <code class="docutils literal"><span class="pre">Matrix</span> <span class="pre">matrix</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Matrix();</span></code></li>
+<li>Test every method in the <code class="docutils literal"><span class="pre">matrix</span></code> object.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="section" id="extension">
-<h3>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h3>
+<h2>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h2>
 <p>There are several parts of the Extension that are highly suggested (and are
 covered in the Latex book that Dr. Gomprecht presented). In addition, there
 are some extensions that previous students have completed, although they are
@@ -229,15 +269,8 @@ when you accumulate a function’s derivative?</p>
 <p>You could also make a GUI. Even if you choose not to make a GUI, you should
 definitely have a way in which people can input their own polynomials through
 a command line interface.</p>
-<div class="section" id="polynomial-interpolation">
-<h4>Polynomial Interpolation<a class="headerlink" href="#polynomial-interpolation" title="Permalink to this headline">¶</a></h4>
 <p>Some of you actually conducted polynomial interpolation with Simpson’s Rule
 for the Riemann assignment extension.</p>
-</div>
-</div>
-</div>
-<div class="section" id="advanced-extensions">
-<h2>Advanced Extensions<a class="headerlink" href="#advanced-extensions" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
