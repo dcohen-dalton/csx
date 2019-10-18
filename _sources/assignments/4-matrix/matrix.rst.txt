@@ -70,8 +70,8 @@ Base Assignment
 
   #. Create a package namespace called ``matrix``.
   #. In ``matrix`` create a class called ``Matrix``.
-  #. Add the ``private`` ``matrix`` attribute.
-  #. Write a constructor to set the size of the ``matrix``. 
+  #. Add a ``private`` attribute called ``matrix`` that is a two-dimensional array of ``double`` s.
+  #. Write the Matrix constructor, which sets the size of the ``matrix``. 
   #. Implement the rest of the methods in the `Matrix JavaDoc <https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
   #. Optionally, create other constructors to help you fill your matrix.
 
