@@ -17,6 +17,7 @@ This online book contains the assignments for the CSX class.
    Projectile Motion <assignments/3-projectile/projectile>
    Matrices <assignments/4-matrix/matrix>
    Springs <assignments/5-springs/springs>
+   Orbitals <assignments/6-orbital/orbital>
 
 
 .. Indices and tables

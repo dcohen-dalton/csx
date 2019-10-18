@@ -120,6 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../3-projectile/projectile.html">Projectile Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4-matrix/matrix.html">Matrices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6-orbital/orbital.html">Orbitals</a></li>
 </ul>
 
             
@@ -394,7 +395,7 @@ before it:</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Asserts that the object’s <code class="docutils literal"><span class="pre">slice()</span></code> returns the correct area of the rectangle under the given Polynomial between two <code class="docutils literal"><span class="pre">x</span></code> values.</li>
+<li>Asserts that the object’s <code class="docutils literal"><span class="pre">slice()</span></code> returns the correct area of the rectangle under the given Polynomial between two <code class="docutils literal"><span class="pre">x</span></code> values. You can check what the Riemann sum should be using a <a class="reference external" href="https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/">Riemann Sum Calculator</a>.</li>
 </ul>
 </div></blockquote>
 <p>You may add more test methods as you see fit. When you are certain <code class="docutils literal"><span class="pre">RightHandRule</span></code>’s <code class="docutils literal"><span class="pre">slice()</span></code> method works, test the other rules:</p>
@@ -432,7 +433,7 @@ before it:</p>
 <li>For each rule object use <code class="docutils literal"><span class="pre">rsPlot()</span></code> to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,</li>
 </ol>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">rightHandRule</span><span class="o">.</span><span class="na">rsPlot</span><span class="o">(</span><span class="n">rightHandPlot</span><span class="o">,</span> <span class="n">polynomial</span><span class="o">,</span> <span class="n">xLeft</span><span class="o">,</span> <span class="n">xRight</span><span class="o">,</span> <span class="n">numberSlices</span><span class="o">);</span>
+<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">rightHandRule</span><span class="o">.</span><span class="na">rsPlot</span><span class="o">(</span><span class="n">rightHandPlot</span><span class="o">,</span> <span class="n">polynomial</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
 </pre></div>
 </div>
 </div></blockquote>

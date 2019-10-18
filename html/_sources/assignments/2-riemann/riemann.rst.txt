@@ -222,7 +222,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
     .. code-block:: java
 
       RightHandRule rightHandRule = new RightHandRule();
-    - Asserts that the object's ``slice()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values.
+    - Asserts that the object's ``slice()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values. You can check what the Riemann sum should be using a `Riemann Sum Calculator <https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/>`_.
 
   You may add more test methods as you see fit. When you are certain ``RightHandRule``'s ``slice()`` method works, test the other rules: 
 
@@ -251,7 +251,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
     .. code-block:: java
     
-      rightHandRule.rsPlot(rightHandPlot, polynomial, xLeft, xRight, numberSlices);
+      rightHandRule.rsPlot(rightHandPlot, polynomial, 1, 2, 10);
   #. Also on each PlotFrame, plot the example Polynomial so you can see the line in relation to the rectangles.
   #. Finally, for each rule, print the estimated area under the curve.
 
