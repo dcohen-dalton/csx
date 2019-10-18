@@ -38,7 +38,7 @@ Java class which evaluates a given Riemann sum.
    The individual rectangles' areas can be added up using a ``for``-loop.
    The more iterations (steps) of the loop, the better the approximation.
 
-.. admonition:: Exercise
+.. admonition:: Optional Exercise
 
    The syntax of ``for``-loops in Java can be hard to remember.
 
@@ -177,7 +177,7 @@ before it::
 Base Assignment
 ----------------
 
-You will write a total of **eight** Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapazoid Rule.
+You will write a total of **eight** Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.
 
 1. AbstractRiemann Class
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -194,13 +194,13 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   #. Write ``rsAcc()`` (see :download:`Area Under a Curve Slides </_static/RiemannSumSlides.pdf>` for an explanation of the accumulation function).
 
 
-2. RightHandRule, LeftHandRule and TrapazoidRule Classes
+2. RightHandRule, LeftHandRule and TrapezoidRule Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
   **Summary**: Create specific Object classes for various Riemann rules.
 
-  #. Also in the ``riemann`` package, create three child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each extending **AbstractRiemann** class.
+  #. Also in the ``riemann`` package, create three child classes: ``RightHandRule``, ``LeftHandRule``, and ``TrapezoidRule``, each extending ``AbstractRiemann`` class.
   #. Each rule should implement the abstract methods ``slice()`` and ``slicePlot()``. Do not include implementations of any other methods from ``AbstractRiemann`` in these classes; they will be automatically inherited.
   #. For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill in the trapezoids for ``TrapezoidRule``.
 
@@ -209,16 +209,27 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
 ^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
-  **Summary**: Test the Riemann rules.
+  **Summary**: Test the Riemann ``slice()`` methods.
 
-  #. In the ``test`` folder, create a class called ``RightHandRuleTest`` that contains at least one method called ``slice`` that does the following:
-    #. Creates a Polynomial (you need to ``import org.dalton.polyfun.Polynomial``), e.g. ``Polynomial poly = new Polynomial(new double[]{3, 4, 2})``.
-    #. Creates a ``RightHandRule`` object, e.g. ``RightHandRule righty = new RightHandRule();``
-    #. Asserts that ``righty.slice()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values.
+  #. In the ``test`` folder, create a class called ``RightHandRuleTest`` and add a test method called ``slice`` that does the following:
+    - Creates a Polynomial (first import ``org.dalton.polyfun.Polynomial``). E.g.,
+
+    .. code-block:: java
+
+      Polynomial poly = new Polynomial(new double[]{3, 4, 2});
+    - Creates a ``RightHandRule`` object. E.g.,
+
+    .. code-block:: java
+
+      RightHandRule rightHandRule = new RightHandRule();
+    - Asserts that the object's ``slice()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values.
+
+  You may add more test methods as you see fit. When you are certain ``RightHandRule``'s ``slice()`` method works, test the other rules: 
+
   #. In the ``test`` folder, create a class called ``LeftHandRuleTest`` that contains at least one method to test ``LeftHandRule``'s ``slice()``.
-  #. In the ``test`` folder, create a class called ``TrapazoidRuleTest`` that contains at least one method to test ``TrapazoidRule``'s ``slice()``.
+  #. In the ``test`` folder, create a class called ``TrapezoidRuleTest`` that contains at least one method to test ``TrapezoidRule``'s ``slice()``.
 
-  When the test methods pass you are done with this exercise.
+  When all the test methods pass you are done with this exercise.
 
 
 4. RiemannApp
@@ -229,18 +240,18 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
 
   #. Back in the ``riemann`` package, create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area. 
   #. Create an example Polynomial to find the area under. E.g., 3x^2-6x+3.
-  #. Create one PlotFrame for each rule. E.g.
+  #. Create one PlotFrame for each rule. E.g.,
     .. code-block:: java
 
       PlotFrame rightHandPlot = new PlotFrame(...);
-  #. Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapazoidRule`` object. E.g.
+  #. Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapezoidRule`` object. E.g.,
     .. code-block:: java
 
       RightHandRule rightHandRule = new RightHandRule();
-  #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.
+  #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
     .. code-block:: java
     
-      rightHandRule.rsPlot(rightHandPlot, polynomial, precision, xLeft, xRight, numberSlices);
+      rightHandRule.rsPlot(rightHandPlot, polynomial, xLeft, xRight, numberSlices);
   #. Also on each PlotFrame, plot the example Polynomial so you can see the line in relation to the rectangles.
   #. Finally, for each rule, print the estimated area under the curve.
 
