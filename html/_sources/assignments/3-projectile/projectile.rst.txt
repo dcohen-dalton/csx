@@ -39,7 +39,7 @@ As the name implies, it is an abstract class with some abstract methods, just
 like you learned about in ``Riemann``.
 
 Getting Started with ``AbstractSimulation``
-*******************************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Open the window to create a new class in your package.
 
@@ -65,7 +65,7 @@ Getting Started with ``AbstractSimulation``
     good place to start.
 
 Control Panel
-#############
+^^^^^^^^^^^^^^^^
 
 .. figure:: control-panel.svg
   :width: 50 %
@@ -80,7 +80,7 @@ on the **Control Panel** will run ``initialize()``. The **Step** button will
 run the code in your ``doStep()`` exactly once.
 
 ``doStep()``
-############
+^^^^^^^^^^^^^^^
 
 ``doStep()`` is a function that is repeatedly called while the simulation is
 running. You can think of it as a looping ``main()`` function, or as a
@@ -101,7 +101,7 @@ code so that it is as computationally efficient as possible.
 
 
 ``initialize()``
-################
+^^^^^^^^^^^^^^^^^
 
 ``initialize()`` runs directly after ``reset()`` and right before the first
 ``doStep()``. As the name of the function suggests, it is a good time to get
@@ -112,7 +112,7 @@ code. You can do this by running ``control.getDouble()``,
 data type.
 
 ``reset()``
-###########
+^^^^^^^^^^^^
 
 ``reset()`` runs once every time you run your simulation app. You should add
 all of the information to the **Control Panel** that you want the user to be
@@ -148,7 +148,7 @@ class.
 
 
 Base
-****
+^^^^^
 
 There are two parts of the base assignment. Part III will take much longer than
 Parts I and II; it is essentially a mini-extension. (In fact, one year it was
@@ -175,7 +175,7 @@ Before you start your base assignments, consider:
 - How will you represent your particle on the screen?
 
 Part I
-######
+^^^^^^^
 
 The first part of the assignment is just to simulate a one dimensional
 particle that is only subject to gravity and air resistance. You learned
@@ -202,7 +202,7 @@ particle with air resisance look like?
   particle's velocity?)
 
 Part II
-#######
+^^^^^^^^^
 
 The second part of the assignment is to simulate the projectile experiment you
 are conducting in your physics classes. You will need to modify the simulation
@@ -215,7 +215,7 @@ Once you have your two dimensional particle working, find the value for
 
 
 Part III
-########
+^^^^^^^^^^
 
 The Green Monster is a wall in Fenway park. It is 10 meters tall and 100
 meters away from home plate. Your assignment is to find the angle at the
@@ -223,7 +223,7 @@ minimum velocity necessary to hit a particle from 1 meter off of the ground
 at home plate over the wall.
 
 Extension
-*********
+-----------
 
 Your task for your extension is to model an object that moves in two
 dimensions.
@@ -245,7 +245,7 @@ assignment. You will present the extension to the class and the teachers, so
 be ready to talk about what you learned and to answer some questions.
 
 .. TODO: Add something about past extensions?
-=======
+
 .. figure:: fig1.svg
    :width: 25 %
    :align: center
@@ -353,4 +353,4 @@ may structure this method how you see fit, but it must:
 Setting up a Simulation
 -----------------------
 
-`<../../display-osp/display-osp.html>`__
+`Displaying Simulations using OSP <https://kjergens.github.io/csxdocs-build/display-osp/display-osp.html>`__

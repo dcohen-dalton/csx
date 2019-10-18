@@ -96,32 +96,33 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Projectile Motion</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction-to-simulations">Introduction to Simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#coding-models">Coding Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#getting-started-with-abstractsimulation">Getting Started with <code class="docutils literal"><span class="pre">AbstractSimulation</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#control-panel">Control Panel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dostep"><code class="docutils literal"><span class="pre">doStep()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#initialize"><code class="docutils literal"><span class="pre">initialize()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reset"><code class="docutils literal"><span class="pre">reset()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started-with-abstractsimulation">Getting Started with <code class="docutils literal"><span class="pre">AbstractSimulation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-panel">Control Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dostep"><code class="docutils literal"><span class="pre">doStep()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialize"><code class="docutils literal"><span class="pre">initialize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reset"><code class="docutils literal"><span class="pre">reset()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#base">Base</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#part-i">Part I</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#part-ii">Part II</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#part-iii">Part III</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-i">Part I</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-ii">Part II</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-iii">Part III</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#extension">Extension</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#extension">Extension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#introduction-to-modeling">Introduction to Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#modeling-projectile-motion">Modeling Projectile Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modeling-projectile-motion">Modeling Projectile Motion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-simulated-particle">A Simulated Particle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moving-the-particle">Moving the Particle</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-a-simulation">Setting up a Simulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../4-matrix/matrix.html">Matrices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6-orbital/orbital.html">Orbitals</a></li>
 </ul>
 
             
@@ -246,8 +247,9 @@ in order to see for yourself what its methods look like. In the future, if
 you ever want to learn more aout a class, checking the documentation is a
 good place to start.</p>
 </div>
+</div>
 <div class="section" id="control-panel">
-<h4>Control Panel<a class="headerlink" href="#control-panel" title="Permalink to this headline">¶</a></h4>
+<h3>Control Panel<a class="headerlink" href="#control-panel" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/control-panel.svg"><img alt="../../_images/control-panel.svg" src="../../_images/control-panel.svg" width="50%" /></a>
 </div>
@@ -260,7 +262,7 @@ on the <strong>Control Panel</strong> will run <code class="docutils literal"><s
 run the code in your <code class="docutils literal"><span class="pre">doStep()</span></code> exactly once.</p>
 </div>
 <div class="section" id="dostep">
-<h4><code class="docutils literal"><span class="pre">doStep()</span></code><a class="headerlink" href="#dostep" title="Permalink to this headline">¶</a></h4>
+<h3><code class="docutils literal"><span class="pre">doStep()</span></code><a class="headerlink" href="#dostep" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">doStep()</span></code> is a function that is repeatedly called while the simulation is
 running. You can think of it as a looping <code class="docutils literal"><span class="pre">main()</span></code> function, or as a
 built-in while loop that always has a true condition. Since the code
@@ -280,7 +282,7 @@ the calculations to update before the graphics update.</p>
 </div>
 </div>
 <div class="section" id="initialize">
-<h4><code class="docutils literal"><span class="pre">initialize()</span></code><a class="headerlink" href="#initialize" title="Permalink to this headline">¶</a></h4>
+<h3><code class="docutils literal"><span class="pre">initialize()</span></code><a class="headerlink" href="#initialize" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">initialize()</span></code> runs directly after <code class="docutils literal"><span class="pre">reset()</span></code> and right before the first
 <code class="docutils literal"><span class="pre">doStep()</span></code>. As the name of the function suggests, it is a good time to get
 everything set up for your simulation. During this step, you should take all
@@ -290,7 +292,7 @@ code. You can do this by running <code class="docutils literal"><span class="pre
 data type.</p>
 </div>
 <div class="section" id="reset">
-<h4><code class="docutils literal"><span class="pre">reset()</span></code><a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h4>
+<h3><code class="docutils literal"><span class="pre">reset()</span></code><a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">reset()</span></code> runs once every time you run your simulation app. You should add
 all of the information to the <strong>Control Panel</strong> that you want the user to be
 able to update with their own input. You can do this by writing
@@ -303,7 +305,6 @@ feature, during <code class="docutils literal"><span class="pre">reset()</span><
 <p class="last">Even though you’ve now read about AbstractSimulation, it is useful to get
 some practice before you jump into the assignment. Try to make a
 simulation that moves a circle upwards on the screen.</p>
-</div>
 </div>
 </div>
 </div>
@@ -347,8 +348,9 @@ should be your fields.</li>
 <li>What variables should the user be able to input?</li>
 <li>How will you represent your particle on the screen?</li>
 </ul>
+</div>
 <div class="section" id="part-i">
-<h4>Part I<a class="headerlink" href="#part-i" title="Permalink to this headline">¶</a></h4>
+<h3>Part I<a class="headerlink" href="#part-i" title="Permalink to this headline">¶</a></h3>
 <p>The first part of the assignment is just to simulate a one dimensional
 particle that is only subject to gravity and air resistance. You learned
 different ways to calculate air resistance in class. There are three different
@@ -374,7 +376,7 @@ particle’s velocity?)</p>
 </div>
 </div>
 <div class="section" id="part-ii">
-<h4>Part II<a class="headerlink" href="#part-ii" title="Permalink to this headline">¶</a></h4>
+<h3>Part II<a class="headerlink" href="#part-ii" title="Permalink to this headline">¶</a></h3>
 <p>The second part of the assignment is to simulate the projectile experiment you
 are conducting in your physics classes. You will need to modify the simulation
 you made for Part I in order to show a projectile moving in two dimensions.
@@ -384,7 +386,7 @@ to add this second dimension.</p>
 <strong>beta</strong> that accounts for your experimental error.</p>
 </div>
 <div class="section" id="part-iii">
-<h4>Part III<a class="headerlink" href="#part-iii" title="Permalink to this headline">¶</a></h4>
+<h3>Part III<a class="headerlink" href="#part-iii" title="Permalink to this headline">¶</a></h3>
 <p>The Green Monster is a wall in Fenway park. It is 10 meters tall and 100
 meters away from home plate. Your assignment is to find the angle at the
 minimum velocity necessary to hit a particle from 1 meter off of the ground
@@ -392,7 +394,7 @@ at home plate over the wall.</p>
 </div>
 </div>
 <div class="section" id="extension">
-<h3>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h3>
+<h2>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h2>
 <p>Your task for your extension is to model an object that moves in two
 dimensions.</p>
 <p>Physics extensions are very open ended, and the above prompt is not very
@@ -408,16 +410,8 @@ why the formulas that you use will give you good approximations.</p>
 <code class="docutils literal"><span class="pre">Riemann</span></code>, you will build off of the code you already wrote for your base
 assignment. You will present the extension to the class and the teachers, so
 be ready to talk about what you learned and to answer some questions.</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">align:</th><td class="field-body">center</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/fig11.svg"><img alt="../../_images/fig11.svg" src="../../_images/fig11.svg" width="25%" /></a>
 </div>
 </div>
 <div class="section" id="introduction-to-modeling">
@@ -462,6 +456,8 @@ water?</li>
 </ul>
 <p>You will begin to model the answers to these questions by creating a computer
 simulation of the rock’s motion.</p>
+<div class="section" id="a-simulated-particle">
+<h3>A Simulated Particle<a class="headerlink" href="#a-simulated-particle" title="Permalink to this headline">¶</a></h3>
 <p>You will begin by creating a <code class="docutils literal"><span class="pre">Particle1D</span></code> class to model the motion of a
 particle—in this case, a rock—in one dimension. Just like the real rock,
 we want our simulated rock to have certain properties at a given time. These
@@ -473,6 +469,9 @@ properties correspond to the <strong>fields</strong> (member variables) of the
 </ul>
 <p>You should add a constructor to <code class="docutils literal"><span class="pre">Particle1D</span></code> which takes initial values
 for these properties and initializes the particle accordingly.</p>
+</div>
+<div class="section" id="moving-the-particle">
+<h3>Moving the Particle<a class="headerlink" href="#moving-the-particle" title="Permalink to this headline">¶</a></h3>
 <p>Now that the <code class="docutils literal"><span class="pre">Particle1D</span></code> class has fields which describe its properties,
 it’s time to add a method, <code class="docutils literal"><span class="pre">step()</span></code> which handles its motion. While
 particles move continuously in real life, you will model them as moving in
@@ -506,9 +505,10 @@ output LARGEST
 your program, rather then the computer.</p>
 </div>
 </div>
+</div>
 <div class="section" id="setting-up-a-simulation">
 <h2>Setting up a Simulation<a class="headerlink" href="#setting-up-a-simulation" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="../../display-osp/display-osp.html">../../display-osp/display-osp.html</a></p>
+<p><a class="reference external" href="https://kjergens.github.io/csxdocs-build/display-osp/display-osp.html">Displaying Simulations using OSP</a></p>
 </div>
 </div>
 

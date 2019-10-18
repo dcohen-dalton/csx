@@ -3,14 +3,12 @@
 Matrix Assignment
 =================
 
-By now, you've heard Dr. Gomprecht's lecture on matrices, which can be found
-`here <../../_static/MatrixSlides.pdf>`_. Matrices, as he told you, have many
+Matrices have many
 different uses and applications both in math and science. In fact, many of you
-will use matrices in physics later in the year in order to solve systems of
+will use matrices in physics in order to solve systems of
 equations.
 
-As with the last assignment, Dr. Gomprecht has already scaffolded some of the
-code for you. He has a list of methods that he wants your class to include. In
+As with the last assignment, there is a list of methods that for your class to include. In
 addition, you should work to create some of your own test classes in order to
 test your matrices.
 
@@ -19,11 +17,11 @@ instructions you want to give your computer, you have to determine how you
 would manipulate a matrix first. So, we recommend that you start by trying to
 modify a few different matrices into the identity matrix.
 
-`Link to the documentation
-<../../_static/matrix-javadoc/main/Matrix.html>`_
+`Link to the Matrix JavaDoc
+<https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
 
 .. note::
-    None of the functions, either than ``getEntry()`` and ``setEntry()``,
+    except for ``setEntry()``, none of the functions 
     should actually modify the original ``Matrix``. Instead, the functions
     return an entirely new ``Matrix``. Make sure, when you are filling out
     these functions, that you are not modifying the original ``Matrix``, but
@@ -45,13 +43,68 @@ singular matrices.
 Matrix Assignment
 -----------------
 
-Your assignment is to make a ``Matrix`` class that can invert a Matrix, as
-well as perform all of the other operations outlined in the ``Matrix``
-JavaDoc.
+Remember to **document as you go.** Each method you write should
+have a documentation comment (ideally in the JavaDoc format)
+before it::
 
+    /**
+     * [DESCRIPTION OF WHAT THE METHOD DOES]
+     *
+     * @param left [DESCRIPTION OF THE 'left' PARAMETER]
+     * @param right [DESCRIPTION OF THE 'right' PARAMETER]
+     * @param subintervals [DESCRIPION OF THE 'subintervals' PARAMETER]
+     * @return [DESCRIPTION OF WHAT THE METHOD RETURNS]
+     */
+    public double calculateDeltaX(double left, double right, int subintervals) {
+        // the actual method
+    }
+
+Base Assignment
+----------------  
+
+1. Matrix Class
+^^^^^^^^^^^^^^^^^^^  
+.. admonition:: Exercise
+
+  **Summary**: Create a Matrix object that performs common matrix operations.
+
+  #. Create a package namespace called ``matrix``.
+  #. In ``matrix`` create a class called ``Matrix``.
+  #. Add a ``private`` attribute called ``matrix`` that is a two-dimensional array of ``double`` s.
+  #. Write the Matrix constructor, which sets the size of the ``matrix``. 
+  #. Implement the rest of the methods in the `Matrix JavaDoc <https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
+  #. Optionally, create other constructors to help you fill your matrix.
+
+2. Test Classes
+^^^^^^^^^^^^^^^^^
+.. admonition:: Exercise
+
+  **Summary**: Test the Matrix methods.
+
+  #. In the ``test`` folder, create a class called ``MatrixTest`` and import all the necessary JUnit libraries.
+  #. In the class, but outside of any methods, create a global Matrix variable of some size, e.g. ``Matrix matrix = new Matrix(10, 10);``
+  #. Write several test methods to test every method in the ``matrix`` object. You can check the answers to an inverse matrix using a `matrix inverse calculator <https://matrix.reshish.com/inverse.php>`_.
+
+  When all of the tests pass you are done with this exercise.
+
+3. MatrixApp
+^^^^^^^^^^^^^^^^^
+.. admonition:: Exercise
+
+  **Summary**: Use the Matrix object.
+
+  #. Back in ``matrix``, create a new class called ``MatrixApp``.
+  #. Create a ``main`` method.
+  #. Create an example ``Matrix`` object and print it to the console. Then print it's inverse.
+
+  When you have output similar to the following you are done with this exercise.
+
+  .. figure:: matrix.png
+   :width: 80 %
+   :align: center
 
 Extension
-^^^^^^^^^
+------------
 
 There are several parts of the Extension that are highly suggested (and are
 covered in the Latex book that Dr. Gomprecht presented). In addition, there
@@ -73,10 +126,7 @@ definitely have a way in which people can input their own polynomials through
 a command line interface.
 
 Polynomial Interpolation
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Some of you actually conducted polynomial interpolation with Simpson's Rule
 for the Riemann assignment extension. 
-
-Advanced Extensions
--------------------

@@ -102,7 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#base-assignment">Base Assignment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#abstractriemann-class">1. AbstractRiemann Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#righthandrule-lefthandrule-and-trapazoidrule-classes">2. RightHandRule, LeftHandRule and TrapazoidRule Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#righthandrule-lefthandrule-and-trapezoidrule-classes">2. RightHandRule, LeftHandRule and TrapezoidRule Classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-classes">3. Test Classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#riemannapp">4. RiemannApp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#analysis">5. Analysis</a></li>
@@ -120,6 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../3-projectile/projectile.html">Projectile Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4-matrix/matrix.html">Matrices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6-orbital/orbital.html">Orbitals</a></li>
 </ul>
 
             
@@ -208,13 +209,13 @@ steps, the calculation involved in each step is simple. In Compsci 1 and 2,
 you learned how to tell a computer to do the same thing over and over using
 <code class="docutils literal"><span class="pre">for</span></code> and <code class="docutils literal"><span class="pre">while</span></code>-loops. Now, you will apply this knowledge to create a
 Java class which evaluates a given Riemann sum.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/fig2.svg"><img alt="../../_images/fig2.svg" src="../../_images/fig2.svg" width="80%" /></a>
 <p class="caption"><span class="caption-text">The individual rectangles’ areas can be added up using a <code class="docutils literal"><span class="pre">for</span></code>-loop.
 The more iterations (steps) of the loop, the better the approximation.</span></p>
 </div>
-<div class="admonition-exercise admonition">
-<p class="first admonition-title">Exercise</p>
+<div class="admonition-optional-exercise admonition">
+<p class="first admonition-title">Optional Exercise</p>
 <p>The syntax of <code class="docutils literal"><span class="pre">for</span></code>-loops in Java can be hard to remember.</p>
 <ul class="last simple">
 <li>Use a <code class="docutils literal"><span class="pre">for</span></code>-loop to print the first 100 positive integers.</li>
@@ -274,7 +275,7 @@ endpoints of the interval and the number of slices.</li>
 <p>Notice that only the third step—calculating the area of each slice—depends
 upon the specific rule being used; the others are the same regardless of the
 rule.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/fig3.svg"><img alt="../../_images/fig3.svg" src="../../_images/fig3.svg" width="95%" /></a>
 <p class="caption"><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum.
 While the slices’ shapes are different, they exist over the same subintervals in
@@ -288,7 +289,7 @@ pages are recommended for reference:</p>
 <li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Oracle - Inheritance Tutorial</a></li>
 <li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">Oracle - Abstract Tutorial</a></li>
 </ul>
-<p>As shown in the JavaDoc, the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you will create will be
+<p>As shown in the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a>, the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you will create will be
 an <strong>abstract class</strong>. As such, you will never directly construct a <code class="docutils literal"><span class="pre">new</span>
 <span class="pre">AbstractRiemann()</span></code>; instead, you will create <strong>child classes</strong> (also known as
 <strong>subclasses</strong>) of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> for each Riemann sum rule. In this way, you
@@ -315,7 +316,7 @@ what a fictional rule called <code class="docutils literal"><span class="pre">Ov
 <p>As shown in <code class="docutils literal"><span class="pre">OvalRule</span></code>, you do not have to reimplement all of the
 methods in <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>. Only the abstract methods should be
 written out in the subclasses.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/riemann-diagram.png"><img alt="../../_images/riemann-diagram.png" src="../../_images/riemann-diagram.png" style="width: 85%;" /></a>
 <p class="caption"><span class="caption-text">This class diagram shows the relationship between <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> and
 its child classes.</span></p>
@@ -343,7 +344,7 @@ before it:</p>
 </div>
 <div class="section" id="base-assignment">
 <h2>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h2>
-<p>You will write a total of <strong>eight</strong> Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapazoid Rule.</p>
+<p>You will write a total of <strong>eight</strong> Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.</p>
 <div class="section" id="abstractriemann-class">
 <h3>1. AbstractRiemann Class<a class="headerlink" href="#abstractriemann-class" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
@@ -360,13 +361,13 @@ before it:</p>
 </ol>
 </div>
 </div>
-<div class="section" id="righthandrule-lefthandrule-and-trapazoidrule-classes">
-<h3>2. RightHandRule, LeftHandRule and TrapazoidRule Classes<a class="headerlink" href="#righthandrule-lefthandrule-and-trapazoidrule-classes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="righthandrule-lefthandrule-and-trapezoidrule-classes">
+<h3>2. RightHandRule, LeftHandRule and TrapezoidRule Classes<a class="headerlink" href="#righthandrule-lefthandrule-and-trapezoidrule-classes" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Create specific Object classes for various Riemann rules.</p>
 <ol class="last arabic simple">
-<li>Also in the <code class="docutils literal"><span class="pre">riemann</span></code> package, create three child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each extending <strong>AbstractRiemann</strong> class.</li>
+<li>Also in the <code class="docutils literal"><span class="pre">riemann</span></code> package, create three child classes: <code class="docutils literal"><span class="pre">RightHandRule</span></code>, <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>, each extending <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class.</li>
 <li>Each rule should implement the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> in these classes; they will be automatically inherited.</li>
 <li>For <code class="docutils literal"><span class="pre">slicePlot()</span></code> , make sure the plots correspond to the specific rules. You don’t need to fill in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>.</li>
 </ol>
@@ -376,13 +377,33 @@ before it:</p>
 <h3>3. Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
-<p><strong>Summary</strong>: Test the Riemann rules.</p>
+<p><strong>Summary</strong>: Test the Riemann <code class="docutils literal"><span class="pre">slice()</span></code> methods.</p>
 <ol class="arabic simple">
-<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">RightHandRule.slice()</span></code>. In other words, assert that <code class="docutils literal"><span class="pre">slice()</span></code> returns the correct area of the rectangle under a given Polynomial between two <code class="docutils literal"><span class="pre">x</span></code> values.</li>
-<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">LeftHandRule.slice()</span></code>.</li>
-<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">TrapazoidRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">TrapazoidRule.slice()</span></code>.</li>
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">RightHandRuleTest</span></code> and add a test method called <code class="docutils literal"><span class="pre">slice</span></code> that does the following:</li>
 </ol>
-<p class="last">When the test methods pass you are done with this exercise.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Creates a Polynomial (first import <code class="docutils literal"><span class="pre">org.dalton.polyfun.Polynomial</span></code>). E.g.,</li>
+</ul>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Polynomial</span> <span class="n">poly</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Polynomial</span><span class="o">(</span><span class="k">new</span> <span class="kt">double</span><span class="o">[]{</span><span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">2</span><span class="o">});</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Creates a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object. E.g.,</li>
+</ul>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">RightHandRule</span> <span class="n">rightHandRule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RightHandRule</span><span class="o">();</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Asserts that the object’s <code class="docutils literal"><span class="pre">slice()</span></code> returns the correct area of the rectangle under the given Polynomial between two <code class="docutils literal"><span class="pre">x</span></code> values. You can check what the Riemann sum should be using a <a class="reference external" href="https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/">Riemann Sum Calculator</a>.</li>
+</ul>
+</div></blockquote>
+<p>You may add more test methods as you see fit. When you are certain <code class="docutils literal"><span class="pre">RightHandRule</span></code>’s <code class="docutils literal"><span class="pre">slice()</span></code> method works, test the other rules:</p>
+<ol class="arabic simple">
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">LeftHandRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">LeftHandRule</span></code>’s <code class="docutils literal"><span class="pre">slice()</span></code>.</li>
+<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">TrapezoidRuleTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">TrapezoidRule</span></code>’s <code class="docutils literal"><span class="pre">slice()</span></code>.</li>
+</ol>
+<p class="last">When all the test methods pass you are done with this exercise.</p>
 </div>
 </div>
 <div class="section" id="riemannapp">
@@ -393,7 +414,7 @@ before it:</p>
 <ol class="arabic simple">
 <li>Back in the <code class="docutils literal"><span class="pre">riemann</span></code> package, create <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area.</li>
 <li>Create an example Polynomial to find the area under. E.g., 3x^2-6x+3.</li>
-<li>Create one PlotFrame for each rule. E.g.</li>
+<li>Create one PlotFrame for each rule. E.g.,</li>
 </ol>
 <blockquote>
 <div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">PlotFrame</span> <span class="n">rightHandPlot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlotFrame</span><span class="o">(...);</span>
@@ -401,7 +422,7 @@ before it:</p>
 </div>
 </div></blockquote>
 <ol class="arabic simple">
-<li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapazoidRule</span></code> object. E.g.</li>
+<li>Create a <code class="docutils literal"><span class="pre">RightHandRule</span></code> object, a <code class="docutils literal"><span class="pre">LeftHandRule</span></code> object, and a <code class="docutils literal"><span class="pre">TrapezoidRule</span></code> object. E.g.,</li>
 </ol>
 <blockquote>
 <div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">RightHandRule</span> <span class="n">rightHandRule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RightHandRule</span><span class="o">();</span>
@@ -409,10 +430,10 @@ before it:</p>
 </div>
 </div></blockquote>
 <ol class="arabic simple">
-<li>For each rule object use <code class="docutils literal"><span class="pre">rsPlot()</span></code> to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.</li>
+<li>For each rule object use <code class="docutils literal"><span class="pre">rsPlot()</span></code> to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,</li>
 </ol>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">rightHandRule</span><span class="o">.</span><span class="na">rsPlot</span><span class="o">(</span><span class="n">rightHandPlot</span><span class="o">,</span> <span class="n">polynomial</span><span class="o">,</span> <span class="n">dataSetIndex</span><span class="o">,</span> <span class="n">precision</span><span class="o">,</span> <span class="n">xLeft</span><span class="o">,</span> <span class="n">xRight</span><span class="o">,</span> <span class="n">numberSlices</span><span class="o">);</span>
+<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">rightHandRule</span><span class="o">.</span><span class="na">rsPlot</span><span class="o">(</span><span class="n">rightHandPlot</span><span class="o">,</span> <span class="n">polynomial</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -488,7 +509,7 @@ produces a curve, then calculate the length of that curve in a given
 subinterval Hint: instead of breaking up an area into rectangles, break up the
 curve into line segments. You will need the distance formula  and the Java function <code class="docutils literal"><span class="pre">Math.sqrt()</span></code> to
 calculate the length of each segment.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/fig4.svg"><img alt="../../_images/fig4.svg" src="../../_images/fig4.svg" width="60%" /></a>
 <p class="caption"><span class="caption-text">Arc length can be approximated by dividing the curve and replacing the
 smaller arcs with segments.</span></p>

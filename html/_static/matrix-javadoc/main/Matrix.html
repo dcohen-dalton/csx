@@ -116,11 +116,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Matrix</span>
 extends java.lang.Object</pre>
-<div class="block">Class for inverting a matrix</div>
-<dl>
-<dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>David Gomprecht</dd>
-</dl>
+<div class="block">Object Class for representing a matrix</div>
 </li>
 </ul>
 </div>
@@ -143,7 +139,8 @@ extends java.lang.Object</pre>
 </tr>
 <tbody>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">Matrix</a></span>()</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">Matrix</a></span>(int&nbsp;rows,
+        int&nbsp;cols)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
@@ -181,7 +178,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="Matrix.html" title="class in main">Matrix</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#invert()">invert</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Inverts this Matrix</div>
+<div class="block">Returns an inverted version of this Matrix</div>
 </td>
 </tr>
 <tr class="altColor" id="i2">
@@ -190,21 +187,21 @@ extends java.lang.Object</pre>
                int&nbsp;firstRow,
                int&nbsp;secondRow)</code></th>
 <td class="colLast">
-<div class="block">Adds a scalar multiple of the first row to the second row</div>
+<div class="block">Returns a matrix that has added a scalar multiple of the first row to the second row of this Matrix.</div>
 </td>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code><a href="Matrix.html" title="class in main">Matrix</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#plus(main.Matrix)">plus</a></span>&#8203;(<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;alice)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#plus(main.Matrix)">plus</a></span>&#8203;(<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;matrix)</code></th>
 <td class="colLast">
-<div class="block">Adds a given Matrix to this Matrix</div>
+<div class="block">Returns a Matrix that is the sum of a given Matrix and this Matrix.</div>
 </td>
 </tr>
 <tr class="altColor" id="i4">
 <td class="colFirst"><code><a href="Matrix.html" title="class in main">Matrix</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rowReduce()">rowReduce</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Row reduces a matrix</div>
+<div class="block">Returns a Matrix that is the row reduction of this  Matrix</div>
 </td>
 </tr>
 <tr class="rowColor" id="i5">
@@ -212,7 +209,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scalarTimesRow(double,int)">scalarTimesRow</a></span>&#8203;(double&nbsp;scalar,
               int&nbsp;rowNumber)</code></th>
 <td class="colLast">
-<div class="block">Multiplies a scalar by a row of this Matrix</div>
+<div class="block">Returns a Matrix that has multiplied a scalar by a row of this Matrix.</div>
 </td>
 </tr>
 <tr class="altColor" id="i6">
@@ -221,7 +218,7 @@ extends java.lang.Object</pre>
         int&nbsp;columnNumber,
         double&nbsp;value)</code></th>
 <td class="colLast">
-<div class="block">Sets the value at a specific spot in the matrix</div>
+<div class="block">Sets the value at a specific spot in this Matrix.</div>
 </td>
 </tr>
 <tr class="rowColor" id="i7">
@@ -229,15 +226,15 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#switchRows(int,int)">switchRows</a></span>&#8203;(int&nbsp;firstRow,
           int&nbsp;secondRow)</code></th>
 <td class="colLast">
-<div class="block">Switches two rows in this Matrix</div>
+<div class="block">Returns a Matrix that has switched two rows in this Matrix.</div>
 </td>
 </tr>
 <tr class="altColor" id="i8">
 <td class="colFirst"><code><a href="Matrix.html" title="class in main">Matrix</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#times(main.Matrix)">times</a></span>&#8203;(<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;trixie)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#times(main.Matrix)">times</a></span>&#8203;(<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;matrix)</code></th>
 <td class="colLast">
 <div class="block">Multiplies this Matrix by a given Matrix - remember that
- Matrix multiplication is not commutative.</div>
+ Matrix multiplication is not commutative - and returns the product Matrix.</div>
 </td>
 </tr>
 <tr class="rowColor" id="i9">
@@ -280,7 +277,8 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Matrix</h4>
-<pre>public&nbsp;Matrix()</pre>
+<pre>public&nbsp;Matrix(int&nbsp;rows,
+        int&nbsp;cols)</pre>
 </li>
 </ul>
 </li>
@@ -335,11 +333,11 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>plus</h4>
-<pre class="methodSignature">public&nbsp;<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;plus&#8203;(<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;alice)</pre>
-<div class="block">Adds a given Matrix to this Matrix</div>
+<pre class="methodSignature">public&nbsp;<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;plus&#8203;(<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;matrix)</pre>
+<div class="block">Returns a Matrix that is the sum of a given Matrix and this Matrix.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>alice</code> - Matrix being added to this Matrix</dd>
+<dd><code>matrix</code> - Matrix being added to this Matrix</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>sum of the two matrices</dd>
 </dl>
@@ -351,12 +349,11 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>times</h4>
-<pre class="methodSignature">public&nbsp;<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;times&#8203;(<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;trixie)</pre>
-<div class="block">Multiplies this Matrix by a given Matrix - remember that
- Matrix multiplication is not commutative.</div>
+<pre class="methodSignature">public&nbsp;<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;times&#8203;(<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;matrix)</pre>
+<div class="block">Multiplies this Matrix by a given Matrix - remember that Matrix multiplication is not commutative - and returns the product Matrix.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>trixie</code> - Matrix being multiplied by this Matrix</dd>
+<dd><code>matrix</code> - Matrix being multiplied by this Matrix</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>product of the two matrices</dd>
 </dl>
@@ -370,7 +367,7 @@ extends java.lang.Object</pre>
 <h4>scalarTimesRow</h4>
 <pre class="methodSignature">public&nbsp;<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;scalarTimesRow&#8203;(double&nbsp;scalar,
                              int&nbsp;rowNumber)</pre>
-<div class="block">Multiplies a scalar by a row of this Matrix</div>
+<div class="block">Returns a Matrix that has multiplied a scalar by a row of this Matrix.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>scalar</code> - number by which each entry in the specified row will be multiplied</dd>
@@ -388,7 +385,7 @@ extends java.lang.Object</pre>
 <h4>switchRows</h4>
 <pre class="methodSignature">public&nbsp;<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;switchRows&#8203;(int&nbsp;firstRow,
                          int&nbsp;secondRow)</pre>
-<div class="block">Switches two rows in this Matrix</div>
+<div class="block">Returns a Matrix that has switched two rows in this Matrix.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>firstRow</code> - first row being switched</dd>
@@ -407,7 +404,7 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;<a href="Matrix.html" title="class in main">Matrix</a>&nbsp;linearComboRows&#8203;(double&nbsp;scalar,
                               int&nbsp;firstRow,
                               int&nbsp;secondRow)</pre>
-<div class="block">Adds a scalar multiple of the first row to the second row</div>
+<div class="block">Returns a matrix that has added a scalar multiple of the first row to the second row of this Matrix.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>scalar</code> - number by which each entry in the first row will be multiplied</dd>
