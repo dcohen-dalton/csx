@@ -17,7 +17,7 @@ instructions you want to give your computer, you have to determine how you
 would manipulate a matrix first. So, we recommend that you start by trying to
 modify a few different matrices into the identity matrix.
 
-`Link to the documentation
+`Link to the Matrix JavaDoc
 <https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
 
 .. note::
@@ -43,13 +43,47 @@ singular matrices.
 Matrix Assignment
 -----------------
 
-Your assignment is to make a ``Matrix`` class that can invert a Matrix, as
-well as perform all of the other operations outlined in the ``Matrix``
-JavaDoc.
+Remember to **document as you go.** Each method you write should
+have a documentation comment (ideally in the JavaDoc format)
+before it::
 
+    /**
+     * [DESCRIPTION OF WHAT THE METHOD DOES]
+     *
+     * @param left [DESCRIPTION OF THE 'left' PARAMETER]
+     * @param right [DESCRIPTION OF THE 'right' PARAMETER]
+     * @param subintervals [DESCRIPION OF THE 'subintervals' PARAMETER]
+     * @return [DESCRIPTION OF WHAT THE METHOD RETURNS]
+     */
+    public double calculateDeltaX(double left, double right, int subintervals) {
+        // the actual method
+    }
+
+Base Assignment
+----------------  
+
+1. Matrix Class
+^^^^^^^^^^^^^^^^^^^  
+.. admonition:: Exercise
+
+  **Summary**: Create a Matrix object that performs common matrix operations.
+
+  #. Create a package namespace called ``matrix``.
+  #. In ``matrix`` create a class called ``Matrix``.
+  #. Implement all the methods in the `Matrix JavaDoc <https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
+
+2. Test Classes
+^^^^^^^^^^^^^^^^^
+.. admonition:: Exercise
+
+  **Summary**: Test the Matrix methods.
+
+  #. In the ``test`` folder, create a class called ``MatrixTest`` and import all the necessary JUnit libraries.
+  #. In the class, but outside of any methods, create a global Matrix variable, e.g. ``Matrix matrix = new Matrix();``
+  #. Test every method in the ``matrix`` object.
 
 Extension
-^^^^^^^^^
+------------
 
 There are several parts of the Extension that are highly suggested (and are
 covered in the Latex book that Dr. Gomprecht presented). In addition, there
@@ -75,6 +109,3 @@ Polynomial Interpolation
 
 Some of you actually conducted polynomial interpolation with Simpson's Rule
 for the Riemann assignment extension. 
-
-Advanced Extensions
--------------------
