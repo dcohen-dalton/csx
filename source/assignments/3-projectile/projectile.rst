@@ -353,4 +353,4 @@ may structure this method how you see fit, but it must:
 Setting up a Simulation
 -----------------------
 
-`<../../display-osp/display-osp.html>`__
+`Displaying Simulations using OSP <https://kjergens.github.io/csxdocs-build/display-osp/display-osp.html>`__

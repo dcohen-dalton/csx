@@ -6,7 +6,7 @@ Getting Started
 Welcome to CSX
 -----------------------
 
-CSX, also know as Advanced Math and Physics Modelling, is three classes taught
+CSX, also know as Advanced Math and Physics Modeling, is three classes taught
 in a unified manner. The classes are Precalculus 2A, Physics A, and Computer
 Science X. In teaching Math and Physics in a unified way, we recognize the
 historical development of the two subjects. Math and Physics fit together like
