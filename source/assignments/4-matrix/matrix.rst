@@ -83,7 +83,7 @@ Base Assignment
 
   #. In the ``test`` folder, create a class called ``MatrixTest`` and import all the necessary JUnit libraries.
   #. In the class, but outside of any methods, create a global Matrix variable of some size, e.g. ``Matrix matrix = new Matrix(10, 10);``
-  #. Write several test methods to every method in the ``matrix`` object.
+  #. Write several test methods to test every method in the ``matrix`` object.
 
 Extension
 ------------
