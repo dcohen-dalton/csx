@@ -12,7 +12,8 @@ different uses and applications both in math and science. In fact, many of you
 will use matrices in physics in order to solve systems of
 equations.
 
-As with the last assignment, there is a list of methods that for your class to include. In
+As with the Riemann Sums assignment, there is `a JavaDoc
+<https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_ with methods for your class to include. In
 addition, you should work to create some of your own test classes in order to
 test your matrices.
 
@@ -21,14 +22,12 @@ instructions you want to give your computer, you have to determine how you
 would manipulate a matrix first. So, we recommend that you start by trying to
 modify a few different matrices into the identity matrix.
 
-`Link to the Matrix JavaDoc
-<https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
 
 .. note::
-    except for ``setEntry()``, none of the functions 
-    should actually modify the original ``Matrix``. Instead, the functions
-    return an entirely new ``Matrix``. Make sure, when you are filling out
-    these functions, that you are not modifying the original ``Matrix``, but
+    Except for ``setEntry()``, none of the methods 
+    should actually modify the original ``Matrix``. Instead, they 
+    return an entirely new ``Matrix``. Make sure, when you are implementing 
+    these methods, that you are not modifying the original ``Matrix``, but
     rather the ``Matrix`` that you will return.
 
 It will be very important to identify your edge cases when you are testing.
