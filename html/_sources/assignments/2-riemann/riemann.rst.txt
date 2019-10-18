@@ -256,7 +256,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
       RightHandRule rightHandRule = new RightHandRule();
 
   #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
-  
+
     .. code-block:: java
     
       rightHandRule.rsPlot(rightHandPlot, polynomial, 1, 2, 10);
@@ -267,19 +267,19 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   When your RiemannApp prints estimated areas and launches three PlotFrames similar to the following, you are done with this exercise.
 
   .. figure:: areas.png
-   :width: 40 %
+   :width: 80 %
    :align: center
 
   .. figure:: rightRule.png
-   :width: 40 %
+   :width: 50 %
    :align: center
 
   .. figure:: leftRule.png
-   :width: 40 %
+   :width: 50 %
    :align: center
 
   .. figure:: trapRule.png
-   :width: 40 %
+   :width: 50 %
    :align: center
 
 
