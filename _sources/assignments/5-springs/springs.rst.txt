@@ -80,7 +80,7 @@ string. Once you have your string, send a wave down the string in order to
 make a transverse wave. Your goal is to mimic the motion of a cello string
 once it is plucked.
 
-..note::
+.. note::
     Cello strings are not at their equilibrium length when they are on a
     cello. Instead, they are pulled taut. This means that when you "pluck"
     your string in your model, each of the springs should be stretched past

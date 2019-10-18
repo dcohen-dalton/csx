@@ -120,7 +120,7 @@ pages are recommended for reference:
 * `Oracle - Inheritance Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html>`_
 * `Oracle - Abstract Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html>`_
 
-As shown in the JavaDoc, the ``AbstractRiemann`` class which you will create will be
+As shown in the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_, the ``AbstractRiemann`` class which you will create will be
 an **abstract class**. As such, you will never directly construct a ``new
 AbstractRiemann()``; instead, you will create **child classes** (also known as
 **subclasses**) of ``AbstractRiemann`` for each Riemann sum rule. In this way, you
