@@ -83,7 +83,9 @@ Base Assignment
 
   #. In the ``test`` folder, create a class called ``MatrixTest`` and import all the necessary JUnit libraries.
   #. In the class, but outside of any methods, create a global Matrix variable of some size, e.g. ``Matrix matrix = new Matrix(10, 10);``
-  #. Write several test methods to test every method in the ``matrix`` object.
+  #. Write several test methods to test every method in the ``matrix`` object. You can check the answers to an inverse matrix using a `matrix inverse calculator <https://matrix.reshish.com/inverse.php>`_.
+
+  When all of the tests pass you are done with this exercise.
 
 3. MatrixApp
 ^^^^^^^^^^^^^^^^^
@@ -93,7 +95,13 @@ Base Assignment
 
   #. Back in ``matrix``, create a new class called ``MatrixApp``.
   #. Create a ``main`` method.
-  #. Create an example ``Matrix`` object and print it to the console.
+  #. Create an example ``Matrix`` object and print it to the console. Then print it's inverse.
+
+  When you have output similar to the following you are done with this exercise.
+
+  .. figure:: matrix.png
+   :width: 80 %
+   :align: center
 
 Extension
 ------------

@@ -212,16 +212,19 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   **Summary**: Test the Riemann ``slice()`` methods.
 
   #. In the ``test`` folder, create a class called ``RightHandRuleTest`` and add a test method called ``slice`` that does the following:
+
     - Creates a Polynomial (first import ``org.dalton.polyfun.Polynomial``). E.g.,
 
     .. code-block:: java
 
       Polynomial poly = new Polynomial(new double[]{3, 4, 2});
+
     - Creates a ``RightHandRule`` object. E.g.,
 
     .. code-block:: java
 
       RightHandRule rightHandRule = new RightHandRule();
+
     - Asserts that the object's ``slice()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values. You can check what the Riemann sum should be using a `Riemann Sum Calculator <https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/>`_.
 
   You may add more test methods as you see fit. When you are certain ``RightHandRule``'s ``slice()`` method works, test the other rules: 
@@ -241,17 +244,23 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   #. Back in the ``riemann`` package, create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area. 
   #. Create an example Polynomial to find the area under. E.g., 3x^2-6x+3.
   #. Create one PlotFrame for each rule. E.g.,
+
     .. code-block:: java
 
       PlotFrame rightHandPlot = new PlotFrame(...);
+
   #. Create a ``RightHandRule`` object, a ``LeftHandRule`` object, and a ``TrapezoidRule`` object. E.g.,
+
     .. code-block:: java
 
       RightHandRule rightHandRule = new RightHandRule();
+
   #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
+  
     .. code-block:: java
     
       rightHandRule.rsPlot(rightHandPlot, polynomial, 1, 2, 10);
+
   #. Also on each PlotFrame, plot the example Polynomial so you can see the line in relation to the rectangles.
   #. Finally, for each rule, print the estimated area under the curve.
 
