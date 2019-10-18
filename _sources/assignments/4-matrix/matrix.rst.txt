@@ -21,7 +21,7 @@ modify a few different matrices into the identity matrix.
 <https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
 
 .. note::
-    None of the functions, either than ``getEntry()`` and ``setEntry()``,
+    except for ``setEntry()``, none of the functions 
     should actually modify the original ``Matrix``. Instead, the functions
     return an entirely new ``Matrix``. Make sure, when you are filling out
     these functions, that you are not modifying the original ``Matrix``, but
@@ -70,7 +70,10 @@ Base Assignment
 
   #. Create a package namespace called ``matrix``.
   #. In ``matrix`` create a class called ``Matrix``.
-  #. Implement all the methods in the `Matrix JavaDoc <https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
+  #. Add the ``private`` ``matrix`` attribute.
+  #. Write a constructor to set the size of the ``matrix``. 
+  #. Implement the rest of the methods in the `Matrix JavaDoc <https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
+  #. Optionally, create other constructors to help you fill your matrix.
 
 2. Test Classes
 ^^^^^^^^^^^^^^^^^
@@ -80,7 +83,7 @@ Base Assignment
 
   #. In the ``test`` folder, create a class called ``MatrixTest`` and import all the necessary JUnit libraries.
   #. In the class, but outside of any methods, create a global Matrix variable, e.g. ``Matrix matrix = new Matrix();``
-  #. Test every method in the ``matrix`` object.
+  #. Write several test methods to every method in the ``matrix`` object.
 
 Extension
 ------------
@@ -105,7 +108,7 @@ definitely have a way in which people can input their own polynomials through
 a command line interface.
 
 Polynomial Interpolation
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Some of you actually conducted polynomial interpolation with Simpson's Rule
 for the Riemann assignment extension. 

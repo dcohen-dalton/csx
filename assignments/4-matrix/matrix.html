@@ -101,7 +101,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#test-classes">2. Test Classes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#extension">Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extension">Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#polynomial-interpolation">Polynomial Interpolation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
@@ -186,7 +189,7 @@ modify a few different matrices into the identity matrix.</p>
 <p><a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html">Link to the Matrix JavaDoc</a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">None of the functions, either than <code class="docutils literal"><span class="pre">getEntry()</span></code> and <code class="docutils literal"><span class="pre">setEntry()</span></code>,
+<p class="last">except for <code class="docutils literal"><span class="pre">setEntry()</span></code>, none of the functions
 should actually modify the original <code class="docutils literal"><span class="pre">Matrix</span></code>. Instead, the functions
 return an entirely new <code class="docutils literal"><span class="pre">Matrix</span></code>. Make sure, when you are filling out
 these functions, that you are not modifying the original <code class="docutils literal"><span class="pre">Matrix</span></code>, but
@@ -231,7 +234,10 @@ before it:</p>
 <ol class="last arabic simple">
 <li>Create a package namespace called <code class="docutils literal"><span class="pre">matrix</span></code>.</li>
 <li>In <code class="docutils literal"><span class="pre">matrix</span></code> create a class called <code class="docutils literal"><span class="pre">Matrix</span></code>.</li>
-<li>Implement all the methods in the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html">Matrix JavaDoc</a></li>
+<li>Add the <code class="docutils literal"><span class="pre">private</span></code> <code class="docutils literal"><span class="pre">matrix</span></code> attribute.</li>
+<li>Write a constructor to set the size of the <code class="docutils literal"><span class="pre">matrix</span></code>.</li>
+<li>Implement the rest of the methods in the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html">Matrix JavaDoc</a></li>
+<li>Optionally, create other constructors to help you fill your matrix.</li>
 </ol>
 </div>
 </div>
@@ -243,7 +249,7 @@ before it:</p>
 <ol class="last arabic simple">
 <li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">MatrixTest</span></code> and import all the necessary JUnit libraries.</li>
 <li>In the class, but outside of any methods, create a global Matrix variable, e.g. <code class="docutils literal"><span class="pre">Matrix</span> <span class="pre">matrix</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Matrix();</span></code></li>
-<li>Test every method in the <code class="docutils literal"><span class="pre">matrix</span></code> object.</li>
+<li>Write several test methods to every method in the <code class="docutils literal"><span class="pre">matrix</span></code> object.</li>
 </ol>
 </div>
 </div>
@@ -269,8 +275,11 @@ when you accumulate a function’s derivative?</p>
 <p>You could also make a GUI. Even if you choose not to make a GUI, you should
 definitely have a way in which people can input their own polynomials through
 a command line interface.</p>
+<div class="section" id="polynomial-interpolation">
+<h3>Polynomial Interpolation<a class="headerlink" href="#polynomial-interpolation" title="Permalink to this headline">¶</a></h3>
 <p>Some of you actually conducted polynomial interpolation with Simpson’s Rule
 for the Riemann assignment extension.</p>
+</div>
 </div>
 </div>
 
