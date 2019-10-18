@@ -85,6 +85,16 @@ Base Assignment
   #. In the class, but outside of any methods, create a global Matrix variable of some size, e.g. ``Matrix matrix = new Matrix(10, 10);``
   #. Write several test methods to test every method in the ``matrix`` object.
 
+3. MatrixApp
+^^^^^^^^^^^^^^^^^
+.. admonition:: Exercise
+
+  **Summary**: Use the Matrix object.
+
+  #. Back in ``matrix``, create a new class called ``MatrixApp``.
+  #. Create a ``main`` method.
+  #. Create an example ``Matrix`` object and print it to the console.
+
 Extension
 ------------
 
