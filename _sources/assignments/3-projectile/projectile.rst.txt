@@ -128,128 +128,6 @@ feature, during ``reset()`` it is best to clear off all of your graphics.
     some practice before you jump into the assignment. Try to make a
     simulation that moves a circle upwards on the screen.
 
-Assignment
-----------
-
-You will have to use the AbstractSimulation class for this project. Your
-simulation class should **extend** AbstractSimulation. You will also need to
-construct a **Particle** class. Try to be as thorough and thoughtful as
-possible when you make this class, because you will likely use it in the rest
-of your physics assignments.
-
-When you make the **Particle** class, consider what variables might affect how
-a projectile moves in air. These variables should be the **fields** in the
-class.
-
-.. note::
-  While it can be tempting to code everything at once and then test it all at
-  the end, the graphics are actually often helpful in order to give you a
-  sense of what's working and what's not.
-
-
-Base
-^^^^^
-
-There are two parts of the base assignment. Part III will take much longer than
-Parts I and II; it is essentially a mini-extension. (In fact, one year it was
-someone's extension.) While everyone in the class will do the same base
-assignments, you will not necessarily all get exactly the same values. This
-will depend on how you choose to calculate your position variables, your
-timestep, and, for Green Monster (Part III), the way that you run your
-different iterations.
-
-Since there is no "right" answer, it can be difficult to tell if you are on
-the right path. You can try to compare answers with your fellow students to
-see if your approximations are at least close to each other. You can also try
-to calculate some of these scenarios by hand in order to see whether you get
-an answer that's close. However, in the end, the goal is not really to get a
-certain "right" answer (since everything we do is an approximation), but
-rather to get an understanding of the physics concepts and their
-implementation.
-
-Before you start your base assignments, consider:
-
-- What variables might affect the flight of your particle? These variables
-  should be your fields.
-- What variables should the user be able to input?
-- How will you represent your particle on the screen?
-
-Part I
-^^^^^^^
-
-The first part of the assignment is just to simulate a one dimensional
-particle that is only subject to gravity and air resistance. You learned
-different ways to calculate air resistance in class. There are three different
-equations for air resistance that you learned:
-
-#. Assume that air resistance is zero.
-#. Air resistance is directly proportional to velocity.
-#. Air resistance is directly proportional to velocity squared.
-
-You will make three particles that move in one dimension. Each particle will
-use one of the three methods of calculating air resistance.
-
-In addition to showing each particle moving on screen, you should also plot
-position, velocity, and acceleration. Before you plot these values, try to
-think about what graphs might make sense. What should the acceleration of a
-particle without air resistance look like? What should the acceleration of a
-particle with air resisance look like?
-
-.. note::
-  Make sure that your air resistance is affecting the particle in the right
-  way (i.e., check the direction of the air resistance as the particle moves.
-  Which way should the air resistance vector be pointing in relation to the
-  particle's velocity?)
-
-Part II
-^^^^^^^^^
-
-The second part of the assignment is to simulate the projectile experiment you
-are conducting in your physics classes. You will need to modify the simulation
-you made for Part I in order to show a projectile moving in two dimensions.
-Think about what you learned in physics class about the golden rule in order
-to add this second dimension.
-
-Once you have your two dimensional particle working, find the value for
-**beta** that accounts for your experimental error.
-
-
-Part III
-^^^^^^^^^^
-
-The Green Monster is a wall in Fenway park. It is 10 meters tall and 100
-meters away from home plate. Your assignment is to find the angle at the
-minimum velocity necessary to hit a particle from 1 meter off of the ground
-at home plate over the wall.
-
-Extension
------------
-
-Your task for your extension is to model an object that moves in two
-dimensions.
-
-Physics extensions are very open ended, and the above prompt is not very
-exact. You should work through your idea for your extension in lab with Mr.
-Condie in order to determine together what might be a realistic goal based on
-your initial idea. While you work on the base assignment, you should think
-about what you might be interested in modeling.
-
-The most important component of this extension is your understanding of the
-underlying physics concepts. While looking up equations onlilne might give you
-a realistic simulation, you will not learn anything if you don't understand
-why the formulas that you use will give you good approximations.
-
-Once you know what you want your extension to be, just as you did in
-``Riemann``, you will build off of the code you already wrote for your base
-assignment. You will present the extension to the class and the teachers, so
-be ready to talk about what you learned and to answer some questions.
-
-.. TODO: Add something about past extensions?
-
-.. figure:: fig1.svg
-   :width: 25 %
-   :align: center
-
 Introduction to Modeling
 ------------------------
 .. from blogs.dalton.org
@@ -354,3 +232,138 @@ Setting up a Simulation
 -----------------------
 
 `Displaying Simulations using OSP <https://kjergens.github.io/csxdocs-build/display-osp/display-osp.html>`__
+
+
+Assignment
+----------
+
+You will have to use the AbstractSimulation class for this project. Your
+simulation class should **extend** AbstractSimulation. You will also need to
+construct a **Particle** class. Try to be as thorough and thoughtful as
+possible when you make this class, because you will likely use it in the rest
+of your physics assignments.
+
+When you make the **Particle** class, consider what variables might affect how
+a projectile moves in air. These variables should be the **fields** in the
+class.
+
+.. note::
+  While it can be tempting to code everything at once and then test it all at
+  the end, the graphics are actually often helpful in order to give you a
+  sense of what's working and what's not.
+
+
+Base Assignment
+------------------
+
+There are two parts of the base assignment. Part 4 will take much longer than
+Parts 1 - 3; it is essentially a mini-extension. (In fact, one year it was
+someone's extension.) While everyone in the class will do the same base
+assignments, you will not necessarily all get exactly the same values. This
+will depend on how you choose to calculate your position variables, your
+timestep, and, for Green Monster (Part 4), the way that you run your
+different iterations.
+
+Since there is no "right" answer, it can be difficult to tell if you are on
+the right path. You can try to compare answers with your fellow students to
+see if your approximations are at least close to each other. You can also try
+to calculate some of these scenarios by hand in order to see whether you get
+an answer that's close. However, in the end, the goal is not really to get a
+certain "right" answer (since everything we do is an approximation), but
+rather to get an understanding of the physics concepts and their
+implementation.
+
+Before you start your base assignments, consider:
+
+- What variables might affect the flight of your particle? These variables
+  should be your fields.
+- What variables should the user be able to input?
+- How will you represent your particle on the screen?
+
+1. Particle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. admonition:: Exercise
+
+  **Summary:** Create an object the models a particle.
+
+  #. Create a package namespace called ``projectile``.
+  #. In ``projectile`` create a new Java class called ``Particle``.
+  #. Implement ``Particle`` as described in the section `Modeling Projectile Motion <#modeling-projectile-motion>`_.
+  #. Add **three** methods to make the particle move. It is up to you to name these methods. Choose method names that signal how the method works. 
+
+  Remember there are different ways to calculate air resistance.:
+
+  - Assume that air resistance is zero.
+  - Air resistance is directly proportional to velocity.
+  - Air resistance is directly proportional to velocity squared.
+
+.. warning::
+  Make sure that your air resistance is affecting the particle in the right
+  way (i.e., check the direction of the air resistance as the particle moves.
+  Which way should the air resistance vector be pointing in relation to the
+  particle's velocity?)
+
+2. ProjectileApp
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. admonition:: Exercise
+
+  **Summary:** Simulate a particle moving in one dimension.
+
+  #. In ``projectile`` create a new Java class called ``ProjectileApp`` that extends from ``AbstractSimulation``. Add all the necessary methods to ``ProjectileApp`` You can use ``MovingBallApp`` as a model. 
+  #. Add three ``Particle`` objects to the simulation. Each particle will use one of the three methods of moving that you created in Part 1.
+  #. Create a PlotFrame and plot each of these data per ``Particle`` object:
+
+  - position
+  - velocity
+  - acceleration
+
+  Before you plot these values, try to think about what graphs might make sense. What should the acceleration of a particle without air resistance look like? What should the acceleration of acceleration particle with air resisance look like?
+
+3. Projectile (2D movement)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. admonition:: Exercise
+
+  **Summary:** Simulate a projectile.
+
+  Modify the simulation you made for Parts 1 and 2 in order to show a projectile moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.
+
+  Once you have your two dimensional particle working, find the value for **beta** that accounts for your experimental error.
+
+  When you have something that works like the following you are done with this exercise:
+
+  .. figure:: test3.gif
+    :width: 40%
+    :align: center
+
+
+4. Green Monster
+^^^^^^^^^^^^^^^^^^^
+.. admonition:: Exercise
+
+  **Summary:** Apply what you've learned to a real example.
+
+  The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment is to find the angle at the minimum velocity necessary to hit a particle from 1 meter off of the ground at home plate over the wall.
+
+
+  .. figure:: fig1.svg
+   :width: 25 %
+   :align: center
+
+Extension
+-----------
+
+When you are done with the base assignment, extend it to model another real-world object. 
+
+.. admonition:: Exercise
+
+  **Summary:** Model a real-world object that moves in two dimensions.
+
+  Physics extensions are very open ended, and the above prompt is not very exact. You should work through your idea for your extension in lab with Mr. Condie in order to determine together what might be a realistic goal based on your initial idea. While you work on the base assignment, you should think about what you might be interested in modeling.
+
+  The most important component of this extension is your understanding of the
+  underlying physics concepts. While looking up equations onlilne might give you a realistic simulation, you will not learn anything if you don't understanding why the formulas that you use will give you good approximations.
+
+  Once you know what you want your extension to be, just as you did in ``Riemann``, you will build off of the code you already wrote for your base assignment. You will present the extension to the class and the teachers, so be ready to talk about what you learned and to answer some questions.
+
+.. TODO: Add something about past extensions?
