@@ -103,33 +103,19 @@ Base Assignment
   When you have output similar to the following you are done with this exercise.
 
   .. figure:: matrix.png
-   :width: 80 %
+   :width: 70 %
    :align: center
 
-Extension
+Extensions
 ------------
 
-There are several parts of the Extension that are highly suggested (and are
-covered in the Latex book that Dr. Gomprecht presented). In addition, there
-are some extensions that previous students have completed, although they are
-more ambitious.
+After the base assignment is done, do more with your ``Matrix``. You can use one of the ideas below or think of your own.
 
-1. Use your ``Matrix`` class in order to differentiate polynomials using the
-   VDM. While this is technically an extension, as long as you are able to
-   get your ``Matrix`` class to work, you should hopefully be able to complete
-   this.
-2. Use your ``Matrix`` class to interpolate polynomials (more below).
+.. admonition:: Extension Ideas
 
-   a. Interpolate the equation of accumulation functions. Note: is there a
-   pattern that you notice when you differentiate an accumulation function or
-   when you accumulate a function's derivative?
+  #. Use your ``Matrix`` class in order to differentiate polynomials using the Vertical Difference Method. While this is technically an extension, as long as you are able to get your ``Matrix`` class to work, you should hopefully be able to complete this.
+  #. Use your ``Matrix`` class to balance a chemical equation. See this research paper on `Balancing of Chemical Equations using Matrix Algebra <https://iiste.org/Journals/index.php/JNSR/article/viewFile/20721/21315>`_.
+  #. Use your ``Matrix`` class to interpolate polynomials. Interpolate the equation of accumulation functions. Note: is there a pattern that you notice when you differentiate an accumulation function or when you accumulate a function's derivative?
 
-You could also make a GUI. Even if you choose not to make a GUI, you should
-definitely have a way in which people can input their own polynomials through
-a command line interface.
+  You could also make a GUI. Even if you choose not to make a GUI, you should definitely have a way in which people can input their own polynomials through a command line interface.
 
-Polynomial Interpolation
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Some of you actually conducted polynomial interpolation with Simpson's Rule
-for the Riemann assignment extension. 
