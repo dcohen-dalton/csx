@@ -284,7 +284,7 @@ Before you start your base assignments, consider:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
-  **Summary:** Create an object the models a particle.
+  **Summary:** Design and implement a Particle object.
 
   #. Create a package namespace called ``projectile``.
   #. In ``projectile`` create a new Java class called ``Particle``.
