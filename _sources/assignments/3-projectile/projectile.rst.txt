@@ -31,32 +31,98 @@ how you should structure your code which will serve as an overview of the
 assignment. It is very important that you take notes, as this lecture will be
 the foundation of your work throughout this project.
 
-Coding Models
--------------
+Introduction to Modeling
+------------------------
+.. from blogs.dalton.org
+
+Modeling is a concept that has broad definitions and meanings, even in
+science. We may never know the ‘true’ nature of the Universe and the laws
+governing its evolution – however, as scientists, we have made giant strides
+in discovering ever more precise approximations of its nature. These models
+enable us to understand how its different elements and systems interact. We
+can sometimes make predictions of future events or understand why that is
+impossible. Newton’s Laws of Motion, General Relativity, Quantum Mechanics,
+and String Theory are but a few of the fundamental models of different realms
+of the universe around us.
+
+Another way that science uses the idea of a model is when working within one
+of the models above. We simplify situations, hoping to include only the
+dominant physics that will model most of what we observe. For example, when
+understanding the orbit of the earth around the sun, we might start with these
+simplifications:
+
+- The earth is the only planet
+- The earth doesn’t have a moon
+- The sun is fixed in space
+
+Using this model allows us to understand much, but not all, of the dynamics of
+a solar system.
+
+Since many models in Physics are described mathematically, the simplified
+models scientists work with involve solving mathematical systems of varying
+complexity. Sometimes these systems can be solved ‘by hand’ with the tools you
+are currently acquiring. More often the systems are too complex and their
+solutions must be found in another way. One way to do this is with a computer
+simulation – another tool you are learning to employ.
+
+Modeling Projectile Motion
+--------------------------
+
+You are standing on the Brooklyn Bridge holding a rock. If you throw the rock
+and watch it fly through the air, what quantities can you determine?
+
+- If you know the rock’s initial velocity, and can determine where it lands,
+  what can you learn about the height of the bridge?
+- If you already knew the height, could you predict where it would hit the
+  water?
+
+You will begin to model the answers to these questions by creating a computer
+simulation of the rock’s motion.
+
+.. admonition:: Pseudocode
+
+   When creating an algorithm, it can be helpful to start by writing
+   **pseudocode**: text which describes a program without having to
+   follow exact Java syntax. For example, the pseudocode for a program
+   which finds the largest number in an array could be:
+
+   .. code-block:: text
+
+      set LARGEST to the first element in the array
+
+      for each element in the array:
+        if CURRENT_ELEMENT is greater than LARGEST:
+          then set LARGEST to CURRENT_ELEMENT
+        otherwise do nothing
+
+      output LARGEST
+
+   As you write pseudocode, imagine that a human will be reading and running
+   your program, rather then the computer.
+
+
+Review  ``AbstractSimulation``
+--------------------------------
 
 You will use ``AbstractSimulation`` for every physics project in this class.
 As the name implies, it is an abstract class with some abstract methods, just
 like you learned about in ``Riemann``.
 
-Getting Started with ``AbstractSimulation``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This section is optional and only if you need to review ``AbstractSimulation`` s, which you learned in Getting Started.
 
-#. Open the window to create a new class in your package.
+.. admonition:: Optional Exercise
 
-   - Name the class [...]App. This is the naming convention for your
-     simulation classes.
-   - Before you click **Finish**, click the **Browse** button
-     next to the **Superclass** text box. Choose ``AbstractSimulation`` and
-     click **OK**.
-   - Under the "method stubs" section, choose to click the box next to ``public
+  **Summary**: Create an ``AbstractSimulaton`` class.
+
+  #. Open the window to create a new class in your package. Name the class [...]App. This is the naming convention for your simulation classes.
+  #. Before you click **Finish**, click the **Browse** button next to the **Superclass** text box. Choose ``AbstractSimulation`` and click **OK**.
+  #. Under the "method stubs" section, choose to click the box next to ``public
      static void main(String[] args)``.
-#. Declare the following two functions:
+  #. In ``main()``, add this line: ``SimulationControl.createApp(new <NAME OF CLASS>());``
+  #. Declare the following two functions:
 
    - ``public void initialize()``
    - ``public void reset()``
-
-#. In ``main()``, add this line: ``SimulationControl.createApp(new
-   nameOfClass());``
 
 .. note::
     It might be useful to look at the **JavaDoc** for ``AbstractSimulation``
@@ -128,112 +194,6 @@ feature, during ``reset()`` it is best to clear off all of your graphics.
     some practice before you jump into the assignment. Try to make a
     simulation that moves a circle upwards on the screen.
 
-Introduction to Modeling
-------------------------
-.. from blogs.dalton.org
-
-Modeling is a concept that has broad definitions and meanings, even in
-science. We may never know the ‘true’ nature of the Universe and the laws
-governing its evolution – however, as scientists, we have made giant strides
-in discovering ever more precise approximations of its nature. These models
-enable us to understand how its different elements and systems interact. We
-can sometimes make predictions of future events or understand why that is
-impossible. Newton’s Laws of Motion, General Relativity, Quantum Mechanics,
-and String Theory are but a few of the fundamental models of different realms
-of the universe around us.
-
-Another way that science uses the idea of a model is when working within one
-of the models above. We simplify situations, hoping to include only the
-dominant physics that will model most of what we observe. For example, when
-understanding the orbit of the earth around the sun, we might start with these
-simplifications:
-
-- The earth is the only planet
-- The earth doesn’t have a moon
-- The sun is fixed in space
-
-Using this model allows us to understand much, but not all, of the dynamics of
-a solar system.
-
-Since many models in Physics are described mathematically, the simplified
-models scientists work with involve solving mathematical systems of varying
-complexity. Sometimes these systems can be solved ‘by hand’ with the tools you
-are currently acquiring. More often the systems are too complex and their
-solutions must be found in another way. One way to do this is with a computer
-simulation – another tool you are learning to employ.
-
-Modeling Projectile Motion
---------------------------
-
-You are standing on the Brooklyn Bridge holding a rock. If you throw the rock
-and watch it fly through the air, what quantities can you determine?
-
-- If you know the rock’s initial velocity, and can determine where it lands,
-  what can you learn about the height of the bridge?
-- If you already knew the height, could you predict where it would hit the
-  water?
-
-You will begin to model the answers to these questions by creating a computer
-simulation of the rock’s motion.
-
-A Simulated Particle
-^^^^^^^^^^^^^^^^^^^^
-
-You will begin by creating a ``Particle1D`` class to model the motion of a
-particle---in this case, a rock---in one dimension. Just like the real rock,
-we want our simulated rock to have certain properties at a given time. These
-properties correspond to the **fields** (member variables) of the
-``Particle1D`` object.
-
-- What properties does a real particle have?
-- What fields should an object of this type have?
-
-You should add a constructor to ``Particle1D`` which takes initial values
-for these properties and initializes the particle accordingly.
-
-Moving the Particle
-^^^^^^^^^^^^^^^^^^^
-
-Now that the ``Particle1D`` class has fields which describe its properties,
-it's time to add a method, ``step()`` which handles its motion. While
-particles move continuously in real life, you will model them as moving in
-discrete steps. In each step, a certain amount of time (:math:`\Delta t`)
-should pass and the particle's properties should be updated. You
-may structure this method how you see fit, but it must:
-
-- Take a parameter, :math:`\Delta t`, and pass that amount of time.
-- Use motion equations you have learned in physics class to update
-  the properties of the particle. The question you should be asking yourself
-  is **"if** :math:`\Delta t` **seconds pass, what are the new properties of
-  the particle?"**
-
-.. admonition:: Pseudocode
-
-   When creating an algorithm, it can be helpful to start by writing
-   **pseudocode**: text which describes a program without having to
-   follow exact Java syntax. For example, the pseudocode for a program
-   which finds the largest number in an array could be:
-
-   .. code-block:: text
-
-      set LARGEST to the first element in the array
-
-      for each element in the array:
-        if CURRENT_ELEMENT is greater than LARGEST:
-          then set LARGEST to CURRENT_ELEMENT
-        otherwise do nothing
-
-      output LARGEST
-
-   As you write pseudocode, imagine that a human will be reading and running
-   your program, rather then the computer.
-
-Setting up a Simulation
------------------------
-
-`Displaying Simulations using OSP <https://kjergens.github.io/csxdocs-build/display-osp/display-osp.html>`__
-
-
 Assignment
 ----------
 
@@ -242,6 +202,8 @@ simulation class should **extend** AbstractSimulation. You will also need to
 construct a **Particle** class. Try to be as thorough and thoughtful as
 possible when you make this class, because you will likely use it in the rest
 of your physics assignments.
+
+If you need to, refer to `Displaying Simulations using OSP <https://kjergens.github.io/csxdocs-build/display-osp/display-osp.html>`__
 
 When you make the **Particle** class, consider what variables might affect how
 a projectile moves in air. These variables should be the **fields** in the
@@ -288,10 +250,10 @@ Before you start your base assignments, consider:
 
   #. Create a package namespace called ``projectile``.
   #. In ``projectile`` create a new Java class called ``Particle``.
-  #. Implement ``Particle`` as described in the section `Modeling Projectile Motion <#modeling-projectile-motion>`_.
-  #. Add **three** methods to make the particle move. It is up to you to name these methods. Choose method names that signal how the method works. 
-
-  Remember there are different ways to calculate air resistance.:
+  #. Design the ``Particle`` class to model the motion of a particle - for example, a rock - in one dimension. Just like the real rock, you want your simulated rock to have certain properties at a given time. These properties correspond to the **fields** (attributes, aka, member variables) of the ``Particle`` object. What properties does a real particle have? What fields should an object of this type have?
+  #. Add a constructor to ``Particle`` which takes initial values for these properties and initializes the particle accordingly.
+  #. Now that the ``Particle`` class has fields which describe its properties, add a method ``step()`` which handles its motion. While particles move continuously in real life, you will model them as moving in discrete steps. In each step, a certain amount of time :math:`\Delta t` should pass and the particle's properties should be updated. You may structure this method how you see fit, but it must: (1) take a parameter, :math:`\Delta t` deltaTime, and pass that amount of time, and (2) use motion equations you have learned in physics class to update the properties of the particle. The question you should be asking yourself is **"if** :math:`\Delta t` **seconds pass, what are the new properties of the particle?"**
+  #. Add **two more** methods to make the particle move one step. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:
 
   - Assume that air resistance is zero.
   - Air resistance is directly proportional to velocity.
@@ -318,6 +280,24 @@ Before you start your base assignments, consider:
   - acceleration
 
   Before you plot these values, try to think about what graphs might make sense. What should the acceleration of a particle without air resistance look like? What should the acceleration of acceleration particle with air resisance look like?
+
+  When you have one animation and three plots you are done with this exercise.
+
+   .. figure:: falling1D.gif
+    :width: 30 %
+    :align: center
+
+   .. figure:: proj_positionplot.png
+    :width: 30 %
+    :align: center
+
+   .. figure:: proj_velocityplot.png
+    :width: 30 %
+    :align: center
+
+   .. figure:: proj_accelplot.png
+    :width: 30 %
+    :align: center
 
 3. Projectile (2D movement)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -346,8 +326,8 @@ Before you start your base assignments, consider:
   The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment is to find the angle at the minimum velocity necessary to hit a particle from 1 meter off of the ground at home plate over the wall.
 
 
-  .. figure:: fig1.svg
-   :width: 25 %
+  .. figure:: greenmonster.jpg
+   :width: 100 %
    :align: center
 
 Extension
@@ -357,7 +337,7 @@ When you are done with the base assignment, extend it to model another real-worl
 
 .. admonition:: Exercise
 
-  **Summary:** Model a real-world object that moves in two dimensions.
+  **Summary:** Model a real-world object of your choosing that moves in two dimensions.
 
   Physics extensions are very open ended, and the above prompt is not very exact. You should work through your idea for your extension in lab with Mr. Condie in order to determine together what might be a realistic goal based on your initial idea. While you work on the base assignment, you should think about what you might be interested in modeling.
 
