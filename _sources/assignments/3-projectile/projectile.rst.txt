@@ -253,7 +253,7 @@ Before you start your base assignments, consider:
   #. Design the ``Particle`` class to model the motion of a particle - for example, a rock - in one dimension. Just like the real rock, you want your simulated rock to have certain properties at a given time. These properties correspond to the **fields** (attributes, aka, member variables) of the ``Particle`` object. What properties does a real particle have? What fields should an object of this type have?
   #. Add a constructor to ``Particle`` which takes initial values for these properties and initializes the particle accordingly.
   #. Now that the ``Particle`` class has fields which describe its properties, add a method ``step()`` which handles its motion. While particles move continuously in real life, you will model them as moving in discrete steps. In each step, a certain amount of time :math:`\Delta t` should pass and the particle's properties should be updated. You may structure this method how you see fit, but it must: (1) take a parameter, :math:`\Delta t` deltaTime, and pass that amount of time, and (2) use motion equations you have learned in physics class to update the properties of the particle. The question you should be asking yourself is **"if** :math:`\Delta t` **seconds pass, what are the new properties of the particle?"**
-  #. Add **two more** methods to make the particle move one step. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:
+  #. Add **two more** methods to make the ``Particle`` move one step. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:
 
   - Assume that air resistance is zero.
   - Air resistance is directly proportional to velocity.
@@ -265,15 +265,16 @@ Before you start your base assignments, consider:
   Which way should the air resistance vector be pointing in relation to the
   particle's velocity?)
 
-2. ProjectileApp
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2. FallingBallApp
+^^^^^^^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
   **Summary:** Simulate a particle moving in one dimension.
 
-  #. In ``projectile`` create a new Java class called ``ProjectileApp`` that extends from ``AbstractSimulation``. Add all the necessary methods to ``ProjectileApp`` You can use ``MovingBallApp`` as a model. 
-  #. Add three ``Particle`` objects to the simulation. Each particle will use one of the three methods of moving that you created in Part 1.
-  #. Create a PlotFrame and plot each of these data per ``Particle`` object:
+  #. In ``projectile`` create a new Java class called ``FallingBallApp`` that extends from ``AbstractSimulation``. Add all the necessary methods.
+  #. Create a ``PlotFrame`` to hold the simulation. 
+  #. Add three ``Particle`` objects to the PlotFrame. Each ``Particle`` will use one of the three methods of moving that you created in Part 1.
+  #. Create three more ``PlotFrame`` s and plot each of these data per ``Particle`` object:
 
   - position
   - velocity
@@ -299,16 +300,17 @@ Before you start your base assignments, consider:
     :width: 30 %
     :align: center
 
-3. Projectile (2D movement)
+3. ProjectileApp (2D movement)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. admonition:: Exercise
 
   **Summary:** Simulate a projectile.
 
-  Modify the simulation you made for Parts 1 and 2 in order to show a projectile moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.
-
-  Once you have your two dimensional particle working, find the value for **beta** that accounts for your experimental error.
+  #. In ``projectile`` create a new Java class called ``ProjectileApp`` that extends ``AbstractSimulation``.
+  #. Edit your ``Particle`` so that it moves in two dimensions. 
+  #. In ``ProjectileApp``, create a ``PlotFrame`` and plot a ``Particle`` moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.
+  #. Once you have your two dimensional particle working, find the value for **beta** that accounts for your experimental error.
 
   When you have something that works like the following you are done with this exercise:
 
@@ -317,13 +319,19 @@ Before you start your base assignments, consider:
     :align: center
 
 
-4. Green Monster
-^^^^^^^^^^^^^^^^^^^
+4. BaseballSimulationApp
+^^^^^^^^^^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
   **Summary:** Apply what you've learned to a real example.
 
   The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment is to find the angle at the minimum velocity necessary to hit a particle from 1 meter off of the ground at home plate over the wall.
+
+  #. Create a new Java class in ``projectile`` called ``BaseballSimulationApp`` that extends ``AbstractSimuation``.
+  #. Create a ``PlotFrame`` that will hold the animation.
+  #. On the ``PlotFrame``, draw a rectangle or line to represent the Green Monster.
+  #. Also on the ``PlotFrame``, show a ``Particle`` moving in both x and y directions, 1 meter off the ground, moving toward the wall.
+  #. Use the Control Panel to change the velocity and discover the angle at the minimum velocity to clear the wall.
 
 
   .. figure:: greenmonster.jpg

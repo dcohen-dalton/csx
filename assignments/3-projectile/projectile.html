@@ -107,9 +107,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#base-assignment">Base Assignment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#particle">1. Particle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#projectileapp">2. ProjectileApp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#projectile-2d-movement">3. Projectile (2D movement)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#green-monster">4. Green Monster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fallingballapp">2. FallingBallApp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#projectileapp-2d-movement">3. ProjectileApp (2D movement)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#baseballsimulationapp">4. BaseballSimulationApp</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#extension">Extension</a></li>
@@ -415,7 +415,7 @@ should be your fields.</li>
 <li>Design the <code class="docutils literal"><span class="pre">Particle</span></code> class to model the motion of a particle - for example, a rock - in one dimension. Just like the real rock, you want your simulated rock to have certain properties at a given time. These properties correspond to the <strong>fields</strong> (attributes, aka, member variables) of the <code class="docutils literal"><span class="pre">Particle</span></code> object. What properties does a real particle have? What fields should an object of this type have?</li>
 <li>Add a constructor to <code class="docutils literal"><span class="pre">Particle</span></code> which takes initial values for these properties and initializes the particle accordingly.</li>
 <li>Now that the <code class="docutils literal"><span class="pre">Particle</span></code> class has fields which describe its properties, add a method <code class="docutils literal"><span class="pre">step()</span></code> which handles its motion. While particles move continuously in real life, you will model them as moving in discrete steps. In each step, a certain amount of time  should pass and the particle’s properties should be updated. You may structure this method how you see fit, but it must: (1) take a parameter,  deltaTime, and pass that amount of time, and (2) use motion equations you have learned in physics class to update the properties of the particle. The question you should be asking yourself is <strong>“if</strong>  <strong>seconds pass, what are the new properties of the particle?”</strong></li>
-<li>Add <strong>two more</strong> methods to make the particle move one step. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:</li>
+<li>Add <strong>two more</strong> methods to make the <code class="docutils literal"><span class="pre">Particle</span></code> move one step. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:</li>
 </ol>
 <ul class="last simple">
 <li>Assume that air resistance is zero.</li>
@@ -431,15 +431,16 @@ Which way should the air resistance vector be pointing in relation to the
 particle’s velocity?)</p>
 </div>
 </div>
-<div class="section" id="projectileapp">
-<h3>2. ProjectileApp<a class="headerlink" href="#projectileapp" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fallingballapp">
+<h3>2. FallingBallApp<a class="headerlink" href="#fallingballapp" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary:</strong> Simulate a particle moving in one dimension.</p>
 <ol class="arabic simple">
-<li>In <code class="docutils literal"><span class="pre">projectile</span></code> create a new Java class called <code class="docutils literal"><span class="pre">ProjectileApp</span></code> that extends from <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>. Add all the necessary methods to <code class="docutils literal"><span class="pre">ProjectileApp</span></code> You can use <code class="docutils literal"><span class="pre">MovingBallApp</span></code> as a model.</li>
-<li>Add three <code class="docutils literal"><span class="pre">Particle</span></code> objects to the simulation. Each particle will use one of the three methods of moving that you created in Part 1.</li>
-<li>Create a PlotFrame and plot each of these data per <code class="docutils literal"><span class="pre">Particle</span></code> object:</li>
+<li>In <code class="docutils literal"><span class="pre">projectile</span></code> create a new Java class called <code class="docutils literal"><span class="pre">FallingBallApp</span></code> that extends from <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>. Add all the necessary methods.</li>
+<li>Create a <code class="docutils literal"><span class="pre">PlotFrame</span></code> to hold the simulation.</li>
+<li>Add three <code class="docutils literal"><span class="pre">Particle</span></code> objects to the PlotFrame. Each <code class="docutils literal"><span class="pre">Particle</span></code> will use one of the three methods of moving that you created in Part 1.</li>
+<li>Create three more <code class="docutils literal"><span class="pre">PlotFrame</span></code> s and plot each of these data per <code class="docutils literal"><span class="pre">Particle</span></code> object:</li>
 </ol>
 <ul class="simple">
 <li>position</li>
@@ -464,25 +465,36 @@ particle’s velocity?)</p>
 </div></blockquote>
 </div>
 </div>
-<div class="section" id="projectile-2d-movement">
-<h3>3. Projectile (2D movement)<a class="headerlink" href="#projectile-2d-movement" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="projectileapp-2d-movement">
+<h3>3. ProjectileApp (2D movement)<a class="headerlink" href="#projectileapp-2d-movement" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary:</strong> Simulate a projectile.</p>
-<p>Modify the simulation you made for Parts 1 and 2 in order to show a projectile moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.</p>
-<p>Once you have your two dimensional particle working, find the value for <strong>beta</strong> that accounts for your experimental error.</p>
+<ol class="arabic simple">
+<li>In <code class="docutils literal"><span class="pre">projectile</span></code> create a new Java class called <code class="docutils literal"><span class="pre">ProjectileApp</span></code> that extends <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>.</li>
+<li>Edit your <code class="docutils literal"><span class="pre">Particle</span></code> so that it moves in two dimensions.</li>
+<li>In <code class="docutils literal"><span class="pre">ProjectileApp</span></code>, create a <code class="docutils literal"><span class="pre">PlotFrame</span></code> and plot a <code class="docutils literal"><span class="pre">Particle</span></code> moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.</li>
+<li>Once you have your two dimensional particle working, find the value for <strong>beta</strong> that accounts for your experimental error.</li>
+</ol>
 <p>When you have something that works like the following you are done with this exercise:</p>
 <div class="last figure align-center">
 <a class="reference internal image-reference" href="../../_images/test3.gif"><img alt="../../_images/test3.gif" src="../../_images/test3.gif" style="width: 40%;" /></a>
 </div>
 </div>
 </div>
-<div class="section" id="green-monster">
-<h3>4. Green Monster<a class="headerlink" href="#green-monster" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="baseballsimulationapp">
+<h3>4. BaseballSimulationApp<a class="headerlink" href="#baseballsimulationapp" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary:</strong> Apply what you’ve learned to a real example.</p>
 <p>The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment is to find the angle at the minimum velocity necessary to hit a particle from 1 meter off of the ground at home plate over the wall.</p>
+<ol class="arabic simple">
+<li>Create a new Java class in <code class="docutils literal"><span class="pre">projectile</span></code> called <code class="docutils literal"><span class="pre">BaseballSimulationApp</span></code> that extends <code class="docutils literal"><span class="pre">AbstractSimuation</span></code>.</li>
+<li>Create a <code class="docutils literal"><span class="pre">PlotFrame</span></code> that will hold the animation.</li>
+<li>On the <code class="docutils literal"><span class="pre">PlotFrame</span></code>, draw a rectangle or line to represent the Green Monster.</li>
+<li>Also on the <code class="docutils literal"><span class="pre">PlotFrame</span></code>, show a <code class="docutils literal"><span class="pre">Particle</span></code> moving in both x and y directions, 1 meter off the ground, moving toward the wall.</li>
+<li>Use the Control Panel to change the velocity and discover the angle at the minimum velocity to clear the wall.</li>
+</ol>
 <div class="last figure align-center">
 <a class="reference internal image-reference" href="../../_images/greenmonster.jpg"><img alt="../../_images/greenmonster.jpg" src="../../_images/greenmonster.jpg" style="width: 100%;" /></a>
 </div>
