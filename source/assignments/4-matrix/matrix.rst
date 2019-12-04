@@ -98,7 +98,7 @@ Base Assignment
 
   #. Back in ``matrix``, create a new class called ``MatrixApp``.
   #. Create a ``main`` method.
-  #. Create an example ``Matrix`` object and print it to the console. Then print it's inverse.
+  #. Create an example ``Matrix`` object and print it to the console. Then print its inverse.
 
   When you have output similar to the following you are done with this exercise.
 
