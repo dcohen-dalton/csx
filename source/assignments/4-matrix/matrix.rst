@@ -103,11 +103,13 @@ Base Assignment
   #. Create a ``main`` method.
   #. Create an example ``Matrix`` object and print it to the console. Then print its inverse.
 
-  When you have output similar to the following you are done with this exercise.
+  When you have output similar to the following you are done with this step.
 
   .. figure:: matrix.png
    :width: 70 %
    :align: center
+
+  #. Finally, use your ``Matrix`` class in order to differentiate polynomials using the Vertical Difference Method. 
 
 Extensions
 ------------
@@ -116,7 +118,6 @@ After the base assignment is done, do more with your ``Matrix``. You can use one
 
 .. admonition:: Extension Ideas
 
-  #. Use your ``Matrix`` class in order to differentiate polynomials using the Vertical Difference Method. While this is technically an extension, as long as you are able to get your ``Matrix`` class to work, you should hopefully be able to complete this.
   #. Use your ``Matrix`` class to balance a chemical equation. See this research paper on `Balancing of Chemical Equations using Matrix Algebra <https://iiste.org/Journals/index.php/JNSR/article/viewFile/20721/21315>`_.
   #. Use your ``Matrix`` class to interpolate polynomials. Interpolate the equation of accumulation functions. Note: is there a pattern that you notice when you differentiate an accumulation function or when you accumulate a function's derivative?
 
