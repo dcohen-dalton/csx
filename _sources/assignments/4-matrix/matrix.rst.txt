@@ -12,6 +12,9 @@ different uses and applications both in math and science. In fact, many of you
 will use matrices in physics in order to solve systems of
 equations.
 
+:download:`Matrices and VDM chapter </_static/Matrices-and-VDM.pdf>`
+
+
 As with the Riemann Sums assignment, there is `a JavaDoc
 <https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_ with methods for your class to include. In
 addition, you should work to create some of your own test classes in order to
