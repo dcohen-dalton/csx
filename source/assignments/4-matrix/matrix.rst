@@ -116,8 +116,9 @@ After the base assignment is done, do more with your ``Matrix``. You can use one
 
 .. admonition:: Extension Ideas
 
+  #. Use your ``Matrix`` class to interpolate a polynomial given a set of points. Think about whether given *n* points what is the degree of the polynomial you will need to make.
+  #. See if you can find a relationship between the derivative of an accumulation function (recall the Riemann sum assignment), and the accumulation function of the derivative of the function.
   #. Use your ``Matrix`` class to balance a chemical equation. See this research paper on `Balancing of Chemical Equations using Matrix Algebra <https://iiste.org/Journals/index.php/JNSR/article/viewFile/20721/21315>`_.
-  #. Use your ``Matrix`` class to interpolate polynomials. Interpolate the equation of accumulation functions. Note: is there a pattern that you notice when you differentiate an accumulation function or when you accumulate a function's derivative?
 
   You could also make a GUI. Even if you choose not to make a GUI, you should definitely have a way in which people can input their own polynomials through a command line interface.
 
