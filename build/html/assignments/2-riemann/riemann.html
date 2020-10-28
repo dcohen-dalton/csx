@@ -101,7 +101,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#base-assignment">Base Assignment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#package-namespaces">1. Package Namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-package-namespace">1. Create a Package Namespace</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#abstractriemann-class">2. AbstractRiemann Class</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#righthandrule-lefthandrule-and-trapezoidrule-classes">3. RightHandRule, LeftHandRule and TrapezoidRule Classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-classes">4. Test Classes</a></li>
@@ -328,17 +328,22 @@ before it:</p>
 <div class="section" id="base-assignment">
 <h2>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h2>
 <p>You will write a total of <strong>eight</strong> Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.</p>
-<div class="section" id="package-namespaces">
-<h3>1. Package Namespaces<a class="headerlink" href="#package-namespaces" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="create-a-package-namespace">
+<h3>1. Create a Package Namespace<a class="headerlink" href="#create-a-package-namespace" title="Permalink to this headline">¶</a></h3>
 <p>A good way to organize all the projects you will do this year is by creating a separate package namespace for each.</p>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
-<p><strong>Summary</strong>: Create a package namespace to hold your projects.</p>
-<ol class="last arabic simple">
+<p><strong>Summary</strong>: Create a package namespace to hold your project.</p>
+<ol class="arabic simple">
 <li>In src, right-click to get the option menu.</li>
 <li>Select New…Package</li>
 <li>Name it <code class="docutils literal"><span class="pre">com.[yourname]</span></code> (E.g. if your name is Kim Cheng, name it <code class="docutils literal"><span class="pre">com.kimcheng</span></code>)</li>
+<li>Inside your the package you just created (the folder named <code class="docutils literal"><span class="pre">com.[yourname]</span></code>) create another package called <code class="docutils literal"><span class="pre">riemann</span></code>.</li>
 </ol>
+<p>When your folder looks like the following you are done with this exercise:</p>
+<div class="last figure align-center">
+<img alt="../../_images/packagenamespace.png" src="../../_images/packagenamespace.png" />
+</div>
 </div>
 </div>
 <div class="section" id="abstractriemann-class">
@@ -347,7 +352,6 @@ before it:</p>
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Create an abstract class that has logic common to all Riemann rules.</p>
 <ol class="last arabic simple">
-<li>Inside your a package namespace (the folder named “com.[yourname]”) create another package called called <code class="docutils literal"><span class="pre">riemann</span></code>.</li>
 <li>In <code class="docutils literal"><span class="pre">riemann</span></code> create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a> .</li>
 <li>Write <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>.</li>
 <li>Add the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Make sure to mark them as <code class="docutils literal"><span class="pre">abstract</span></code> and end the line with a semicolon instead of implementing the method.</li>

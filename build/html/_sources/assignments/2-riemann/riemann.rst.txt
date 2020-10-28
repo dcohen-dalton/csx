@@ -162,17 +162,23 @@ Base Assignment
 
 You will write a total of **eight** Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.
 
-1. Package Namespaces
+1. Create a Package Namespace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A good way to organize all the projects you will do this year is by creating a separate package namespace for each.
 
 .. admonition:: Exercise
 
-  **Summary**: Create a package namespace to hold your projects.
+  **Summary**: Create a package namespace to hold your project.
 
   #. In src, right-click to get the option menu.
   #. Select New...Package
   #. Name it ``com.[yourname]`` (E.g. if your name is Kim Cheng, name it ``com.kimcheng``)
+  #. Inside your the package you just created (the folder named ``com.[yourname]``) create another package called ``riemann``.
+
+  When your folder looks like the following you are done with this exercise:
+
+  .. figure:: packagenamespace.png
+   :align: center
 
 2. AbstractRiemann Class
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -180,7 +186,6 @@ A good way to organize all the projects you will do this year is by creating a s
 
   **Summary**: Create an abstract class that has logic common to all Riemann rules.
 
-  #. Inside your a package namespace (the folder named "com.[yourname]") create another package called called ``riemann``.
   #. In ``riemann`` create the ``AbstractRiemann`` abstract class based on the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ .
   #. Write ``calculateDeltaX()``.
   #. Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract`` and end the line with a semicolon instead of implementing the method.
