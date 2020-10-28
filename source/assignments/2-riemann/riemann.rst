@@ -71,19 +71,13 @@ same type of return value.
 
 .. note::
    Java programmers frequently use **JavaDocs** to document their code so that
-   other people can understand what it does. For example, Dr. Gomprecht used
-   JavaDocs while creating Polyfun so that you know how to use the methods
-   in ``Polynomial`` and other classes in the library. JavaDocs are created by
-   writing comments in your source code using a specific format; you can find a
-   good introduction to documenting your code in this way at https://alvinalexander.com/java/edu/pj/pj010014.
+   other people can understand what it does. JavaDocs are created by
+   writing comments in your source code using a specific format; you can find a good introduction to documenting your code in this way at https://alvinalexander.com/java/edu/pj/pj010014.
 
 Abstract Classes and Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``AbstractRiemann`` class, as shown in the JavaDoc, contains a keyword which you
-most likely have not yet encountered: ``abstract``. This keyword will allow
-you to use to use **object-oriented programming (OOP)** to organize your code
-in a more logical way.
+The ``AbstractRiemann`` class, as shown in the JavaDoc, contains a keyword which you most likely have not yet encountered: ``abstract``. This keyword will allow you to use to use **object-oriented programming (OOP)** to organize your code in a more logical way.
 
 You have learned that there are several different rules which can be used to
 calculate Riemann sums, such as the left hand rule, right hand rule, and
@@ -100,17 +94,13 @@ steps:
 #. Calculate the area of each slice.
 #. Add up the areas to find the total area.
 
-Notice that only the third step---calculating the area of each slice---depends
-upon the specific rule being used; the others are the same regardless of the
-rule.
+Notice that only the third step---calculating the area of each slice---depends upon the specific rule being used; the others are the same regardless of the rule.
 
 .. figure:: fig3.svg
    :width: 95 %
    :align: center
 
-   Here, three different rules are being used to calculate the same Riemann sum.
-   While the slices' shapes are different, they exist over the same subintervals in
-   each diagram.
+   Here, three different rules are being used to calculate the same Riemann sum. While the slices' shapes are different, they exist over the same subintervals in each diagram.
 
 Fourtunately, Java provides a convenient means of structuring classes which
 are mostly the same but differ with respect to certain functions:
@@ -120,15 +110,7 @@ pages are recommended for reference:
 * `Oracle - Inheritance Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html>`_
 * `Oracle - Abstract Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html>`_
 
-As shown in the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_, the ``AbstractRiemann`` class which you will create will be
-an **abstract class**. As such, you will never directly construct a ``new
-AbstractRiemann()``; instead, you will create **child classes** (also known as
-**subclasses**) of ``AbstractRiemann`` for each Riemann sum rule. In this way, you
-will end up with a structure where ``RightHandRule`` and ``LeftHandRule``,
-both child classes of ``AbstractRiemann``, share most methods, differing only in their
-implementations of ``slice()`` and ``slicePlot()``, since these are the only
-methods whose functionality should depend on the rule. For example, this is
-what a fictional rule called ``OvalRule`` could look like::
+As shown in the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_, the ``AbstractRiemann`` class which you will create will be an **abstract class**. As such, you will never directly construct a ``new AbstractRiemann()``; instead, you will create **child classes** (also known as **subclasses**) of ``AbstractRiemann`` for each Riemann sum rule. In this way, you will end up with a structure where ``RightHandRule`` and ``LeftHandRule``, both child classes of ``AbstractRiemann``, share most methods, differing only in their implementations of ``slice()`` and ``slicePlot()``, since these are the only methods whose functionality should depend on the rule. For example, this is what a fictional rule called ``OvalRule`` could look like::
 
     public class OvalRule extends AbstractRiemann {
         @Override
@@ -174,18 +156,31 @@ before it::
         // the actual method
     }
 
+
 Base Assignment
 ----------------
 
 You will write a total of **eight** Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.
 
-1. AbstractRiemann Class
+1. Package Namespaces
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A good way to organize all the projects you will do this year is by creating a separate package namespace for each.
+
+.. admonition:: Exercise
+
+  **Summary**: Create a package namespace to hold your projects.
+
+  #. In src, right-click to get the option menu.
+  #. Select New...Package
+  #. Name it ``com.[yourname]`` (E.g. if your name is Kim Cheng, name it ``com.kimcheng``)
+
+2. AbstractRiemann Class
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
   **Summary**: Create an abstract class that has logic common to all Riemann rules.
 
-  #. Create a package namespace called ``reimann``.
+  #. Inside your a package namespace (the folder named "com.[yourname]") create another package called called ``riemann``.
   #. In ``riemann`` create the ``AbstractRiemann`` abstract class based on the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ .
   #. Write ``calculateDeltaX()``.
   #. Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract`` and end the line with a semicolon instead of implementing the method.
@@ -194,7 +189,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   #. Write ``rsAcc()`` (see :download:`Area Under a Curve Slides </_static/RiemannSumSlides.pdf>` for an explanation of the accumulation function).
 
 
-2. RightHandRule, LeftHandRule and TrapezoidRule Classes
+3. RightHandRule, LeftHandRule and TrapezoidRule Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
@@ -205,7 +200,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   #. For ``slicePlot()`` , make sure the plots correspond to the specific rules. You don't need to fill in the trapezoids for ``TrapezoidRule``.
 
 
-3. Test Classes
+4. Test Classes
 ^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
@@ -235,7 +230,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
   When all the test methods pass you are done with this exercise.
 
 
-4. RiemannApp
+5. RiemannApp
 ^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
@@ -283,7 +278,7 @@ You will write a total of **eight** Java classes for the base assignment. Togeth
    :align: center
 
 
-5. Analysis
+6. Analysis
 ^^^^^^^^^^^^^
 
 Use your program to answer the following question: **which of the three rules is the most accurate?** This should compare the results of the Riemann sums with the actual area under the curve (use this `Integral Calculator <https://www.integral-calculator.com>`__ to get the actual value).

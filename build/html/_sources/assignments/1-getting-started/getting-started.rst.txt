@@ -9,8 +9,7 @@ Welcome to CSX
 CSX, also know as Advanced Math and Physics Modeling, is three classes taught
 in a unified manner. The classes are Precalculus 2A, Physics A, and Computer
 Science X. In teaching Math and Physics in a unified way, we recognize the
-historical development of the two subjects. Math and Physics fit together like
-a hand in a glove. It’s most instructive, and most enjoyable, if the two
+historical development of the two subjects. Math and Physics fit together like a hand in a glove. It’s most instructive, and most enjoyable, if the two
 subjects are presented in tandem. In teaching Math, Physics, and Computer
 Science in a unified way, we recognize the way in which contemporary
 scientists work. Whereas once all scientists were either experimentalists or
@@ -24,9 +23,7 @@ as disparate as Global Warming and the Human Genome.
 
 Almost all Computer Science projects will be based on Physics or Mathematics.
 Some programs will be computer models of physical situations. For example,
-you’ll model balls dropping, planets orbiting the Sun, and masses connected to
-a spring. Some programs will be realizations of mathematical algorithms. For
-instance, early on in the year you’ll write code to invert a matrix.
+you’ll model balls dropping, planets orbiting the Sun, and masses connected to a spring. Some programs will be realizations of mathematical algorithms. For instance, early on in the year you’ll write code to invert a matrix.
 
 When possible, the same topics will be covered at the same time in both Math
 and Physics. Many of the concepts covered in Precalculus and Physics were
@@ -75,8 +72,8 @@ Follow these images to set up your environment:
    not appear until you've run a class.)
 
 
-Rust Removal
-------------
+Introduction to JUnit
+----------------------
 For this section, you will review Quadratic equations, how to write objects
 and get introduced to writing test cases.
 
@@ -264,9 +261,9 @@ Background Information: Abstract Classes
 """""""""""""""""""""""""""""""""""""""""
 ``MovingBallApp`` is an extension of ``AbstractSimulation``, an **abstract class**.
  
-An **abstract class** is a class that one where the author left some methods empty. These empty methods are called **abstract methods**. The class that extends the abstract class defines the abstract methods.
+An **abstract class** is a class that is meant to be extended and one where the author left some methods empty, which are meant to be overridden. These empty methods are called **abstract methods**. 
  
-In AbstractSimulation, these are the abstract methods that MovingBallApp needs to define:
+In AbstractSimulation, these are the abstract methods that MovingBallApp needs to override:
 
    #. ``reset`` - Adds options to the Control Panel and returns the simulation to its default state. All commands within the reset() method are executed the FIRST time the simulation is INITIALIZED, and every time the RESET button is clicked after that. Note that the RESET button appears when the app is first loaded, but does not appear again until the app has been STARTED and STOPPED, and NEW is clicked.
    #. ``initialize`` - Sets the initial conditions of your simulation. It should read and store values from the control panel and add objects to the PlotFrame. The commands within this method are executed once, or every time the INITIALIZE button in clicked.

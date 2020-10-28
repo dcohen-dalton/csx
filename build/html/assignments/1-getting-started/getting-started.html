@@ -94,7 +94,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#welcome-to-csx">Welcome to CSX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setup-your-environment">Setup your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rust-removal">Rust Removal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-junit">Introduction to JUnit</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#problem-find-the-roots-of-a-quadratic">Problem: Find the roots of a Quadratic.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step-1-create-a-test-class">Step 1: Create a Test Class</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step-2-create-a-quadratic-object">Step 2: Create a Quadratic Object</a></li>
@@ -195,8 +195,7 @@
 <p>CSX, also know as Advanced Math and Physics Modeling, is three classes taught
 in a unified manner. The classes are Precalculus 2A, Physics A, and Computer
 Science X. In teaching Math and Physics in a unified way, we recognize the
-historical development of the two subjects. Math and Physics fit together like
-a hand in a glove. It’s most instructive, and most enjoyable, if the two
+historical development of the two subjects. Math and Physics fit together like a hand in a glove. It’s most instructive, and most enjoyable, if the two
 subjects are presented in tandem. In teaching Math, Physics, and Computer
 Science in a unified way, we recognize the way in which contemporary
 scientists work. Whereas once all scientists were either experimentalists or
@@ -209,9 +208,7 @@ complicated situations. Consequently, computer models are ubiquitous in areas
 as disparate as Global Warming and the Human Genome.</p>
 <p>Almost all Computer Science projects will be based on Physics or Mathematics.
 Some programs will be computer models of physical situations. For example,
-you’ll model balls dropping, planets orbiting the Sun, and masses connected to
-a spring. Some programs will be realizations of mathematical algorithms. For
-instance, early on in the year you’ll write code to invert a matrix.</p>
+you’ll model balls dropping, planets orbiting the Sun, and masses connected to a spring. Some programs will be realizations of mathematical algorithms. For instance, early on in the year you’ll write code to invert a matrix.</p>
 <p>When possible, the same topics will be covered at the same time in both Math
 and Physics. Many of the concepts covered in Precalculus and Physics were
 developed simultaneously. Math is necessary for a deep understanding of
@@ -247,8 +244,8 @@ Your project should now look like the above. (Note: the <strong>out</strong> fol
 not appear until you’ve run a class.)</span></p>
 </div>
 </div>
-<div class="section" id="rust-removal">
-<h2>Rust Removal<a class="headerlink" href="#rust-removal" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction-to-junit">
+<h2>Introduction to JUnit<a class="headerlink" href="#introduction-to-junit" title="Permalink to this headline">¶</a></h2>
 <p>For this section, you will review Quadratic equations, how to write objects
 and get introduced to writing test cases.</p>
 <div class="section" id="problem-find-the-roots-of-a-quadratic">
@@ -434,8 +431,8 @@ Write a test method in <code class="docutils literal"><span class="pre">Quadrati
 <div class="section" id="background-information-abstract-classes">
 <h4>Background Information: Abstract Classes<a class="headerlink" href="#background-information-abstract-classes" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal"><span class="pre">MovingBallApp</span></code> is an extension of <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>, an <strong>abstract class</strong>.</p>
-<p>An <strong>abstract class</strong> is a class that one where the author left some methods empty. These empty methods are called <strong>abstract methods</strong>. The class that extends the abstract class defines the abstract methods.</p>
-<p>In AbstractSimulation, these are the abstract methods that MovingBallApp needs to define:</p>
+<p>An <strong>abstract class</strong> is a class that is meant to be extended and one where the author left some methods empty, which are meant to be overridden. These empty methods are called <strong>abstract methods</strong>.</p>
+<p>In AbstractSimulation, these are the abstract methods that MovingBallApp needs to override:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><code class="docutils literal"><span class="pre">reset</span></code> - Adds options to the Control Panel and returns the simulation to its default state. All commands within the reset() method are executed the FIRST time the simulation is INITIALIZED, and every time the RESET button is clicked after that. Note that the RESET button appears when the app is first loaded, but does not appear again until the app has been STARTED and STOPPED, and NEW is clicked.</li>

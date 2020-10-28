@@ -101,11 +101,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#base-assignment">Base Assignment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#abstractriemann-class">1. AbstractRiemann Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#righthandrule-lefthandrule-and-trapezoidrule-classes">2. RightHandRule, LeftHandRule and TrapezoidRule Classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-classes">3. Test Classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#riemannapp">4. RiemannApp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#analysis">5. Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#package-namespaces">1. Package Namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#abstractriemann-class">2. AbstractRiemann Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#righthandrule-lefthandrule-and-trapezoidrule-classes">3. RightHandRule, LeftHandRule and TrapezoidRule Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-classes">4. Test Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#riemannapp">5. RiemannApp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis">6. Analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#extension">Extension</a></li>
@@ -244,19 +245,13 @@ same type of return value.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Java programmers frequently use <strong>JavaDocs</strong> to document their code so that
-other people can understand what it does. For example, Dr. Gomprecht used
-JavaDocs while creating Polyfun so that you know how to use the methods
-in <code class="docutils literal"><span class="pre">Polynomial</span></code> and other classes in the library. JavaDocs are created by
-writing comments in your source code using a specific format; you can find a
-good introduction to documenting your code in this way at <a class="reference external" href="https://alvinalexander.com/java/edu/pj/pj010014">https://alvinalexander.com/java/edu/pj/pj010014</a>.</p>
+other people can understand what it does. JavaDocs are created by
+writing comments in your source code using a specific format; you can find a good introduction to documenting your code in this way at <a class="reference external" href="https://alvinalexander.com/java/edu/pj/pj010014">https://alvinalexander.com/java/edu/pj/pj010014</a>.</p>
 </div>
 </div>
 <div class="section" id="abstract-classes-and-methods">
 <h3>Abstract Classes and Methods<a class="headerlink" href="#abstract-classes-and-methods" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class, as shown in the JavaDoc, contains a keyword which you
-most likely have not yet encountered: <code class="docutils literal"><span class="pre">abstract</span></code>. This keyword will allow
-you to use to use <strong>object-oriented programming (OOP)</strong> to organize your code
-in a more logical way.</p>
+<p>The <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class, as shown in the JavaDoc, contains a keyword which you most likely have not yet encountered: <code class="docutils literal"><span class="pre">abstract</span></code>. This keyword will allow you to use to use <strong>object-oriented programming (OOP)</strong> to organize your code in a more logical way.</p>
 <p>You have learned that there are several different rules which can be used to
 calculate Riemann sums, such as the left hand rule, right hand rule, and
 trapezoid rule. Thinking of a Riemann sum as the sum of many small slices of
@@ -272,14 +267,10 @@ endpoints of the interval and the number of slices.</li>
 <li>Calculate the area of each slice.</li>
 <li>Add up the areas to find the total area.</li>
 </ol>
-<p>Notice that only the third step—calculating the area of each slice—depends
-upon the specific rule being used; the others are the same regardless of the
-rule.</p>
+<p>Notice that only the third step—calculating the area of each slice—depends upon the specific rule being used; the others are the same regardless of the rule.</p>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/fig3.svg"><img alt="../../_images/fig3.svg" src="../../_images/fig3.svg" width="95%" /></a>
-<p class="caption"><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum.
-While the slices’ shapes are different, they exist over the same subintervals in
-each diagram.</span></p>
+<p class="caption"><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum. While the slices’ shapes are different, they exist over the same subintervals in each diagram.</span></p>
 </div>
 <p>Fourtunately, Java provides a convenient means of structuring classes which
 are mostly the same but differ with respect to certain functions:
@@ -289,15 +280,7 @@ pages are recommended for reference:</p>
 <li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Oracle - Inheritance Tutorial</a></li>
 <li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">Oracle - Abstract Tutorial</a></li>
 </ul>
-<p>As shown in the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a>, the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you will create will be
-an <strong>abstract class</strong>. As such, you will never directly construct a <code class="docutils literal"><span class="pre">new</span>
-<span class="pre">AbstractRiemann()</span></code>; instead, you will create <strong>child classes</strong> (also known as
-<strong>subclasses</strong>) of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> for each Riemann sum rule. In this way, you
-will end up with a structure where <code class="docutils literal"><span class="pre">RightHandRule</span></code> and <code class="docutils literal"><span class="pre">LeftHandRule</span></code>,
-both child classes of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>, share most methods, differing only in their
-implementations of <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>, since these are the only
-methods whose functionality should depend on the rule. For example, this is
-what a fictional rule called <code class="docutils literal"><span class="pre">OvalRule</span></code> could look like:</p>
+<p>As shown in the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a>, the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you will create will be an <strong>abstract class</strong>. As such, you will never directly construct a <code class="docutils literal"><span class="pre">new</span> <span class="pre">AbstractRiemann()</span></code>; instead, you will create <strong>child classes</strong> (also known as <strong>subclasses</strong>) of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> for each Riemann sum rule. In this way, you will end up with a structure where <code class="docutils literal"><span class="pre">RightHandRule</span></code> and <code class="docutils literal"><span class="pre">LeftHandRule</span></code>, both child classes of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>, share most methods, differing only in their implementations of <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>, since these are the only methods whose functionality should depend on the rule. For example, this is what a fictional rule called <code class="docutils literal"><span class="pre">OvalRule</span></code> could look like:</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OvalRule</span> <span class="kd">extends</span> <span class="n">AbstractRiemann</span> <span class="o">{</span>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">double</span> <span class="nf">slice</span><span class="o">(</span><span class="n">Polynomial</span> <span class="n">poly</span><span class="o">,</span> <span class="kt">double</span> <span class="n">sleft</span><span class="o">,</span> <span class="kt">double</span> <span class="n">sright</span><span class="o">)</span> <span class="o">{</span>
@@ -345,13 +328,26 @@ before it:</p>
 <div class="section" id="base-assignment">
 <h2>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h2>
 <p>You will write a total of <strong>eight</strong> Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.</p>
+<div class="section" id="package-namespaces">
+<h3>1. Package Namespaces<a class="headerlink" href="#package-namespaces" title="Permalink to this headline">¶</a></h3>
+<p>A good way to organize all the projects you will do this year is by creating a separate package namespace for each.</p>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<p><strong>Summary</strong>: Create a package namespace to hold your projects.</p>
+<ol class="last arabic simple">
+<li>In src, right-click to get the option menu.</li>
+<li>Select New…Package</li>
+<li>Name it <code class="docutils literal"><span class="pre">com.[yourname]</span></code> (E.g. if your name is Kim Cheng, name it <code class="docutils literal"><span class="pre">com.kimcheng</span></code>)</li>
+</ol>
+</div>
+</div>
 <div class="section" id="abstractriemann-class">
-<h3>1. AbstractRiemann Class<a class="headerlink" href="#abstractriemann-class" title="Permalink to this headline">¶</a></h3>
+<h3>2. AbstractRiemann Class<a class="headerlink" href="#abstractriemann-class" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Create an abstract class that has logic common to all Riemann rules.</p>
 <ol class="last arabic simple">
-<li>Create a package namespace called <code class="docutils literal"><span class="pre">reimann</span></code>.</li>
+<li>Inside your a package namespace (the folder named “com.[yourname]”) create another package called called <code class="docutils literal"><span class="pre">riemann</span></code>.</li>
 <li>In <code class="docutils literal"><span class="pre">riemann</span></code> create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the <a class="reference external" href="https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a> .</li>
 <li>Write <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>.</li>
 <li>Add the abstract methods <code class="docutils literal"><span class="pre">slice()</span></code> and <code class="docutils literal"><span class="pre">slicePlot()</span></code>. Make sure to mark them as <code class="docutils literal"><span class="pre">abstract</span></code> and end the line with a semicolon instead of implementing the method.</li>
@@ -362,7 +358,7 @@ before it:</p>
 </div>
 </div>
 <div class="section" id="righthandrule-lefthandrule-and-trapezoidrule-classes">
-<h3>2. RightHandRule, LeftHandRule and TrapezoidRule Classes<a class="headerlink" href="#righthandrule-lefthandrule-and-trapezoidrule-classes" title="Permalink to this headline">¶</a></h3>
+<h3>3. RightHandRule, LeftHandRule and TrapezoidRule Classes<a class="headerlink" href="#righthandrule-lefthandrule-and-trapezoidrule-classes" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Create specific Object classes for various Riemann rules.</p>
@@ -374,7 +370,7 @@ before it:</p>
 </div>
 </div>
 <div class="section" id="test-classes">
-<h3>3. Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h3>
+<h3>4. Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Test the Riemann <code class="docutils literal"><span class="pre">slice()</span></code> methods.</p>
@@ -407,7 +403,7 @@ before it:</p>
 </div>
 </div>
 <div class="section" id="riemannapp">
-<h3>4. RiemannApp<a class="headerlink" href="#riemannapp" title="Permalink to this headline">¶</a></h3>
+<h3>5. RiemannApp<a class="headerlink" href="#riemannapp" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Plot the Riemann rules.</p>
@@ -457,7 +453,7 @@ before it:</p>
 </div>
 </div>
 <div class="section" id="analysis">
-<h3>5. Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h3>
+<h3>6. Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h3>
 <p>Use your program to answer the following question: <strong>which of the three rules is the most accurate?</strong> This should compare the results of the Riemann sums with the actual area under the curve (use this <a class="reference external" href="https://www.integral-calculator.com">Integral Calculator</a> to get the actual value).</p>
 <blockquote>
 <div><div class="admonition warning">
