@@ -346,6 +346,3 @@ Step 4: (Advanced) Spiral Trail Animation
 More Information
 ^^^^^^^^^^^^^^^^^^
 For more information on Open Source Physics, read the `Open Source Physics JavaDocs <https://kjergens.github.io/osp-5.1.0/out/html/index.html?overview-summary.html>`_
-
-
-
