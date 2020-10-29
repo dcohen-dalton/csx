@@ -189,9 +189,9 @@ A good way to organize all the projects you will do this year is by creating a s
   #. In ``riemann`` create the ``AbstractRiemann`` abstract class based on the `JavaDoc <../../_static/riemann-javadoc/riemannsum/Riemann.html>`_ .
   #. Write ``calculateDeltaX()``.
   #. Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract`` and end the line with a semicolon instead of implementing the method.
-  #. Write ``rs()``.
-  #. Write ``rsPlot()``.
-  #. Write ``rsAcc()`` (see :download:`Area Under a Curve Slides </_static/RiemannSumSlides.pdf>` for an explanation of the accumulation function).
+  #. Write ``sum()``.
+  #. Write ``sumPlot()``.
+  #. Write ``accumulatePlot()`` (see :download:`Area Under a Curve Slides </_static/RiemannSumSlides.pdf>` for an explanation of the accumulation function).
 
 
 3. RightHandRule, LeftHandRule and TrapezoidRule Classes
