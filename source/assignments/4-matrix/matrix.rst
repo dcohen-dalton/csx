@@ -16,7 +16,7 @@ equations.
 
 
 As with the Riemann Sums assignment, there is `a JavaDoc
-<https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_ with methods for your class to include. In
+<../../_static/matrix-javadoc/main/Matrix.html>`_ with methods for your class to include. In
 addition, you should work to create some of your own test classes in order to
 test your matrices.
 
@@ -78,7 +78,7 @@ Base Assignment
   #. In ``matrix`` create a class called ``Matrix``.
   #. Add a ``private`` attribute called ``matrix`` that is a two-dimensional array of ``double`` s.
   #. Write the Matrix constructor, which sets the size of the ``matrix``. 
-  #. Implement the rest of the methods in the `Matrix JavaDoc <https://kjergens.github.io/csxdocs-build/_static/matrix-javadoc/main/Matrix.html>`_
+  #. Implement the rest of the methods in the `Matrix JavaDoc <../../_static/matrix-javadoc/main/Matrix.html>`_
   #. Optionally, create other constructors to help you fill your matrix.
 
 2. Test Classes

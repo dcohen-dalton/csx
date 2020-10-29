@@ -59,7 +59,7 @@ The AbstractRiemann Class
 The first class which you will create for this assignment, ``AbstractRiemann``, will
 contain the majority of your code for calculating Riemann sums. Start by
 `opening up the documentation
-<https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``AbstractRiemann``. The
+<../../_static/riemann-javadoc/riemannsum/Riemann.html>`_ for ``AbstractRiemann``. The
 linked page, known as a **JavaDoc**, has information about each of the methods
 of the ``AbstractRiemann`` class. This includes the methods' **parameters** (inputs)
 and their **return values** (outputs). Your job will be to create a class
@@ -110,7 +110,7 @@ pages are recommended for reference:
 * `Oracle - Inheritance Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html>`_
 * `Oracle - Abstract Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html>`_
 
-As shown in the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_, the ``AbstractRiemann`` class which you will create will be an **abstract class**. As such, you will never directly construct a ``new AbstractRiemann()``; instead, you will create **child classes** (also known as **subclasses**) of ``AbstractRiemann`` for each Riemann sum rule. In this way, you will end up with a structure where ``RightHandRule`` and ``LeftHandRule``, both child classes of ``AbstractRiemann``, share most methods, differing only in their implementations of ``slice()`` and ``slicePlot()``, since these are the only methods whose functionality should depend on the rule. For example, this is what a fictional rule called ``OvalRule`` could look like::
+As shown in the `JavaDoc <../../_static/riemann-javadoc/riemannsum/Riemann.html>`_, the ``AbstractRiemann`` class which you will create will be an **abstract class**. As such, you will never directly construct a ``new AbstractRiemann()``; instead, you will create **child classes** (also known as **subclasses**) of ``AbstractRiemann`` for each Riemann sum rule. In this way, you will end up with a structure where ``RightHandRule`` and ``LeftHandRule``, both child classes of ``AbstractRiemann``, share most methods, differing only in their implementations of ``slice()`` and ``slicePlot()``, since these are the only methods whose functionality should depend on the rule. For example, this is what a fictional rule called ``OvalRule`` could look like::
 
     public class OvalRule extends AbstractRiemann {
         @Override
@@ -186,7 +186,7 @@ A good way to organize all the projects you will do this year is by creating a s
 
   **Summary**: Create an abstract class that has logic common to all Riemann rules.
 
-  #. In ``riemann`` create the ``AbstractRiemann`` abstract class based on the `JavaDoc <https://kjergens.github.io/csxdocs-build/_static/riemann-javadoc/riemannsum/Riemann.html>`_ .
+  #. In ``riemann`` create the ``AbstractRiemann`` abstract class based on the `JavaDoc <../../_static/riemann-javadoc/riemannsum/Riemann.html>`_ .
   #. Write ``calculateDeltaX()``.
   #. Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract`` and end the line with a semicolon instead of implementing the method.
   #. Write ``rs()``.
