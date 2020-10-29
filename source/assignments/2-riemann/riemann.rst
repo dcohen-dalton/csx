@@ -254,11 +254,11 @@ A good way to organize all the projects you will do this year is by creating a s
 
       RightHandRule rightHandRule = new RightHandRule();
 
-  #. For each rule object use ``rsPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
+  #. For each rule object use ``sumPlot()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
 
     .. code-block:: java
     
-      rightHandRule.rsPlot(rightHandPlot, polynomial, 1, 2, 10);
+      rightHandRule.sumPlot(rightHandPlot, polynomial, 1, 2, 10);
 
   #. Also on each PlotFrame, plot the example Polynomial so you can see the line in relation to the rectangles.
   #. Finally, for each rule, print the estimated area under the curve.
