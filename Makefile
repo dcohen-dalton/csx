@@ -9,7 +9,10 @@ SOURCEDIR     = source
 BUILDDIR      = docs
 
 html: 
-	@rm -r docs_backup && mv docs docs_backup && $(SPHINXBUILD) "$(SOURCEDIR)/" "$(BUILDDIR)/" $(SPHINXOPTS) $(O)
+	@rm -r "$(BUILDDIR)_backup" 
+	@mv "$(BUILDDIR)" "$(BUILDDIR)_backup" 
+	@$(SPHINXBUILD) "$(SOURCEDIR)/" "$(BUILDDIR)/" $(SPHINXOPTS) $(O)
+	@touch "$(BUILDDIR)/.nojekyll"
 
 # Put it first so that "make" without argument is like "make help".
 help:
