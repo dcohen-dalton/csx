@@ -1,5 +1,5 @@
 # csxdocs-build
-=======
+
 Online book for the X Class
 
 # Setup
@@ -11,9 +11,9 @@ Make sure you have **Python 3** and **pip** installed. Run the following:
 # Build - Method 1
 From the project directory, run
 
-    `sphinx-build source/ docs/`
+    sphinx-build source/ docs/
 
 # Build - Method 2
 Optionally, if you have make installed, run
 
-    `make html`
+    make html
