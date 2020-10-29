@@ -12,7 +12,7 @@ Make sure you have **Python 3** and **pip** installed. Run the following:
 # Building
 From the project directory, run
 
-    make html
+    make docs 
 
-(if you do not have `make` installed, run `sphinx-build source/ build/`)
+(if you do not have `make` installed, run `sphinx-build source/ docs/`)
 >>>>>>> d1a8c485d11f8c66ce62fd4cd48c8451bcf4fccb
