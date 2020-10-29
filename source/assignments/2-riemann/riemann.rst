@@ -172,9 +172,8 @@ A good way to organize all the projects you will do this year is by creating a s
 
   #. In src, right-click to get the option menu.
   #. Select New...Package
-  #. Name it ``com.[yourname]`` (E.g. if your name is Kim Cheng, name it ``com.kimcheng``)
-  #. Inside your the package you just created (the folder named ``com.[yourname]``) create another package called ``riemann``.
-
+  #. Name it ``com.[yourname].riemann`` (E.g. if your name is Kim Cheng, name it ``com.kimcheng.riemann``)
+  
   When your folder looks like the following you are done with this exercise:
 
   .. figure:: packagenamespace.png
@@ -186,7 +185,7 @@ A good way to organize all the projects you will do this year is by creating a s
 
   **Summary**: Create an abstract class that has logic common to all Riemann rules.
 
-  #. In ``riemann`` create the ``AbstractRiemann`` abstract class based on the `JavaDoc <../../_static/riemann-javadoc/riemannsum/Riemann.html>`_ .
+  #. In ``com.[yourname].riemann`` create the ``AbstractRiemann`` abstract class based on the `JavaDoc <../../_static/riemann-javadoc/riemannsum/Riemann.html>`_ .
   #. Write ``calculateDeltaX()``.
   #. Add the abstract methods ``slice()`` and ``slicePlot()``. Make sure to mark them as ``abstract`` and end the line with a semicolon instead of implementing the method.
   #. Write ``sum()``.
