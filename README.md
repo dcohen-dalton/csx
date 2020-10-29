@@ -1,4 +1,4 @@
-# csxdocs-build
+# csx
 
 Online book for the X Class
 
