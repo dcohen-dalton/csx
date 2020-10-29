@@ -179,7 +179,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor" id="i1">
 <td class="colFirst"><code>double</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rs(org.dalton.polyfun.Polynomial,double,double,int)">sum</a></span>&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sum(org.dalton.polyfun.Polynomial,double,double,int)">sum</a></span>&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
   double&nbsp;xLeft,
   double&nbsp;xRight,
   int&nbsp;subintervals)</code></th>
@@ -190,9 +190,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#accumulate(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)">accumulate</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#accumulate(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double,int)">accumulate</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
      org.dalton.polyfun.Polynomial&nbsp;poly,
-     double&nbsp;xLeft,double&nbsp;xRight,double&nbsp;subintervals)</code></th>
+     double&nbsp;xLeft,double&nbsp;xRight,int&nbsp;subintervals)</code></th>
 <td class="colLast">
 <div class="block">Graphs the accumulation function corresponding to the input
  polynomial and the input left hand endpoint.</div>
@@ -300,12 +300,12 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="rs(org.dalton.polyfun.Polynomial,double,double,int)">
+<a id="sum(org.dalton.polyfun.Polynomial,double,double,int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>rs</h4>
+<h4>sum</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;sum&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
                  double&nbsp;xLeft,
                  double&nbsp;xRight,
@@ -323,7 +323,7 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="accumulate(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double,double)">
+<a id="accumulate(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double,int)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -333,7 +333,7 @@ extends java.lang.Object</pre>
                   org.dalton.polyfun.Polynomial&nbsp;poly,
                   double&nbsp;xLeft,
                   double&nbsp;xRight,
-                  double&nbsp;subintervals)</pre>
+                  int&nbsp;subintervals)</pre>
 <div class="block">Graphs the accumulation function corresponding to the input
  polynomial and the endpoints. This method uses the
  specific implementation of <a href="#slice(org.dalton.polyfun.Polynomial,double,double)"><code>slice(Polynomial, double, double)</code></a>
