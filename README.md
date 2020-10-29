@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # csxdocs-build
 =======
 Online book for the X Class
@@ -9,10 +8,12 @@ Make sure you have **Python 3** and **pip** installed. Run the following:
     pip3 install --upgrade pip
     pip3 install sphinx sphinx_rtd_theme
 
-# Building
+# Build - Method 1
 From the project directory, run
 
-    make html 
+    `sphinx-build source/ docs/`
 
-(if you do not have `make` installed, run `sphinx-build source/ docs/`)
->>>>>>> d1a8c485d11f8c66ce62fd4cd48c8451bcf4fccb
+# Build - Method 2
+Optionally, if you have make installed, run
+
+    `make html`

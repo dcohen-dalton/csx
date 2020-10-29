@@ -6,7 +6,10 @@
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
-BUILDDIR      = docs 
+BUILDDIR      = docs
+
+html: 
+	@rm -r docs_backup && mv docs docs_backup && $(SPHINXBUILD) "$(SOURCEDIR)/" "$(BUILDDIR)/" $(SPHINXOPTS) $(O)
 
 # Put it first so that "make" without argument is like "make help".
 help:
