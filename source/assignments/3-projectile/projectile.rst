@@ -248,7 +248,7 @@ Before you start your base assignments, consider:
 
   **Summary:** Design and implement a Particle object.
 
-  #. Create a package namespace called ``projectile``.
+  #. In src folder, create a new package namespace called ``com.[yourname].projectile``.
   #. In ``projectile`` create a new Java class called ``Particle``.
   #. Design the ``Particle`` class to model the motion of a particle - for example, a rock - in one dimension. Just like the real rock, you want your simulated rock to have certain properties at a given time. These properties correspond to the **fields** (attributes, aka, member variables) of the ``Particle`` object. What properties does a real particle have? What fields should an object of this type have?
   #. Add a constructor to ``Particle`` which takes initial values for these properties and initializes the particle accordingly.
