@@ -179,7 +179,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor" id="i1">
 <td class="colFirst"><code>double</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rs(org.dalton.polyfun.Polynomial,double,double,int)">rs</a></span>&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rs(org.dalton.polyfun.Polynomial,double,double,int)">sum</a></span>&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
   double&nbsp;xLeft,
   double&nbsp;xRight,
   int&nbsp;subintervals)</code></th>
@@ -190,9 +190,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)">rsAcc</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#accumulate(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)">accumulate</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
      org.dalton.polyfun.Polynomial&nbsp;poly,
-     double&nbsp;xLeft,double&nbsp;xRight)</code></th>
+     double&nbsp;xLeft,double&nbsp;xRight,double&nbsp;subintervals)</code></th>
 <td class="colLast">
 <div class="block">Graphs the accumulation function corresponding to the input
  polynomial and the input left hand endpoint.</div>
@@ -200,7 +200,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rsPlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double,int)">rsPlot</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sumPlot(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double,int)">sumPlot</a></span>&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
       org.dalton.polyfun.Polynomial&nbsp;poly,
       double&nbsp;xLeft,
       double&nbsp;xRight,
@@ -306,7 +306,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>rs</h4>
-<pre class="methodSignature">public&nbsp;double&nbsp;rs&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
+<pre class="methodSignature">public&nbsp;double&nbsp;sum&#8203;(org.dalton.polyfun.Polynomial&nbsp;poly,
                  double&nbsp;xLeft,
                  double&nbsp;xRight,
                  int&nbsp;subintervals)</pre>
@@ -323,16 +323,17 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="rsAcc(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double)">
+<a id="accumulate(org.opensourcephysics.frames.PlotFrame,org.dalton.polyfun.Polynomial,double,double,double)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>rsAcc</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;rsAcc&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
+<h4>accumulate</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;accumulate&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
                   org.dalton.polyfun.Polynomial&nbsp;poly,
                   double&nbsp;xLeft,
-                  double&nbsp;xRight)</pre>
+                  double&nbsp;xRight,
+                  double&nbsp;subintervals)</pre>
 <div class="block">Graphs the accumulation function corresponding to the input
  polynomial and the endpoints. This method uses the
  specific implementation of <a href="#slice(org.dalton.polyfun.Polynomial,double,double)"><code>slice(Polynomial, double, double)</code></a>
@@ -344,6 +345,7 @@ extends java.lang.Object</pre>
 <dd><code>poly</code> - the polynomial whose accumulation function is to be calculated</dd>
 <dd><code>xLeft</code> - the left hand endpoint of the accumulation function</dd>
 <dd><code>xRight</code> - the right hand endpoint of the accumulation function</dd>
+<dd><code>subintervals</code> - the numbers of slices</dd>
 </dl>
 </li>
 </ul>
@@ -352,7 +354,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>rsPlot</h4>
+<h4>sumPlot</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;rsPlot&#8203;(org.opensourcephysics.frames.PlotFrame&nbsp;pframe,
                    org.dalton.polyfun.Polynomial&nbsp;poly,
                    double&nbsp;xLeft,
