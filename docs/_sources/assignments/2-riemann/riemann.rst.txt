@@ -263,24 +263,57 @@ A good way to organize all the projects you will do this year is by creating a s
   #. Also on each PlotFrame, plot the example Polynomial so you can see the line in relation to the rectangles.
   #. Finally, for each rule, print the estimated area under the curve.
 
-  When your RiemannApp prints estimated areas and launches three PlotFrames similar to the following, you are done with this exercise.
+  When your RiemannApp (1) prints estimated areas of a polynomial for each of the rules, (2) plots each rule and (3) plots each accumulation function, similar to the following, you are done with this exercise.
 
-  .. figure:: areas.png
-   :width: 80 %
+  (1) Estimated areas of a polynomial:
+
+  .. figure:: 00sum.png
+   :width: 100 %
    :align: center
 
-  .. figure:: rightRule.png
-   :width: 50 %
+  
+  (2) Plots for each rule:
+
+  .. figure:: 01lhr.png
+   :width: 70 %
    :align: center
 
-  .. figure:: leftRule.png
-   :width: 50 %
+  .. figure:: 02rhr.png
+   :width: 70 %
    :align: center
 
-  .. figure:: trapRule.png
-   :width: 50 %
+  .. figure:: 03tr.png
+   :width: 70 %
    :align: center
 
+  
+  (3) Plots for each accumulation function:
+
+  .. figure:: 04lhracc.png
+   :width: 70 %
+   :align: center
+
+  .. figure:: 05rhracc.png
+   :width: 70 %
+   :align: center
+
+  .. figure:: 06tracc.png
+   :width: 70 %
+   :align: center
+
+  You can also combine the accumulation graphs with their associated Riemann Sum Rules like this:
+
+  .. figure:: 07lhrtogether.png
+   :width: 70 %
+   :align: center
+
+  .. figure:: 08rhrtogether.png
+   :width: 70 %
+   :align: center
+
+  .. figure:: 09trtogether.png
+   :width: 70 %
+   :align: center
 
 6. Analysis
 ^^^^^^^^^^^^^
