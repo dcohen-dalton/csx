@@ -265,14 +265,14 @@ A good way to organize all the projects you will do this year is by creating a s
 
   When your RiemannApp (1) prints estimated areas of a polynomial for each of the rules, (2) plots each rule and (3) plots each accumulation function, similar to the following, you are done with this exercise.
 
-  Estimated areas for a polynomial:
+  (1) Estimated areas of a polynomial:
 
   .. figure:: 00sum.png
    :width: 100 %
    :align: center
 
   
-  Riemann Sum plots:
+  (2) Plots for each rule:
 
   .. figure:: 01lhr.png
    :width: 70 %
@@ -287,7 +287,7 @@ A good way to organize all the projects you will do this year is by creating a s
    :align: center
 
   
-  Accumulation functions plots:
+  (3) Plots for each accumulation function:
 
   .. figure:: 04lhracc.png
    :width: 70 %
