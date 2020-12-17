@@ -162,7 +162,7 @@ Base Assignment
 
 You will write a total of **eight** Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.
 
-See the `JavaDoc <../../_static/riemann-javadoc/package-summary.html>`_ 
+See the `JavaDoc <../../_static/riemann-javadoc/package-summary.html>`_ for an overview of all the classes in this project.
 
 1. Create a Package Namespace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

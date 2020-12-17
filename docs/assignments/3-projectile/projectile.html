@@ -97,11 +97,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#introduction-to-simulations">Introduction to Simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#introduction-to-modeling">Introduction to Modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modeling-projectile-motion">Modeling Projectile Motion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#review-abstractsimulation">Review  <code class="docutils literal"><span class="pre">AbstractSimulation</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#control-panel">Control Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#review-displaying-simulations-using-osp">Review: Displaying Simulations using OSP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-simulation-class">The Simulation Class</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dostep"><code class="docutils literal"><span class="pre">doStep()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#initialize"><code class="docutils literal"><span class="pre">initialize()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#reset"><code class="docutils literal"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialize"><code class="docutils literal"><span class="pre">initialize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main"><code class="docutils literal"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-panel">Control Panel</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a></li>
@@ -271,12 +273,113 @@ output LARGEST
 your program, rather then the computer.</p>
 </div>
 </div>
-<div class="section" id="review-abstractsimulation">
-<h2>Review  <code class="docutils literal"><span class="pre">AbstractSimulation</span></code><a class="headerlink" href="#review-abstractsimulation" title="Permalink to this headline">¶</a></h2>
-<p>You will use <code class="docutils literal"><span class="pre">AbstractSimulation</span></code> for every physics project in this class.
-As the name implies, it is an abstract class with some abstract methods, just
-like you learned about in <code class="docutils literal"><span class="pre">Riemann</span></code>.</p>
-<p>This section is optional and only if you need to review <code class="docutils literal"><span class="pre">AbstractSimulation</span></code> s, which you learned in Getting Started.</p>
+<div class="section" id="review-displaying-simulations-using-osp">
+<h2>Review: Displaying Simulations using OSP<a class="headerlink" href="#review-displaying-simulations-using-osp" title="Permalink to this headline">¶</a></h2>
+<p>You will use the <strong>Open Source Physics</strong> (OSP) library to display your physics
+simulations. You’ve already used OSP (specifically the <code class="docutils literal"><span class="pre">PlotFrame</span></code> class) to
+plot graphs and Riemann sums, and you used <code class="docutils literal"><span class="pre">AbstractSimulation</span></code> to make an animation n <code class="docutils literal"><span class="pre">Getting</span> <span class="pre">Started</span></code>. This section will review how to create OSP for animated
+simulations.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It might be useful to look at the <a class="reference external" href="https://kjergens.github.io/osp-5.1.0/out/html/index.html?overview-summary.html">JavaDocs for OSP</a>
+in order to see for yourself what its methods look like. In the future, if
+you ever want to learn more aout a class, checking the documentation is a
+good place to start.</p>
+</div>
+<div class="section" id="the-simulation-class">
+<h3>The Simulation Class<a class="headerlink" href="#the-simulation-class" title="Permalink to this headline">¶</a></h3>
+<p>The first step when making an OSP simulation is to create a class which
+extends <code class="docutils literal"><span class="pre">AbstractSimulation</span></code> (<a class="reference external" href="https://kjergens.github.io/osp-5.1.0/out/html/org/opensourcephysics/controls/AbstractSimulation.html">doc</a>),
+the abstract class from which all simulations inherit:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Projectile1DApp</span> <span class="n">extends</span> <span class="n">AbstractSimulation</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You’ll notice an error pop up; that’s because <code class="docutils literal"><span class="pre">AbstractSimulation</span></code> has an
+abstract method called <code class="docutils literal"><span class="pre">doStep()</span></code> which must be implemented inside of your
+simulation class (the <code class="docutils literal"><span class="pre">&#64;Override</span></code> annotation is a reminder that <code class="docutils literal"><span class="pre">doStep()</span></code>
+is implementing a method from its superclass).</p>
+</div>
+<div class="section" id="dostep">
+<h3><code class="docutils literal"><span class="pre">doStep()</span></code><a class="headerlink" href="#dostep" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">doStep()</span></code> is a function that is repeatedly called while the simulation is
+running. You can think of it as a looping <code class="docutils literal"><span class="pre">main()</span></code> function, or as a
+built-in while loop that always has a true condition. Since the code
+in <code class="docutils literal"><span class="pre">doStep()</span></code> will be repeated thousands of times throughout the course of
+the simulation, it is very important to think about how you will optimize your
+code so that it is as computationally efficient as possible.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="n">protected</span> <span class="n">void</span> <span class="n">doStep</span><span class="p">()</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can make your simulation a little faster by avoiding updating your
+graphics every <code class="docutils literal"><span class="pre">doStep()</span></code>. Instead of just telling the simulation app to
+run the <code class="docutils literal"><span class="pre">doStep</span></code> less often, which will just slow the simulation down, or
+increasing your time interval, which will make your calculations less
+accurate, you can put a <code class="docutils literal"><span class="pre">for</span></code> loop inside of your <code class="docutils literal"><span class="pre">doStep()</span></code>. If you run
+calculations inside of the <code class="docutils literal"><span class="pre">for</span></code> loop and update your grpahics outside of
+the loop, you can determine for yourself how many times you want to allow
+the calculations to update before the graphics update.</p>
+</div>
+<p><code class="docutils literal"><span class="pre">doStep()</span></code> will be called repeatedly by OSP as your program runs; you will
+update the particle’s properties and display its new position inside of this
+method.</p>
+<p>Next, add the <code class="docutils literal"><span class="pre">reset()</span></code> and <code class="docutils literal"><span class="pre">initialize()</span></code> methods to <code class="docutils literal"><span class="pre">Projectile1DApp</span></code></p>
+</div>
+<div class="section" id="reset">
+<h3><code class="docutils literal"><span class="pre">reset()</span></code><a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">reset()</span></code> runs at the start every time you run your simulation app. (It really should be called “setup” because it is run first, even before <code class="docutils literal"><span class="pre">initialize()</span></code>. This is a good place to add
+all of the information to the <strong>Control Panel</strong> that you want the user to be
+able to update with their own input. You can do this by writing
+<code class="docutils literal"><span class="pre">control.addValue(&quot;variableName&quot;,</span> <span class="pre">variableValue)</span></code>. Additionally, if you stop
+a simulation that is already initialized and running, you can press the
+<strong>Reset</strong> button to restart it and reinitialize it. In order to use this
+feature, during <code class="docutils literal"><span class="pre">reset()</span></code> it is best to clear off all of your graphics.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="n">public</span> <span class="n">void</span> <span class="n">reset</span><span class="p">()</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="initialize">
+<h3><code class="docutils literal"><span class="pre">initialize()</span></code><a class="headerlink" href="#initialize" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">initialize()</span></code> runs directly after <code class="docutils literal"><span class="pre">reset()</span></code> and right before the first
+<code class="docutils literal"><span class="pre">doStep()</span></code>. As the name of the function suggests, it is a good time to get
+everything set up for your simulation. During this step, you should take all
+of the input from the <strong>Control Panel</strong> and store it in variables in your
+code. You can do this by running <code class="docutils literal"><span class="pre">control.getDouble()</span></code>,
+<code class="docutils literal"><span class="pre">control.getString()</span></code>, etc., using the appropriate function for your desired
+data type.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="n">public</span> <span class="n">void</span> <span class="n">initialize</span><span class="p">()</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As with <code class="docutils literal"><span class="pre">doStep()</span></code>, you will never call these methods yourself. Rather, they
+will be called by the superclass, <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>. Just as <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code>
+and <code class="docutils literal"><span class="pre">drawSlice()</span></code> had specific implementations for each Riemann sum rule,
+<code class="docutils literal"><span class="pre">doStep()</span></code>, <code class="docutils literal"><span class="pre">reset()</span></code>, and <code class="docutils literal"><span class="pre">initialize()</span></code> have specific implementations
+in your simulation. The <code class="docutils literal"><span class="pre">reset()</span></code> method will contain code which resets the
+simulation’s properties to their default values, while <code class="docutils literal"><span class="pre">initialize()</span></code> will
+contain code to set up the simulation before it runs.</p>
+</div>
+<div class="section" id="main">
+<h3><code class="docutils literal"><span class="pre">main()</span></code><a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h3>
+<p>The last method you should add is a main method—the simulation class will
+be the main class for your program. This method will tell OSP to set up
+the simulation when the program starts:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">SimulationControl</span><span class="o">.</span><span class="n">createApp</span><span class="p">(</span><span class="n">new</span> <span class="n">FreeFallApp</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="admonition-optional-exercise admonition">
 <p class="first admonition-title">Optional Exercise</p>
 <p><strong>Summary</strong>: Create an <code class="docutils literal"><span class="pre">AbstractSimulaton</span></code> class.</p>
@@ -286,21 +389,16 @@ like you learned about in <code class="docutils literal"><span class="pre">Riema
 <li>Under the “method stubs” section, choose to click the box next to <code class="docutils literal"><span class="pre">public</span>
 <span class="pre">static</span> <span class="pre">void</span> <span class="pre">main(String[]</span> <span class="pre">args)</span></code>.</li>
 <li>In <code class="docutils literal"><span class="pre">main()</span></code>, add this line: <code class="docutils literal"><span class="pre">SimulationControl.createApp(new</span> <span class="pre">&lt;NAME</span> <span class="pre">OF</span> <span class="pre">CLASS&gt;());</span></code></li>
-<li>Declare the following two functions:</li>
+<li>Declare the following functions:</li>
 </ol>
 <blockquote class="last">
 <div><ul class="simple">
 <li><code class="docutils literal"><span class="pre">public</span> <span class="pre">void</span> <span class="pre">initialize()</span></code></li>
 <li><code class="docutils literal"><span class="pre">public</span> <span class="pre">void</span> <span class="pre">reset()</span></code></li>
+<li><code class="docutils literal"><span class="pre">public</span> <span class="pre">void</span> <span class="pre">doStep()</span></code></li>
 </ul>
 </div></blockquote>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">It might be useful to look at the <strong>JavaDoc</strong> for <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>
-in order to see for yourself what its methods look like. In the future, if
-you ever want to learn more aout a class, checking the documentation is a
-good place to start.</p>
 </div>
 <div class="section" id="control-panel">
 <h3>Control Panel<a class="headerlink" href="#control-panel" title="Permalink to this headline">¶</a></h3>
@@ -314,46 +412,6 @@ input easy. Notice that there are three buttons on the <strong>Control Panel</st
 <code class="docutils literal"><span class="pre">reset()</span></code> functions, respsectively. So, pressing the <strong>Initialize</strong> button
 on the <strong>Control Panel</strong> will run <code class="docutils literal"><span class="pre">initialize()</span></code>. The <strong>Step</strong> button will
 run the code in your <code class="docutils literal"><span class="pre">doStep()</span></code> exactly once.</p>
-</div>
-<div class="section" id="dostep">
-<h3><code class="docutils literal"><span class="pre">doStep()</span></code><a class="headerlink" href="#dostep" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">doStep()</span></code> is a function that is repeatedly called while the simulation is
-running. You can think of it as a looping <code class="docutils literal"><span class="pre">main()</span></code> function, or as a
-built-in while loop that always has a true condition. Since the code
-in <code class="docutils literal"><span class="pre">doStep()</span></code> will be repeated thousands of times throughout the course of
-the simulation, it is very important to think about how you will optimize your
-code so that it is as computationally efficient as possible.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You can make your simulation a little faster by avoiding updating your
-graphics every <code class="docutils literal"><span class="pre">doStep()</span></code>. Instead of just telling the simulation app to
-run the <code class="docutils literal"><span class="pre">doStep</span></code> less often, which will just slow the simulation down, or
-increasing your time interval, which will make your calculations less
-accurate, you can put a <code class="docutils literal"><span class="pre">for</span></code> loop inside of your <code class="docutils literal"><span class="pre">doStep()</span></code>. If you run
-calculations inside of the <code class="docutils literal"><span class="pre">for</span></code> loop and update your grpahics outside of
-the loop, you can determine for yourself how many times you want to allow
-the calculations to update before the graphics update.</p>
-</div>
-</div>
-<div class="section" id="initialize">
-<h3><code class="docutils literal"><span class="pre">initialize()</span></code><a class="headerlink" href="#initialize" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">initialize()</span></code> runs directly after <code class="docutils literal"><span class="pre">reset()</span></code> and right before the first
-<code class="docutils literal"><span class="pre">doStep()</span></code>. As the name of the function suggests, it is a good time to get
-everything set up for your simulation. During this step, you should take all
-of the input from the <strong>Control Panel</strong> and store it in variables in your
-code. You can do this by running <code class="docutils literal"><span class="pre">control.getDouble()</span></code>,
-<code class="docutils literal"><span class="pre">control.getString()</span></code>, etc., using the appropriate function for your desired
-data type.</p>
-</div>
-<div class="section" id="reset">
-<h3><code class="docutils literal"><span class="pre">reset()</span></code><a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">reset()</span></code> runs once every time you run your simulation app. You should add
-all of the information to the <strong>Control Panel</strong> that you want the user to be
-able to update with their own input. You can do this by writing
-<code class="docutils literal"><span class="pre">control.addValue(&quot;variableName&quot;,</span> <span class="pre">variableValue)</span></code>. Additionally, if you stop
-a simulation that is already initialized and running, you can press the
-<strong>Reset</strong> button to restart it and reinitialize it. In order to use this
-feature, during <code class="docutils literal"><span class="pre">reset()</span></code> it is best to clear off all of your graphics.</p>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p class="last">Even though you’ve now read about AbstractSimulation, it is useful to get
@@ -369,7 +427,6 @@ simulation class should <strong>extend</strong> AbstractSimulation. You will als
 construct a <strong>Particle</strong> class. Try to be as thorough and thoughtful as
 possible when you make this class, because you will likely use it in the rest
 of your physics assignments.</p>
-<p>If you need to, refer to <a class="reference external" href="https://kjergens.github.io/csxdocs-build/display-osp/display-osp.html">Displaying Simulations using OSP</a></p>
 <p>When you make the <strong>Particle</strong> class, consider what variables might affect how
 a projectile moves in air. These variables should be the <strong>fields</strong> in the
 class.</p>

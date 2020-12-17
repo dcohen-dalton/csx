@@ -100,15 +100,130 @@ simulation of the rock’s motion.
    As you write pseudocode, imagine that a human will be reading and running
    your program, rather then the computer.
 
+Review: Displaying Simulations using OSP
+--------------------------------------
 
-Review  ``AbstractSimulation``
---------------------------------
+You will use the **Open Source Physics** (OSP) library to display your physics
+simulations. You've already used OSP (specifically the ``PlotFrame`` class) to
+plot graphs and Riemann sums, and you used ``AbstractSimulation`` to make an animation n ``Getting Started``. This section will review how to create OSP for animated
+simulations.
 
-You will use ``AbstractSimulation`` for every physics project in this class.
-As the name implies, it is an abstract class with some abstract methods, just
-like you learned about in ``Riemann``.
+.. note::
+    It might be useful to look at the `JavaDocs for OSP <https://kjergens.github.io/osp-5.1.0/out/html/index.html?overview-summary.html>`_ 
+    in order to see for yourself what its methods look like. In the future, if
+    you ever want to learn more aout a class, checking the documentation is a
+    good place to start.
 
-This section is optional and only if you need to review ``AbstractSimulation`` s, which you learned in Getting Started.
+
+The Simulation Class
+^^^^^^^^^^^^^^^^^^^^
+
+The first step when making an OSP simulation is to create a class which
+extends ``AbstractSimulation`` (`doc
+<https://kjergens.github.io/osp-5.1.0/out/html/org/opensourcephysics/controls/AbstractSimulation.html>`__),
+the abstract class from which all simulations inherit::
+
+    public class Projectile1DApp extends AbstractSimulation {
+        // ...
+    }
+
+You'll notice an error pop up; that's because ``AbstractSimulation`` has an
+abstract method called ``doStep()`` which must be implemented inside of your
+simulation class (the ``@Override`` annotation is a reminder that ``doStep()``
+is implementing a method from its superclass).
+
+``doStep()``
+^^^^^^^^^^^^^^^
+
+``doStep()`` is a function that is repeatedly called while the simulation is
+running. You can think of it as a looping ``main()`` function, or as a
+built-in while loop that always has a true condition. Since the code
+in ``doStep()`` will be repeated thousands of times throughout the course of
+the simulation, it is very important to think about how you will optimize your
+code so that it is as computationally efficient as possible.
+
+::
+
+    @Override
+    protected void doStep() {
+        // ...
+    }
+
+
+.. note::
+  You can make your simulation a little faster by avoiding updating your
+  graphics every ``doStep()``. Instead of just telling the simulation app to
+  run the ``doStep`` less often, which will just slow the simulation down, or
+  increasing your time interval, which will make your calculations less
+  accurate, you can put a ``for`` loop inside of your ``doStep()``. If you run
+  calculations inside of the ``for`` loop and update your grpahics outside of
+  the loop, you can determine for yourself how many times you want to allow
+  the calculations to update before the graphics update.
+
+``doStep()`` will be called repeatedly by OSP as your program runs; you will
+update the particle's properties and display its new position inside of this
+method.
+
+Next, add the ``reset()`` and ``initialize()`` methods to ``Projectile1DApp``
+
+
+``reset()``
+^^^^^^^^^^^^
+
+``reset()`` runs at the start every time you run your simulation app. (It really should be called "setup" because it is run first, even before ``initialize()``. This is a good place to add
+all of the information to the **Control Panel** that you want the user to be
+able to update with their own input. You can do this by writing
+``control.addValue("variableName", variableValue)``. Additionally, if you stop
+a simulation that is already initialized and running, you can press the
+**Reset** button to restart it and reinitialize it. In order to use this
+feature, during ``reset()`` it is best to clear off all of your graphics.
+
+::
+
+    @Override
+    public void reset() {
+        // ...
+    }
+
+
+``initialize()``
+^^^^^^^^^^^^^^^^^
+
+``initialize()`` runs directly after ``reset()`` and right before the first
+``doStep()``. As the name of the function suggests, it is a good time to get
+everything set up for your simulation. During this step, you should take all
+of the input from the **Control Panel** and store it in variables in your
+code. You can do this by running ``control.getDouble()``,
+``control.getString()``, etc., using the appropriate function for your desired
+data type.
+
+::
+
+    @Override
+    public void initialize() {
+        // ...
+    }
+
+
+
+As with ``doStep()``, you will never call these methods yourself. Rather, they
+will be called by the superclass, ``AbstractSimulation``. Just as ``getSubintervalArea()``
+and ``drawSlice()`` had specific implementations for each Riemann sum rule,
+``doStep()``, ``reset()``, and ``initialize()`` have specific implementations
+in your simulation. The ``reset()`` method will contain code which resets the
+simulation's properties to their default values, while ``initialize()`` will
+contain code to set up the simulation before it runs.
+
+``main()``
+^^^^^^^^^^
+The last method you should add is a main method---the simulation class will
+be the main class for your program. This method will tell OSP to set up
+the simulation when the program starts::
+
+    public static void main(String[] args) {
+        SimulationControl.createApp(new FreeFallApp());
+    }
+
 
 .. admonition:: Optional Exercise
 
@@ -119,16 +234,12 @@ This section is optional and only if you need to review ``AbstractSimulation`` s
   #. Under the "method stubs" section, choose to click the box next to ``public
      static void main(String[] args)``.
   #. In ``main()``, add this line: ``SimulationControl.createApp(new <NAME OF CLASS>());``
-  #. Declare the following two functions:
+  #. Declare the following functions:
 
    - ``public void initialize()``
    - ``public void reset()``
+   - ``public void doStep()``
 
-.. note::
-    It might be useful to look at the **JavaDoc** for ``AbstractSimulation``
-    in order to see for yourself what its methods look like. In the future, if
-    you ever want to learn more aout a class, checking the documentation is a
-    good place to start.
 
 Control Panel
 ^^^^^^^^^^^^^^^^
@@ -145,54 +256,14 @@ input easy. Notice that there are three buttons on the **Control Panel**.
 on the **Control Panel** will run ``initialize()``. The **Step** button will
 run the code in your ``doStep()`` exactly once.
 
-``doStep()``
-^^^^^^^^^^^^^^^
 
-``doStep()`` is a function that is repeatedly called while the simulation is
-running. You can think of it as a looping ``main()`` function, or as a
-built-in while loop that always has a true condition. Since the code
-in ``doStep()`` will be repeated thousands of times throughout the course of
-the simulation, it is very important to think about how you will optimize your
-code so that it is as computationally efficient as possible.
-
-.. note::
-  You can make your simulation a little faster by avoiding updating your
-  graphics every ``doStep()``. Instead of just telling the simulation app to
-  run the ``doStep`` less often, which will just slow the simulation down, or
-  increasing your time interval, which will make your calculations less
-  accurate, you can put a ``for`` loop inside of your ``doStep()``. If you run
-  calculations inside of the ``for`` loop and update your grpahics outside of
-  the loop, you can determine for yourself how many times you want to allow
-  the calculations to update before the graphics update.
-
-
-``initialize()``
-^^^^^^^^^^^^^^^^^
-
-``initialize()`` runs directly after ``reset()`` and right before the first
-``doStep()``. As the name of the function suggests, it is a good time to get
-everything set up for your simulation. During this step, you should take all
-of the input from the **Control Panel** and store it in variables in your
-code. You can do this by running ``control.getDouble()``,
-``control.getString()``, etc., using the appropriate function for your desired
-data type.
-
-``reset()``
-^^^^^^^^^^^^
-
-``reset()`` runs once every time you run your simulation app. You should add
-all of the information to the **Control Panel** that you want the user to be
-able to update with their own input. You can do this by writing
-``control.addValue("variableName", variableValue)``. Additionally, if you stop
-a simulation that is already initialized and running, you can press the
-**Reset** button to restart it and reinitialize it. In order to use this
-feature, during ``reset()`` it is best to clear off all of your graphics.
 
 .. admonition:: Exercise
 
     Even though you've now read about AbstractSimulation, it is useful to get
     some practice before you jump into the assignment. Try to make a
     simulation that moves a circle upwards on the screen.
+
 
 Assignment
 ----------
@@ -202,8 +273,6 @@ simulation class should **extend** AbstractSimulation. You will also need to
 construct a **Particle** class. Try to be as thorough and thoughtful as
 possible when you make this class, because you will likely use it in the rest
 of your physics assignments.
-
-If you need to, refer to `Displaying Simulations using OSP <https://kjergens.github.io/csxdocs-build/display-osp/display-osp.html>`__
 
 When you make the **Particle** class, consider what variables might affect how
 a projectile moves in air. These variables should be the **fields** in the
