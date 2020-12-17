@@ -210,7 +210,7 @@ steps, the calculation involved in each step is simple. In Compsci 1 and 2,
 you learned how to tell a computer to do the same thing over and over using
 <code class="docutils literal"><span class="pre">for</span></code> and <code class="docutils literal"><span class="pre">while</span></code>-loops. Now, you will apply this knowledge to create a
 Java class which evaluates a given Riemann sum.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/fig2.svg"><img alt="../../_images/fig2.svg" src="../../_images/fig2.svg" width="80%" /></a>
 <p class="caption"><span class="caption-text">The individual rectangles’ areas can be added up using a <code class="docutils literal"><span class="pre">for</span></code>-loop.
 The more iterations (steps) of the loop, the better the approximation.</span></p>
@@ -251,7 +251,7 @@ writing comments in your source code using a specific format; you can find a goo
 </div>
 <div class="section" id="abstract-classes-and-methods">
 <h3>Abstract Classes and Methods<a class="headerlink" href="#abstract-classes-and-methods" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class, as shown in the JavaDoc, contains a keyword which you most likely have not yet encountered: <code class="docutils literal"><span class="pre">abstract</span></code>. This keyword will allow you to use to use <strong>object-oriented programming (OOP)</strong> to organize your code in a more logical way.</p>
+<p>The <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class, as shown in the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">JavaDoc</a> , contains a keyword which you most likely have not yet encountered: <code class="docutils literal"><span class="pre">abstract</span></code>. This keyword will allow you to use to use <strong>object-oriented programming (OOP)</strong> to organize your code in a more logical way.</p>
 <p>You have learned that there are several different rules which can be used to
 calculate Riemann sums, such as the left hand rule, right hand rule, and
 trapezoid rule. Thinking of a Riemann sum as the sum of many small slices of
@@ -268,11 +268,11 @@ endpoints of the interval and the number of slices.</li>
 <li>Add up the areas to find the total area.</li>
 </ol>
 <p>Notice that only the third step—calculating the area of each slice—depends upon the specific rule being used; the others are the same regardless of the rule.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/fig3.svg"><img alt="../../_images/fig3.svg" src="../../_images/fig3.svg" width="95%" /></a>
 <p class="caption"><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum. While the slices’ shapes are different, they exist over the same subintervals in each diagram.</span></p>
 </div>
-<p>Fourtunately, Java provides a convenient means of structuring classes which
+<p>Fortunately, Java provides a convenient means of structuring classes which
 are mostly the same but differ with respect to certain functions:
 <strong>inheritance</strong>. You will discuss this concept in class, and the following
 pages are recommended for reference:</p>
@@ -280,7 +280,7 @@ pages are recommended for reference:</p>
 <li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Oracle - Inheritance Tutorial</a></li>
 <li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">Oracle - Abstract Tutorial</a></li>
 </ul>
-<p>As shown in the <a class="reference external" href="../../_static/riemann-javadoc/riemannsum/Riemann.html">JavaDoc</a>, the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you will create will be an <strong>abstract class</strong>. As such, you will never directly construct a <code class="docutils literal"><span class="pre">new</span> <span class="pre">AbstractRiemann()</span></code>; instead, you will create <strong>child classes</strong> (also known as <strong>subclasses</strong>) of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> for each Riemann sum rule. In this way, you will end up with a structure where <code class="docutils literal"><span class="pre">RightHandPlot</span></code> and <code class="docutils literal"><span class="pre">LeftHandPlot</span></code>, both child classes of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>, share most methods, differing only in their implementations of <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code> and <code class="docutils literal"><span class="pre">drawSlice()</span></code>, since these are the only methods whose functionality should depend on the rule. For example, this is what a fictional rule called <code class="docutils literal"><span class="pre">OvalPlot</span></code> could look like:</p>
+<p>As shown in the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">JavaDoc</a>, the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you will create will be an <strong>abstract class</strong>. As such, you will never directly construct a <code class="docutils literal"><span class="pre">new</span> <span class="pre">AbstractRiemann()</span></code>; instead, you will create <strong>child classes</strong> (also known as <strong>subclasses</strong>) of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> for each Riemann sum rule. In this way, you will end up with a structure where <code class="docutils literal"><span class="pre">RightHandPlot</span></code> and <code class="docutils literal"><span class="pre">LeftHandPlot</span></code>, both child classes of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>, share most methods, differing only in their implementations of <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code> and <code class="docutils literal"><span class="pre">drawSlice()</span></code>, since these are the only methods whose functionality should depend on the rule. For example, this is what a fictional rule called <code class="docutils literal"><span class="pre">OvalPlot</span></code> could look like:</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OvalPlot</span> <span class="kd">extends</span> <span class="n">AbstractRiemann</span> <span class="o">{</span>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getSubintervalArea</span><span class="o">(</span><span class="n">Polynomial</span> <span class="n">poly</span><span class="o">,</span> <span class="kt">double</span> <span class="n">leftBorder</span><span class="o">,</span> <span class="kt">double</span> <span class="n">rightBorder</span><span class="o">)</span> <span class="o">{</span>
@@ -299,7 +299,7 @@ pages are recommended for reference:</p>
 <p>As shown in <code class="docutils literal"><span class="pre">OvalPlot</span></code>, you do not have to reimplement all of the
 methods in <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>. Only the abstract methods should be
 written out in the subclasses.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id7">
 <a class="reference internal image-reference" href="../../_images/riemann-diagram.png"><img alt="../../_images/riemann-diagram.png" src="../../_images/riemann-diagram.png" style="width: 85%;" /></a>
 <p class="caption"><span class="caption-text">This class diagram shows the relationship between <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> and
 its child classes.</span></p>
@@ -328,6 +328,7 @@ before it:</p>
 <div class="section" id="base-assignment">
 <h2>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h2>
 <p>You will write a total of <strong>eight</strong> Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.</p>
+<p>See the <a class="reference external" href="../../_static/riemann-javadoc/package-summary.html">JavaDoc</a></p>
 <div class="section" id="create-a-package-namespace">
 <h3>1. Create a Package Namespace<a class="headerlink" href="#create-a-package-namespace" title="Permalink to this headline">¶</a></h3>
 <p>A good way to organize all the projects you will do this year is by creating a separate package namespace for each.</p>
@@ -505,7 +506,7 @@ produces a curve, then calculate the length of that curve in a given
 subinterval Hint: instead of breaking up an area into rectangles, break up the
 curve into line segments. You will need the distance formula  and the Java function <code class="docutils literal"><span class="pre">Math.sqrt()</span></code> to
 calculate the length of each segment.</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id8">
 <a class="reference internal image-reference" href="../../_images/fig4.svg"><img alt="../../_images/fig4.svg" src="../../_images/fig4.svg" width="60%" /></a>
 <p class="caption"><span class="caption-text">Arc length can be approximated by dividing the curve and replacing the
 smaller arcs with segments.</span></p>

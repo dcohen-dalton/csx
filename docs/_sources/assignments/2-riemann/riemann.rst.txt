@@ -77,7 +77,7 @@ same type of return value.
 Abstract Classes and Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``AbstractRiemann`` class, as shown in the JavaDoc, contains a keyword which you most likely have not yet encountered: ``abstract``. This keyword will allow you to use to use **object-oriented programming (OOP)** to organize your code in a more logical way.
+The ``AbstractRiemann`` class, as shown in the `JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_ , contains a keyword which you most likely have not yet encountered: ``abstract``. This keyword will allow you to use to use **object-oriented programming (OOP)** to organize your code in a more logical way.
 
 You have learned that there are several different rules which can be used to
 calculate Riemann sums, such as the left hand rule, right hand rule, and
@@ -102,7 +102,7 @@ Notice that only the third step---calculating the area of each slice---depends u
 
    Here, three different rules are being used to calculate the same Riemann sum. While the slices' shapes are different, they exist over the same subintervals in each diagram.
 
-Fourtunately, Java provides a convenient means of structuring classes which
+Fortunately, Java provides a convenient means of structuring classes which
 are mostly the same but differ with respect to certain functions:
 **inheritance**. You will discuss this concept in class, and the following
 pages are recommended for reference:
@@ -161,6 +161,8 @@ Base Assignment
 ----------------
 
 You will write a total of **eight** Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.
+
+See the `JavaDoc <../../_static/riemann-javadoc/package-summary.html>`_ for an overview of all the classes in this project.
 
 1. Create a Package Namespace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
