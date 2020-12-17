@@ -380,6 +380,19 @@ the simulation when the program starts:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="control-panel">
+<h3>Control Panel<a class="headerlink" href="#control-panel" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/control-panel.svg"><img alt="../../_images/control-panel.svg" src="../../_images/control-panel.svg" width="50%" /></a>
+</div>
+<p>Your simulation app will automatically generate a pop-up window called a
+<strong>Control Panel</strong>. The <strong>Control Panel</strong> makes incorporating a lot of user
+input easy. Notice that there are three buttons on the <strong>Control Panel</strong>.
+<strong>Initialize</strong> and <strong>Reset</strong> each correlate to the <code class="docutils literal"><span class="pre">initialize()</span></code> and
+<code class="docutils literal"><span class="pre">reset()</span></code> functions, respsectively. So, pressing the <strong>Initialize</strong> button
+on the <strong>Control Panel</strong> will run <code class="docutils literal"><span class="pre">initialize()</span></code>. The <strong>Step</strong> button will
+run the code in your <code class="docutils literal"><span class="pre">doStep()</span></code> exactly once.</p>
 <div class="admonition-optional-exercise admonition">
 <p class="first admonition-title">Optional Exercise</p>
 <p><strong>Summary</strong>: Create an <code class="docutils literal"><span class="pre">AbstractSimulaton</span></code> class.</p>
@@ -398,25 +411,6 @@ the simulation when the program starts:</p>
 <li><code class="docutils literal"><span class="pre">public</span> <span class="pre">void</span> <span class="pre">doStep()</span></code></li>
 </ul>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="control-panel">
-<h3>Control Panel<a class="headerlink" href="#control-panel" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/control-panel.svg"><img alt="../../_images/control-panel.svg" src="../../_images/control-panel.svg" width="50%" /></a>
-</div>
-<p>Your simulation app will automatically generate a pop-up window called a
-<strong>Control Panel</strong>. The <strong>Control Panel</strong> makes incorporating a lot of user
-input easy. Notice that there are three buttons on the <strong>Control Panel</strong>.
-<strong>Initialize</strong> and <strong>Reset</strong> each correlate to the <code class="docutils literal"><span class="pre">initialize()</span></code> and
-<code class="docutils literal"><span class="pre">reset()</span></code> functions, respsectively. So, pressing the <strong>Initialize</strong> button
-on the <strong>Control Panel</strong> will run <code class="docutils literal"><span class="pre">initialize()</span></code>. The <strong>Step</strong> button will
-run the code in your <code class="docutils literal"><span class="pre">doStep()</span></code> exactly once.</p>
-<div class="admonition-exercise admonition">
-<p class="first admonition-title">Exercise</p>
-<p class="last">Even though you’ve now read about AbstractSimulation, it is useful to get
-some practice before you jump into the assignment. Try to make a
-simulation that moves a circle upwards on the screen.</p>
 </div>
 </div>
 </div>
