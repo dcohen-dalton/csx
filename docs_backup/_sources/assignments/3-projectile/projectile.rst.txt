@@ -105,7 +105,7 @@ Review: Displaying Simulations using OSP
 
 You will use the **Open Source Physics** (OSP) library to display your physics
 simulations. You've already used OSP (specifically the ``PlotFrame`` class) to
-plot graphs and Riemann sums. This page will cover how to use OSP for animated
+plot graphs and Riemann sums, and you used ``AbstractSimulation`` to make an animation n ``Getting Started``. This section will review how to create OSP for animated
 simulations.
 
 .. note::
