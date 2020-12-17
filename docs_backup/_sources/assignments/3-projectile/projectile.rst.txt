@@ -225,22 +225,6 @@ the simulation when the program starts::
     }
 
 
-.. admonition:: Optional Exercise
-
-  **Summary**: Create an ``AbstractSimulaton`` class.
-
-  #. Open the window to create a new class in your package. Name the class [...]App. This is the naming convention for your simulation classes.
-  #. Before you click **Finish**, click the **Browse** button next to the **Superclass** text box. Choose ``AbstractSimulation`` and click **OK**.
-  #. Under the "method stubs" section, choose to click the box next to ``public
-     static void main(String[] args)``.
-  #. In ``main()``, add this line: ``SimulationControl.createApp(new <NAME OF CLASS>());``
-  #. Declare the following functions:
-
-   - ``public void initialize()``
-   - ``public void reset()``
-   - ``public void doStep()``
-
-
 Control Panel
 ^^^^^^^^^^^^^^^^
 
@@ -256,13 +240,21 @@ input easy. Notice that there are three buttons on the **Control Panel**.
 on the **Control Panel** will run ``initialize()``. The **Step** button will
 run the code in your ``doStep()`` exactly once.
 
+.. admonition:: Optional Exercise
 
+  **Summary**: Create an ``AbstractSimulaton`` class.
 
-.. admonition:: Exercise
+  #. Open the window to create a new class in your package. Name the class [...]App. This is the naming convention for your simulation classes.
+  #. Before you click **Finish**, click the **Browse** button next to the **Superclass** text box. Choose ``AbstractSimulation`` and click **OK**.
+  #. Under the "method stubs" section, choose to click the box next to ``public
+     static void main(String[] args)``.
+  #. In ``main()``, add this line: ``SimulationControl.createApp(new <NAME OF CLASS>());``
+  #. Declare the following functions:
 
-    Even though you've now read about AbstractSimulation, it is useful to get
-    some practice before you jump into the assignment. Try to make a
-    simulation that moves a circle upwards on the screen.
+   - ``public void initialize()``
+   - ``public void reset()``
+   - ``public void doStep()``
+
 
 
 Assignment

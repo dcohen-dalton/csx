@@ -256,7 +256,6 @@ run the code in your ``doStep()`` exactly once.
    - ``public void doStep()``
 
 
-
 Assignment
 ----------
 
