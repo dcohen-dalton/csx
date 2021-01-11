@@ -26,11 +26,6 @@ can start to add on features and tweak your code to get closer and closer to a
 more accurate model. Alternatively, trying to make your simulation too
 complicated too quickly will likely give you issues when you try to debug.
 
-For this assignment, Mr. Condie will come into class and give a lecture about
-how you should structure your code which will serve as an overview of the
-assignment. It is very important that you take notes, as this lecture will be
-the foundation of your work throughout this project.
-
 Introduction to Modeling
 ------------------------
 .. from blogs.dalton.org
@@ -407,7 +402,7 @@ When you are done with the base assignment, extend it to model another real-worl
 
   **Summary:** Model a real-world object of your choosing that moves in two dimensions.
 
-  Physics extensions are very open ended, and the above prompt is not very exact. You should work through your idea for your extension in lab with Mr. Condie in order to determine together what might be a realistic goal based on your initial idea. While you work on the base assignment, you should think about what you might be interested in modeling.
+  Physics extensions are very open ended, and the above prompt is not very exact. You should work through your idea for your extension with a physics teacher in order to determine together what might be a realistic goal based on your initial idea. While you work on the base assignment, you should think about what you might be interested in modeling.
 
   The most important component of this extension is your understanding of the
   underlying physics concepts. While looking up equations onlilne might give you a realistic simulation, you will not learn anything if you don't understanding why the formulas that you use will give you good approximations.

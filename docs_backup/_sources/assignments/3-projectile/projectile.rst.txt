@@ -375,7 +375,7 @@ Before you start your base assignments, consider:
   When you have something that works like the following you are done with this exercise:
 
   .. figure:: test3.gif
-    :width: 40%
+    :width: 100%
     :align: center
 
 
