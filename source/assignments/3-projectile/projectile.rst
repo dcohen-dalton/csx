@@ -96,7 +96,7 @@ simulation of the rock’s motion.
    your program, rather then the computer.
 
 Review: Displaying Simulations using OSP
---------------------------------------
+-----------------------------------------
 
 You will use the **Open Source Physics** (OSP) library to display your physics
 simulations. You've already used OSP (specifically the ``PlotFrame`` class) to

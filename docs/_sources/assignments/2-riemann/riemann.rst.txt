@@ -11,8 +11,7 @@ Approximating Area Under a Curve
 --------------------------------
 
 The focus of this assignment will be defining and calculating
-the area under a curve. The following slides, created by Dr. Gomprecht,
-contain an introduction to the concept of **Riemann sums**, which
+the area under a curve. The following slides contain an introduction to the concept of **Riemann sums**, which
 provide a way of approximating this area:
 
 :download:`Area Under a Curve Slides </_static/RiemannSumSlides.pdf>`
@@ -26,9 +25,8 @@ hand.
 This is where computers can be of help. Calculating a Riemann sum requires
 adding up many small areas to get an approximation of the total area under the
 curve. Computers are good at this kind of repetitive task: while there are many
-steps, the calculation involved in each step is simple. In Compsci 1 and 2,
-you learned how to tell a computer to do the same thing over and over using
-``for`` and ``while``-loops. Now, you will apply this knowledge to create a
+steps, the calculation involved in each step is simple. Remember how to tell a program to do the same thing over and over using
+``for`` and ``while``-loops? Now, you will apply this knowledge to create a
 Java class which evaluates a given Riemann sum.
 
 .. figure:: fig2.svg
@@ -130,12 +128,6 @@ As shown in ``OvalPlot``, you do not have to reimplement all of the
 methods in ``AbstractRiemann``. Only the abstract methods should be
 written out in the subclasses.
 
-.. figure:: riemann-diagram.png
-   :width: 85 %
-   :align: center
-
-   This class diagram shows the relationship between ``AbstractRiemann`` and
-   its child classes.
 
 Assignment
 -----------
@@ -191,7 +183,7 @@ A good way to organize all the projects you will do this year is by creating a s
   #. Create all the attributes: poly, plotFrame, xLower, xUpper, and subintervals.
   #. Create a constructor.
   #. Write the non-abstract methods: ``calculateDeltaX()``, ``getIntervalArea()``, ``drawRiemannSlices()``, ``plotPolynomial()``, ``plotAccFnc()``, and ``configPlotFrame()``.
-    #. See :download:`Area Under a Curve Slides </_static/RiemannSumSlides.pdf>` for an explanation of the accumulation function.
+  #. For the accumulation function, ``plotAccFnc()``, note that it graphs how the area grows with increasing :math:`x`. See :download:`Area Under a Curve Slides </_static/RiemannSumSlides.pdf>` for a deeper explanation of the accumulation function.
   #. Add stubs for the the abstract methods ``getSubintervalArea()`` and ``drawSlice()``. Make sure to mark them as ``abstract`` and end the line with a semicolon instead of implementing the method.
 
 3. RightHandPlot, LeftHandPlot and TrapezoidPlot Classes
@@ -242,7 +234,7 @@ A good way to organize all the projects you will do this year is by creating a s
   **Summary**: Plot the Riemann rules.
 
   #. Back in the ``riemann`` package, create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area. 
-  #. Create an example Polynomial to find the area under. E.g., 3x^2-6x+3.
+  #. Create an example Polynomial to find the area under. E.g., :math:`3x^2-6x+3`.
 
   #. For each plot object use ``drawRiemannSlices()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
 
@@ -254,27 +246,29 @@ A good way to organize all the projects you will do this year is by creating a s
   #. Plot the accumulation function using ``plotAccFnc()``.
   #. Finally, for each rule, print the estimated area under the curve.
 
-  When your RiemannApp (1) prints estimated areas of a polynomial for each of the rules, (2) plots each rule and (3) plots each accumulation function, similar to the following, you are done with this exercise.
+  When your RiemannApp (1) prints estimated areas of a polynomial for each of the rules, (2) plots each rule and (3) plots each accumulation function you are done with this exercise.
+
+  Example output:
 
   (1) Estimated areas of a polynomial:
 
   .. figure:: 00sum.png
-   :width: 100 %
+   :width: 80 %
    :align: center
 
   
-  (2) Plots for each rule:
+  (2) Plots for each rule. The accumulation function is shown in green:
 
   .. figure:: 07lhrtogether.png
-   :width: 70 %
+   :width: 50 %
    :align: center
 
   .. figure:: 08rhrtogether.png
-   :width: 70 %
+   :width: 50 %
    :align: center
 
   .. figure:: 09trtogether.png
-   :width: 70 %
+   :width: 50 %
    :align: center
 
 6. Analysis

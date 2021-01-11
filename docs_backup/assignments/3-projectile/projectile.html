@@ -34,6 +34,7 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -206,10 +207,6 @@ the first draft of your simulation should be as simple as possible. Then, you
 can start to add on features and tweak your code to get closer and closer to a
 more accurate model. Alternatively, trying to make your simulation too
 complicated too quickly will likely give you issues when you try to debug.</p>
-<p>For this assignment, Mr. Condie will come into class and give a lecture about
-how you should structure your code which will serve as an overview of the
-assignment. It is very important that you take notes, as this lecture will be
-the foundation of your work throughout this project.</p>
 </div>
 <div class="section" id="introduction-to-modeling">
 <h2>Introduction to Modeling<a class="headerlink" href="#introduction-to-modeling" title="Permalink to this headline">¶</a></h2>
@@ -465,7 +462,7 @@ should be your fields.</li>
 <li>In <code class="docutils literal"><span class="pre">projectile</span></code> create a new Java class called <code class="docutils literal"><span class="pre">Particle</span></code>.</li>
 <li>Design the <code class="docutils literal"><span class="pre">Particle</span></code> class to model the motion of a particle - for example, a rock - in one dimension. Just like the real rock, you want your simulated rock to have certain properties at a given time. These properties correspond to the <strong>fields</strong> (attributes, aka, member variables) of the <code class="docutils literal"><span class="pre">Particle</span></code> object. What properties does a real particle have? What fields should an object of this type have?</li>
 <li>Add a constructor to <code class="docutils literal"><span class="pre">Particle</span></code> which takes initial values for these properties and initializes the particle accordingly.</li>
-<li>Now that the <code class="docutils literal"><span class="pre">Particle</span></code> class has fields which describe its properties, add a method <code class="docutils literal"><span class="pre">step()</span></code> which handles its motion. While particles move continuously in real life, you will model them as moving in discrete steps. In each step, a certain amount of time  should pass and the particle’s properties should be updated. You may structure this method how you see fit, but it must: (1) take a parameter,  deltaTime, and pass that amount of time, and (2) use motion equations you have learned in physics class to update the properties of the particle. The question you should be asking yourself is <strong>“if</strong>  <strong>seconds pass, what are the new properties of the particle?”</strong></li>
+<li>Now that the <code class="docutils literal"><span class="pre">Particle</span></code> class has fields which describe its properties, add a method <code class="docutils literal"><span class="pre">step()</span></code> which handles its motion. While particles move continuously in real life, you will model them as moving in discrete steps. In each step, a certain amount of time <span class="math">\(\Delta t\)</span> should pass and the particle’s properties should be updated. You may structure this method how you see fit, but it must: (1) take a parameter, <span class="math">\(\Delta t\)</span> deltaTime, and pass that amount of time, and (2) use motion equations you have learned in physics class to update the properties of the particle. The question you should be asking yourself is <strong>“if</strong> <span class="math">\(\Delta t\)</span> <strong>seconds pass, what are the new properties of the particle?”</strong></li>
 <li>Add <strong>two more</strong> step methods to make the <code class="docutils literal"><span class="pre">Particle</span></code> move with air resistence. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:</li>
 </ol>
 <ul class="last simple">
@@ -558,7 +555,7 @@ particle’s velocity?)</p>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary:</strong> Model a real-world object of your choosing that moves in two dimensions.</p>
-<p>Physics extensions are very open ended, and the above prompt is not very exact. You should work through your idea for your extension in lab with Mr. Condie in order to determine together what might be a realistic goal based on your initial idea. While you work on the base assignment, you should think about what you might be interested in modeling.</p>
+<p>Physics extensions are very open ended, and the above prompt is not very exact. You should work through your idea for your extension with a physics teacher in order to determine together what might be a realistic goal based on your initial idea. While you work on the base assignment, you should think about what you might be interested in modeling.</p>
 <p>The most important component of this extension is your understanding of the
 underlying physics concepts. While looking up equations onlilne might give you a realistic simulation, you will not learn anything if you don’t understanding why the formulas that you use will give you good approximations.</p>
 <p class="last">Once you know what you want your extension to be, just as you did in <code class="docutils literal"><span class="pre">Riemann</span></code>, you will build off of the code you already wrote for your base assignment. You will present the extension to the class and the teachers, so be ready to talk about what you learned and to answer some questions.</p>
