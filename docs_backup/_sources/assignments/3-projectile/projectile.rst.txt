@@ -256,7 +256,6 @@ run the code in your ``doStep()`` exactly once.
    - ``public void doStep()``
 
 
-
 Assignment
 ----------
 
@@ -314,7 +313,7 @@ Before you start your base assignments, consider:
   #. Design the ``Particle`` class to model the motion of a particle - for example, a rock - in one dimension. Just like the real rock, you want your simulated rock to have certain properties at a given time. These properties correspond to the **fields** (attributes, aka, member variables) of the ``Particle`` object. What properties does a real particle have? What fields should an object of this type have?
   #. Add a constructor to ``Particle`` which takes initial values for these properties and initializes the particle accordingly.
   #. Now that the ``Particle`` class has fields which describe its properties, add a method ``step()`` which handles its motion. While particles move continuously in real life, you will model them as moving in discrete steps. In each step, a certain amount of time :math:`\Delta t` should pass and the particle's properties should be updated. You may structure this method how you see fit, but it must: (1) take a parameter, :math:`\Delta t` deltaTime, and pass that amount of time, and (2) use motion equations you have learned in physics class to update the properties of the particle. The question you should be asking yourself is **"if** :math:`\Delta t` **seconds pass, what are the new properties of the particle?"**
-  #. Add **two more** methods to make the ``Particle`` move one step. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:
+  #. Add **two more** step methods to make the ``Particle`` move with air resistence. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:
 
   - Assume that air resistance is zero.
   - Air resistance is directly proportional to velocity.
@@ -346,19 +345,19 @@ Before you start your base assignments, consider:
   When you have one animation and three plots you are done with this exercise.
 
    .. figure:: falling1D.gif
-    :width: 30 %
+    :width: 50 %
     :align: center
 
    .. figure:: proj_positionplot.png
-    :width: 30 %
+    :width: 50 %
     :align: center
 
    .. figure:: proj_velocityplot.png
-    :width: 30 %
+    :width: 50 %
     :align: center
 
    .. figure:: proj_accelplot.png
-    :width: 30 %
+    :width: 50 %
     :align: center
 
 3. ProjectileApp (2D movement)
@@ -386,7 +385,7 @@ Before you start your base assignments, consider:
 
   **Summary:** Apply what you've learned to a real example.
 
-  The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment is to find the angle at the minimum velocity necessary to hit a particle from 1 meter off of the ground at home plate over the wall.
+  The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment create an animation to is to simulate hitting a particle the size of a baseball from 1 meter off of the ground to see at what velocities it will go over over the wall.
 
   #. Create a new Java class in ``projectile`` called ``BaseballSimulationApp`` that extends ``AbstractSimuation``.
   #. Create a ``PlotFrame`` that will hold the animation.

@@ -466,7 +466,7 @@ should be your fields.</li>
 <li>Design the <code class="docutils literal"><span class="pre">Particle</span></code> class to model the motion of a particle - for example, a rock - in one dimension. Just like the real rock, you want your simulated rock to have certain properties at a given time. These properties correspond to the <strong>fields</strong> (attributes, aka, member variables) of the <code class="docutils literal"><span class="pre">Particle</span></code> object. What properties does a real particle have? What fields should an object of this type have?</li>
 <li>Add a constructor to <code class="docutils literal"><span class="pre">Particle</span></code> which takes initial values for these properties and initializes the particle accordingly.</li>
 <li>Now that the <code class="docutils literal"><span class="pre">Particle</span></code> class has fields which describe its properties, add a method <code class="docutils literal"><span class="pre">step()</span></code> which handles its motion. While particles move continuously in real life, you will model them as moving in discrete steps. In each step, a certain amount of time  should pass and the particle’s properties should be updated. You may structure this method how you see fit, but it must: (1) take a parameter,  deltaTime, and pass that amount of time, and (2) use motion equations you have learned in physics class to update the properties of the particle. The question you should be asking yourself is <strong>“if</strong>  <strong>seconds pass, what are the new properties of the particle?”</strong></li>
-<li>Add <strong>two more</strong> methods to make the <code class="docutils literal"><span class="pre">Particle</span></code> move one step. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:</li>
+<li>Add <strong>two more</strong> step methods to make the <code class="docutils literal"><span class="pre">Particle</span></code> move with air resistence. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:</li>
 </ol>
 <ul class="last simple">
 <li>Assume that air resistance is zero.</li>
@@ -502,16 +502,16 @@ particle’s velocity?)</p>
 <p>When you have one animation and three plots you are done with this exercise.</p>
 <blockquote class="last">
 <div><div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/falling1D.gif"><img alt="../../_images/falling1D.gif" src="../../_images/falling1D.gif" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/falling1D.gif"><img alt="../../_images/falling1D.gif" src="../../_images/falling1D.gif" style="width: 50%;" /></a>
 </div>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/proj_positionplot.png"><img alt="../../_images/proj_positionplot.png" src="../../_images/proj_positionplot.png" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/proj_positionplot.png"><img alt="../../_images/proj_positionplot.png" src="../../_images/proj_positionplot.png" style="width: 50%;" /></a>
 </div>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/proj_velocityplot.png"><img alt="../../_images/proj_velocityplot.png" src="../../_images/proj_velocityplot.png" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/proj_velocityplot.png"><img alt="../../_images/proj_velocityplot.png" src="../../_images/proj_velocityplot.png" style="width: 50%;" /></a>
 </div>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/proj_accelplot.png"><img alt="../../_images/proj_accelplot.png" src="../../_images/proj_accelplot.png" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/proj_accelplot.png"><img alt="../../_images/proj_accelplot.png" src="../../_images/proj_accelplot.png" style="width: 50%;" /></a>
 </div>
 </div></blockquote>
 </div>
@@ -538,7 +538,7 @@ particle’s velocity?)</p>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary:</strong> Apply what you’ve learned to a real example.</p>
-<p>The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment is to find the angle at the minimum velocity necessary to hit a particle from 1 meter off of the ground at home plate over the wall.</p>
+<p>The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment create an animation to is to simulate hitting a particle the size of a baseball from 1 meter off of the ground to see at what velocities it will go over over the wall.</p>
 <ol class="arabic simple">
 <li>Create a new Java class in <code class="docutils literal"><span class="pre">projectile</span></code> called <code class="docutils literal"><span class="pre">BaseballSimulationApp</span></code> that extends <code class="docutils literal"><span class="pre">AbstractSimuation</span></code>.</li>
 <li>Create a <code class="docutils literal"><span class="pre">PlotFrame</span></code> that will hold the animation.</li>
