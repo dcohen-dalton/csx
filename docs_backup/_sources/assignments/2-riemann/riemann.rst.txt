@@ -63,7 +63,7 @@ of the ``AbstractRiemann`` class. This includes the methods' **parameters** (inp
 and their **return values** (outputs). Your job will be to create a class
 which conforms to the given JavaDoc---the ``AbstractRiemann`` class which you create
 should contain each of the listed methods, and each method should behave as
-described in the `JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_, taking in the same parameters and outputting the
+described in the `AbstractRiemann JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_, taking in the same parameters and outputting the
 same type of return value.
 
 

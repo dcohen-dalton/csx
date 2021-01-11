@@ -380,7 +380,7 @@ Before you start your base assignments, consider:
 
   **Summary:** Apply what you've learned to a real example.
 
-  The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment create an animation to is to simulate hitting a particle the size of a baseball from 1 meter off of the ground to see at what velocities it will go over over the wall.
+  The Green Monster is a wall in Fenway park. It is 10 meters tall and 100 meters away from home plate. Your assignment is to create an animation that simulates hitting a particle the size of a baseball from 1 meter off of the ground to show at what velocities it will or will not go over over the wall.
 
   #. Create a new Java class in ``projectile`` called ``BaseballSimulationApp`` that extends ``AbstractSimuation``.
   #. Create a ``PlotFrame`` that will hold the animation.
