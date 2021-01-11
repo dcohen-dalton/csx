@@ -209,7 +209,7 @@ curve. Computers are good at this kind of repetitive task: while there are many
 steps, the calculation involved in each step is simple. Remember how to tell a program to do the same thing over and over using
 <code class="docutils literal"><span class="pre">for</span></code> and <code class="docutils literal"><span class="pre">while</span></code>-loops? Now, you will apply this knowledge to create a
 Java class which evaluates a given Riemann sum.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/fig2.svg"><img alt="../../_images/fig2.svg" src="../../_images/fig2.svg" width="80%" /></a>
 <p class="caption"><span class="caption-text">The individual rectangles’ areas can be added up using a <code class="docutils literal"><span class="pre">for</span></code>-loop.
 The more iterations (steps) of the loop, the better the approximation.</span></p>
@@ -239,7 +239,7 @@ of the <code class="docutils literal"><span class="pre">AbstractRiemann</span></
 and their <strong>return values</strong> (outputs). Your job will be to create a class
 which conforms to the given JavaDoc—the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you create
 should contain each of the listed methods, and each method should behave as
-described in the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">JavaDoc</a>, taking in the same parameters and outputting the
+described in the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">AbstractRiemann JavaDoc</a>, taking in the same parameters and outputting the
 same type of return value.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -267,7 +267,7 @@ endpoints of the interval and the number of slices.</li>
 <li>Add up the areas to find the total area.</li>
 </ol>
 <p>Notice that only the third step—calculating the area of each slice—depends upon the specific rule being used; the others are the same regardless of the rule.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/fig3.svg"><img alt="../../_images/fig3.svg" src="../../_images/fig3.svg" width="95%" /></a>
 <p class="caption"><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum. While the slices’ shapes are different, they exist over the same subintervals in each diagram.</span></p>
 </div>
@@ -498,7 +498,7 @@ subinterval Hint: instead of breaking up an area into rectangles, break up the
 curve into line segments. You will need the distance formula <span class="math">\(r =
 \sqrt{\Delta x ^ 2 + \Delta y ^ 2}\)</span> and the Java function <code class="docutils literal"><span class="pre">Math.sqrt()</span></code> to
 calculate the length of each segment.</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id7">
 <a class="reference internal image-reference" href="../../_images/fig4.svg"><img alt="../../_images/fig4.svg" src="../../_images/fig4.svg" width="60%" /></a>
 <p class="caption"><span class="caption-text">Arc length can be approximated by dividing the curve and replacing the
 smaller arcs with segments.</span></p>

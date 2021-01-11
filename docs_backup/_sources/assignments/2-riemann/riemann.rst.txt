@@ -386,7 +386,7 @@ Java/Computer Science
 * `Oracle - Abstract Classes and Methods <https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html>`_
 * `Oracle - Interfaces <https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html>`_
 * `freeCodeCamp.org - Lambda Expressions <https://www.freecodecamp.org/news/learn-these-4-things-and-working-with-lambda-expressions-b0ab36e0fffc/>`_
-* `JavaDoc <https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Math.html>`_
+* `Math JavaDoc <https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Math.html>`_
   for the ``Math`` class - contains useful mathematical functions such as
   ``Math.sin()`` and ``Math.sqrt()``.
 
