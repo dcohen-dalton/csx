@@ -63,7 +63,7 @@ of the ``AbstractRiemann`` class. This includes the methods' **parameters** (inp
 and their **return values** (outputs). Your job will be to create a class
 which conforms to the given JavaDoc---the ``AbstractRiemann`` class which you create
 should contain each of the listed methods, and each method should behave as
-described in the JavaDoc, taking in the same parameters and outputting the
+described in the `JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_, taking in the same parameters and outputting the
 same type of return value.
 
 
@@ -75,7 +75,7 @@ same type of return value.
 Abstract Classes and Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``AbstractRiemann`` class, as shown in the `JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_ , contains a keyword which you most likely have not yet encountered: ``abstract``. This keyword will allow you to use to use **object-oriented programming (OOP)** to organize your code in a more logical way.
+The ``AbstractRiemann`` class, as shown in the `AbstractRiemann JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_ , contains a keyword which you most likely have not yet encountered: ``abstract``. This keyword will allow you to use to use **object-oriented programming (OOP)** to organize your code in a more logical way.
 
 You have learned that there are several different rules which can be used to
 calculate Riemann sums, such as the left hand rule, right hand rule, and
@@ -108,7 +108,11 @@ pages are recommended for reference:
 * `Oracle - Inheritance Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html>`_
 * `Oracle - Abstract Tutorial <https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html>`_
 
-As shown in the `JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_, the ``AbstractRiemann`` class which you will create will be an **abstract class**. As such, you will never directly construct a ``new AbstractRiemann()``; instead, you will create **child classes** (also known as **subclasses**) of ``AbstractRiemann`` for each Riemann sum rule. In this way, you will end up with a structure where ``RightHandPlot`` and ``LeftHandPlot``, both child classes of ``AbstractRiemann``, share most methods, differing only in their implementations of ``getSubintervalArea()`` and ``drawSlice()``, since these are the only methods whose functionality should depend on the rule. For example, this is what a fictional rule called ``OvalPlot`` could look like::
+As shown in the `AbstractRiemann JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_, the ``AbstractRiemann`` class which you will create will be an **abstract class**. As such, you will never directly construct a ``new AbstractRiemann()``; instead, you will create **child classes** (also known as **extended classes** or **subclasses**) of ``AbstractRiemann`` for each Riemann sum rule. In this way, you will end up with a structure where ``RightHandPlot`` and ``LeftHandPlot``, both child classes of ``AbstractRiemann``, share most methods, differing only in their implementations of ``getSubintervalArea()`` and ``drawSlice()``, since these are the only methods whose functionality should depend on the rule. 
+
+See the `Riemann Sum JavaDoc <../../_static/riemann-javadoc/package-summary.html>`_ to see how the abstract class is different from the child classes.
+
+For example, this is what a fictional rule called ``OvalPlot`` could look like::
 
     public class OvalPlot extends AbstractRiemann {
         @Override
@@ -154,10 +158,10 @@ Base Assignment
 
 You will write a total of **eight** Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.
 
-See the `JavaDoc <../../_static/riemann-javadoc/package-summary.html>`_ for an overview of all the classes in this project.
+See the `Riemann Sum JavaDoc <../../_static/riemann-javadoc/package-summary.html>`_ for an overview of all the classes in this project.
 
 1. Create a Package Namespace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A good way to organize all the projects you will do this year is by creating a separate package namespace for each.
 
 .. admonition:: Exercise
@@ -179,22 +183,23 @@ A good way to organize all the projects you will do this year is by creating a s
 
   **Summary**: Create an abstract class that has logic common to all Riemann rules.
 
-  #. In ``com.[yourname].riemann`` create the ``AbstractRiemann`` abstract class based on the `JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_ .
+  #. In ``com.[yourname].riemann`` create the ``AbstractRiemann`` abstract class based on the `AbstractRiemann JavaDoc <../../_static/riemann-javadoc/AbstractRiemann.html>`_ .
   #. Create all the attributes: poly, plotFrame, xLower, xUpper, and subintervals.
   #. Create a constructor.
   #. Write the non-abstract methods: ``calculateDeltaX()``, ``getIntervalArea()``, ``drawRiemannSlices()``, ``plotPolynomial()``, ``plotAccFnc()``, and ``configPlotFrame()``.
   #. For the accumulation function, ``plotAccFnc()``, note that it graphs how the area grows with increasing :math:`x`. See :download:`Area Under a Curve Slides </_static/RiemannSumSlides.pdf>` for a deeper explanation of the accumulation function.
   #. Add stubs for the the abstract methods ``getSubintervalArea()`` and ``drawSlice()``. Make sure to mark them as ``abstract`` and end the line with a semicolon instead of implementing the method.
 
-3. RightHandPlot, LeftHandPlot and TrapezoidPlot Classes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+3. RightHandPlot, LeftHandPlot and TrapezoidPlot
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. admonition:: Exercise
 
-  **Summary**: Create specific Object classes for various Riemann rules.
+  **Summary**: Create object classes for various Riemann rules.
 
-  #. Also in the ``riemann`` package, create three child classes: ``RightHandPlot``, ``LeftHandPlot``, and ``TrapezoidPlot``, each extending ``AbstractRiemann`` class.
-  #. Each rule should implement the abstract methods ``getSubintervalArea()`` and ``drawSlice()``. Do not include implementations of any other methods from ``AbstractRiemann`` in these classes; they will be automatically inherited.
-  #. For ``drawSlice()``, make sure the plots correspond to the specific rules. You don't need to fill in the trapezoids for ``TrapezoidPlot``.
+  #. In your ``riemann`` package, create three child classes: ``RightHandPlot``, ``LeftHandPlot``, and ``TrapezoidPlot``, each extending ``AbstractRiemann``.
+  #. Each rule should implement the abstract methods ``getSubintervalArea()`` and ``drawSlice()``. Do not include implementations of any other methods from ``AbstractRiemann``; they will be automatically inherited.
+  #. For ``drawSlice()``, make sure the plots correspond to the specific rules. Note: You don't need to fill in the trapezoids for ``TrapezoidPlot``.
 
 
 4. Test Classes
@@ -217,7 +222,7 @@ A good way to organize all the projects you will do this year is by creating a s
 
       RightHandPlot rightHandPlot = new RightHandPlot(poly, new PlotFrame("x", "y", "Right Hand Rule"), 0, 2, 10);
 
-    - Asserts that the object's ``getSubintervalArea()`` returns the correct area of the rectangle under the given Polynomial between two ``x`` values. You can check what the Riemann sum should be using a `Riemann Sum Calculator <https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/>`_.
+    - Asserts that the object's ``getSubintervalArea()`` returns the correct area of the rectangle under the given Polynomial between two :math:`x` values. You can check what the Riemann sum should be using a `Riemann Sum Calculator <https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/>`_.
 
   You may add more test methods as you see fit. When you are certain ``RightHandPlot``'s ``getSubintervalArea()`` method works, test the other rules: 
 
@@ -234,7 +239,7 @@ A good way to organize all the projects you will do this year is by creating a s
   **Summary**: Plot the Riemann rules.
 
   #. Back in the ``riemann`` package, create ``RiemannApp``, which will have a ``main`` method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area. 
-  #. Create an example Polynomial to find the area under. E.g., :math:`3x^2-6x+3`.
+  #. Create an example Polynomial to find the area under. E.g., :math:`3x^2-6x+3`. See the `Polynomial JavaDoc <../../_static/polyfun-javadoc/org/dalton/polyfun/Polynomial.html>`_  for how to construct a Polynomial.
 
   #. For each plot object use ``drawRiemannSlices()`` to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,
 
@@ -381,7 +386,7 @@ Java/Computer Science
 * `Oracle - Abstract Classes and Methods <https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html>`_
 * `Oracle - Interfaces <https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html>`_
 * `freeCodeCamp.org - Lambda Expressions <https://www.freecodecamp.org/news/learn-these-4-things-and-working-with-lambda-expressions-b0ab36e0fffc/>`_
-* `JavaDoc <https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Math.html>`_
+* `Math JavaDoc <https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Math.html>`_
   for the ``Math`` class - contains useful mathematical functions such as
   ``Math.sin()`` and ``Math.sqrt()``.
 
