@@ -51,7 +51,7 @@ Follow these images to set up your environment:
    :width: 100 %
    :align: left
 
-   **Step 1.** Open IntelliJ and select Check out from Version Control > Git.
+   **Step 1.** Open IntelliJ and select Get from VCS (top right button).
 
 
 .. figure:: setup01.png
@@ -68,8 +68,7 @@ Follow these images to set up your environment:
 
    **Step 3.** Expand the **src** and **test** folders. These folders have
    example classes and are where you will put all your code for this course.
-   Your project should now look like the above. (Note: the **out** folder will
-   not appear until you've run a class.)
+   Your project should look like the above.
 
 
 Introduction to JUnit

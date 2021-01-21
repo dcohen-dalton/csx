@@ -28,7 +28,6 @@ complicated too quickly will likely give you issues when you try to debug.
 
 Introduction to Modeling
 ------------------------
-.. from blogs.dalton.org
 
 Modeling is a concept that has broad definitions and meanings, even in
 science. We may never know the ‘true’ nature of the Universe and the laws
@@ -274,8 +273,7 @@ Base Assignment
 ------------------
 
 There are two parts of the base assignment. Part 4 will take much longer than
-Parts 1 - 3; it is essentially a mini-extension. (In fact, one year it was
-someone's extension.) While everyone in the class will do the same base
+Parts 1 - 3; it is essentially a mini-extension. While everyone in the class will do the same base
 assignments, you will not necessarily all get exactly the same values. This
 will depend on how you choose to calculate your position variables, your
 timestep, and, for Green Monster (Part 4), the way that you run your
@@ -306,6 +304,7 @@ Before you start your base assignments, consider:
   #. In src folder, create a new package namespace called ``com.[yourname].projectile``.
   #. In ``projectile`` create a new Java class called ``Particle``.
   #. Design the ``Particle`` class to model the motion of a particle - for example, a rock - in one dimension. Just like the real rock, you want your simulated rock to have certain properties at a given time. These properties correspond to the **fields** (attributes, aka, member variables) of the ``Particle`` object. What properties does a real particle have? What fields should an object of this type have?
+  #. HINT: OSP already comes with a Circle object that keeps track of its x and y and also can be added to a PlotFrame as a Drawable. Can you extend Circle to be a Particle?
   #. Add a constructor to ``Particle`` which takes initial values for these properties and initializes the particle accordingly.
   #. Now that the ``Particle`` class has fields which describe its properties, add a method ``step()`` which handles its motion. While particles move continuously in real life, you will model them as moving in discrete steps. In each step, a certain amount of time :math:`\Delta t` should pass and the particle's properties should be updated. You may structure this method how you see fit, but it must: (1) take a parameter, :math:`\Delta t` deltaTime, and pass that amount of time, and (2) use motion equations you have learned in physics class to update the properties of the particle. The question you should be asking yourself is **"if** :math:`\Delta t` **seconds pass, what are the new properties of the particle?"**
   #. Add **two more** step methods to make the ``Particle`` move with air resistence. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:
