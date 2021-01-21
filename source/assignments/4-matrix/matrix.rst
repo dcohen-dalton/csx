@@ -17,7 +17,7 @@ In this assignment, you will write a class to find the inverse of a given matrix
 There are various techniques for finding the inverse of a matrix. This assignment asks you to find it using `elementary row operations <https://www.mathsisfun.com/algebra/matrix-inverse-row-operations-gauss-jordan.html>`_ . Each elementary row operation will be a method in your Matrix class, except for ``invert()`` which will call the other methods. 
 
 As with the Riemann Sums assignment, there is `a Matrix JavaDoc
-<../../_static/matrix-javadoc/Matrix.html>`_ that describes the methods the class. You will also create a ``MatrixApp`` class to test your ``Matrix`` and a ``MatrixTest`` test class with several test cases.
+<../../_static/matrix-javadoc/Matrix.html>`_ to guide you. You will also create a ``MatrixApp`` class to test your ``Matrix`` and a ``MatrixTest`` test class with several test cases.
 
 This assignment can seem very daunting at first. Before you decide what
 instructions you want to give your computer, you have to determine how you
