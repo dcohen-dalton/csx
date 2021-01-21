@@ -77,7 +77,7 @@ Base Assignment
   #. In ``matrix`` create a class called ``Matrix``.
   #. Add a ``private`` attribute called ``matrix`` that is a two-dimensional array of ``double`` s.
   #. Write the Matrix constructors. 
-  #. Implement the rest of the methods in the `Matrix JavaDoc <../../_static/matrix-javadoc/main/Matrix.html>`_
+  #. Implement the rest of the methods in the `Matrix JavaDoc <../../_static/matrix-javadoc/Matrix.html>`_
   #. Optionally, create other helper methods to aid in inverting a matrix.
 
 2. Test Classes
