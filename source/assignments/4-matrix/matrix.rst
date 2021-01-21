@@ -12,12 +12,12 @@ different uses and applications both in math and science. In fact, many of you
 will use matrices in physics in order to solve systems of
 equations.
 
-In this assignment, you will write a class that will find the inverse of a given matrix, or find of the inverse does not exist. The **inverse** of a matrix is another matrix such that when multiplied to the original produces the **identity matrix** (a square matrix of all zeros except for ones along the diaganol.) You can read about why the inverse is useful `here <https://www.mathsisfun.com/algebra/matrix-inverse.html>`_ .
+In this assignment, you will write a class to find the inverse of a given matrix, if in fact the inverse exists. The **inverse** of a matrix is one such that when multiplied to the original matrix produces the **identity matrix** (a square matrix of all zeros except for ones along the diaganol). You can read about why the inverse is useful `here <https://www.mathsisfun.com/algebra/matrix-inverse.html>`_ .
 
-There are a handful of techniques for finding the inverse of a given matrix. This assignment asks you to find it using `elementary row operations <https://www.mathsisfun.com/algebra/matrix-inverse-row-operations-gauss-jordan.html>`_ . Each elementary row operation will be a method in your Matrix class, except for ``invert()`` which will call the other methods. 
+There are various techniques for finding the inverse of a matrix. This assignment asks you to find it using `elementary row operations <https://www.mathsisfun.com/algebra/matrix-inverse-row-operations-gauss-jordan.html>`_ . Each elementary row operation will be a method in your Matrix class, except for ``invert()`` which will call the other methods. 
 
 As with the Riemann Sums assignment, there is `a Matrix JavaDoc
-<../../_static/matrix-javadoc/Matrix.html>`_ that describes the methods for your class. You will also create a MatrixApp to test your Matrix and a MatrixTest test class with several test cases.
+<../../_static/matrix-javadoc/Matrix.html>`_ that describes the methods the class. You will also create a ``MatrixApp`` class to test your ``Matrix`` and a ``MatrixTest`` test class with several test cases.
 
 This assignment can seem very daunting at first. Before you decide what
 instructions you want to give your computer, you have to determine how you

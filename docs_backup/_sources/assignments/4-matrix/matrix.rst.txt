@@ -76,9 +76,9 @@ Base Assignment
   #. Create a package namespace called ``matrix``.
   #. In ``matrix`` create a class called ``Matrix``.
   #. Add a ``private`` attribute called ``matrix`` that is a two-dimensional array of ``double`` s.
-  #. Write the Matrix constructor, which sets the size of the ``matrix``. 
+  #. Write the Matrix constructors. 
   #. Implement the rest of the methods in the `Matrix JavaDoc <../../_static/matrix-javadoc/main/Matrix.html>`_
-  #. Optionally, create other constructors to help you fill your matrix.
+  #. Optionally, create other helper methods to aid in inverting a matrix.
 
 2. Test Classes
 ^^^^^^^^^^^^^^^^^
