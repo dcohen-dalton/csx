@@ -183,17 +183,16 @@
 different uses and applications both in math and science. In fact, many of you
 will use matrices in physics in order to solve systems of
 equations.</p>
-<p><a class="reference download internal" href="../../_downloads/Matrices-and-VDM.pdf" download=""><code class="xref download docutils literal"><span class="pre">Matrices</span> <span class="pre">and</span> <span class="pre">VDM</span> <span class="pre">chapter</span></code></a></p>
-<p>As with the Riemann Sums assignment, there is <a class="reference external" href="../../_static/matrix-javadoc/main/Matrix.html">a JavaDoc</a> with methods for your class to include. In
-addition, you should work to create some of your own test classes in order to
-test your matrices.</p>
+<p>In this assignment, you will write a class that will find the inverse of a given matrix, or find of the inverse does not exist. The <strong>inverse</strong> of a matrix is another matrix such that when multiplied to the original produces the <strong>identity matrix</strong> (a square matrix of all zeros except for ones along the diaganol.) You can read about why the inverse is useful <a class="reference external" href="https://www.mathsisfun.com/algebra/matrix-inverse.html">here</a> .</p>
+<p>There are a handful of techniques for finding the inverse of a given matrix. This assignment asks you to find it using <a class="reference external" href="https://www.mathsisfun.com/algebra/matrix-inverse-row-operations-gauss-jordan.html">elementary row operations</a> . Each elementary row operation will be a method in your Matrix class, except for <code class="docutils literal"><span class="pre">invert()</span></code> which will call the other methods.</p>
+<p>As with the Riemann Sums assignment, there is <a class="reference external" href="../../_static/matrix-javadoc/Matrix.html">a Matrix JavaDoc</a> that describes the methods for your class. You will also create a MatrixApp to test your Matrix and a MatrixTest test class with several test cases.</p>
 <p>This assignment can seem very daunting at first. Before you decide what
 instructions you want to give your computer, you have to determine how you
 would manipulate a matrix first. So, we recommend that you start by trying to
-modify a few different matrices into the identity matrix.</p>
+modify a few different matrices into the identity matrix by hand.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Except for <code class="docutils literal"><span class="pre">setEntry()</span></code>, none of the methods
+<p class="last">Except for the methods that start with <code class="docutils literal"><span class="pre">set__</span></code>, none of the methods
 should actually modify the original <code class="docutils literal"><span class="pre">Matrix</span></code>. Instead, they
 return an entirely new <code class="docutils literal"><span class="pre">Matrix</span></code>. Make sure, when you are implementing
 these methods, that you are not modifying the original <code class="docutils literal"><span class="pre">Matrix</span></code>, but
@@ -268,12 +267,9 @@ before it:</p>
 <li>Create a <code class="docutils literal"><span class="pre">main</span></code> method.</li>
 <li>Create an example <code class="docutils literal"><span class="pre">Matrix</span></code> object and print it to the console. Then print its inverse, like this:</li>
 </ol>
-<div class="figure align-center">
+<div class="last figure align-center">
 <a class="reference internal image-reference" href="../../_images/matrix.png"><img alt="../../_images/matrix.png" src="../../_images/matrix.png" style="width: 70%;" /></a>
 </div>
-<ol class="last arabic simple">
-<li>Finally, use your <code class="docutils literal"><span class="pre">Matrix</span></code> class in order to differentiate polynomials using the Vertical Difference Method.</li>
-</ol>
 </div>
 </div>
 </div>
@@ -283,6 +279,7 @@ before it:</p>
 <div class="admonition-extension-ideas admonition">
 <p class="first admonition-title">Extension Ideas</p>
 <ol class="arabic simple">
+<li>You can also inverse a matrix by using its <cite>determinant &lt;https://www.mathsisfun.com/algebra/matrix-determinant.html&gt;</cite>. Implement methods to find the determinant and use it to find the inverse.</li>
 <li>Use your <code class="docutils literal"><span class="pre">Matrix</span></code> class to interpolate a polynomial given a set of points. Think about whether given <em>n</em> points what is the degree of the polynomial you will need to make.</li>
 <li>See if you can find a relationship between the derivative of an accumulation function (recall the Riemann sum assignment), and the accumulation function of the derivative of the function.</li>
 <li>Use your <code class="docutils literal"><span class="pre">Matrix</span></code> class to balance a chemical equation. See this research paper on <a class="reference external" href="https://iiste.org/Journals/index.php/JNSR/article/viewFile/20721/21315">Balancing of Chemical Equations using Matrix Algebra</a>.</li>

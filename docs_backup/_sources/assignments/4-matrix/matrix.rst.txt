@@ -12,22 +12,21 @@ different uses and applications both in math and science. In fact, many of you
 will use matrices in physics in order to solve systems of
 equations.
 
-:download:`Matrices and VDM chapter </_static/Matrices-and-VDM.pdf>`
+In this assignment, you will write a class that will find the inverse of a given matrix, or find of the inverse does not exist. The **inverse** of a matrix is another matrix such that when multiplied to the original produces the **identity matrix** (a square matrix of all zeros except for ones along the diaganol.) You can read about why the inverse is useful `here <https://www.mathsisfun.com/algebra/matrix-inverse.html>`_ .
 
+There are a handful of techniques for finding the inverse of a given matrix. This assignment asks you to find it using `elementary row operations <https://www.mathsisfun.com/algebra/matrix-inverse-row-operations-gauss-jordan.html>`_ . Each elementary row operation will be a method in your Matrix class, except for ``invert()`` which will call the other methods. 
 
-As with the Riemann Sums assignment, there is `a JavaDoc
-<../../_static/matrix-javadoc/main/Matrix.html>`_ with methods for your class to include. In
-addition, you should work to create some of your own test classes in order to
-test your matrices.
+As with the Riemann Sums assignment, there is `a Matrix JavaDoc
+<../../_static/matrix-javadoc/Matrix.html>`_ that describes the methods for your class. You will also create a MatrixApp to test your Matrix and a MatrixTest test class with several test cases.
 
 This assignment can seem very daunting at first. Before you decide what
 instructions you want to give your computer, you have to determine how you
 would manipulate a matrix first. So, we recommend that you start by trying to
-modify a few different matrices into the identity matrix.
+modify a few different matrices into the identity matrix by hand.
 
 
 .. note::
-    Except for ``setEntry()``, none of the methods 
+    Except for the methods that start with ``set__``, none of the methods 
     should actually modify the original ``Matrix``. Instead, they 
     return an entirely new ``Matrix``. Make sure, when you are implementing 
     these methods, that you are not modifying the original ``Matrix``, but
@@ -107,7 +106,6 @@ Base Assignment
    :width: 70 %
    :align: center
 
-  #. Finally, use your ``Matrix`` class in order to differentiate polynomials using the Vertical Difference Method. 
 
 Extensions
 ------------
@@ -116,6 +114,7 @@ After the base assignment is done, do more with your ``Matrix``. You can use one
 
 .. admonition:: Extension Ideas
 
+  #. You can also inverse a matrix by using its `determinant <https://www.mathsisfun.com/algebra/matrix-determinant.html>`. Implement methods to find the determinant and use it to find the inverse. 
   #. Use your ``Matrix`` class to interpolate a polynomial given a set of points. Think about whether given *n* points what is the degree of the polynomial you will need to make.
   #. See if you can find a relationship between the derivative of an accumulation function (recall the Riemann sum assignment), and the accumulation function of the derivative of the function.
   #. Use your ``Matrix`` class to balance a chemical equation. See this research paper on `Balancing of Chemical Equations using Matrix Algebra <https://iiste.org/Journals/index.php/JNSR/article/viewFile/20721/21315>`_.
