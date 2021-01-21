@@ -404,7 +404,7 @@ When you are done with the base assignment, extend it to model another real-worl
   Physics extensions are very open ended, and the above prompt is not very exact. You should work through your idea for your extension with a physics teacher in order to determine together what might be a realistic goal based on your initial idea. While you work on the base assignment, you should think about what you might be interested in modeling.
 
   The most important component of this extension is your understanding of the
-  underlying physics concepts. While looking up equations onlilne might give you a realistic simulation, you will not learn anything if you don't understanding why the formulas that you use will give you good approximations.
+  underlying physics concepts. While looking up equations online might give you a realistic simulation, you will not learn anything if you don't understanding why the formulas that you use will give you good approximations.
 
   Once you know what you want your extension to be, just as you did in ``Riemann``, you will build off of the code you already wrote for your base assignment. You will present the extension to the class and the teachers, so be ready to talk about what you learned and to answer some questions.
 
