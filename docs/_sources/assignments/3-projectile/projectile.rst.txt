@@ -365,7 +365,7 @@ Before you start your base assignments, consider:
     :width: 90 %
     :align: center
 
-    The red particle has no air reResults will depend on the air/water pressure you chose and the mass and radius of the particles. 
+    The red particle has no air pressure and the green one has air pressure. Results will depend on the air/water pressure you chose and the mass and radius of the particles. 
 
 
 3. ProjectileApp (2D movement)

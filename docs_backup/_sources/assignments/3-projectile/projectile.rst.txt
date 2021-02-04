@@ -378,7 +378,6 @@ Before you start your base assignments, consider:
   #. In ``projectile`` create a new Java class called ``ProjectileApp`` that extends ``AbstractSimulation``.
   #. Edit your ``Particle`` so that it moves in two dimensions. 
   #. In ``ProjectileApp``, create a ``PlotFrame`` and plot a ``Particle`` moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.
-  #. Once you have your two dimensional particle working, find the value for **beta** that accounts for your experimental error.
 
   When you have something that works like the following you are done with this exercise:
 
