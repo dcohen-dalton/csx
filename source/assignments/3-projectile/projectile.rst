@@ -335,7 +335,8 @@ Before you start your base assignments, consider:
   #. Compute the ``drag``. Drag is the force that is opposite the direction of travel and works against its weight. It is computed with a combination of ``pressure``, ``mass``, the cross-sectional surface area and a ``drag constant``. See complete formula above.
   #. Once you know the force of ``drag``, add it to the ``weight`` to get the ``total net force``.
   #. Set the acceleration of the particle to the ``total net force`` divided by the ``mass``.
-  #. Finally, set the other attributes of the particle like you did in the first ``step()`` method.
+  #. Set the other attributes of the particle like you did in the first ``step()`` method.
+  #. Once the particle has reached **terminal velocity**, its acceleration should not change. (In other words, drag should never make the particle float upwards.) It is for you to figure out the **terminal velocity**.
 
 .. warning::
   Make sure that your air resistance is affecting the particle in the right
@@ -377,7 +378,6 @@ Before you start your base assignments, consider:
   #. In ``projectile`` create a new Java class called ``ProjectileApp`` that extends ``AbstractSimulation``.
   #. Edit your ``Particle`` so that it moves in two dimensions. 
   #. In ``ProjectileApp``, create a ``PlotFrame`` and plot a ``Particle`` moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.
-  #. Once you have your two dimensional particle working, find the value for **beta** that accounts for your experimental error.
 
   When you have something that works like the following you are done with this exercise:
 

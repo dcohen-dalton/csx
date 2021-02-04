@@ -496,7 +496,8 @@ should be your attributes.</li>
 <li>Compute the <code class="docutils literal"><span class="pre">drag</span></code>. Drag is the force that is opposite the direction of travel and works against its weight. It is computed with a combination of <code class="docutils literal"><span class="pre">pressure</span></code>, <code class="docutils literal"><span class="pre">mass</span></code>, the cross-sectional surface area and a <code class="docutils literal"><span class="pre">drag</span> <span class="pre">constant</span></code>. See complete formula above.</li>
 <li>Once you know the force of <code class="docutils literal"><span class="pre">drag</span></code>, add it to the <code class="docutils literal"><span class="pre">weight</span></code> to get the <code class="docutils literal"><span class="pre">total</span> <span class="pre">net</span> <span class="pre">force</span></code>.</li>
 <li>Set the acceleration of the particle to the <code class="docutils literal"><span class="pre">total</span> <span class="pre">net</span> <span class="pre">force</span></code> divided by the <code class="docutils literal"><span class="pre">mass</span></code>.</li>
-<li>Finally, set the other attributes of the particle like you did in the first <code class="docutils literal"><span class="pre">step()</span></code> method.</li>
+<li>Set the other attributes of the particle like you did in the first <code class="docutils literal"><span class="pre">step()</span></code> method.</li>
+<li>Once the particle has reached <strong>terminal velocity</strong>, its acceleration should not change. (In other words, drag should never make the particle float upwards.) It is for you to figure out the <strong>terminal velocity</strong>.</li>
 </ol>
 </div>
 <div class="admonition warning">
@@ -541,7 +542,6 @@ particle’s velocity?)</p>
 <li>In <code class="docutils literal"><span class="pre">projectile</span></code> create a new Java class called <code class="docutils literal"><span class="pre">ProjectileApp</span></code> that extends <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>.</li>
 <li>Edit your <code class="docutils literal"><span class="pre">Particle</span></code> so that it moves in two dimensions.</li>
 <li>In <code class="docutils literal"><span class="pre">ProjectileApp</span></code>, create a <code class="docutils literal"><span class="pre">PlotFrame</span></code> and plot a <code class="docutils literal"><span class="pre">Particle</span></code> moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.</li>
-<li>Once you have your two dimensional particle working, find the value for <strong>beta</strong> that accounts for your experimental error.</li>
 </ol>
 <p>When you have something that works like the following you are done with this exercise:</p>
 <div class="last figure align-center">

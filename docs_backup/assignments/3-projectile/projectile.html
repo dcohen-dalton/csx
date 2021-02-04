@@ -495,8 +495,9 @@ should be your attributes.</li>
 <li>As a first step to finding the effects of pressure, compute the <code class="docutils literal"><span class="pre">weight</span></code> of the particle, using its <code class="docutils literal"><span class="pre">mass</span></code> and the force of gravity.</li>
 <li>Compute the <code class="docutils literal"><span class="pre">drag</span></code>. Drag is the force that is opposite the direction of travel and works against its weight. It is computed with a combination of <code class="docutils literal"><span class="pre">pressure</span></code>, <code class="docutils literal"><span class="pre">mass</span></code>, the cross-sectional surface area and a <code class="docutils literal"><span class="pre">drag</span> <span class="pre">constant</span></code>. See complete formula above.</li>
 <li>Once you know the force of <code class="docutils literal"><span class="pre">drag</span></code>, add it to the <code class="docutils literal"><span class="pre">weight</span></code> to get the <code class="docutils literal"><span class="pre">total</span> <span class="pre">net</span> <span class="pre">force</span></code>.</li>
-<li>Set the acceleration of the particle to the <code class="docutils literal"><span class="pre">total</span> <span class="pre">net</span> <span class="pre">force</span></code> divided by the mass.</li>
-<li>Finally, set the other attributes of the particle like you did in the first <code class="docutils literal"><span class="pre">step()</span></code> method.</li>
+<li>Set the acceleration of the particle to the <code class="docutils literal"><span class="pre">total</span> <span class="pre">net</span> <span class="pre">force</span></code> divided by the <code class="docutils literal"><span class="pre">mass</span></code>.</li>
+<li>Set the other attributes of the particle like you did in the first <code class="docutils literal"><span class="pre">step()</span></code> method.</li>
+<li>Once the particle has reached <strong>terminal velocity</strong>, its acceleration should not change. (In other words, drag should never make the particle float upwards.) It is for you to figure out the <strong>terminal velocity</strong>.</li>
 </ol>
 </div>
 <div class="admonition warning">
