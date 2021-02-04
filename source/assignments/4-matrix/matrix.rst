@@ -73,11 +73,11 @@ Base Assignment
 
   **Summary**: Create a Matrix object that performs common matrix operations.
 
-  #. Create a package namespace called ``matrix``.
+  #. In src folder, create a package namespace called ``com.[yourname].matrix``.
   #. In ``matrix`` create a class called ``Matrix``.
   #. Add a ``private`` attribute called ``matrix`` that is a two-dimensional array of ``double`` s.
-  #. Write the Matrix constructors. 
-  #. Implement the rest of the methods in the `Matrix JavaDoc <../../_static/matrix-javadoc/Matrix.html>`_
+  #. Write the Matrix constructors according to the `Matrix JavaDoc <../../_static/matrix-javadoc/Matrix.html>`_ . 
+  #. Implement the rest of the methods in the `Matrix JavaDoc <../../_static/matrix-javadoc/Matrix.html>`_ .
   #. Optionally, create other helper methods to aid in inverting a matrix.
 
 2. Test Classes

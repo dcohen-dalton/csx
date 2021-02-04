@@ -109,7 +109,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#base-assignment">Base Assignment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#particle">1. Particle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-particle">1a. Particle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b-particle-with-air-water-pressure">1b. Particle with air/water pressure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fallingballapp">2. FallingBallApp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#projectileapp-2d-movement">3. ProjectileApp (2D movement)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#baseballsimulationapp">4. BaseballSimulationApp</a></li>
@@ -447,29 +448,56 @@ implementation.</p>
 <p>Before you start your base assignments, consider:</p>
 <ul class="simple">
 <li>What variables might affect the flight of your particle? These variables
-should be your fields.</li>
+should be your attributes.</li>
 <li>What variables should the user be able to input?</li>
 <li>How will you represent your particle on the screen?</li>
 </ul>
-<div class="section" id="particle">
-<h3>1. Particle<a class="headerlink" href="#particle" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a-particle">
+<h3>1a. Particle<a class="headerlink" href="#a-particle" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-exercise admonition">
 <p class="first admonition-title">Exercise</p>
 <p><strong>Summary:</strong> Design and implement a Particle object.</p>
-<ol class="arabic simple">
+<ol class="last arabic simple">
 <li>In src folder, create a new package namespace called <code class="docutils literal"><span class="pre">com.[yourname].projectile</span></code>.</li>
 <li>In <code class="docutils literal"><span class="pre">projectile</span></code> create a new Java class called <code class="docutils literal"><span class="pre">Particle</span></code>.</li>
 <li>Design the <code class="docutils literal"><span class="pre">Particle</span></code> class to model the motion of a particle - for example, a rock - in one dimension. Just like the real rock, you want your simulated rock to have certain properties at a given time. These properties correspond to the <strong>fields</strong> (attributes, aka, member variables) of the <code class="docutils literal"><span class="pre">Particle</span></code> object. What properties does a real particle have? What fields should an object of this type have?</li>
 <li>HINT: OSP already comes with a Circle object that keeps track of its x and y and also can be added to a PlotFrame as a Drawable. Can you extend Circle to be a Particle?</li>
 <li>Add a constructor to <code class="docutils literal"><span class="pre">Particle</span></code> which takes initial values for these properties and initializes the particle accordingly.</li>
-<li>Now that the <code class="docutils literal"><span class="pre">Particle</span></code> class has fields which describe its properties, add a method <code class="docutils literal"><span class="pre">step()</span></code> which handles its motion. While particles move continuously in real life, you will model them as moving in discrete steps. In each step, a certain amount of time <span class="math">\(\Delta t\)</span> should pass and the particle’s properties should be updated. You may structure this method how you see fit, but it must: (1) take a parameter, <span class="math">\(\Delta t\)</span> deltaTime, and pass that amount of time, and (2) use motion equations you have learned in physics class to update the properties of the particle. The question you should be asking yourself is <strong>“if</strong> <span class="math">\(\Delta t\)</span> <strong>seconds pass, what are the new properties of the particle?”</strong></li>
-<li>Add <strong>two more</strong> step methods to make the <code class="docutils literal"><span class="pre">Particle</span></code> move with air resistence. It is up to you to name these methods. Choose method names that signal how the method works. Remember there are different ways to calculate air resistance:</li>
+<li>Write a method <code class="docutils literal"><span class="pre">step()</span></code> which handles its motion after one segment of time. While in real life particles move continuously, you will model them as moving in discrete time steps. In each step, a certain amount of time <span class="math">\(\Delta t\)</span> should pass and the particle’s attributes should be updated. The method should take at least one  parameter, <span class="math">\(\Delta t\)</span> deltaTime. Use motion equations you have learned in physics class to update the relevant properties of the particle after each time segment elapses. The question you should be asking yourself is <strong>“if</strong> <span class="math">\(\Delta t\)</span> <strong>seconds pass, what are the new properties of the particle?”</strong></li>
 </ol>
-<ul class="last simple">
-<li>Assume that air resistance is zero.</li>
-<li>Air resistance is directly proportional to velocity.</li>
-<li>Air resistance is directly proportional to velocity squared.</li>
+</div>
+</div>
+<div class="section" id="b-particle-with-air-water-pressure">
+<h3>1b. Particle with air/water pressure<a class="headerlink" href="#b-particle-with-air-water-pressure" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Useful formulas:</strong></p>
+<ul class="simple">
+<li>weight = mass x gravity</li>
+<li>drag = air pressure x drag constant x cross sectional area x velocity <span class="math">\(^2\)</span> / mass x 2</li>
+<li>total net force = weight + drag</li>
+<li>acceleration = total net force  /  mass</li>
 </ul>
+<p><strong>Useful values:</strong></p>
+<ul class="last simple">
+<li>drag constant: <span class="math">\(0.02\)</span></li>
+<li>air pressure at 1000 ft: 1.227 <span class="math">\(kg/m^3\)</span></li>
+<li>cross sectional area of a sphere: the area at the largest diameter (diameter at the center)</li>
+</ul>
+</div>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<p><strong>Summary:</strong> Enhance your Particle object to consider air/water pressure.</p>
+<ol class="last arabic simple">
+<li>In your existing <code class="docutils literal"><span class="pre">Particle</span></code> object add attributes for <code class="docutils literal"><span class="pre">mass</span></code> and <code class="docutils literal"><span class="pre">radius</span></code>. Update the constructor accordingly.</li>
+<li>Write a second <code class="docutils literal"><span class="pre">step()</span></code> method.</li>
+<li>The second step method should also take <span class="math">\(\Delta t\)</span> deltaTime as a parameter but also take <code class="docutils literal"><span class="pre">pressure</span></code>. Pressure is the air or water pressure the particle is travelling through. This is a constant that can be looked up. E.g. air pressure at 1000 feet above sea level is 1.227 <span class="math">\(kg/m^3\)</span>.</li>
+<li>As a first step to finding the effects of pressure, compute the <code class="docutils literal"><span class="pre">weight</span></code> of the particle, using its <code class="docutils literal"><span class="pre">mass</span></code> and the force of gravity.</li>
+<li>Compute the <code class="docutils literal"><span class="pre">drag</span></code>. Drag is the force that is opposite the direction of travel and works against its weight. It is computed with a combination of <code class="docutils literal"><span class="pre">pressure</span></code>, <code class="docutils literal"><span class="pre">mass</span></code>, the cross-sectional surface area and a <code class="docutils literal"><span class="pre">drag</span> <span class="pre">constant</span></code>. See complete formula above.</li>
+<li>Once you know the force of <code class="docutils literal"><span class="pre">drag</span></code>, add it to the <code class="docutils literal"><span class="pre">weight</span></code> to get the <code class="docutils literal"><span class="pre">total</span> <span class="pre">net</span> <span class="pre">force</span></code>.</li>
+<li>Set the acceleration of the particle to the <code class="docutils literal"><span class="pre">total</span> <span class="pre">net</span> <span class="pre">force</span></code> divided by the mass.</li>
+<li>Finally, set the other attributes of the particle like you did in the first <code class="docutils literal"><span class="pre">step()</span></code> method.</li>
+</ol>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -487,28 +515,19 @@ particle’s velocity?)</p>
 <ol class="arabic simple">
 <li>In <code class="docutils literal"><span class="pre">projectile</span></code> create a new Java class called <code class="docutils literal"><span class="pre">FallingBallApp</span></code> that extends from <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>. Add all the necessary methods.</li>
 <li>Create a <code class="docutils literal"><span class="pre">PlotFrame</span></code> to hold the simulation.</li>
-<li>Add three <code class="docutils literal"><span class="pre">Particle</span></code> objects to the PlotFrame. Each <code class="docutils literal"><span class="pre">Particle</span></code> will use one of the three methods of moving that you created in Part 1.</li>
+<li>Add two <code class="docutils literal"><span class="pre">Particle</span></code> objects to the PlotFrame. Each <code class="docutils literal"><span class="pre">Particle</span></code>. One <code class="docutils literal"><span class="pre">Particle</span></code> will move without air pressure, and the other will move with air pressure.</li>
 <li>Create three more <code class="docutils literal"><span class="pre">PlotFrame</span></code> s and plot each of these data per <code class="docutils literal"><span class="pre">Particle</span></code> object:</li>
 </ol>
 <ul class="simple">
-<li>position</li>
-<li>velocity</li>
-<li>acceleration</li>
+<li>Position over Time</li>
+<li>Velocity over Time</li>
+<li>Acceleration over Time</li>
 </ul>
-<p>Before you plot these values, try to think about what graphs might make sense. What should the acceleration of a particle without air resistance look like? What should the acceleration of acceleration particle with air resisance look like?</p>
-<p>When you have one animation and three plots you are done with this exercise.</p>
+<p>When you have these four plots you are done with this exercise.</p>
 <blockquote class="last">
-<div><div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/falling1D.gif"><img alt="../../_images/falling1D.gif" src="../../_images/falling1D.gif" style="width: 50%;" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/proj_positionplot.png"><img alt="../../_images/proj_positionplot.png" src="../../_images/proj_positionplot.png" style="width: 50%;" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/proj_velocityplot.png"><img alt="../../_images/proj_velocityplot.png" src="../../_images/proj_velocityplot.png" style="width: 50%;" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/proj_accelplot.png"><img alt="../../_images/proj_accelplot.png" src="../../_images/proj_accelplot.png" style="width: 50%;" /></a>
+<div><div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/falling_ball.gif"><img alt="../../_images/falling_ball.gif" src="../../_images/falling_ball.gif" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">The red particle has no air reResults will depend on the air/water pressure you chose and the mass and radius of the particles.</span></p>
 </div>
 </div></blockquote>
 </div>
@@ -557,7 +576,7 @@ particle’s velocity?)</p>
 <p><strong>Summary:</strong> Model a real-world object of your choosing that moves in two dimensions.</p>
 <p>Physics extensions are very open ended, and the above prompt is not very exact. You should work through your idea for your extension with a physics teacher in order to determine together what might be a realistic goal based on your initial idea. While you work on the base assignment, you should think about what you might be interested in modeling.</p>
 <p>The most important component of this extension is your understanding of the
-underlying physics concepts. While looking up equations onlilne might give you a realistic simulation, you will not learn anything if you don’t understanding why the formulas that you use will give you good approximations.</p>
+underlying physics concepts. While looking up equations online might give you a realistic simulation, you will not learn anything if you don’t understanding why the formulas that you use will give you good approximations.</p>
 <p class="last">Once you know what you want your extension to be, just as you did in <code class="docutils literal"><span class="pre">Riemann</span></code>, you will build off of the code you already wrote for your base assignment. You will present the extension to the class and the teachers, so be ready to talk about what you learned and to answer some questions.</p>
 </div>
 </div>
