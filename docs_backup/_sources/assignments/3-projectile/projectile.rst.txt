@@ -330,7 +330,7 @@ Before you start your base assignments, consider:
 
   #. In your existing ``Particle`` object add attributes for ``mass`` and ``radius``. Update the constructor accordingly. 
   #. Write a second ``step()`` method. 
-  #. The second step method should also take :math:`\Delta t` deltaTime as a parameter but also take ``pressure``. Pressure is the air or water pressure the particle is travelling through. This is a constant that can be looked up. E.g. air pressure at 1000 feet above sea level is 1.227 :math:`kg/m^3`. 
+  #. The second step method should also take :math:`\Delta t` deltaTime as a parameter but also take ``pressure``. Pressure is the air or water pressure the particle is travelling through. This is a constant that can be looked up. 
   #. As a first step to finding the effects of pressure, compute the ``weight`` of the particle, using its ``mass`` and the force of gravity.
   #. Compute the ``drag``. Drag is the force that is opposite the direction of travel and works against its weight. It is computed with a combination of ``pressure``, ``mass``, the cross-sectional surface area and a ``drag constant``. See complete formula above.
   #. Once you know the force of ``drag``, add it to the ``weight`` to get the ``total net force``.
