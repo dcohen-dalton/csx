@@ -385,7 +385,7 @@ Before you start your base assignments, consider:
     :width: 100%
     :align: center
 
-    The red particle has no air resistance and the green ball has air resistance.
+    The red particle has no air resistance and the green ball has air resistance. Results will vary depending on the air pressure and size of your particles.
 
 
 4. BaseballSimulationApp
@@ -410,6 +410,8 @@ Before you start your base assignments, consider:
 .. figure:: baseball.gif
   :width: 100%
   :align: center
+
+  Example of a failed attempt to hit a home run.
 
 Extension
 -----------
