@@ -321,7 +321,7 @@ Before you start your base assignments, consider:
   **Useful values:**
 
   - drag constant: :math:`0.02`
-  - air pressure at 1000 ft: 1.227 :math:`kg/m^3` 
+  - air pressure at sea level and 15 degrees C: 1.225 :math:`kg/m^3` 
   - cross sectional area of a sphere: the area at the largest diameter (diameter at the center)
 
 .. admonition:: Exercise
@@ -376,14 +376,16 @@ Before you start your base assignments, consider:
   **Summary:** Simulate a projectile.
 
   #. In ``projectile`` create a new Java class called ``ProjectileApp`` that extends ``AbstractSimulation``.
-  #. Edit your ``Particle`` so that it moves in two dimensions. 
-  #. In ``ProjectileApp``, create a ``PlotFrame`` and plot a ``Particle`` moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.
+  #. Edit your ``Particle`` object so it moves in two dimensions. 
+  #. In ``ProjectileApp``, create a ``PlotFrame`` and plot two ``Particles`` , both moving in two dimensions, one without air resistance and one with. Look up the golden rule in order to add this second dimension.
 
   When you have something that works like the following you are done with this exercise:
 
-  .. figure:: test3.gif
+  .. figure:: projectile2D.gif
     :width: 100%
     :align: center
+
+    The red particle has no air resistance and the green ball has air resistance. Results will vary depending on the air pressure and size of your particles.
 
 
 4. BaseballSimulationApp
@@ -404,6 +406,12 @@ Before you start your base assignments, consider:
   .. figure:: greenmonster.jpg
    :width: 100 %
    :align: center
+
+.. figure:: baseball.gif
+  :width: 100%
+  :align: center
+
+  Example of a failed attempt to hit a home run.
 
 Extension
 -----------

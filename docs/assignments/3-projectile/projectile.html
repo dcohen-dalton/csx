@@ -481,7 +481,7 @@ should be your attributes.</li>
 <p><strong>Useful values:</strong></p>
 <ul class="last simple">
 <li>drag constant: <span class="math">\(0.02\)</span></li>
-<li>air pressure at 1000 ft: 1.227 <span class="math">\(kg/m^3\)</span></li>
+<li>air pressure at sea level and 15 degrees C: 1.225 <span class="math">\(kg/m^3\)</span></li>
 <li>cross sectional area of a sphere: the area at the largest diameter (diameter at the center)</li>
 </ul>
 </div>
@@ -540,12 +540,13 @@ particle’s velocity?)</p>
 <p><strong>Summary:</strong> Simulate a projectile.</p>
 <ol class="arabic simple">
 <li>In <code class="docutils literal"><span class="pre">projectile</span></code> create a new Java class called <code class="docutils literal"><span class="pre">ProjectileApp</span></code> that extends <code class="docutils literal"><span class="pre">AbstractSimulation</span></code>.</li>
-<li>Edit your <code class="docutils literal"><span class="pre">Particle</span></code> so that it moves in two dimensions.</li>
-<li>In <code class="docutils literal"><span class="pre">ProjectileApp</span></code>, create a <code class="docutils literal"><span class="pre">PlotFrame</span></code> and plot a <code class="docutils literal"><span class="pre">Particle</span></code> moving in two dimensions. Think about what you learned in physics class about the golden rule in order to add this second dimension.</li>
+<li>Edit your <code class="docutils literal"><span class="pre">Particle</span></code> object so it moves in two dimensions.</li>
+<li>In <code class="docutils literal"><span class="pre">ProjectileApp</span></code>, create a <code class="docutils literal"><span class="pre">PlotFrame</span></code> and plot two <code class="docutils literal"><span class="pre">Particles</span></code> , both moving in two dimensions, one without air resistance and one with. Look up the golden rule in order to add this second dimension.</li>
 </ol>
 <p>When you have something that works like the following you are done with this exercise:</p>
-<div class="last figure align-center">
-<a class="reference internal image-reference" href="../../_images/test3.gif"><img alt="../../_images/test3.gif" src="../../_images/test3.gif" style="width: 100%;" /></a>
+<div class="last figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/projectile2D.gif"><img alt="../../_images/projectile2D.gif" src="../../_images/projectile2D.gif" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">The red particle has no air resistance and the green ball has air resistance. Results will vary depending on the air pressure and size of your particles.</span></p>
 </div>
 </div>
 </div>
@@ -565,6 +566,10 @@ particle’s velocity?)</p>
 <div class="last figure align-center">
 <a class="reference internal image-reference" href="../../_images/greenmonster.jpg"><img alt="../../_images/greenmonster.jpg" src="../../_images/greenmonster.jpg" style="width: 100%;" /></a>
 </div>
+</div>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/baseball.gif"><img alt="../../_images/baseball.gif" src="../../_images/baseball.gif" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Example of a failed attempt to hit a home run.</span></p>
 </div>
 </div>
 </div>
